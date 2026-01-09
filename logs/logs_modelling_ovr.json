@@ -1,0 +1,217 @@
+{"timestamp": "2026-01-07 13:21:55,617", "module": "modelling_ovr", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-07 13:23:56,216", "module": "modelling_ovr", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-07 13:25:35,477", "module": "modelling_ovr", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-07 13:28:36,486", "module": "modelling_ovr", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-07 13:43:44,095", "module": "modelling_ovr", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-07 13:44:10,178", "module": "modelling_ovr", "level": "INFO", "message": "Loaded train data: X_train=(11759571, 80), y_train=(11759571, 24)"}
+{"timestamp": "2026-01-07 13:44:10,178", "module": "modelling_ovr", "level": "INFO", "message": "Loaded test data: X_test=(928269, 80), y_test=(928269, 24)"}
+{"timestamp": "2026-01-07 13:44:15,064", "module": "modelling_ovr", "level": "INFO", "message": "MLflow experiment: ovr_grouped_catboost"}
+{"timestamp": "2026-01-07 13:44:15,064", "module": "modelling_ovr", "level": "INFO", "message": "OvRGroupModel initialized"}
+{"timestamp": "2026-01-07 14:01:38,970", "module": "modelling_ovr", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-07 14:02:04,775", "module": "modelling_ovr", "level": "INFO", "message": "Loaded train data: X_train=(11759571, 80), y_train=(11759571, 24)"}
+{"timestamp": "2026-01-07 14:02:04,775", "module": "modelling_ovr", "level": "INFO", "message": "Loaded test data: X_test=(928269, 80), y_test=(928269, 24)"}
+{"timestamp": "2026-01-07 14:02:10,075", "module": "modelling_ovr", "level": "INFO", "message": "MLflow experiment: ovr_grouped_catboost"}
+{"timestamp": "2026-01-07 14:02:10,075", "module": "modelling_ovr", "level": "INFO", "message": "OvRGroupModel initialized"}
+{"timestamp": "2026-01-07 14:03:28,903", "module": "modelling_ovr", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-07 14:03:53,804", "module": "modelling_ovr", "level": "INFO", "message": "Loaded train data: X_train=(11759571, 80), y_train=(11759571, 24)"}
+{"timestamp": "2026-01-07 14:03:53,804", "module": "modelling_ovr", "level": "INFO", "message": "Loaded test data: X_test=(928269, 80), y_test=(928269, 24)"}
+{"timestamp": "2026-01-07 14:03:54,504", "module": "modelling_ovr", "level": "INFO", "message": "MLflow experiment: ovr_grouped_catboost"}
+{"timestamp": "2026-01-07 14:03:54,504", "module": "modelling_ovr", "level": "INFO", "message": "OvRGroupModel initialized"}
+{"timestamp": "2026-01-07 14:03:58,595", "module": "modelling_ovr", "level": "INFO", "message": "Prepared data: X_pd=(11759571, 80), y_pd=(11759571, 24)"}
+{"timestamp": "2026-01-07 14:03:58,596", "module": "modelling_ovr", "level": "INFO", "message": "Categorical features: ['ind_empleado', 'pais_residencia', 'sexo', 'indrel', 'indrel_1mes', 'tiprel_1mes', 'canal_entrada', 'cod_prov', 'nomprov', 'segmento', 'ind_ahor_fin_ult1_lag3', 'ind_aval_fin_ult1_lag3', 'ind_cco_fin_ult1_lag3', 'ind_cder_fin_ult1_lag3', 'ind_cno_fin_ult1_lag3', 'ind_ctju_fin_ult1_lag3', 'ind_ctma_fin_ult1_lag3', 'ind_ctop_fin_ult1_lag3', 'ind_ctpp_fin_ult1_lag3', 'ind_deco_fin_ult1_lag3', 'ind_ahor_fin_ult1_lag6', 'ind_aval_fin_ult1_lag6', 'ind_cco_fin_ult1_lag6', 'ind_cder_fin_ult1_lag6', 'ind_cno_fin_ult1_lag6', 'ind_ctju_fin_ult1_lag6', 'ind_ctma_fin_ult1_lag6', 'ind_ctop_fin_ult1_lag6', 'ind_ctpp_fin_ult1_lag6', 'ind_deco_fin_ult1_lag6']"}
+{"timestamp": "2026-01-07 14:03:58,596", "module": "modelling_ovr", "level": "INFO", "message": "Categorical feature indices: [0, 1, 2, 7, 8, 9, 12, 14, 15, 18, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63]"}
+{"timestamp": "2026-01-07 14:03:58,596", "module": "modelling_ovr", "level": "INFO", "message": "Total products: 24"}
+{"timestamp": "2026-01-07 14:03:58,597", "module": "modelling_ovr", "level": "INFO", "message": "Total features: 80"}
+{"timestamp": "2026-01-07 14:03:58,597", "module": "modelling_ovr", "level": "INFO", "message": "Categorical features: 30"}
+{"timestamp": "2026-01-07 14:04:09,379", "module": "modelling_ovr", "level": "INFO", "message": "Created product groups by prevalence:"}
+{"timestamp": "2026-01-07 14:04:09,379", "module": "modelling_ovr", "level": "INFO", "message": "  Frequent (>5.0%): 0 products"}
+{"timestamp": "2026-01-07 14:04:09,379", "module": "modelling_ovr", "level": "INFO", "message": "  Mid (1.0-5.0%): 1 products"}
+{"timestamp": "2026-01-07 14:04:09,379", "module": "modelling_ovr", "level": "INFO", "message": "  Rare (<1.0%): 23 products"}
+{"timestamp": "2026-01-07 14:04:09,379", "module": "modelling_ovr", "level": "INFO", "message": "    mid: prevalence range [1.22%, 1.22%]"}
+{"timestamp": "2026-01-07 14:04:09,379", "module": "modelling_ovr", "level": "INFO", "message": "    rare: prevalence range [0.00%, 0.67%]"}
+{"timestamp": "2026-01-07 14:04:09,557", "module": "modelling_ovr", "level": "INFO", "message": "Prepared data: X_pd=(928269, 80), y_pd=(928269, 24)"}
+{"timestamp": "2026-01-07 14:04:10,393", "module": "modelling_ovr", "level": "INFO", "message": "Skipping frequent group: no products"}
+{"timestamp": "2026-01-07 14:04:10,400", "module": "modelling_ovr", "level": "INFO", "message": "Training MID group (1 products)"}
+{"timestamp": "2026-01-07 14:07:05,082", "module": "modelling_ovr", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-07 14:07:30,872", "module": "modelling_ovr", "level": "INFO", "message": "Loaded train data: X_train=(11759571, 80), y_train=(11759571, 24)"}
+{"timestamp": "2026-01-07 14:07:30,872", "module": "modelling_ovr", "level": "INFO", "message": "Loaded test data: X_test=(928269, 80), y_test=(928269, 24)"}
+{"timestamp": "2026-01-07 14:07:31,648", "module": "modelling_ovr", "level": "INFO", "message": "MLflow experiment: ovr_grouped_catboost"}
+{"timestamp": "2026-01-07 14:07:31,648", "module": "modelling_ovr", "level": "INFO", "message": "OvRGroupModel initialized"}
+{"timestamp": "2026-01-07 14:07:35,515", "module": "modelling_ovr", "level": "INFO", "message": "Prepared data: X_pd=(11759571, 80), y_pd=(11759571, 24)"}
+{"timestamp": "2026-01-07 14:07:35,516", "module": "modelling_ovr", "level": "INFO", "message": "Categorical features: ['ind_empleado', 'pais_residencia', 'sexo', 'indrel', 'indrel_1mes', 'tiprel_1mes', 'canal_entrada', 'cod_prov', 'nomprov', 'segmento', 'ind_ahor_fin_ult1_lag3', 'ind_aval_fin_ult1_lag3', 'ind_cco_fin_ult1_lag3', 'ind_cder_fin_ult1_lag3', 'ind_cno_fin_ult1_lag3', 'ind_ctju_fin_ult1_lag3', 'ind_ctma_fin_ult1_lag3', 'ind_ctop_fin_ult1_lag3', 'ind_ctpp_fin_ult1_lag3', 'ind_deco_fin_ult1_lag3', 'ind_ahor_fin_ult1_lag6', 'ind_aval_fin_ult1_lag6', 'ind_cco_fin_ult1_lag6', 'ind_cder_fin_ult1_lag6', 'ind_cno_fin_ult1_lag6', 'ind_ctju_fin_ult1_lag6', 'ind_ctma_fin_ult1_lag6', 'ind_ctop_fin_ult1_lag6', 'ind_ctpp_fin_ult1_lag6', 'ind_deco_fin_ult1_lag6']"}
+{"timestamp": "2026-01-07 14:07:35,517", "module": "modelling_ovr", "level": "INFO", "message": "Categorical feature indices: [0, 1, 2, 7, 8, 9, 12, 14, 15, 18, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63]"}
+{"timestamp": "2026-01-07 14:07:35,517", "module": "modelling_ovr", "level": "INFO", "message": "Total products: 24"}
+{"timestamp": "2026-01-07 14:07:35,517", "module": "modelling_ovr", "level": "INFO", "message": "Total features: 80"}
+{"timestamp": "2026-01-07 14:07:35,519", "module": "modelling_ovr", "level": "INFO", "message": "Categorical features: 30"}
+{"timestamp": "2026-01-07 14:08:03,235", "module": "modelling_ovr", "level": "INFO", "message": "Created product groups by prevalence:"}
+{"timestamp": "2026-01-07 14:08:03,237", "module": "modelling_ovr", "level": "INFO", "message": "  Frequent (>5.0%): 0 products"}
+{"timestamp": "2026-01-07 14:08:03,237", "module": "modelling_ovr", "level": "INFO", "message": "  Mid (1.0-5.0%): 1 products"}
+{"timestamp": "2026-01-07 14:08:03,237", "module": "modelling_ovr", "level": "INFO", "message": "  Rare (<1.0%): 23 products"}
+{"timestamp": "2026-01-07 14:08:03,245", "module": "modelling_ovr", "level": "INFO", "message": "    mid: prevalence range [1.22%, 1.22%]"}
+{"timestamp": "2026-01-07 14:08:03,245", "module": "modelling_ovr", "level": "INFO", "message": "    rare: prevalence range [0.00%, 0.67%]"}
+{"timestamp": "2026-01-07 14:08:03,447", "module": "modelling_ovr", "level": "INFO", "message": "Prepared data: X_pd=(928269, 80), y_pd=(928269, 24)"}
+{"timestamp": "2026-01-07 14:08:03,728", "module": "modelling_ovr", "level": "INFO", "message": "Skipping frequent group: no products"}
+{"timestamp": "2026-01-07 14:08:03,728", "module": "modelling_ovr", "level": "INFO", "message": "Training MID group (1 products)"}
+{"timestamp": "2026-01-07 14:11:40,796", "module": "modelling_ovr", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-07 14:12:07,463", "module": "modelling_ovr", "level": "INFO", "message": "Loaded train data: X_train=(11759571, 79), y_train=(11759571, 24)"}
+{"timestamp": "2026-01-07 14:12:07,463", "module": "modelling_ovr", "level": "INFO", "message": "Loaded test data: X_test=(928269, 79), y_test=(928269, 24)"}
+{"timestamp": "2026-01-07 14:12:08,203", "module": "modelling_ovr", "level": "INFO", "message": "MLflow experiment: ovr_grouped_catboost"}
+{"timestamp": "2026-01-07 14:12:08,203", "module": "modelling_ovr", "level": "INFO", "message": "OvRGroupModel initialized"}
+{"timestamp": "2026-01-07 14:12:11,280", "module": "modelling_ovr", "level": "INFO", "message": "Prepared data: X_pd=(11759571, 79), y_pd=(11759571, 24)"}
+{"timestamp": "2026-01-07 14:12:11,280", "module": "modelling_ovr", "level": "INFO", "message": "Categorical features: ['ind_empleado', 'pais_residencia', 'sexo', 'indrel', 'indrel_1mes', 'tiprel_1mes', 'canal_entrada', 'cod_prov', 'nomprov', 'segmento', 'ind_ahor_fin_ult1_lag3', 'ind_aval_fin_ult1_lag3', 'ind_cco_fin_ult1_lag3', 'ind_cder_fin_ult1_lag3', 'ind_cno_fin_ult1_lag3', 'ind_ctju_fin_ult1_lag3', 'ind_ctma_fin_ult1_lag3', 'ind_ctop_fin_ult1_lag3', 'ind_ctpp_fin_ult1_lag3', 'ind_deco_fin_ult1_lag3', 'ind_ahor_fin_ult1_lag6', 'ind_aval_fin_ult1_lag6', 'ind_cco_fin_ult1_lag6', 'ind_cder_fin_ult1_lag6', 'ind_cno_fin_ult1_lag6', 'ind_ctju_fin_ult1_lag6', 'ind_ctma_fin_ult1_lag6', 'ind_ctop_fin_ult1_lag6', 'ind_ctpp_fin_ult1_lag6', 'ind_deco_fin_ult1_lag6']"}
+{"timestamp": "2026-01-07 14:12:11,280", "module": "modelling_ovr", "level": "INFO", "message": "Categorical feature indices: [0, 1, 2, 6, 7, 8, 11, 13, 14, 17, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62]"}
+{"timestamp": "2026-01-07 14:12:11,280", "module": "modelling_ovr", "level": "INFO", "message": "Total products: 24"}
+{"timestamp": "2026-01-07 14:12:11,280", "module": "modelling_ovr", "level": "INFO", "message": "Total features: 79"}
+{"timestamp": "2026-01-07 14:12:11,280", "module": "modelling_ovr", "level": "INFO", "message": "Categorical features: 30"}
+{"timestamp": "2026-01-07 14:12:37,018", "module": "modelling_ovr", "level": "INFO", "message": "Created product groups by prevalence:"}
+{"timestamp": "2026-01-07 14:12:37,028", "module": "modelling_ovr", "level": "INFO", "message": "  Frequent (>5.0%): 0 products"}
+{"timestamp": "2026-01-07 14:12:37,028", "module": "modelling_ovr", "level": "INFO", "message": "  Mid (1.0-5.0%): 1 products"}
+{"timestamp": "2026-01-07 14:12:37,028", "module": "modelling_ovr", "level": "INFO", "message": "  Rare (<1.0%): 23 products"}
+{"timestamp": "2026-01-07 14:12:37,028", "module": "modelling_ovr", "level": "INFO", "message": "    mid: prevalence range [1.22%, 1.22%]"}
+{"timestamp": "2026-01-07 14:12:37,028", "module": "modelling_ovr", "level": "INFO", "message": "    rare: prevalence range [0.00%, 0.67%]"}
+{"timestamp": "2026-01-07 14:12:37,207", "module": "modelling_ovr", "level": "INFO", "message": "Prepared data: X_pd=(928269, 79), y_pd=(928269, 24)"}
+{"timestamp": "2026-01-07 14:12:37,449", "module": "modelling_ovr", "level": "INFO", "message": "Skipping frequent group: no products"}
+{"timestamp": "2026-01-07 14:12:37,449", "module": "modelling_ovr", "level": "INFO", "message": "Training MID group (1 products)"}
+{"timestamp": "2026-01-07 14:25:08,496", "module": "modelling_ovr", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-07 14:25:35,919", "module": "modelling_ovr", "level": "INFO", "message": "Loaded train data: X_train=(11759571, 79), y_train=(11759571, 24)"}
+{"timestamp": "2026-01-07 14:25:35,919", "module": "modelling_ovr", "level": "INFO", "message": "Loaded test data: X_test=(928269, 79), y_test=(928269, 24)"}
+{"timestamp": "2026-01-07 14:25:36,575", "module": "modelling_ovr", "level": "INFO", "message": "MLflow experiment: ovr_grouped_catboost"}
+{"timestamp": "2026-01-07 14:25:36,575", "module": "modelling_ovr", "level": "INFO", "message": "OvRGroupModel initialized"}
+{"timestamp": "2026-01-07 14:30:21,576", "module": "modelling_ovr", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-07 14:30:47,822", "module": "modelling_ovr", "level": "INFO", "message": "Loaded train data: X_train=(11759571, 79), y_train=(11759571, 24)"}
+{"timestamp": "2026-01-07 14:30:47,822", "module": "modelling_ovr", "level": "INFO", "message": "Loaded test data: X_test=(928269, 79), y_test=(928269, 24)"}
+{"timestamp": "2026-01-07 14:30:48,417", "module": "modelling_ovr", "level": "INFO", "message": "MLflow experiment: ovr_grouped_catboost"}
+{"timestamp": "2026-01-07 14:30:48,417", "module": "modelling_ovr", "level": "INFO", "message": "OvRGroupModel initialized"}
+{"timestamp": "2026-01-07 14:31:30,000", "module": "modelling_ovr", "level": "INFO", "message": "Prepared data: X_pd=(11759571, 79), y_pd=(11759571, 24)"}
+{"timestamp": "2026-01-07 14:31:30,008", "module": "modelling_ovr", "level": "INFO", "message": "Categorical features: ['ind_empleado', 'pais_residencia', 'sexo', 'indrel', 'indrel_1mes', 'tiprel_1mes', 'canal_entrada', 'cod_prov', 'nomprov', 'segmento', 'ind_ahor_fin_ult1_lag3', 'ind_aval_fin_ult1_lag3', 'ind_cco_fin_ult1_lag3', 'ind_cder_fin_ult1_lag3', 'ind_cno_fin_ult1_lag3', 'ind_ctju_fin_ult1_lag3', 'ind_ctma_fin_ult1_lag3', 'ind_ctop_fin_ult1_lag3', 'ind_ctpp_fin_ult1_lag3', 'ind_deco_fin_ult1_lag3', 'ind_ahor_fin_ult1_lag6', 'ind_aval_fin_ult1_lag6', 'ind_cco_fin_ult1_lag6', 'ind_cder_fin_ult1_lag6', 'ind_cno_fin_ult1_lag6', 'ind_ctju_fin_ult1_lag6', 'ind_ctma_fin_ult1_lag6', 'ind_ctop_fin_ult1_lag6', 'ind_ctpp_fin_ult1_lag6', 'ind_deco_fin_ult1_lag6']"}
+{"timestamp": "2026-01-07 14:31:30,017", "module": "modelling_ovr", "level": "INFO", "message": "Categorical feature indices: [0, 1, 2, 6, 7, 8, 11, 13, 14, 17, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62]"}
+{"timestamp": "2026-01-07 14:31:30,017", "module": "modelling_ovr", "level": "INFO", "message": "Total products: 24"}
+{"timestamp": "2026-01-07 14:31:30,017", "module": "modelling_ovr", "level": "INFO", "message": "Total features: 79"}
+{"timestamp": "2026-01-07 14:31:30,017", "module": "modelling_ovr", "level": "INFO", "message": "Categorical features: 30"}
+{"timestamp": "2026-01-07 14:31:55,066", "module": "modelling_ovr", "level": "INFO", "message": "Created product groups by prevalence:"}
+{"timestamp": "2026-01-07 14:31:55,066", "module": "modelling_ovr", "level": "INFO", "message": "  Frequent (>5.0%): 0 products"}
+{"timestamp": "2026-01-07 14:31:55,066", "module": "modelling_ovr", "level": "INFO", "message": "  Mid (1.0-5.0%): 1 products"}
+{"timestamp": "2026-01-07 14:31:55,066", "module": "modelling_ovr", "level": "INFO", "message": "  Rare (<1.0%): 23 products"}
+{"timestamp": "2026-01-07 14:31:55,069", "module": "modelling_ovr", "level": "INFO", "message": "    mid: prevalence range [1.22%, 1.22%]"}
+{"timestamp": "2026-01-07 14:31:55,069", "module": "modelling_ovr", "level": "INFO", "message": "    rare: prevalence range [0.00%, 0.67%]"}
+{"timestamp": "2026-01-07 14:31:58,232", "module": "modelling_ovr", "level": "INFO", "message": "Prepared data: X_pd=(928269, 79), y_pd=(928269, 24)"}
+{"timestamp": "2026-01-07 14:31:59,399", "module": "modelling_ovr", "level": "INFO", "message": "Skipping frequent group: no products"}
+{"timestamp": "2026-01-07 14:31:59,399", "module": "modelling_ovr", "level": "INFO", "message": "Training MID group (1 products)"}
+{"timestamp": "2026-01-08 00:01:37,389", "module": "modelling_ovr", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-08 00:02:04,542", "module": "modelling_ovr", "level": "INFO", "message": "Loaded train data: X_train=(11759571, 79), y_train=(11759571, 24)"}
+{"timestamp": "2026-01-08 00:02:04,542", "module": "modelling_ovr", "level": "INFO", "message": "Loaded test data: X_test=(928269, 79), y_test=(928269, 24)"}
+{"timestamp": "2026-01-08 00:02:05,329", "module": "modelling_ovr", "level": "INFO", "message": "MLflow experiment: ovr_grouped_catboost"}
+{"timestamp": "2026-01-08 00:02:05,330", "module": "modelling_ovr", "level": "INFO", "message": "OvRGroupModel initialized"}
+{"timestamp": "2026-01-08 00:02:48,717", "module": "modelling_ovr", "level": "INFO", "message": "Prepared data: X_pd=(11759571, 79), y_pd=(11759571, 24)"}
+{"timestamp": "2026-01-08 00:02:48,717", "module": "modelling_ovr", "level": "INFO", "message": "Categorical features: ['ind_empleado', 'pais_residencia', 'sexo', 'indrel', 'indrel_1mes', 'tiprel_1mes', 'canal_entrada', 'cod_prov', 'nomprov', 'segmento', 'ind_ahor_fin_ult1_lag3', 'ind_aval_fin_ult1_lag3', 'ind_cco_fin_ult1_lag3', 'ind_cder_fin_ult1_lag3', 'ind_cno_fin_ult1_lag3', 'ind_ctju_fin_ult1_lag3', 'ind_ctma_fin_ult1_lag3', 'ind_ctop_fin_ult1_lag3', 'ind_ctpp_fin_ult1_lag3', 'ind_deco_fin_ult1_lag3', 'ind_ahor_fin_ult1_lag6', 'ind_aval_fin_ult1_lag6', 'ind_cco_fin_ult1_lag6', 'ind_cder_fin_ult1_lag6', 'ind_cno_fin_ult1_lag6', 'ind_ctju_fin_ult1_lag6', 'ind_ctma_fin_ult1_lag6', 'ind_ctop_fin_ult1_lag6', 'ind_ctpp_fin_ult1_lag6', 'ind_deco_fin_ult1_lag6']"}
+{"timestamp": "2026-01-08 00:02:48,729", "module": "modelling_ovr", "level": "INFO", "message": "Categorical feature indices: [0, 1, 2, 6, 7, 8, 11, 13, 14, 17, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62]"}
+{"timestamp": "2026-01-08 00:02:48,729", "module": "modelling_ovr", "level": "INFO", "message": "Total products: 24"}
+{"timestamp": "2026-01-08 00:02:48,729", "module": "modelling_ovr", "level": "INFO", "message": "Total features: 79"}
+{"timestamp": "2026-01-08 00:02:48,729", "module": "modelling_ovr", "level": "INFO", "message": "Categorical features: 30"}
+{"timestamp": "2026-01-08 00:03:15,088", "module": "modelling_ovr", "level": "INFO", "message": "Created product groups by prevalence:"}
+{"timestamp": "2026-01-08 00:03:15,088", "module": "modelling_ovr", "level": "INFO", "message": "  Frequent (>5.0%): 0 products"}
+{"timestamp": "2026-01-08 00:03:15,088", "module": "modelling_ovr", "level": "INFO", "message": "  Mid (1.0-5.0%): 1 products"}
+{"timestamp": "2026-01-08 00:03:15,088", "module": "modelling_ovr", "level": "INFO", "message": "  Rare (<1.0%): 23 products"}
+{"timestamp": "2026-01-08 00:03:15,088", "module": "modelling_ovr", "level": "INFO", "message": "    mid: prevalence range [1.22%, 1.22%]"}
+{"timestamp": "2026-01-08 00:03:15,088", "module": "modelling_ovr", "level": "INFO", "message": "    rare: prevalence range [0.00%, 0.67%]"}
+{"timestamp": "2026-01-08 00:03:18,171", "module": "modelling_ovr", "level": "INFO", "message": "Prepared data: X_pd=(928269, 79), y_pd=(928269, 24)"}
+{"timestamp": "2026-01-08 00:03:18,509", "module": "modelling_ovr", "level": "INFO", "message": "Skipping frequent group: no products"}
+{"timestamp": "2026-01-08 00:03:18,509", "module": "modelling_ovr", "level": "INFO", "message": "Training MID group (1 products)"}
+{"timestamp": "2026-01-08 01:10:29,503", "module": "modelling_ovr", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-08 01:15:27,547", "module": "modelling_ovr", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-08 01:15:50,712", "module": "modelling_ovr", "level": "INFO", "message": "Loaded train data: X_train=(11751040, 80), y_train=(11751040, 24)"}
+{"timestamp": "2026-01-08 01:15:50,712", "module": "modelling_ovr", "level": "INFO", "message": "Loaded test data: X_test=(926663, 80), y_test=(926663, 24)"}
+{"timestamp": "2026-01-08 01:15:51,356", "module": "modelling_ovr", "level": "INFO", "message": "MLflow experiment: ovr_grouped_catboost"}
+{"timestamp": "2026-01-08 01:15:51,357", "module": "modelling_ovr", "level": "INFO", "message": "OvRGroupModel initialized"}
+{"timestamp": "2026-01-08 01:16:05,750", "module": "modelling_ovr", "level": "INFO", "message": "Prepared data: X_pd=(11751040, 80), y_pd=(11751040, 24)"}
+{"timestamp": "2026-01-08 01:16:05,750", "module": "modelling_ovr", "level": "INFO", "message": "Categorical features: ['ind_empleado', 'pais_residencia', 'sexo', 'ind_nuevo', 'indrel', 'indrel_1mes', 'tiprel_1mes', 'indresi', 'indext', 'canal_entrada', 'indfall', 'cod_prov', 'nomprov', 'ind_actividad_cliente', 'segmento', 'ind_ahor_fin_ult1_lag3', 'ind_aval_fin_ult1_lag3', 'ind_cco_fin_ult1_lag3', 'ind_cder_fin_ult1_lag3', 'ind_cno_fin_ult1_lag3', 'ind_ctju_fin_ult1_lag3', 'ind_ctma_fin_ult1_lag3', 'ind_ctop_fin_ult1_lag3', 'ind_ctpp_fin_ult1_lag3', 'ind_deco_fin_ult1_lag3', 'ind_ahor_fin_ult1_lag6', 'ind_aval_fin_ult1_lag6', 'ind_cco_fin_ult1_lag6', 'ind_cder_fin_ult1_lag6', 'ind_cno_fin_ult1_lag6', 'ind_ctju_fin_ult1_lag6', 'ind_ctma_fin_ult1_lag6', 'ind_ctop_fin_ult1_lag6', 'ind_ctpp_fin_ult1_lag6', 'ind_deco_fin_ult1_lag6']"}
+{"timestamp": "2026-01-08 01:16:05,750", "module": "modelling_ovr", "level": "INFO", "message": "Categorical feature indices: [0, 1, 2, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63]"}
+{"timestamp": "2026-01-08 01:16:05,750", "module": "modelling_ovr", "level": "INFO", "message": "Total products: 24"}
+{"timestamp": "2026-01-08 01:16:05,750", "module": "modelling_ovr", "level": "INFO", "message": "Total features: 80"}
+{"timestamp": "2026-01-08 01:16:05,750", "module": "modelling_ovr", "level": "INFO", "message": "Categorical features: 35"}
+{"timestamp": "2026-01-08 01:16:05,953", "module": "modelling_ovr", "level": "INFO", "message": "Created product groups by prevalence:"}
+{"timestamp": "2026-01-08 01:16:05,953", "module": "modelling_ovr", "level": "INFO", "message": "  Frequent (>5.0%): 0 products"}
+{"timestamp": "2026-01-08 01:16:05,953", "module": "modelling_ovr", "level": "INFO", "message": "  Mid (1.0-5.0%): 1 products"}
+{"timestamp": "2026-01-08 01:16:05,953", "module": "modelling_ovr", "level": "INFO", "message": "  Rare (<1.0%): 23 products"}
+{"timestamp": "2026-01-08 01:16:05,953", "module": "modelling_ovr", "level": "INFO", "message": "    mid: prevalence range [1.22%, 1.22%]"}
+{"timestamp": "2026-01-08 01:16:05,953", "module": "modelling_ovr", "level": "INFO", "message": "    rare: prevalence range [0.00%, 0.67%]"}
+{"timestamp": "2026-01-08 01:16:06,758", "module": "modelling_ovr", "level": "INFO", "message": "Prepared data: X_pd=(926663, 80), y_pd=(926663, 24)"}
+{"timestamp": "2026-01-08 01:16:07,506", "module": "modelling_ovr", "level": "INFO", "message": "Skipping frequent group: no products"}
+{"timestamp": "2026-01-08 01:16:07,506", "module": "modelling_ovr", "level": "INFO", "message": "Training MID group (1 products)"}
+{"timestamp": "2026-01-08 01:18:32,970", "module": "modelling_ovr", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-08 01:18:56,457", "module": "modelling_ovr", "level": "INFO", "message": "Loaded train data: X_train=(11751040, 80), y_train=(11751040, 24)"}
+{"timestamp": "2026-01-08 01:18:56,457", "module": "modelling_ovr", "level": "INFO", "message": "Loaded test data: X_test=(926663, 80), y_test=(926663, 24)"}
+{"timestamp": "2026-01-08 01:18:57,118", "module": "modelling_ovr", "level": "INFO", "message": "MLflow experiment: ovr_grouped_catboost"}
+{"timestamp": "2026-01-08 01:18:57,118", "module": "modelling_ovr", "level": "INFO", "message": "OvRGroupModel initialized"}
+{"timestamp": "2026-01-08 01:19:45,367", "module": "modelling_ovr", "level": "INFO", "message": "Prepared data: X_pd=(11751040, 80), y_pd=(11751040, 24)"}
+{"timestamp": "2026-01-08 01:19:45,367", "module": "modelling_ovr", "level": "INFO", "message": "Categorical features: ['ind_empleado', 'pais_residencia', 'sexo', 'ind_nuevo', 'indrel', 'indrel_1mes', 'tiprel_1mes', 'indresi', 'indext', 'canal_entrada', 'indfall', 'cod_prov', 'nomprov', 'ind_actividad_cliente', 'segmento', 'ind_ahor_fin_ult1_lag3', 'ind_aval_fin_ult1_lag3', 'ind_cco_fin_ult1_lag3', 'ind_cder_fin_ult1_lag3', 'ind_cno_fin_ult1_lag3', 'ind_ctju_fin_ult1_lag3', 'ind_ctma_fin_ult1_lag3', 'ind_ctop_fin_ult1_lag3', 'ind_ctpp_fin_ult1_lag3', 'ind_deco_fin_ult1_lag3', 'ind_ahor_fin_ult1_lag6', 'ind_aval_fin_ult1_lag6', 'ind_cco_fin_ult1_lag6', 'ind_cder_fin_ult1_lag6', 'ind_cno_fin_ult1_lag6', 'ind_ctju_fin_ult1_lag6', 'ind_ctma_fin_ult1_lag6', 'ind_ctop_fin_ult1_lag6', 'ind_ctpp_fin_ult1_lag6', 'ind_deco_fin_ult1_lag6']"}
+{"timestamp": "2026-01-08 01:19:45,367", "module": "modelling_ovr", "level": "INFO", "message": "Categorical feature indices: [0, 1, 2, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63]"}
+{"timestamp": "2026-01-08 01:19:45,367", "module": "modelling_ovr", "level": "INFO", "message": "Total products: 24"}
+{"timestamp": "2026-01-08 01:19:45,367", "module": "modelling_ovr", "level": "INFO", "message": "Total features: 80"}
+{"timestamp": "2026-01-08 01:19:45,367", "module": "modelling_ovr", "level": "INFO", "message": "Categorical features: 35"}
+{"timestamp": "2026-01-08 01:19:45,597", "module": "modelling_ovr", "level": "INFO", "message": "Created product groups by prevalence:"}
+{"timestamp": "2026-01-08 01:19:45,597", "module": "modelling_ovr", "level": "INFO", "message": "  Frequent (>5.0%): 0 products"}
+{"timestamp": "2026-01-08 01:19:45,597", "module": "modelling_ovr", "level": "INFO", "message": "  Mid (1.0-5.0%): 1 products"}
+{"timestamp": "2026-01-08 01:19:45,597", "module": "modelling_ovr", "level": "INFO", "message": "  Rare (<1.0%): 23 products"}
+{"timestamp": "2026-01-08 01:19:45,597", "module": "modelling_ovr", "level": "INFO", "message": "    mid: prevalence range [1.22%, 1.22%]"}
+{"timestamp": "2026-01-08 01:19:45,597", "module": "modelling_ovr", "level": "INFO", "message": "    rare: prevalence range [0.00%, 0.67%]"}
+{"timestamp": "2026-01-08 01:21:30,007", "module": "modelling_ovr", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-08 01:21:54,554", "module": "modelling_ovr", "level": "INFO", "message": "Loaded train data: X_train=(11751040, 80), y_train=(11751040, 24)"}
+{"timestamp": "2026-01-08 01:21:54,554", "module": "modelling_ovr", "level": "INFO", "message": "Loaded test data: X_test=(926663, 80), y_test=(926663, 24)"}
+{"timestamp": "2026-01-08 01:21:55,448", "module": "modelling_ovr", "level": "INFO", "message": "MLflow experiment: ovr_grouped_catboost"}
+{"timestamp": "2026-01-08 01:21:55,448", "module": "modelling_ovr", "level": "INFO", "message": "OvRGroupModel initialized"}
+{"timestamp": "2026-01-08 01:23:19,154", "module": "modelling_ovr", "level": "INFO", "message": "Prepared data: X_pd=(11751040, 80), y_pd=(11751040, 24)"}
+{"timestamp": "2026-01-08 01:23:19,154", "module": "modelling_ovr", "level": "INFO", "message": "Categorical features: ['ind_empleado', 'pais_residencia', 'sexo', 'ind_nuevo', 'indrel', 'indrel_1mes', 'tiprel_1mes', 'indresi', 'indext', 'canal_entrada', 'indfall', 'cod_prov', 'nomprov', 'ind_actividad_cliente', 'segmento', 'ind_ahor_fin_ult1_lag3', 'ind_aval_fin_ult1_lag3', 'ind_cco_fin_ult1_lag3', 'ind_cder_fin_ult1_lag3', 'ind_cno_fin_ult1_lag3', 'ind_ctju_fin_ult1_lag3', 'ind_ctma_fin_ult1_lag3', 'ind_ctop_fin_ult1_lag3', 'ind_ctpp_fin_ult1_lag3', 'ind_deco_fin_ult1_lag3', 'ind_ahor_fin_ult1_lag6', 'ind_aval_fin_ult1_lag6', 'ind_cco_fin_ult1_lag6', 'ind_cder_fin_ult1_lag6', 'ind_cno_fin_ult1_lag6', 'ind_ctju_fin_ult1_lag6', 'ind_ctma_fin_ult1_lag6', 'ind_ctop_fin_ult1_lag6', 'ind_ctpp_fin_ult1_lag6', 'ind_deco_fin_ult1_lag6']"}
+{"timestamp": "2026-01-08 01:23:19,154", "module": "modelling_ovr", "level": "INFO", "message": "Categorical feature indices: [0, 1, 2, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63]"}
+{"timestamp": "2026-01-08 01:23:19,154", "module": "modelling_ovr", "level": "INFO", "message": "Total products: 24"}
+{"timestamp": "2026-01-08 01:23:19,154", "module": "modelling_ovr", "level": "INFO", "message": "Total features: 80"}
+{"timestamp": "2026-01-08 01:23:19,154", "module": "modelling_ovr", "level": "INFO", "message": "Categorical features: 35"}
+{"timestamp": "2026-01-08 01:23:19,346", "module": "modelling_ovr", "level": "INFO", "message": "Created product groups by prevalence:"}
+{"timestamp": "2026-01-08 01:23:19,346", "module": "modelling_ovr", "level": "INFO", "message": "  Frequent (>5.0%): 0 products"}
+{"timestamp": "2026-01-08 01:23:19,346", "module": "modelling_ovr", "level": "INFO", "message": "  Mid (1.0-5.0%): 1 products"}
+{"timestamp": "2026-01-08 01:23:19,346", "module": "modelling_ovr", "level": "INFO", "message": "  Rare (<1.0%): 23 products"}
+{"timestamp": "2026-01-08 01:23:19,346", "module": "modelling_ovr", "level": "INFO", "message": "    mid: prevalence range [1.22%, 1.22%]"}
+{"timestamp": "2026-01-08 01:23:19,346", "module": "modelling_ovr", "level": "INFO", "message": "    rare: prevalence range [0.00%, 0.67%]"}
+{"timestamp": "2026-01-08 01:23:23,990", "module": "modelling_ovr", "level": "INFO", "message": "Prepared data: X_pd=(926663, 80), y_pd=(926663, 24)"}
+{"timestamp": "2026-01-08 01:23:24,246", "module": "modelling_ovr", "level": "INFO", "message": "Skipping frequent group: no products"}
+{"timestamp": "2026-01-08 01:23:24,246", "module": "modelling_ovr", "level": "INFO", "message": "Training MID group (1 products)"}
+{"timestamp": "2026-01-08 02:13:23,170", "module": "modelling_ovr", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-08 02:13:47,678", "module": "modelling_ovr", "level": "INFO", "message": "Loaded train data: X_train=(11751040, 80), y_train=(11751040, 24)"}
+{"timestamp": "2026-01-08 02:13:47,678", "module": "modelling_ovr", "level": "INFO", "message": "Loaded test data: X_test=(926663, 80), y_test=(926663, 24)"}
+{"timestamp": "2026-01-08 02:13:52,078", "module": "modelling_ovr", "level": "INFO", "message": "MLflow experiment: ovr_grouped_catboost"}
+{"timestamp": "2026-01-08 02:13:52,081", "module": "modelling_ovr", "level": "INFO", "message": "OvRGroupModel initialized"}
+{"timestamp": "2026-01-08 02:15:15,165", "module": "modelling_ovr", "level": "INFO", "message": "Prepared data: X_pd=(11751040, 80), y_pd=(11751040, 24)"}
+{"timestamp": "2026-01-08 02:15:15,165", "module": "modelling_ovr", "level": "INFO", "message": "Categorical features: ['ind_empleado', 'pais_residencia', 'sexo', 'ind_nuevo', 'indrel', 'indrel_1mes', 'tiprel_1mes', 'indresi', 'indext', 'canal_entrada', 'indfall', 'cod_prov', 'nomprov', 'ind_actividad_cliente', 'segmento', 'ind_ahor_fin_ult1_lag3', 'ind_aval_fin_ult1_lag3', 'ind_cco_fin_ult1_lag3', 'ind_cder_fin_ult1_lag3', 'ind_cno_fin_ult1_lag3', 'ind_ctju_fin_ult1_lag3', 'ind_ctma_fin_ult1_lag3', 'ind_ctop_fin_ult1_lag3', 'ind_ctpp_fin_ult1_lag3', 'ind_deco_fin_ult1_lag3', 'ind_ahor_fin_ult1_lag6', 'ind_aval_fin_ult1_lag6', 'ind_cco_fin_ult1_lag6', 'ind_cder_fin_ult1_lag6', 'ind_cno_fin_ult1_lag6', 'ind_ctju_fin_ult1_lag6', 'ind_ctma_fin_ult1_lag6', 'ind_ctop_fin_ult1_lag6', 'ind_ctpp_fin_ult1_lag6', 'ind_deco_fin_ult1_lag6']"}
+{"timestamp": "2026-01-08 02:15:15,165", "module": "modelling_ovr", "level": "INFO", "message": "Categorical feature indices: [0, 1, 2, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63]"}
+{"timestamp": "2026-01-08 02:15:15,165", "module": "modelling_ovr", "level": "INFO", "message": "Total products: 24"}
+{"timestamp": "2026-01-08 02:15:15,165", "module": "modelling_ovr", "level": "INFO", "message": "Total features: 80"}
+{"timestamp": "2026-01-08 02:15:15,165", "module": "modelling_ovr", "level": "INFO", "message": "Categorical features: 35"}
+{"timestamp": "2026-01-08 02:15:15,358", "module": "modelling_ovr", "level": "INFO", "message": "Created product groups by prevalence (percentile-based):"}
+{"timestamp": "2026-01-08 02:15:15,358", "module": "modelling_ovr", "level": "INFO", "message": "  Frequent (top 33%, >=0.1077%): 8 products"}
+{"timestamp": "2026-01-08 02:15:15,358", "module": "modelling_ovr", "level": "INFO", "message": "  Mid (middle 33%, 0.0051%-0.1077%): 8 products"}
+{"timestamp": "2026-01-08 02:15:15,358", "module": "modelling_ovr", "level": "INFO", "message": "  Rare (bottom 33%, <0.0051%): 8 products"}
+{"timestamp": "2026-01-08 02:15:15,358", "module": "modelling_ovr", "level": "INFO", "message": "    frequent: prevalence range [0.1077%, 1.2170%]"}
+{"timestamp": "2026-01-08 02:15:15,358", "module": "modelling_ovr", "level": "INFO", "message": "    mid: prevalence range [0.0051%, 0.0762%]"}
+{"timestamp": "2026-01-08 02:15:15,358", "module": "modelling_ovr", "level": "INFO", "message": "    rare: prevalence range [0.0000%, 0.0038%]"}
+{"timestamp": "2026-01-08 02:15:20,340", "module": "modelling_ovr", "level": "INFO", "message": "Prepared data: X_pd=(926663, 80), y_pd=(926663, 24)"}
+{"timestamp": "2026-01-08 02:15:20,955", "module": "modelling_ovr", "level": "INFO", "message": "Training FREQUENT group (8 products)"}
+{"timestamp": "2026-01-08 02:28:09,214", "module": "modelling_ovr", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-08 02:28:33,046", "module": "modelling_ovr", "level": "INFO", "message": "Loaded train data: X_train=(11751040, 80), y_train=(11751040, 24)"}
+{"timestamp": "2026-01-08 02:28:33,046", "module": "modelling_ovr", "level": "INFO", "message": "Loaded test data: X_test=(926663, 80), y_test=(926663, 24)"}
+{"timestamp": "2026-01-08 02:28:33,750", "module": "modelling_ovr", "level": "INFO", "message": "MLflow experiment: ovr_grouped_catboost"}
+{"timestamp": "2026-01-08 02:28:33,750", "module": "modelling_ovr", "level": "INFO", "message": "OvRGroupModel initialized"}
+{"timestamp": "2026-01-08 02:29:55,578", "module": "modelling_ovr", "level": "INFO", "message": "Prepared data: X_pd=(11751040, 80), y_pd=(11751040, 24)"}
+{"timestamp": "2026-01-08 02:29:55,578", "module": "modelling_ovr", "level": "INFO", "message": "Categorical features: ['ind_empleado', 'pais_residencia', 'sexo', 'ind_nuevo', 'indrel', 'indrel_1mes', 'tiprel_1mes', 'indresi', 'indext', 'canal_entrada', 'indfall', 'cod_prov', 'nomprov', 'ind_actividad_cliente', 'segmento', 'ind_ahor_fin_ult1_lag3', 'ind_aval_fin_ult1_lag3', 'ind_cco_fin_ult1_lag3', 'ind_cder_fin_ult1_lag3', 'ind_cno_fin_ult1_lag3', 'ind_ctju_fin_ult1_lag3', 'ind_ctma_fin_ult1_lag3', 'ind_ctop_fin_ult1_lag3', 'ind_ctpp_fin_ult1_lag3', 'ind_deco_fin_ult1_lag3', 'ind_ahor_fin_ult1_lag6', 'ind_aval_fin_ult1_lag6', 'ind_cco_fin_ult1_lag6', 'ind_cder_fin_ult1_lag6', 'ind_cno_fin_ult1_lag6', 'ind_ctju_fin_ult1_lag6', 'ind_ctma_fin_ult1_lag6', 'ind_ctop_fin_ult1_lag6', 'ind_ctpp_fin_ult1_lag6', 'ind_deco_fin_ult1_lag6']"}
+{"timestamp": "2026-01-08 02:29:55,578", "module": "modelling_ovr", "level": "INFO", "message": "Categorical feature indices: [0, 1, 2, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63]"}
+{"timestamp": "2026-01-08 02:29:55,578", "module": "modelling_ovr", "level": "INFO", "message": "Total products: 24"}
+{"timestamp": "2026-01-08 02:29:55,578", "module": "modelling_ovr", "level": "INFO", "message": "Total features: 80"}
+{"timestamp": "2026-01-08 02:29:55,578", "module": "modelling_ovr", "level": "INFO", "message": "Categorical features: 35"}
+{"timestamp": "2026-01-08 02:29:55,764", "module": "modelling_ovr", "level": "INFO", "message": "Created product groups by prevalence (percentile-based):"}
+{"timestamp": "2026-01-08 02:29:55,764", "module": "modelling_ovr", "level": "INFO", "message": "  Frequent (top 33%, >=0.5000%): 5 products"}
+{"timestamp": "2026-01-08 02:29:55,764", "module": "modelling_ovr", "level": "INFO", "message": "  Mid (middle 33%, 0.0100%-0.5000%): 10 products"}
+{"timestamp": "2026-01-08 02:29:55,764", "module": "modelling_ovr", "level": "INFO", "message": "  Rare (bottom 33%, <0.0100%): 9 products"}
+{"timestamp": "2026-01-08 02:29:55,764", "module": "modelling_ovr", "level": "INFO", "message": "    frequent: prevalence range [0.5537%, 1.2170%]"}
+{"timestamp": "2026-01-08 02:29:55,764", "module": "modelling_ovr", "level": "INFO", "message": "    mid: prevalence range [0.0195%, 0.2965%]"}
+{"timestamp": "2026-01-08 02:29:55,764", "module": "modelling_ovr", "level": "INFO", "message": "    rare: prevalence range [0.0000%, 0.0051%]"}
+{"timestamp": "2026-01-08 02:30:00,547", "module": "modelling_ovr", "level": "INFO", "message": "Prepared data: X_pd=(926663, 80), y_pd=(926663, 24)"}
+{"timestamp": "2026-01-08 02:30:00,778", "module": "modelling_ovr", "level": "INFO", "message": "Training FREQUENT group (5 products)"}

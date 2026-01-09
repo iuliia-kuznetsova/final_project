@@ -1,0 +1,510 @@
+{"timestamp": "2026-01-04 03:41:10,733", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-04 03:43:48,371", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-04 03:46:42,081", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-04 03:47:07,248", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-04 03:47:07,544", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-04 03:47:12,206", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-04 03:47:12,206", "module": "feature_engineering", "level": "INFO", "message": "Adding 1m lags..."}
+{"timestamp": "2026-01-04 03:47:15,250", "module": "feature_engineering", "level": "INFO", "message": "Added 1m lags for 10 products"}
+{"timestamp": "2026-01-04 03:47:15,250", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-04 03:47:18,354", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-04 03:47:18,354", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-04 03:47:21,451", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-04 03:47:21,451", "module": "feature_engineering", "level": "INFO", "message": "Adding 12m lags..."}
+{"timestamp": "2026-01-04 03:47:23,678", "module": "feature_engineering", "level": "INFO", "message": "Added 12m lags for 10 products"}
+{"timestamp": "2026-01-04 03:47:23,678", "module": "feature_engineering", "level": "INFO", "message": "Added interaction features for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-04 03:47:23,678", "module": "feature_engineering", "level": "INFO", "message": "Added interaction features for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-04 03:47:23,678", "module": "feature_engineering", "level": "INFO", "message": "Added interaction features for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-04 03:47:23,688", "module": "feature_engineering", "level": "INFO", "message": "Added interaction features for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-04 03:47:23,688", "module": "feature_engineering", "level": "INFO", "message": "Added interaction features for ind_nom_pens_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-04 03:47:25,328", "module": "feature_engineering", "level": "INFO", "message": "Added number of products change over one month feature"}
+{"timestamp": "2026-01-04 03:47:26,794", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-04 03:47:26,794", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+[2026-01-04 04:30:18,364] [INFO] Logging to C:\Users\iulii\final_project\logs\logs_feature_engineering.json setup completed
+{"timestamp": "2026-01-04 23:58:46,000", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-04 23:59:12,168", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-04 23:59:12,450", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-04 23:59:17,007", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-04 23:59:17,007", "module": "feature_engineering", "level": "INFO", "message": "Adding 1m lags..."}
+{"timestamp": "2026-01-04 23:59:19,920", "module": "feature_engineering", "level": "INFO", "message": "Added 1m lags for 10 products"}
+{"timestamp": "2026-01-04 23:59:19,930", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-04 23:59:22,012", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-04 23:59:22,012", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-04 23:59:24,077", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-04 23:59:24,110", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-04 23:59:24,148", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-04 23:59:24,179", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-04 23:59:24,210", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-04 23:59:24,241", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nom_pens_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-04 23:59:24,275", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-04 23:59:25,052", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-04 23:59:25,052", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+{"timestamp": "2026-01-05 00:50:07,153", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-05 00:50:34,651", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-05 00:50:35,013", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-05 00:50:39,633", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-05 00:50:39,633", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-05 00:50:41,778", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-05 00:50:41,778", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-05 00:50:43,971", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-05 00:50:46,336", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-05 00:50:46,379", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-05 00:50:46,411", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-05 00:50:46,448", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-05 00:50:46,477", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-05 00:50:46,511", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-05 00:50:47,463", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-05 00:50:47,463", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+{"timestamp": "2026-01-05 03:12:38,105", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-05 03:13:05,129", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-05 03:13:05,453", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-05 03:13:11,575", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-05 03:13:11,575", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-05 03:13:13,714", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-05 03:13:13,714", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-05 03:13:15,903", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-05 03:13:18,164", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-05 03:13:18,203", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-05 03:13:18,233", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-05 03:13:18,267", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-05 03:13:18,303", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-05 03:13:18,330", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-05 03:15:55,438", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-05 03:15:55,443", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-05 03:15:55,906", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-05 03:16:00,806", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-05 03:16:00,806", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-05 03:16:03,771", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-05 03:16:03,773", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-05 03:16:06,683", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-05 03:16:08,977", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-05 03:16:09,011", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-05 03:16:09,036", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-05 03:16:09,073", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-05 03:16:09,102", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-05 03:16:09,135", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-05 03:16:09,235", "module": "feature_engineering", "level": "INFO", "message": "Rows after filtering targets nulls: 12,669,757"}
+{"timestamp": "2026-01-05 03:16:09,983", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-05 03:16:09,983", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+{"timestamp": "2026-01-05 03:17:31,557", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-05 03:17:58,416", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-05 03:17:58,833", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-05 03:18:03,625", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-05 03:18:03,625", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-05 03:18:06,514", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-05 03:18:06,514", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-05 03:18:09,313", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-05 03:18:11,633", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-05 03:18:11,665", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-05 03:18:11,698", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-05 03:18:11,729", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-05 03:18:11,763", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-05 03:18:11,793", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-05 03:20:49,513", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-05 03:20:49,521", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-05 03:20:49,811", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-05 03:20:54,593", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-05 03:20:54,593", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-05 03:20:56,735", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-05 03:20:56,735", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-05 03:20:59,673", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-05 03:21:01,923", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-05 03:21:01,961", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-05 03:21:01,990", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-05 03:21:02,020", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-05 03:21:02,053", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-05 03:21:02,083", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-05 03:21:02,183", "module": "feature_engineering", "level": "INFO", "message": "Rows after filtering targets nulls: 12,669,757"}
+{"timestamp": "2026-01-05 03:21:02,874", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-05 03:21:02,874", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+{"timestamp": "2026-01-05 03:21:59,373", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-05 03:22:24,723", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-05 03:22:25,001", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-05 03:22:29,709", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-05 03:22:29,709", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-05 03:22:32,574", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-05 03:22:32,574", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-05 03:22:34,763", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-05 03:22:37,025", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-05 03:22:37,055", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-05 03:22:37,087", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-05 03:22:37,118", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-05 03:22:37,149", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-05 03:22:37,183", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-05 03:22:37,293", "module": "feature_engineering", "level": "INFO", "message": "Rows after filtering targets nulls: 12,669,757"}
+{"timestamp": "2026-01-05 03:22:38,354", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-05 03:22:38,355", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+{"timestamp": "2026-01-05 20:34:29,471", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-05 20:34:58,279", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-05 20:34:58,717", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-05 20:35:05,040", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-05 20:35:05,041", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-05 20:35:07,635", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-05 20:35:07,636", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-05 20:35:11,014", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-05 20:35:13,289", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-05 20:35:13,327", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-05 20:35:13,360", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-05 20:35:13,387", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-05 20:35:13,421", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-05 20:35:13,451", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-05 20:35:13,552", "module": "feature_engineering", "level": "INFO", "message": "Rows after filtering targets nulls: 12,669,757"}
+{"timestamp": "2026-01-05 20:35:14,737", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-05 20:35:14,737", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+{"timestamp": "2026-01-05 20:46:22,557", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-05 20:46:47,804", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-05 20:46:48,062", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-05 20:46:52,407", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-05 20:46:52,407", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-05 20:46:54,467", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-05 20:46:54,467", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-05 20:46:56,503", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-05 20:46:58,742", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-05 20:46:58,775", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-05 20:46:58,800", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-05 20:46:58,832", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-05 20:46:58,857", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-05 20:46:58,887", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-05 20:46:59,687", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-05 20:46:59,687", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+{"timestamp": "2026-01-05 20:58:18,381", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-05 20:58:43,357", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-05 20:58:43,587", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-05 20:58:47,871", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-05 20:58:47,871", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-05 20:58:50,588", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-05 20:58:50,588", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-05 20:58:53,292", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-05 20:58:55,421", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-05 20:58:55,455", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-05 20:58:55,487", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-05 20:58:55,517", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-05 20:58:55,547", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-05 20:58:55,577", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-05 20:58:55,685", "module": "feature_engineering", "level": "INFO", "message": "Rows after filtering targets nulls: 12,669,757"}
+{"timestamp": "2026-01-05 20:58:56,310", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-05 20:58:56,310", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+{"timestamp": "2026-01-05 21:03:23,579", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-05 21:03:23,579", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-05 21:03:23,579", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-05 21:03:24,599", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-05 21:03:45,274", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-05 21:03:45,275", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-05 21:03:52,101", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-05 21:03:52,102", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-05 21:03:58,779", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-05 21:04:07,656", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-05 21:04:07,712", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-05 21:04:07,760", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-05 21:04:07,818", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-05 21:04:07,867", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-05 21:04:07,928", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-05 21:04:08,123", "module": "feature_engineering", "level": "INFO", "message": "Filtered out last month (2016-05-28) - no valid targets possible"}
+{"timestamp": "2026-01-05 21:04:08,124", "module": "feature_engineering", "level": "INFO", "message": "Rows after filtering targets nulls: 12,669,679"}
+{"timestamp": "2026-01-05 21:04:18,889", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-05 21:04:18,890", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+{"timestamp": "2026-01-05 21:04:18,895", "module": "feature_engineering", "level": "INFO", "message": "Feature engineering completed successfully"}
+{"timestamp": "2026-01-05 21:07:05,581", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-05 21:08:04,800", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-05 21:08:05,496", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-05 21:08:18,683", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-05 21:08:18,687", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-05 21:08:27,500", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-05 21:08:27,502", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-05 21:08:36,274", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-05 21:08:43,251", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-05 21:08:43,327", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-05 21:08:43,406", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-05 21:08:43,480", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-05 21:08:43,557", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-05 21:08:43,633", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-05 21:08:43,826", "module": "feature_engineering", "level": "INFO", "message": "Filtered out last month (2016-05-28) - no valid targets possible"}
+{"timestamp": "2026-01-05 21:08:43,827", "module": "feature_engineering", "level": "INFO", "message": "Rows after filtering last month: 12,687,840"}
+{"timestamp": "2026-01-05 21:08:45,979", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-05 21:08:45,979", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+{"timestamp": "2026-01-07 13:20:08,422", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-07 13:21:46,122", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-07 13:23:54,535", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-07 13:25:33,777", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-07 13:28:34,827", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-07 13:29:15,892", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-07 13:29:15,892", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-07 13:29:16,165", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-07 13:29:20,726", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-07 13:29:20,726", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-07 13:29:23,664", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-07 13:29:23,664", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-07 13:29:26,617", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-07 13:29:28,921", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-07 13:29:28,964", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-07 13:29:28,995", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-07 13:29:29,025", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-07 13:29:29,059", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-07 13:29:29,089", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-07 13:29:29,205", "module": "feature_engineering", "level": "INFO", "message": "Filtered out last month (2016-05-28) - no valid targets possible"}
+{"timestamp": "2026-01-07 13:29:29,205", "module": "feature_engineering", "level": "INFO", "message": "Rows after filtering last month: 12,687,840"}
+{"timestamp": "2026-01-07 13:29:29,888", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-07 13:29:29,888", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+{"timestamp": "2026-01-07 13:29:29,895", "module": "feature_engineering", "level": "INFO", "message": "Feature engineering completed successfully"}
+{"timestamp": "2026-01-07 13:43:42,439", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-07 13:43:50,875", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-07 13:43:50,875", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-07 13:43:51,225", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-07 13:43:55,624", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-07 13:43:55,624", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-07 13:43:58,436", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-07 13:43:58,436", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-07 13:44:01,282", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-07 13:44:03,437", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-07 13:44:03,467", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-07 13:44:03,498", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-07 13:44:03,526", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-07 13:44:03,555", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-07 13:44:03,587", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-07 13:44:03,693", "module": "feature_engineering", "level": "INFO", "message": "Filtered out last month (2016-05-28) - no valid targets possible"}
+{"timestamp": "2026-01-07 13:44:03,694", "module": "feature_engineering", "level": "INFO", "message": "Rows after filtering last month: 12,687,840"}
+{"timestamp": "2026-01-07 13:44:04,414", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-07 13:44:04,414", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+{"timestamp": "2026-01-07 13:44:04,414", "module": "feature_engineering", "level": "INFO", "message": "Feature engineering completed successfully"}
+{"timestamp": "2026-01-07 14:01:36,991", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-07 14:01:46,435", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-07 14:01:46,435", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-07 14:01:46,683", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-07 14:01:51,090", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-07 14:01:51,090", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-07 14:01:53,245", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-07 14:01:53,245", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-07 14:01:55,951", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-07 14:01:58,083", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-07 14:01:58,118", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-07 14:01:58,149", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-07 14:01:58,177", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-07 14:01:58,207", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-07 14:01:58,240", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-07 14:01:58,347", "module": "feature_engineering", "level": "INFO", "message": "Filtered out last month (2016-05-28) - no valid targets possible"}
+{"timestamp": "2026-01-07 14:01:58,347", "module": "feature_engineering", "level": "INFO", "message": "Rows after filtering last month: 12,687,840"}
+{"timestamp": "2026-01-07 14:01:59,025", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-07 14:01:59,025", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+{"timestamp": "2026-01-07 14:01:59,026", "module": "feature_engineering", "level": "INFO", "message": "Feature engineering completed successfully"}
+{"timestamp": "2026-01-07 14:03:26,541", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-07 14:03:35,904", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-07 14:03:35,904", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-07 14:03:36,167", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-07 14:03:40,501", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-07 14:03:40,501", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-07 14:03:43,266", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-07 14:03:43,269", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-07 14:03:45,336", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-07 14:03:47,472", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-07 14:03:47,506", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-07 14:03:47,532", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-07 14:03:47,565", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-07 14:03:47,597", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-07 14:03:47,627", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-07 14:03:47,712", "module": "feature_engineering", "level": "INFO", "message": "Filtered out last month (2016-05-28) - no valid targets possible"}
+{"timestamp": "2026-01-07 14:03:47,727", "module": "feature_engineering", "level": "INFO", "message": "Rows after filtering last month: 12,687,840"}
+{"timestamp": "2026-01-07 14:03:48,403", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-07 14:03:48,403", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+{"timestamp": "2026-01-07 14:03:48,403", "module": "feature_engineering", "level": "INFO", "message": "Feature engineering completed successfully"}
+{"timestamp": "2026-01-07 14:07:02,293", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-07 14:07:12,470", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-07 14:07:12,470", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-07 14:07:12,756", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-07 14:07:17,183", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-07 14:07:17,183", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-07 14:07:19,329", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-07 14:07:19,329", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-07 14:07:22,146", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-07 14:07:24,309", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-07 14:07:24,343", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-07 14:07:24,372", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-07 14:07:24,399", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-07 14:07:24,431", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-07 14:07:24,464", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-07 14:07:24,556", "module": "feature_engineering", "level": "INFO", "message": "Filtered out last month (2016-05-28) - no valid targets possible"}
+{"timestamp": "2026-01-07 14:07:24,572", "module": "feature_engineering", "level": "INFO", "message": "Rows after filtering last month: 12,687,840"}
+{"timestamp": "2026-01-07 14:07:25,294", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-07 14:07:25,294", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+{"timestamp": "2026-01-07 14:07:25,294", "module": "feature_engineering", "level": "INFO", "message": "Feature engineering completed successfully"}
+{"timestamp": "2026-01-07 14:11:25,096", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-07 14:11:48,671", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-07 14:11:48,671", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-07 14:11:49,004", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-07 14:11:53,609", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-07 14:11:53,609", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-07 14:11:56,443", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-07 14:11:56,445", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-07 14:11:58,636", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-07 14:12:00,883", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-07 14:12:00,914", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-07 14:12:00,939", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-07 14:12:00,973", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-07 14:12:01,000", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-07 14:12:01,034", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-07 14:12:01,137", "module": "feature_engineering", "level": "INFO", "message": "Filtered out last month (2016-05-28) - no valid targets possible"}
+{"timestamp": "2026-01-07 14:12:01,137", "module": "feature_engineering", "level": "INFO", "message": "Rows after filtering last month: 12,687,840"}
+{"timestamp": "2026-01-07 14:12:01,904", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-07 14:12:01,904", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+{"timestamp": "2026-01-07 14:12:01,904", "module": "feature_engineering", "level": "INFO", "message": "Feature engineering completed successfully"}
+{"timestamp": "2026-01-07 14:25:05,597", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-07 14:25:16,758", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-07 14:25:16,758", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-07 14:25:17,058", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-07 14:25:21,603", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-07 14:25:21,603", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-07 14:25:24,464", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-07 14:25:24,464", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-07 14:25:27,316", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-07 14:25:29,514", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-07 14:25:29,549", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-07 14:25:29,579", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-07 14:25:29,613", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-07 14:25:29,643", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-07 14:25:29,661", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-07 14:25:29,775", "module": "feature_engineering", "level": "INFO", "message": "Filtered out last month (2016-05-28) - no valid targets possible"}
+{"timestamp": "2026-01-07 14:25:29,775", "module": "feature_engineering", "level": "INFO", "message": "Rows after filtering last month: 12,687,840"}
+{"timestamp": "2026-01-07 14:25:30,504", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-07 14:25:30,504", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+{"timestamp": "2026-01-07 14:25:30,504", "module": "feature_engineering", "level": "INFO", "message": "Feature engineering completed successfully"}
+{"timestamp": "2026-01-07 14:30:19,894", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-07 14:30:28,821", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-07 14:30:28,821", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-07 14:30:29,095", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-07 14:30:33,534", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-07 14:30:33,534", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-07 14:30:36,381", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-07 14:30:36,381", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-07 14:30:39,163", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-07 14:30:41,413", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-07 14:30:41,451", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-07 14:30:41,477", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-07 14:30:41,509", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-07 14:30:41,543", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-07 14:30:41,575", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-07 14:30:41,678", "module": "feature_engineering", "level": "INFO", "message": "Filtered out last month (2016-05-28) - no valid targets possible"}
+{"timestamp": "2026-01-07 14:30:41,678", "module": "feature_engineering", "level": "INFO", "message": "Rows after filtering last month: 12,687,840"}
+{"timestamp": "2026-01-07 14:30:42,413", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-07 14:30:42,413", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+{"timestamp": "2026-01-07 14:30:42,413", "module": "feature_engineering", "level": "INFO", "message": "Feature engineering completed successfully"}
+{"timestamp": "2026-01-08 00:01:31,949", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-08 00:01:45,501", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-08 00:01:45,503", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-08 00:01:45,796", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-08 00:01:50,592", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-08 00:01:50,592", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-08 00:01:53,461", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-08 00:01:53,461", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-08 00:01:55,534", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-08 00:01:57,696", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-08 00:01:57,737", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-08 00:01:57,768", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-08 00:01:57,799", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-08 00:01:57,823", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-08 00:01:57,851", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-08 00:01:57,962", "module": "feature_engineering", "level": "INFO", "message": "Filtered out last month (2016-05-28) - no valid targets possible"}
+{"timestamp": "2026-01-08 00:01:57,963", "module": "feature_engineering", "level": "INFO", "message": "Rows after filtering last month: 12,687,840"}
+{"timestamp": "2026-01-08 00:01:58,742", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-08 00:01:58,742", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+{"timestamp": "2026-01-08 00:01:58,742", "module": "feature_engineering", "level": "INFO", "message": "Feature engineering completed successfully"}
+{"timestamp": "2026-01-08 01:10:26,218", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-08 01:15:25,902", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-08 01:15:34,592", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-08 01:15:34,592", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-08 01:15:34,840", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-08 01:15:38,941", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-08 01:15:38,941", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-08 01:15:40,950", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-08 01:15:40,950", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-08 01:15:43,673", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-08 01:15:45,781", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-08 01:15:45,803", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-08 01:15:45,840", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-08 01:15:45,867", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-08 01:15:45,887", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-08 01:15:45,929", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-08 01:15:46,013", "module": "feature_engineering", "level": "INFO", "message": "Filtered out last month per customer - no valid targets possible"}
+{"timestamp": "2026-01-08 01:15:46,029", "module": "feature_engineering", "level": "INFO", "message": "Rows after filtering last month per customer: 12,677,703"}
+{"timestamp": "2026-01-08 01:15:46,624", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-08 01:15:46,624", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+{"timestamp": "2026-01-08 01:15:46,624", "module": "feature_engineering", "level": "INFO", "message": "Feature engineering completed successfully"}
+{"timestamp": "2026-01-08 01:18:30,705", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-08 01:18:40,325", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-08 01:18:40,326", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-08 01:18:40,576", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-08 01:18:44,751", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-08 01:18:44,751", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-08 01:18:46,813", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-08 01:18:46,813", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-08 01:18:49,474", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-08 01:18:51,612", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-08 01:18:51,645", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-08 01:18:51,674", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-08 01:18:51,700", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-08 01:18:51,730", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-08 01:18:51,755", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-08 01:18:51,849", "module": "feature_engineering", "level": "INFO", "message": "Filtered out last month per customer - no valid targets possible"}
+{"timestamp": "2026-01-08 01:18:51,849", "module": "feature_engineering", "level": "INFO", "message": "Rows after filtering last month per customer: 12,677,703"}
+{"timestamp": "2026-01-08 01:18:52,485", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-08 01:18:52,485", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+{"timestamp": "2026-01-08 01:18:52,485", "module": "feature_engineering", "level": "INFO", "message": "Feature engineering completed successfully"}
+{"timestamp": "2026-01-08 01:21:25,304", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-08 01:21:37,175", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-08 01:21:37,177", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-08 01:21:37,416", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-08 01:21:41,513", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-08 01:21:41,513", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-08 01:21:44,946", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-08 01:21:44,946", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-08 01:21:47,599", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-08 01:21:49,734", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-08 01:21:49,766", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-08 01:21:49,796", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-08 01:21:49,826", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-08 01:21:49,856", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-08 01:21:49,886", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-08 01:21:49,981", "module": "feature_engineering", "level": "INFO", "message": "Filtered out last month per customer - no valid targets possible"}
+{"timestamp": "2026-01-08 01:21:49,981", "module": "feature_engineering", "level": "INFO", "message": "Rows after filtering last month per customer: 12,677,703"}
+{"timestamp": "2026-01-08 01:21:50,588", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-08 01:21:50,589", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+{"timestamp": "2026-01-08 01:21:50,591", "module": "feature_engineering", "level": "INFO", "message": "Feature engineering completed successfully"}
+{"timestamp": "2026-01-08 02:12:39,513", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-08 02:13:17,106", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-08 02:13:30,146", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-08 02:13:30,146", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-08 02:13:30,421", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-08 02:13:34,769", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-08 02:13:34,769", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-08 02:13:38,421", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-08 02:13:38,421", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-08 02:13:40,537", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-08 02:13:42,668", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-08 02:13:42,722", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-08 02:13:42,751", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-08 02:13:42,781", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-08 02:13:42,800", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-08 02:13:42,838", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-08 02:13:42,937", "module": "feature_engineering", "level": "INFO", "message": "Filtered out last month per customer - no valid targets possible"}
+{"timestamp": "2026-01-08 02:13:42,937", "module": "feature_engineering", "level": "INFO", "message": "Rows after filtering last month per customer: 12,677,703"}
+{"timestamp": "2026-01-08 02:13:43,547", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-08 02:13:43,547", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+{"timestamp": "2026-01-08 02:13:43,547", "module": "feature_engineering", "level": "INFO", "message": "Feature engineering completed successfully"}
+{"timestamp": "2026-01-08 02:28:06,851", "module": "feature_engineering", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-08 02:28:15,716", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-08 02:28:15,716", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-08 02:28:15,985", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-08 02:28:20,282", "module": "feature_engineering", "level": "INFO", "message": "Created targets for new products: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-08 02:28:20,282", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
+{"timestamp": "2026-01-08 02:28:22,996", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
+{"timestamp": "2026-01-08 02:28:22,996", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
+{"timestamp": "2026-01-08 02:28:25,786", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
+{"timestamp": "2026-01-08 02:28:27,998", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
+{"timestamp": "2026-01-08 02:28:28,031", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-08 02:28:28,061", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
+{"timestamp": "2026-01-08 02:28:28,090", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
+{"timestamp": "2026-01-08 02:28:28,115", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-08 02:28:28,147", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
+{"timestamp": "2026-01-08 02:28:28,247", "module": "feature_engineering", "level": "INFO", "message": "Filtered out last month per customer - no valid targets possible"}
+{"timestamp": "2026-01-08 02:28:28,247", "module": "feature_engineering", "level": "INFO", "message": "Rows after filtering last month per customer: 12,677,703"}
+{"timestamp": "2026-01-08 02:28:28,848", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-08 02:28:28,848", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
+{"timestamp": "2026-01-08 02:28:28,848", "module": "feature_engineering", "level": "INFO", "message": "Feature engineering completed successfully"}
