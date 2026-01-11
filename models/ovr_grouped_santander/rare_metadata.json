@@ -1,0 +1,25 @@
+{
+  "products": [
+    "target_pres_fin",
+    "target_plan_fin",
+    "target_cder_fin",
+    "target_ahor_fin",
+    "target_ctju_fin",
+    "target_hip_fin",
+    "target_aval_fin",
+    "target_viv_fin",
+    "target_deme_fin"
+  ],
+  "best_params": {},
+  "thresholds": {
+    "target_pres_fin": 0.5,
+    "target_plan_fin": 0.5,
+    "target_cder_fin": 0.5,
+    "target_ahor_fin": 0.5,
+    "target_ctju_fin": 0.5,
+    "target_hip_fin": 0.5,
+    "target_aval_fin": 0.5,
+    "target_viv_fin": 0.5,
+    "target_deme_fin": 0.5
+  }
+}

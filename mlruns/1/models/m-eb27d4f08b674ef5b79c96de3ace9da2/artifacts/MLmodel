@@ -1,0 +1,22 @@
+artifact_path: /home/mle-user/mle_projects/final_project/mlruns/1/models/m-eb27d4f08b674ef5b79c96de3ace9da2/artifacts
+flavors:
+  catboost:
+    catboost_version: 1.2.8
+    code: null
+    data: model.cb
+    model_type: CatBoostClassifier
+    save_format: cbm
+  python_function:
+    data: model.cb
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.catboost
+    python_version: 3.10.12
+mlflow_version: 3.8.1
+model_id: m-eb27d4f08b674ef5b79c96de3ace9da2
+model_size_bytes: 61240
+model_uuid: m-eb27d4f08b674ef5b79c96de3ace9da2
+prompts: null
+run_id: 3af3f838307a42acadbacfb6208fb07d
+utc_time_created: '2026-01-11 02:16:12.907323'

@@ -1,0 +1,37 @@
+{
+  "products": [
+    "target_deco_fin",
+    "target_reca_fin",
+    "target_pres_fin",
+    "target_plan_fin",
+    "target_fond_fin",
+    "target_ctop_fin",
+    "target_cder_fin",
+    "target_cno_fin",
+    "target_ctpp_fin",
+    "target_ecue_fin",
+    "target_ctju_fin",
+    "target_ctma_fin",
+    "target_deme_fin",
+    "target_dela_fin",
+    "target_valo_fin"
+  ],
+  "best_params": {},
+  "thresholds": {
+    "target_deco_fin": 0.5,
+    "target_reca_fin": 0.5,
+    "target_pres_fin": 0.5,
+    "target_plan_fin": 0.5,
+    "target_fond_fin": 0.5,
+    "target_ctop_fin": 0.5,
+    "target_cder_fin": 0.5,
+    "target_cno_fin": 0.5,
+    "target_ctpp_fin": 0.5,
+    "target_ecue_fin": 0.5,
+    "target_ctju_fin": 0.5,
+    "target_ctma_fin": 0.5,
+    "target_deme_fin": 0.5,
+    "target_dela_fin": 0.5,
+    "target_valo_fin": 0.5
+  }
+}

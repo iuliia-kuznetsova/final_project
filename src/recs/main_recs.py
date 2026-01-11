@@ -79,6 +79,7 @@ def main(args):
     logger.info(f'INFO: Data directory: {DATA_DIR}')
     logger.info(f'INFO: Models directory: {MODELS_DIR}')
     logger.info(f'INFO: Results directory: {RESULTS_DIR}')
+    logger.info(f'STEP 1 DONE')
     
     # ---------- Step 2: Download raw data (if not skipped) ---------- #
     if not args.skip_download:

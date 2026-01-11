@@ -1,32 +1,11 @@
-{"timestamp": "2026-01-07 13:20:08,323", "module": "data_loading", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_data_loading.json setup completed"}
-{"timestamp": "2026-01-07 13:21:46,087", "module": "data_loading", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_data_loading.json setup completed"}
-{"timestamp": "2026-01-07 13:21:55,631", "module": "data_loading", "level": "INFO", "message": "Starting data loading pipeline"}
-{"timestamp": "2026-01-07 13:23:54,516", "module": "data_loading", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_data_loading.json setup completed"}
-{"timestamp": "2026-01-07 13:23:56,224", "module": "data_loading", "level": "INFO", "message": "Starting data loading pipeline"}
-{"timestamp": "2026-01-07 13:25:33,771", "module": "data_loading", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_data_loading.json setup completed"}
-{"timestamp": "2026-01-07 13:25:35,487", "module": "data_loading", "level": "INFO", "message": "Starting data loading pipeline"}
-{"timestamp": "2026-01-07 13:25:36,400", "module": "data_loading", "level": "INFO", "message": "Direct link obtained for Yandex.Disk resource"}
-{"timestamp": "2026-01-07 13:25:37,309", "module": "data_loading", "level": "INFO", "message": "File content downloaded from https://disk.yandex.com/d/Io0siOESo2RAaA"}
-{"timestamp": "2026-01-07 13:28:34,815", "module": "data_loading", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_data_loading.json setup completed"}
-{"timestamp": "2026-01-07 13:28:36,497", "module": "data_loading", "level": "INFO", "message": "Starting data loading pipeline"}
-{"timestamp": "2026-01-07 13:28:37,106", "module": "data_loading", "level": "INFO", "message": "Direct link obtained for Yandex.Disk resource"}
-{"timestamp": "2026-01-07 13:28:37,900", "module": "data_loading", "level": "INFO", "message": "File content downloaded from https://disk.yandex.com/d/Io0siOESo2RAaA"}
-{"timestamp": "2026-01-07 13:29:01,355", "module": "data_loading", "level": "INFO", "message": "Detected ZIP archive, extracting..."}
-{"timestamp": "2026-01-07 13:29:08,440", "module": "data_loading", "level": "INFO", "message": "Extracted: data\\train_ver2.csv"}
-{"timestamp": "2026-01-07 13:29:08,440", "module": "data_loading", "level": "INFO", "message": "Download complete. 1 file(s) saved to ./data"}
-{"timestamp": "2026-01-07 13:29:08,456", "module": "data_loading", "level": "INFO", "message": "Data loading pipeline completed successfully"}
-{"timestamp": "2026-01-07 13:43:42,439", "module": "data_loading", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_data_loading.json setup completed"}
-{"timestamp": "2026-01-07 14:01:36,971", "module": "data_loading", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_data_loading.json setup completed"}
-{"timestamp": "2026-01-07 14:03:26,525", "module": "data_loading", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_data_loading.json setup completed"}
-{"timestamp": "2026-01-07 14:07:02,275", "module": "data_loading", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_data_loading.json setup completed"}
-{"timestamp": "2026-01-07 14:11:25,023", "module": "data_loading", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_data_loading.json setup completed"}
-{"timestamp": "2026-01-07 14:25:05,587", "module": "data_loading", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_data_loading.json setup completed"}
-{"timestamp": "2026-01-07 14:30:19,887", "module": "data_loading", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_data_loading.json setup completed"}
-{"timestamp": "2026-01-08 00:01:31,926", "module": "data_loading", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_data_loading.json setup completed"}
-{"timestamp": "2026-01-08 01:10:26,194", "module": "data_loading", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_data_loading.json setup completed"}
-{"timestamp": "2026-01-08 01:15:25,869", "module": "data_loading", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_data_loading.json setup completed"}
-{"timestamp": "2026-01-08 01:18:30,683", "module": "data_loading", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_data_loading.json setup completed"}
-{"timestamp": "2026-01-08 01:21:25,256", "module": "data_loading", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_data_loading.json setup completed"}
-{"timestamp": "2026-01-08 02:12:39,462", "module": "data_loading", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_data_loading.json setup completed"}
-{"timestamp": "2026-01-08 02:13:17,095", "module": "data_loading", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_data_loading.json setup completed"}
-{"timestamp": "2026-01-08 02:28:06,845", "module": "data_loading", "level": "INFO", "message": "Logging to C:\\Users\\iulii\\final_project\\logs\\logs_data_loading.json setup completed"}
+{"timestamp": "2026-01-10 15:04:20,433", "module": "data_loading", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_data_loading.json setup completed"}
+{"timestamp": "2026-01-10 15:29:04,695", "module": "data_loading", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_data_loading.json setup completed"}
+{"timestamp": "2026-01-10 15:38:11,767", "module": "data_loading", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_data_loading.json setup completed"}
+{"timestamp": "2026-01-10 15:52:37,485", "module": "data_loading", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_data_loading.json setup completed"}
+{"timestamp": "2026-01-10 16:09:07,154", "module": "data_loading", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_data_loading.json setup completed"}
+{"timestamp": "2026-01-10 16:32:46,876", "module": "data_loading", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_data_loading.json setup completed"}
+{"timestamp": "2026-01-10 18:15:33,807", "module": "data_loading", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_data_loading.json setup completed"}
+{"timestamp": "2026-01-10 23:41:03,298", "module": "data_loading", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_data_loading.json setup completed"}
+{"timestamp": "2026-01-11 00:01:15,470", "module": "data_loading", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_data_loading.json setup completed"}
+{"timestamp": "2026-01-11 01:35:45,878", "module": "data_loading", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_data_loading.json setup completed"}
+{"timestamp": "2026-01-11 01:52:31,019", "module": "data_loading", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_data_loading.json setup completed"}

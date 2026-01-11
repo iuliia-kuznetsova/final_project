@@ -1,0 +1,10 @@
+global:
+  # Metrics collection frequency 
+  scrape_interval: 5s
+
+scrape_configs:
+  # Scrape metrics from FastAPI ML service
+  - job_name: "recommender"
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["recommender:8080"]

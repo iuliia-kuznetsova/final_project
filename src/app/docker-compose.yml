@@ -1,0 +1,45 @@
+services:
+  recommender:
+    container_name: microservice_container
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    ports:
+      - '${MAIN_APP_VM_PORT}:${MAIN_APP_DOCKER_PORT}'
+    volumes:
+      - ./models:/app/models
+    # - ./mlruns:/mlruns
+    hostname: fastapi
+    restart: always
+    # restart: unless-stopped
+
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus:latest
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    ports:
+      - '${PROMETEUS_APP_VM_PORT}:${PROMETEUS_APP_DOCKER_PORT}'
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    depends_on:
+      - recommender
+    restart: always
+    hostname: prometheus
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:latest
+    env_file:
+      - .env
+    ports:
+      - '${GRAFANA_APP_VM_PORT}:${GRAFANA_APP_DOCKER_PORT}'
+    environment:
+      - GF_SECURITY_ADMIN_USER=${GRAFANA_USER}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASS}
+    depends_on:
+      - prometheus
+    restart: always
+    hostname: grafana

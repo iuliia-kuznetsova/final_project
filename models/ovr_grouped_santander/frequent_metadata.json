@@ -1,0 +1,27 @@
+{
+  "products": [
+    "target_reca_fin",
+    "target_nomina",
+    "target_cno_fin",
+    "target_ecue_fin",
+    "target_ctma_fin",
+    "target_nom_pens",
+    "target_cco_fin",
+    "target_dela_fin",
+    "target_recibo",
+    "target_tjcr_fin"
+  ],
+  "best_params": {},
+  "thresholds": {
+    "target_reca_fin": 0.5,
+    "target_nomina": 0.5,
+    "target_cno_fin": 0.5,
+    "target_ecue_fin": 0.5,
+    "target_ctma_fin": 0.5,
+    "target_nom_pens": 0.5,
+    "target_cco_fin": 0.5,
+    "target_dela_fin": 0.5,
+    "target_recibo": 0.5,
+    "target_tjcr_fin": 0.5
+  }
+}

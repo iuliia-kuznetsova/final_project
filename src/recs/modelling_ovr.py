@@ -37,6 +37,8 @@ import pandas as pd
 import os
 import json
 import pickle
+import gc
+import logging
 from pathlib import Path
 from typing import List, Dict, Tuple, Optional, Any, Union
 from datetime import datetime
@@ -70,7 +72,7 @@ from src.logging_setup import setup_logging
 
 # ---------- Logging setup ---------- #
 logger = setup_logging('modelling_ovr')
-
+logging.getLogger('catboost').setLevel(logging.ERROR)
 
 # ---------- Config ---------- #
 load_dotenv()
@@ -103,11 +105,23 @@ TOP_K = int(os.getenv('TOP_K', 7))
 FREQUENT_THRESHOLD = float(os.getenv('FREQUENT_THRESHOLD', 5.0))
 RARE_THRESHOLD = float(os.getenv('RARE_THRESHOLD', 1.0))
 
+# Helper to parse boolean env vars
+# As bool() of any empty string is True
+def _parse_bool_env(key: str, default: bool = True) -> bool:
+    value = os.getenv(key)
+    if value is None:
+        return default
+    return value.lower() in ('true', '1', 'yes', 'on')
+
 # Optimization parameters
-OPTIMIZE = bool(os.getenv('OPTIMIZE', True)) # Run Optuna hyperparameter optimization
+OPTIMIZE = _parse_bool_env('OPTIMIZE', True)  # Run Optuna hyperparameter optimization
 N_TRIALS = int(os.getenv('N_TRIALS', 15)) # Optuna trials per group
 OPTUNA_TIMEOUT = int(os.getenv('OPTUNA_TIMEOUT', 180)) # Optuna timeout per group optimization (seconds)
-RUN_CV = bool(os.getenv('RUN_CV', True)) # Run 5-fold TimeSeriesSplit CV
+RUN_CV = _parse_bool_env('RUN_CV', True)  # Run 5-fold TimeSeriesSplit CV
+
+# Memory management
+SUBSAMPLE_RATIO = float(os.getenv('SUBSAMPLE_RATIO', 1.0))  # Subsample training data (0.1 = 10%)
+MAX_RAM_GB = float(os.getenv('MAX_RAM_GB', 4.0))  # Max RAM for CatBoost in GB
 
 # ---------- Helper Functions ---------- #
 def load_training_data(
@@ -168,7 +182,9 @@ class OvRGroupModel:
         n_trials: int = N_TRIALS,
         optuna_timeout: int = OPTUNA_TIMEOUT,
         run_cv: bool = RUN_CV,
-        top_k: int = TOP_K
+        top_k: int = TOP_K,
+        subsample_ratio: float = SUBSAMPLE_RATIO,
+        max_ram_gb: float = MAX_RAM_GB
     ):
         '''
             Initialize OvR Group model:
@@ -196,6 +212,8 @@ class OvRGroupModel:
         self.optuna_timeout = optuna_timeout
         self.run_cv = run_cv
         self.top_k = top_k
+        self.subsample_ratio = subsample_ratio
+        self.max_ram_gb = max_ram_gb
 
         # Create directories
         self.models_dir.mkdir(parents=True, exist_ok=True)
@@ -383,7 +401,7 @@ class OvRGroupModel:
                 # Fixed params
                 'loss_function': 'Logloss',
                 'random_seed': self.random_state,
-                'verbose': False,
+                'logging_level': 'Silent',  # Suppress all CatBoost output
                 'thread_count': -1,
                 'auto_class_weights': 'Balanced'
             }
@@ -392,9 +410,15 @@ class OvRGroupModel:
             tscv = TimeSeriesSplit(n_splits=self.n_splits)
             auc_scores = []
             
-            for train_idx, val_idx in tscv.split(X):
+            for fold_idx, (train_idx, val_idx) in enumerate(tscv.split(X)):
                 X_tr, X_val = X.iloc[train_idx], X.iloc[val_idx]
                 y_tr, y_val = y[train_idx], y[val_idx]
+                
+                # Log fold progress
+                logger.info(
+                    f'    Trial {trial.number + 1} | Fold {fold_idx + 1}/{self.n_splits} | '
+                    f'Train: {len(X_tr):,} samples, Val: {len(X_val):,} samples'
+                )
                 
                 # Create OvR with CatBoost base estimator
                 base_estimator = CatBoostClassifier(
@@ -422,7 +446,9 @@ class OvRGroupModel:
 
                 # Add fold score only if any products were valid
                 if fold_aucs:  # len(fold_aucs) > 0
-                    auc_scores.append(np.mean(fold_aucs))  # Mean AUC across valid products
+                    fold_mean_auc = np.mean(fold_aucs)
+                    auc_scores.append(fold_mean_auc)
+                    logger.info(f'    Trial {trial.number + 1} | Fold {fold_idx + 1} completed: AUC={fold_mean_auc:.4f}')
             
             return np.mean(auc_scores) if auc_scores else 0.0
         
@@ -449,15 +475,29 @@ class OvRGroupModel:
             X, y, self.cat_feature_indices
         )
         
+        # Callback to log intermediate trial results
+        def logging_callback(study: optuna.Study, trial: optuna.trial.FrozenTrial):
+            logger.info(
+                f'  [{group_name}] Trial {trial.number + 1}/{self.n_trials}: '
+                f'AUC={trial.value:.4f} | '
+                f'Best so far: {study.best_value:.4f} | '
+                f'Params: depth={trial.params.get("depth")}, '
+                f'lr={trial.params.get("learning_rate", 0):.4f}, '
+                f'iter={trial.params.get("iterations")}'
+            )
+        
         # Don't show Optuna logs
         optuna.logging.set_verbosity(optuna.logging.WARNING)
+        
+        logger.info(f'  Starting Optuna optimization for {group_name}: {self.n_trials} trials, timeout={self.optuna_timeout}s')
         
         # Optimize with timeout for faster execution
         study.optimize(
             objective,
             n_trials=self.n_trials,
             timeout=self.optuna_timeout,
-            show_progress_bar=True
+            show_progress_bar=True,
+            callbacks=[logging_callback]
         )
         
         # Build full params
@@ -465,7 +505,7 @@ class OvRGroupModel:
         best_params.update({
             'loss_function': 'Logloss',
             'random_seed': self.random_state,
-            'verbose': False,
+            'logging_level': 'Silent',  # Suppress all CatBoost output
             'thread_count': -1,
             'auto_class_weights': 'Balanced'
         })
@@ -489,11 +529,16 @@ class OvRGroupModel:
         # TimeSeriesSplit CV
         tscv = TimeSeriesSplit(n_splits=self.n_splits)
         fold_aucs = []
+        n_products = y.shape[1]
+        
+        logger.info(f'  Starting {self.n_splits}-fold CV evaluation ({n_products} products per fold)')
         
         # Loop over folds
-        for train_idx, val_idx in tscv.split(X):
+        for fold_idx, (train_idx, val_idx) in enumerate(tscv.split(X)):
             X_tr, X_val = X.iloc[train_idx], X.iloc[val_idx]
             y_tr, y_val = y[train_idx], y[val_idx]
+            
+            logger.info(f'    CV Fold {fold_idx + 1}/{self.n_splits}: Train={len(X_tr):,}, Val={len(X_val):,} samples')
             
             # Create OvR with CatBoost base estimator
             base_estimator = CatBoostClassifier(
@@ -503,7 +548,9 @@ class OvRGroupModel:
             ovr = OneVsRestClassifier(base_estimator, n_jobs=1)
             
             # Train
+            logger.info(f'    CV Fold {fold_idx + 1}: Training {n_products} product models...')
             ovr.fit(X_tr, y_tr)
+            logger.info(f'    CV Fold {fold_idx + 1}: Training complete, predicting...')
             
             # Predict probabilities
             y_proba = ovr.predict_proba(X_val)
@@ -519,10 +566,11 @@ class OvRGroupModel:
                     product_aucs.append(auc)
             
             if product_aucs: # Add fold score only if any products were valid
-                fold_aucs.append(np.mean(product_aucs)) # Mean AUC across valid products
+                fold_mean_auc = np.mean(product_aucs)
+                fold_aucs.append(fold_mean_auc) # Mean AUC across valid products
+                logger.info(f'    CV Fold {fold_idx + 1}/{self.n_splits} completed: AUC={fold_mean_auc:.4f}')
         
-        logger.info(f'DONE: CV evaluation for group completed')
-        logger.info(f'   Fold AUCs: {fold_aucs}')
+        logger.info(f'  CV evaluation completed: Fold AUCs={[f"{a:.4f}" for a in fold_aucs]}')
 
         return fold_aucs
     
@@ -588,6 +636,40 @@ class OvRGroupModel:
         X_pd, y_pd = self._prepare_data(X_train, y_train)
         self.feature_names = list(X_pd.columns)
         self.cat_feature_indices = self._get_cat_feature_indices(X_pd)
+        
+        # Stratified subsampling: keep ALL positive examples, subsample negatives
+        # This ensures rare products still have positive examples for training
+        if self.subsample_ratio < 1.0:
+            logger.info(f'Stratified subsampling (keeping all positives, subsampling negatives)...')
+            
+            # Find rows where ANY product has a positive (target=1)
+            any_positive_mask = y_pd.max(axis=1) == 1
+            positive_indices = np.where(any_positive_mask)[0]
+            negative_indices = np.where(~any_positive_mask)[0]
+            
+            # Calculate how many negatives to keep
+            n_total_target = int(len(X_pd) * self.subsample_ratio)
+            n_negatives_to_keep = max(0, n_total_target - len(positive_indices))
+            
+            # Sample negatives
+            if n_negatives_to_keep < len(negative_indices):
+                sampled_negative_indices = np.random.RandomState(self.random_state).choice(
+                    negative_indices, size=n_negatives_to_keep, replace=False
+                )
+            else:
+                sampled_negative_indices = negative_indices
+            
+            # Combine positive and sampled negative indices
+            final_indices = np.concatenate([positive_indices, sampled_negative_indices])
+            final_indices = np.sort(final_indices)  # Keep temporal order
+            
+            logger.info(f'  Original: {len(X_pd):,} samples')
+            logger.info(f'  Positives (any product): {len(positive_indices):,} (100% kept)')
+            logger.info(f'  Negatives sampled: {len(sampled_negative_indices):,} / {len(negative_indices):,}')
+            logger.info(f'  Final: {len(final_indices):,} samples')
+            
+            X_pd = X_pd.iloc[final_indices].reset_index(drop=True)
+            y_pd = y_pd.iloc[final_indices].reset_index(drop=True)
         
         # Get target names
         if target_names is not None:
@@ -668,17 +750,23 @@ class OvRGroupModel:
                                 if k not in ['verbose', 'thread_count']:
                                     mlflow.log_param(f'hp_{k}', v)
                     else:
+                        logger.info(f'  Skipping Optuna optimization, using default params for {group_name}')
                         best_params = {
-                            'iterations': 300,
-                            'depth': 6,
-                            'learning_rate': 0.1,
+                            'iterations': 100,  # Reduced for memory
+                            'depth': 4,  # Shallower trees = less memory
+                            'learning_rate': 0.15,  # Higher LR to compensate fewer iterations
                             'loss_function': 'Logloss',
                             'random_seed': self.random_state,
-                            'verbose': False,
-                            'thread_count': -1,
-                            'auto_class_weights': 'Balanced'
+                            'logging_level': 'Silent',  # Suppress all CatBoost output
+                            'thread_count': 1,  # Single thread = less memory
+                            'auto_class_weights': 'Balanced',
+                            'used_ram_limit': f'{self.max_ram_gb}gb',
+                            'max_ctr_complexity': 1,  # Reduce CTR memory for categoricals
+                            'store_all_simple_ctr': False,  # Don't store all CTR values
+                            'one_hot_max_size': 10,  # Limit one-hot encoding size
                         }
                         self.best_params[group_name] = best_params
+                        logger.info(f'  Default params: iter={best_params["iterations"]}, depth={best_params["depth"]}, lr={best_params["learning_rate"]}, ram={self.max_ram_gb}gb, ctr_complexity=1')
                     
                     # 5-fold TimeSeriesSplit CV evaluation
                     if self.run_cv:
@@ -696,35 +784,106 @@ class OvRGroupModel:
                             for fold_idx, fold_auc in enumerate(cv_scores):
                                 mlflow.log_metric(f'cv_fold_{fold_idx}_auc', fold_auc)
                     
-                    # Train final model on full training data
-                    logger.info(f'Training final {group_name} model')
-                    base_estimator = CatBoostClassifier(
-                        cat_features=self.cat_feature_indices if self.cat_feature_indices else None,
-                        **best_params
-                    )
-                    model = OneVsRestClassifier(base_estimator, n_jobs=-1)
-                    model.fit(X_pd, y_group)
+                    # Train products one at a time to minimize memory usage
+                    n_products_group = len(products)
+                    logger.info(f'  Training {group_name} group: {n_products_group} products (one at a time for memory efficiency)')
+                    
+                    # Create temp directory for intermediate saves
+                    temp_model_dir = self.models_dir / f'temp_{group_name}'
+                    temp_model_dir.mkdir(parents=True, exist_ok=True)
+                    
+                    estimators = []
+                    skipped_products = []  # Products with no positive examples
+                    trained_products = []  # Products that were actually trained
+                    
+                    for prod_idx, product in enumerate(products):
+                        # Get binary target for this product
+                        y_product = y_group[:, prod_idx]
+                        n_positive = y_product.sum()
+                        n_negative = len(y_product) - n_positive
+                        
+                        # Check if we have both classes
+                        if n_positive == 0 or n_negative == 0:
+                            logger.warning(f'    [{prod_idx + 1}/{n_products_group}] SKIPPED: {product} (only {n_positive} positives, {n_negative} negatives)')
+                            skipped_products.append(product)
+                            continue
+                        
+                        logger.info(f'    [{prod_idx + 1}/{n_products_group}] Training: {product} ({n_positive:,} positives, {n_negative:,} negatives)')
+                        
+                        # Create and train single CatBoost model
+                        estimator = CatBoostClassifier(
+                            cat_features=self.cat_feature_indices if self.cat_feature_indices else None,
+                            **best_params
+                        )
+                        estimator.fit(X_pd, y_product)
+                        
+                        # Save model immediately to disk
+                        model_path = temp_model_dir / f'{product}.cbm'
+                        estimator.save_model(str(model_path))
+                        trained_products.append(product)
+                        logger.info(f'    [{prod_idx + 1}/{n_products_group}] Saved: {product}')
+                        
+                        # Clear memory
+                        del estimator
+                        gc.collect()
+                    
+                    if skipped_products:
+                        logger.warning(f'  Skipped {len(skipped_products)} products with no positive examples: {skipped_products}')
+                    
+                    logger.info(f'  Trained {len(trained_products)}/{n_products_group} products')
+                    
+                    # Reload all trained models
+                    for product in trained_products:
+                        model_path = temp_model_dir / f'{product}.cbm'
+                        estimator = CatBoostClassifier()
+                        estimator.load_model(str(model_path))
+                        estimators.append(estimator)
+                    
+                    # Update products list to only include trained ones
+                    self.product_groups[group_name] = trained_products
+                    
+                    # Skip if no products were trained
+                    if not trained_products:
+                        logger.warning(f'  No products trained for {group_name} group (all skipped)')
+                        continue
+                    
+                    # Create OvR-like wrapper with proper sklearn attributes
+                    from sklearn.preprocessing import LabelBinarizer
+                    ovr_model = OneVsRestClassifier(CatBoostClassifier())
+                    ovr_model.estimators_ = estimators
+                    ovr_model.classes_ = np.array([0, 1])
+                    # Initialize label_binarizer_ to avoid predict_proba errors
+                    ovr_model.label_binarizer_ = LabelBinarizer(sparse_output=False)
+                    ovr_model.label_binarizer_.fit(range(len(trained_products)))
                     
                     # Store model in registry
-                    self.models[group_name] = model
+                    self.models[group_name] = ovr_model
+                    logger.info(f'  Final OvR model for {group_name} group trained')
                     
                     # Optimize thresholds on validation set
-                    if X_val_pd is not None and y_val_pd is not None:
-                        y_val_group = y_val_pd[products].astype(int).values
-                        y_proba_val = model.predict_proba(X_val_pd)
+                    if X_val_pd is not None and y_val_pd is not None and trained_products:
+                        y_val_group = y_val_pd[trained_products].astype(int).values
+                        # Manually get probabilities from each estimator (bypass OvR wrapper issues)
+                        y_proba_val = np.column_stack([
+                            est.predict_proba(X_val_pd)[:, 1] for est in estimators
+                        ])
                         group_thresholds = self._optimize_thresholds_for_group(
-                            products, y_val_group, y_proba_val
+                            trained_products, y_val_group, y_proba_val
                         )
                         self.thresholds.update(group_thresholds)
-                        logger.info(f'{group_name} thresholds optimized')
+                        logger.info(f'  {group_name} thresholds optimized')
                     else:
                         # Default thresholds
-                        for product in products:
+                        for product in trained_products:
                             self.thresholds[product] = 0.5
+                    
+                    # Set default thresholds for skipped products
+                    for product in skipped_products:
+                        self.thresholds[product] = 1.0  # High threshold = never recommend
                     
                     # Log model to MLflow
                     if MLFLOW_AVAILABLE and group_mlflow_run:
-                        for i, (product, estimator) in enumerate(zip(products, model.estimators_)):
+                        for i, (product, estimator) in enumerate(zip(trained_products, ovr_model.estimators_)):
                             if i < 5:  # Log first 5 estimators per group
                                 mlflow.catboost.log_model(estimator, f'model_{product}')
                 
@@ -775,10 +934,10 @@ class OvRGroupModel:
         
         for group_name, model in self.models.items(): # Loop over groups
             products = self.product_groups[group_name]
-            y_proba = model.predict_proba(X_pd) # Predict probabilities
-            
+            # Get probabilities from each estimator directly (avoid OvR wrapper issues)
             for i, product in enumerate(products): # Loop over products
-                all_probas[product] = y_proba[:, i] 
+                # CatBoost predict_proba returns [P(class=0), P(class=1)]
+                all_probas[product] = model.estimators_[i].predict_proba(X_pd)[:, 1] 
         
         # Order by original product order
         ordered_probas = {p: all_probas[p] for p in self.all_products if p in all_probas} # Filter products that are in the model
@@ -792,12 +951,15 @@ class OvRGroupModel:
     def predict_top_k(
         self,
         X: Union[pl.DataFrame, pd.DataFrame],
+        k: Optional[int] = None,
         apply_thresholds: bool = True
     ) -> Tuple[np.ndarray, np.ndarray, List[List[str]]]:
         '''
             Get top-K product recommendations per customer.
             Combines all group predictions, ranks by probability.
         '''
+        # Use provided k or default to self.top_k
+        k = k if k is not None else self.top_k
 
         # Get probabilities for all products
         proba_df = self.predict_proba(X)
@@ -810,14 +972,14 @@ class OvRGroupModel:
         
         # Rank products by probability
         # Get indices of top-k products for each customer
-        top_k_indices = np.argsort(-proba_matrix, axis=1)[:, :self.top_k]
+        top_k_indices = np.argsort(-proba_matrix, axis=1)[:, :k]
         # Get corresponding probabilities for the top-k products
         top_k_probas = np.take_along_axis(proba_matrix, top_k_indices, axis=1)
         
         # Apply threshold filtering
         if apply_thresholds:
             for i in range(n_customers): # Loop over customers
-                for j in range(self.top_k): # Loop over top-k products
+                for j in range(k): # Loop over top-k products
                     product_idx = top_k_indices[i, j]
                     product_name = product_names[product_idx]
                     threshold = self.thresholds.get(product_name, 0.5)
@@ -1304,7 +1466,9 @@ def run_modelling_ovr():
         n_trials=N_TRIALS,
         optuna_timeout=OPTUNA_TIMEOUT,
         run_cv=RUN_CV,
-        top_k=TOP_K
+        top_k=TOP_K,
+        subsample_ratio=SUBSAMPLE_RATIO,
+        max_ram_gb=MAX_RAM_GB
     )
     
     # Train all group models
