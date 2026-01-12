@@ -19,31 +19,35 @@
     - preprocessed_dir - Output directory for processed parquet files.
 
     Output:
-    - data_preprocessed - Preprocessed data
+    - data_preprocessed.parquet - Preprocessed data
+    - data_preprocessed_summary.parquet - Summary of preprocessed data
 
     Usage:
-    python -m src.data_preprocessing
+    python -m src.recs.data_preprocessing
 '''
 
 # ---------- Imports ---------- #
-import polars as pl
 import os
+import gc
+import polars as pl
 from dotenv import load_dotenv
 from pathlib import Path
-from typing import List, Dict
 import json
 
 from src.logging_setup import setup_logging
 
+
 # ---------- Logging setup ---------- #
 logger = setup_logging('data_preprocessing')
+
 
 # ---------- Config ---------- #
 # Load environment variables
 load_dotenv()
 # Set working directory to project root
-PROJECT_ROOT = Path(__file__).parent.parent
+PROJECT_ROOT = Path(__file__).parent.parent.parent  # src/recs -> src -> project_root
 os.chdir(PROJECT_ROOT)
+
 
 # ---------- Constants ---------- #
 # Data directory
@@ -54,13 +58,18 @@ RESULTS_DIR = os.getenv('RESULTS_DIR', './results')
 RAW_DATA_FILE = os.getenv('RAW_DATA_FILE', 'train_ver2.csv')
 # Preprocessed data file
 PREPROCESSED_DATA_FILE = os.getenv('PREPROCESSED_DATA_FILE', 'data_preprocessed.parquet')
+# Preprocessed data summary file
+PREPROCESSED_DATA_SUMMARY_FILE = os.getenv('PREPROCESSED_DATA_SUMMARY_FILE', 'data_preprocessed_summary.parquet')
+# Encoding maps file
+ENCODING_MAPS_FILE = os.getenv('ENCODING_MAPS_FILE', 'encoding_maps.json')
+
 
 # ---------- Functions ---------- #
 def load_and_encode_data(
     data_dir: str = DATA_DIR,
     results_dir: str = RESULTS_DIR,
     raw_file: str = RAW_DATA_FILE,
-    encoding_maps_file: str = 'encoding_maps.json'
+    encoding_maps_file: str = ENCODING_MAPS_FILE
 ) -> pl.DataFrame:
     '''
         Load CSV and auto-encode categorical columns during loading.
@@ -176,8 +185,6 @@ def load_and_encode_data(
             ])
     )
     logger.info('Parsed date columns')
-    
-
 
     # Transform categorical columns to Categorical
     # Strip whitespace before replacing
@@ -329,12 +336,12 @@ def preprocess_data(
     logger.info('Computed customer_period (months since fecha_alta)')
     
     # Drop features with high proportion of missing values 'ult_fec_cli_1t', 'conyuemp'
-    # Drop non-indicative feature 'tipodom'
+    # Drop non-indicative feature 'tipodom', 'indext'
     # Drop 'fecha_alta' feature as CatBoost cannot handle dates
-    df_preprocessed = df_preprocessed.drop(['ult_fec_cli_1t', 'conyuemp', 'tipodom', 'fecha_alta'])
-    logger.info(f'Dropped features: {["ult_fec_cli_1t", "conyuemp", "tipodom", "fecha_alta"]}')
+    df_preprocessed = df_preprocessed.drop(['ult_fec_cli_1t', 'conyuemp', 'tipodom', 'fecha_alta', 'indext'])
+    logger.info(f'Dropped features: {["ult_fec_cli_1t", "conyuemp", "tipodom", "fecha_alta", "indext"]}')
     
-    # Clip outliers
+    # Clip outliers (before dropping antiguedad)
     df_preprocessed = (
         df_preprocessed
             .with_columns([
@@ -377,6 +384,11 @@ def preprocess_data(
         .drop('renta_median')
     )
     logger.info('Imputed renta missing values')
+    
+    # Drop 'nomprov' (used for renta imputation, now no longer needed)
+    # Drop 'antiguedad' as it is highly correlated with customer_period
+    df_preprocessed = df_preprocessed.drop(['nomprov', 'antiguedad'])
+    logger.info(f'Dropped features: {["nomprov", "antiguedad"]}')
    
     # Drop rows where sexo is null
     # As data contain rows with almost all features are null
@@ -398,24 +410,22 @@ def preprocess_data(
     logger.info(f"Preprocessed data saved to: {data_dir}/{preprocessed_data_file}")
     logger.info(f"Preprocessed data summary saved to: {results_dir}/{preprocessed_data_summary_file}")
    
-    return df_preprocessed
+    del df, df_preprocessed, df_preprocessed_summary
+    gc.collect()
+
+    return None
 
 def run_preprocessing():
     logger.info('Starting data preprocessing pipeline')
-
-    # Load and encode data
-    df_encoded = load_and_encode_data(DATA_DIR, RESULTS_DIR, RAW_DATA_FILE, 'encoding_maps.json')
-
-    # Full preprocessing pipeline
-    df_preprocessed = preprocess_data(df_encoded, DATA_DIR, RESULTS_DIR, PREPROCESSED_DATA_FILE, 'preprocessed_data_summary.parquet')
-    
+    df_encoded = load_and_encode_data(DATA_DIR, RESULTS_DIR, RAW_DATA_FILE, ENCODING_MAPS_FILE)
+    preprocess_data(df_encoded, DATA_DIR, RESULTS_DIR, PREPROCESSED_DATA_FILE, PREPROCESSED_DATA_SUMMARY_FILE)
     logger.info('Data preprocessing completed successfully')
 
-    return df_preprocessed
 
 # ---------- Main function ---------- #
 if __name__ == '__main__':
     run_preprocessing()
+
 
 # ---------- All exports ---------- #
 __all__ = ['run_preprocessing']

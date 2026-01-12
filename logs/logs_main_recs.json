@@ -1,185 +1,34 @@
-{"timestamp": "2026-01-10 15:04:37,993", "module": "main_recs", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_main_recs.json setup completed"}
-{"timestamp": "2026-01-10 15:04:37,995", "module": "main_recs", "level": "INFO", "message": "STEP 1: Loading environment variables"}
-{"timestamp": "2026-01-10 15:04:37,999", "module": "main_recs", "level": "INFO", "message": "DONE: Loading environment variables completed successfully"}
-{"timestamp": "2026-01-10 15:04:37,999", "module": "main_recs", "level": "INFO", "message": "INFO: Data directory: ./data"}
-{"timestamp": "2026-01-10 15:04:37,999", "module": "main_recs", "level": "INFO", "message": "INFO: Models directory: ./models"}
-{"timestamp": "2026-01-10 15:04:37,999", "module": "main_recs", "level": "INFO", "message": "INFO: Results directory: ./results"}
-{"timestamp": "2026-01-10 15:04:37,999", "module": "main_recs", "level": "INFO", "message": "STEP 1 DONE"}
-{"timestamp": "2026-01-10 15:04:37,999", "module": "main_recs", "level": "INFO", "message": "STEP 2: Skipping raw data download (--skip-download flag)"}
-{"timestamp": "2026-01-10 15:04:37,999", "module": "main_recs", "level": "INFO", "message": "STEP 2 DONE"}
-{"timestamp": "2026-01-10 15:04:38,000", "module": "main_recs", "level": "INFO", "message": "STEP 3: Preprocessing data"}
-{"timestamp": "2026-01-10 15:06:12,406", "module": "main_recs", "level": "INFO", "message": "STEP 3 DONE"}
-{"timestamp": "2026-01-10 15:06:12,407", "module": "main_recs", "level": "INFO", "message": "STEP 4: Feature Engineering"}
-{"timestamp": "2026-01-10 15:07:14,065", "module": "main_recs", "level": "INFO", "message": "STEP 4 DONE"}
-{"timestamp": "2026-01-10 15:07:14,066", "module": "main_recs", "level": "INFO", "message": "STEP 5: Splitting data into train/test sets"}
-{"timestamp": "2026-01-10 15:07:20,969", "module": "main_recs", "level": "INFO", "message": "STEP 5 DONE"}
-{"timestamp": "2026-01-10 15:07:20,969", "module": "main_recs", "level": "INFO", "message": "STEP 6: Modelling OvR Grouped CatBoost"}
-{"timestamp": "2026-01-10 15:29:14,321", "module": "main_recs", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_main_recs.json setup completed"}
-{"timestamp": "2026-01-10 15:29:14,322", "module": "main_recs", "level": "INFO", "message": "STEP 1: Loading environment variables"}
-{"timestamp": "2026-01-10 15:29:14,326", "module": "main_recs", "level": "INFO", "message": "DONE: Loading environment variables completed successfully"}
-{"timestamp": "2026-01-10 15:29:14,327", "module": "main_recs", "level": "INFO", "message": "INFO: Data directory: ./data"}
-{"timestamp": "2026-01-10 15:29:14,327", "module": "main_recs", "level": "INFO", "message": "INFO: Models directory: ./models"}
-{"timestamp": "2026-01-10 15:29:14,327", "module": "main_recs", "level": "INFO", "message": "INFO: Results directory: ./results"}
-{"timestamp": "2026-01-10 15:29:14,327", "module": "main_recs", "level": "INFO", "message": "STEP 1 DONE"}
-{"timestamp": "2026-01-10 15:29:14,327", "module": "main_recs", "level": "INFO", "message": "STEP 2: Skipping raw data download (--skip-download flag)"}
-{"timestamp": "2026-01-10 15:29:14,327", "module": "main_recs", "level": "INFO", "message": "STEP 2 DONE"}
-{"timestamp": "2026-01-10 15:29:14,327", "module": "main_recs", "level": "INFO", "message": "STEP 3: Preprocessing data"}
-{"timestamp": "2026-01-10 15:30:49,292", "module": "main_recs", "level": "INFO", "message": "STEP 3 DONE"}
-{"timestamp": "2026-01-10 15:30:49,292", "module": "main_recs", "level": "INFO", "message": "STEP 4: Feature Engineering"}
-{"timestamp": "2026-01-10 15:31:50,321", "module": "main_recs", "level": "INFO", "message": "STEP 4 DONE"}
-{"timestamp": "2026-01-10 15:31:50,321", "module": "main_recs", "level": "INFO", "message": "STEP 5: Splitting data into train/test sets"}
-{"timestamp": "2026-01-10 15:31:56,755", "module": "main_recs", "level": "INFO", "message": "STEP 5 DONE"}
-{"timestamp": "2026-01-10 15:31:56,755", "module": "main_recs", "level": "INFO", "message": "STEP 6: Modelling OvR Grouped CatBoost"}
-{"timestamp": "2026-01-10 15:38:40,514", "module": "main_recs", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_main_recs.json setup completed"}
-{"timestamp": "2026-01-10 15:38:40,519", "module": "main_recs", "level": "INFO", "message": "STEP 1: Loading environment variables"}
-{"timestamp": "2026-01-10 15:38:40,525", "module": "main_recs", "level": "INFO", "message": "DONE: Loading environment variables completed successfully"}
-{"timestamp": "2026-01-10 15:38:40,535", "module": "main_recs", "level": "INFO", "message": "INFO: Data directory: ./data"}
-{"timestamp": "2026-01-10 15:38:40,536", "module": "main_recs", "level": "INFO", "message": "INFO: Models directory: ./models"}
-{"timestamp": "2026-01-10 15:38:40,536", "module": "main_recs", "level": "INFO", "message": "INFO: Results directory: ./results"}
-{"timestamp": "2026-01-10 15:38:40,536", "module": "main_recs", "level": "INFO", "message": "STEP 1 DONE"}
-{"timestamp": "2026-01-10 15:38:40,536", "module": "main_recs", "level": "INFO", "message": "STEP 2: Skipping raw data download (--skip-download flag)"}
-{"timestamp": "2026-01-10 15:38:40,536", "module": "main_recs", "level": "INFO", "message": "STEP 2 DONE"}
-{"timestamp": "2026-01-10 15:38:40,537", "module": "main_recs", "level": "INFO", "message": "STEP 3: Preprocessing data"}
-{"timestamp": "2026-01-10 15:40:19,215", "module": "main_recs", "level": "INFO", "message": "STEP 3 DONE"}
-{"timestamp": "2026-01-10 15:40:19,215", "module": "main_recs", "level": "INFO", "message": "STEP 4: Feature Engineering"}
-{"timestamp": "2026-01-10 15:41:20,323", "module": "main_recs", "level": "INFO", "message": "STEP 4 DONE"}
-{"timestamp": "2026-01-10 15:41:20,323", "module": "main_recs", "level": "INFO", "message": "STEP 5: Splitting data into train/test sets"}
-{"timestamp": "2026-01-10 15:41:26,936", "module": "main_recs", "level": "INFO", "message": "STEP 5 DONE"}
-{"timestamp": "2026-01-10 15:41:26,936", "module": "main_recs", "level": "INFO", "message": "STEP 6: Modelling OvR Grouped CatBoost"}
-{"timestamp": "2026-01-10 15:53:01,617", "module": "main_recs", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_main_recs.json setup completed"}
-{"timestamp": "2026-01-10 15:53:01,631", "module": "main_recs", "level": "INFO", "message": "STEP 1: Loading environment variables"}
-{"timestamp": "2026-01-10 15:53:01,635", "module": "main_recs", "level": "INFO", "message": "DONE: Loading environment variables completed successfully"}
-{"timestamp": "2026-01-10 15:53:01,635", "module": "main_recs", "level": "INFO", "message": "INFO: Data directory: ./data"}
-{"timestamp": "2026-01-10 15:53:01,635", "module": "main_recs", "level": "INFO", "message": "INFO: Models directory: ./models"}
-{"timestamp": "2026-01-10 15:53:01,635", "module": "main_recs", "level": "INFO", "message": "INFO: Results directory: ./results"}
-{"timestamp": "2026-01-10 15:53:01,635", "module": "main_recs", "level": "INFO", "message": "STEP 1 DONE"}
-{"timestamp": "2026-01-10 15:53:01,635", "module": "main_recs", "level": "INFO", "message": "STEP 2: Skipping raw data download (--skip-download flag)"}
-{"timestamp": "2026-01-10 15:53:01,635", "module": "main_recs", "level": "INFO", "message": "STEP 2 DONE"}
-{"timestamp": "2026-01-10 15:53:01,636", "module": "main_recs", "level": "INFO", "message": "STEP 3: Preprocessing data"}
-{"timestamp": "2026-01-10 15:54:31,135", "module": "main_recs", "level": "INFO", "message": "STEP 3 DONE"}
-{"timestamp": "2026-01-10 15:54:31,135", "module": "main_recs", "level": "INFO", "message": "STEP 4: Feature Engineering"}
-{"timestamp": "2026-01-10 15:55:30,351", "module": "main_recs", "level": "INFO", "message": "STEP 4 DONE"}
-{"timestamp": "2026-01-10 15:55:30,351", "module": "main_recs", "level": "INFO", "message": "STEP 5: Splitting data into train/test sets"}
-{"timestamp": "2026-01-10 15:55:36,975", "module": "main_recs", "level": "INFO", "message": "STEP 5 DONE"}
-{"timestamp": "2026-01-10 15:55:36,975", "module": "main_recs", "level": "INFO", "message": "STEP 6: Modelling OvR Grouped CatBoost"}
-{"timestamp": "2026-01-10 16:09:23,446", "module": "main_recs", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_main_recs.json setup completed"}
-{"timestamp": "2026-01-10 16:09:23,448", "module": "main_recs", "level": "INFO", "message": "STEP 1: Loading environment variables"}
-{"timestamp": "2026-01-10 16:09:23,452", "module": "main_recs", "level": "INFO", "message": "DONE: Loading environment variables completed successfully"}
-{"timestamp": "2026-01-10 16:09:23,452", "module": "main_recs", "level": "INFO", "message": "INFO: Data directory: ./data"}
-{"timestamp": "2026-01-10 16:09:23,452", "module": "main_recs", "level": "INFO", "message": "INFO: Models directory: ./models"}
-{"timestamp": "2026-01-10 16:09:23,452", "module": "main_recs", "level": "INFO", "message": "INFO: Results directory: ./results"}
-{"timestamp": "2026-01-10 16:09:23,452", "module": "main_recs", "level": "INFO", "message": "STEP 1 DONE"}
-{"timestamp": "2026-01-10 16:09:23,452", "module": "main_recs", "level": "INFO", "message": "STEP 2: Skipping raw data download (--skip-download flag)"}
-{"timestamp": "2026-01-10 16:09:23,453", "module": "main_recs", "level": "INFO", "message": "STEP 2 DONE"}
-{"timestamp": "2026-01-10 16:09:23,453", "module": "main_recs", "level": "INFO", "message": "STEP 3: Preprocessing data"}
-{"timestamp": "2026-01-10 16:11:03,150", "module": "main_recs", "level": "INFO", "message": "STEP 3 DONE"}
-{"timestamp": "2026-01-10 16:11:03,150", "module": "main_recs", "level": "INFO", "message": "STEP 4: Feature Engineering"}
-{"timestamp": "2026-01-10 16:12:02,844", "module": "main_recs", "level": "INFO", "message": "STEP 4 DONE"}
-{"timestamp": "2026-01-10 16:12:02,844", "module": "main_recs", "level": "INFO", "message": "STEP 5: Splitting data into train/test sets"}
-{"timestamp": "2026-01-10 16:12:09,451", "module": "main_recs", "level": "INFO", "message": "STEP 5 DONE"}
-{"timestamp": "2026-01-10 16:12:09,451", "module": "main_recs", "level": "INFO", "message": "STEP 6: Modelling OvR Grouped CatBoost"}
-{"timestamp": "2026-01-10 16:27:05,967", "module": "main_recs", "level": "ERROR", "message": "ERROR: Modelling OvR Grouped CatBoost failed: 'OneVsRestClassifier' object has no attribute 'label_binarizer_'"}
-{"timestamp": "2026-01-10 16:33:01,130", "module": "main_recs", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_main_recs.json setup completed"}
-{"timestamp": "2026-01-10 16:33:01,132", "module": "main_recs", "level": "INFO", "message": "STEP 1: Loading environment variables"}
-{"timestamp": "2026-01-10 16:33:01,136", "module": "main_recs", "level": "INFO", "message": "DONE: Loading environment variables completed successfully"}
-{"timestamp": "2026-01-10 16:33:01,136", "module": "main_recs", "level": "INFO", "message": "INFO: Data directory: ./data"}
-{"timestamp": "2026-01-10 16:33:01,136", "module": "main_recs", "level": "INFO", "message": "INFO: Models directory: ./models"}
-{"timestamp": "2026-01-10 16:33:01,136", "module": "main_recs", "level": "INFO", "message": "INFO: Results directory: ./results"}
-{"timestamp": "2026-01-10 16:33:01,136", "module": "main_recs", "level": "INFO", "message": "STEP 1 DONE"}
-{"timestamp": "2026-01-10 16:33:01,136", "module": "main_recs", "level": "INFO", "message": "STEP 2: Skipping raw data download (--skip-download flag)"}
-{"timestamp": "2026-01-10 16:33:01,136", "module": "main_recs", "level": "INFO", "message": "STEP 2 DONE"}
-{"timestamp": "2026-01-10 16:33:01,136", "module": "main_recs", "level": "INFO", "message": "STEP 3: Preprocessing data"}
-{"timestamp": "2026-01-10 16:34:31,198", "module": "main_recs", "level": "INFO", "message": "STEP 3 DONE"}
-{"timestamp": "2026-01-10 16:34:31,198", "module": "main_recs", "level": "INFO", "message": "STEP 4: Feature Engineering"}
-{"timestamp": "2026-01-10 16:35:30,454", "module": "main_recs", "level": "INFO", "message": "STEP 4 DONE"}
-{"timestamp": "2026-01-10 16:35:30,454", "module": "main_recs", "level": "INFO", "message": "STEP 5: Splitting data into train/test sets"}
-{"timestamp": "2026-01-10 16:35:36,951", "module": "main_recs", "level": "INFO", "message": "STEP 5 DONE"}
-{"timestamp": "2026-01-10 16:35:36,951", "module": "main_recs", "level": "INFO", "message": "STEP 6: Modelling OvR Grouped CatBoost"}
-{"timestamp": "2026-01-10 17:31:43,001", "module": "main_recs", "level": "ERROR", "message": "ERROR: Modelling OvR Grouped CatBoost failed: catboost/private/libs/target/target_converter.cpp:404: Target contains only one unique value"}
-{"timestamp": "2026-01-10 18:15:39,282", "module": "main_recs", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_main_recs.json setup completed"}
-{"timestamp": "2026-01-10 18:15:39,283", "module": "main_recs", "level": "INFO", "message": "STEP 1: Loading environment variables"}
-{"timestamp": "2026-01-10 18:15:39,287", "module": "main_recs", "level": "INFO", "message": "DONE: Loading environment variables completed successfully"}
-{"timestamp": "2026-01-10 18:15:39,287", "module": "main_recs", "level": "INFO", "message": "INFO: Data directory: ./data"}
-{"timestamp": "2026-01-10 18:15:39,287", "module": "main_recs", "level": "INFO", "message": "INFO: Models directory: ./models"}
-{"timestamp": "2026-01-10 18:15:39,287", "module": "main_recs", "level": "INFO", "message": "INFO: Results directory: ./results"}
-{"timestamp": "2026-01-10 18:15:39,287", "module": "main_recs", "level": "INFO", "message": "STEP 1 DONE"}
-{"timestamp": "2026-01-10 18:15:39,287", "module": "main_recs", "level": "INFO", "message": "STEP 2: Skipping raw data download (--skip-download flag)"}
-{"timestamp": "2026-01-10 18:15:39,287", "module": "main_recs", "level": "INFO", "message": "STEP 2 DONE"}
-{"timestamp": "2026-01-10 18:15:39,287", "module": "main_recs", "level": "INFO", "message": "STEP 3: Preprocessing data"}
-{"timestamp": "2026-01-10 18:17:06,686", "module": "main_recs", "level": "INFO", "message": "STEP 3 DONE"}
-{"timestamp": "2026-01-10 18:17:06,687", "module": "main_recs", "level": "INFO", "message": "STEP 4: Feature Engineering"}
-{"timestamp": "2026-01-10 18:18:06,829", "module": "main_recs", "level": "INFO", "message": "STEP 4 DONE"}
-{"timestamp": "2026-01-10 18:18:06,829", "module": "main_recs", "level": "INFO", "message": "STEP 5: Splitting data into train/test sets"}
-{"timestamp": "2026-01-10 18:18:13,242", "module": "main_recs", "level": "INFO", "message": "STEP 5 DONE"}
-{"timestamp": "2026-01-10 18:18:13,242", "module": "main_recs", "level": "INFO", "message": "STEP 6: Modelling OvR Grouped CatBoost"}
-{"timestamp": "2026-01-10 18:20:57,482", "module": "main_recs", "level": "ERROR", "message": "ERROR: Modelling OvR Grouped CatBoost failed: Only one of parameters ['verbose', 'logging_level', 'verbose_eval', 'silent'] should be set"}
-{"timestamp": "2026-01-10 23:41:05,918", "module": "main_recs", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_main_recs.json setup completed"}
-{"timestamp": "2026-01-10 23:41:05,919", "module": "main_recs", "level": "INFO", "message": "STEP 1: Loading environment variables"}
-{"timestamp": "2026-01-10 23:41:05,923", "module": "main_recs", "level": "INFO", "message": "DONE: Loading environment variables completed successfully"}
-{"timestamp": "2026-01-10 23:41:05,923", "module": "main_recs", "level": "INFO", "message": "INFO: Data directory: ./data"}
-{"timestamp": "2026-01-10 23:41:05,923", "module": "main_recs", "level": "INFO", "message": "INFO: Models directory: ./models"}
-{"timestamp": "2026-01-10 23:41:05,923", "module": "main_recs", "level": "INFO", "message": "INFO: Results directory: ./results"}
-{"timestamp": "2026-01-10 23:41:05,923", "module": "main_recs", "level": "INFO", "message": "STEP 1 DONE"}
-{"timestamp": "2026-01-10 23:41:05,924", "module": "main_recs", "level": "INFO", "message": "STEP 2: Skipping raw data download (--skip-download flag)"}
-{"timestamp": "2026-01-10 23:41:05,924", "module": "main_recs", "level": "INFO", "message": "STEP 2 DONE"}
-{"timestamp": "2026-01-10 23:41:05,924", "module": "main_recs", "level": "INFO", "message": "STEP 3: Preprocessing data"}
-{"timestamp": "2026-01-10 23:42:09,411", "module": "main_recs", "level": "INFO", "message": "STEP 3 DONE"}
-{"timestamp": "2026-01-10 23:42:09,411", "module": "main_recs", "level": "INFO", "message": "STEP 4: Feature Engineering"}
-{"timestamp": "2026-01-10 23:42:59,600", "module": "main_recs", "level": "INFO", "message": "STEP 4 DONE"}
-{"timestamp": "2026-01-10 23:42:59,600", "module": "main_recs", "level": "INFO", "message": "STEP 5: Splitting data into train/test sets"}
-{"timestamp": "2026-01-10 23:43:05,115", "module": "main_recs", "level": "INFO", "message": "STEP 5 DONE"}
-{"timestamp": "2026-01-10 23:43:05,115", "module": "main_recs", "level": "INFO", "message": "STEP 6: Modelling OvR Grouped CatBoost"}
-{"timestamp": "2026-01-11 00:01:17,813", "module": "main_recs", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_main_recs.json setup completed"}
-{"timestamp": "2026-01-11 00:01:17,814", "module": "main_recs", "level": "INFO", "message": "STEP 1: Loading environment variables"}
-{"timestamp": "2026-01-11 00:01:17,817", "module": "main_recs", "level": "INFO", "message": "DONE: Loading environment variables completed successfully"}
-{"timestamp": "2026-01-11 00:01:17,817", "module": "main_recs", "level": "INFO", "message": "INFO: Data directory: ./data"}
-{"timestamp": "2026-01-11 00:01:17,817", "module": "main_recs", "level": "INFO", "message": "INFO: Models directory: ./models"}
-{"timestamp": "2026-01-11 00:01:17,818", "module": "main_recs", "level": "INFO", "message": "INFO: Results directory: ./results"}
-{"timestamp": "2026-01-11 00:01:17,818", "module": "main_recs", "level": "INFO", "message": "STEP 1 DONE"}
-{"timestamp": "2026-01-11 00:01:17,818", "module": "main_recs", "level": "INFO", "message": "STEP 2: Skipping raw data download (--skip-download flag)"}
-{"timestamp": "2026-01-11 00:01:17,818", "module": "main_recs", "level": "INFO", "message": "STEP 2 DONE"}
-{"timestamp": "2026-01-11 00:01:17,818", "module": "main_recs", "level": "INFO", "message": "STEP 3: Preprocessing data"}
-{"timestamp": "2026-01-11 00:02:19,869", "module": "main_recs", "level": "INFO", "message": "STEP 3 DONE"}
-{"timestamp": "2026-01-11 00:02:19,870", "module": "main_recs", "level": "INFO", "message": "STEP 4: Feature Engineering"}
-{"timestamp": "2026-01-11 00:03:11,649", "module": "main_recs", "level": "INFO", "message": "STEP 4 DONE"}
-{"timestamp": "2026-01-11 00:03:11,649", "module": "main_recs", "level": "INFO", "message": "STEP 5: Splitting data into train/test sets"}
-{"timestamp": "2026-01-11 00:03:17,152", "module": "main_recs", "level": "INFO", "message": "STEP 5 DONE"}
-{"timestamp": "2026-01-11 00:03:17,152", "module": "main_recs", "level": "INFO", "message": "STEP 6: Modelling OvR Grouped CatBoost"}
-{"timestamp": "2026-01-11 01:35:48,152", "module": "main_recs", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_main_recs.json setup completed"}
-{"timestamp": "2026-01-11 01:35:48,153", "module": "main_recs", "level": "INFO", "message": "STEP 1: Loading environment variables"}
-{"timestamp": "2026-01-11 01:35:48,156", "module": "main_recs", "level": "INFO", "message": "DONE: Loading environment variables completed successfully"}
-{"timestamp": "2026-01-11 01:35:48,156", "module": "main_recs", "level": "INFO", "message": "INFO: Data directory: ./data"}
-{"timestamp": "2026-01-11 01:35:48,156", "module": "main_recs", "level": "INFO", "message": "INFO: Models directory: ./models"}
-{"timestamp": "2026-01-11 01:35:48,157", "module": "main_recs", "level": "INFO", "message": "INFO: Results directory: ./results"}
-{"timestamp": "2026-01-11 01:35:48,157", "module": "main_recs", "level": "INFO", "message": "STEP 1 DONE"}
-{"timestamp": "2026-01-11 01:35:48,157", "module": "main_recs", "level": "INFO", "message": "STEP 2: Skipping raw data download (--skip-download flag)"}
-{"timestamp": "2026-01-11 01:35:48,157", "module": "main_recs", "level": "INFO", "message": "STEP 2 DONE"}
-{"timestamp": "2026-01-11 01:35:48,157", "module": "main_recs", "level": "INFO", "message": "STEP 3: Preprocessing data"}
-{"timestamp": "2026-01-11 01:36:45,569", "module": "main_recs", "level": "INFO", "message": "STEP 3 DONE"}
-{"timestamp": "2026-01-11 01:36:45,569", "module": "main_recs", "level": "INFO", "message": "STEP 4: Feature Engineering"}
-{"timestamp": "2026-01-11 01:37:37,932", "module": "main_recs", "level": "INFO", "message": "STEP 4 DONE"}
-{"timestamp": "2026-01-11 01:37:37,933", "module": "main_recs", "level": "INFO", "message": "STEP 5: Splitting data into train/test sets"}
-{"timestamp": "2026-01-11 01:37:43,426", "module": "main_recs", "level": "INFO", "message": "STEP 5 DONE"}
-{"timestamp": "2026-01-11 01:37:43,426", "module": "main_recs", "level": "INFO", "message": "STEP 6: Modelling OvR Grouped CatBoost"}
-{"timestamp": "2026-01-11 01:52:33,487", "module": "main_recs", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_main_recs.json setup completed"}
-{"timestamp": "2026-01-11 01:52:33,488", "module": "main_recs", "level": "INFO", "message": "STEP 1: Loading environment variables"}
-{"timestamp": "2026-01-11 01:52:33,492", "module": "main_recs", "level": "INFO", "message": "DONE: Loading environment variables completed successfully"}
-{"timestamp": "2026-01-11 01:52:33,492", "module": "main_recs", "level": "INFO", "message": "INFO: Data directory: ./data"}
-{"timestamp": "2026-01-11 01:52:33,492", "module": "main_recs", "level": "INFO", "message": "INFO: Models directory: ./models"}
-{"timestamp": "2026-01-11 01:52:33,492", "module": "main_recs", "level": "INFO", "message": "INFO: Results directory: ./results"}
-{"timestamp": "2026-01-11 01:52:33,492", "module": "main_recs", "level": "INFO", "message": "STEP 1 DONE"}
-{"timestamp": "2026-01-11 01:52:33,492", "module": "main_recs", "level": "INFO", "message": "STEP 2: Skipping raw data download (--skip-download flag)"}
-{"timestamp": "2026-01-11 01:52:33,492", "module": "main_recs", "level": "INFO", "message": "STEP 2 DONE"}
-{"timestamp": "2026-01-11 01:52:33,492", "module": "main_recs", "level": "INFO", "message": "STEP 3: Preprocessing data"}
-{"timestamp": "2026-01-11 01:53:23,405", "module": "main_recs", "level": "INFO", "message": "STEP 3 DONE"}
-{"timestamp": "2026-01-11 01:53:23,405", "module": "main_recs", "level": "INFO", "message": "STEP 4: Feature Engineering"}
-{"timestamp": "2026-01-11 01:54:15,744", "module": "main_recs", "level": "INFO", "message": "STEP 4 DONE"}
-{"timestamp": "2026-01-11 01:54:15,744", "module": "main_recs", "level": "INFO", "message": "STEP 5: Splitting data into train/test sets"}
-{"timestamp": "2026-01-11 01:54:21,284", "module": "main_recs", "level": "INFO", "message": "STEP 5 DONE"}
-{"timestamp": "2026-01-11 01:54:21,284", "module": "main_recs", "level": "INFO", "message": "STEP 6: Modelling OvR Grouped CatBoost"}
-{"timestamp": "2026-01-11 02:44:02,224", "module": "main_recs", "level": "INFO", "message": "STEP 6 DONE"}
-{"timestamp": "2026-01-11 02:44:02,224", "module": "main_recs", "level": "INFO", "message": "STEP 7: Evaluating OvR Grouped CatBoost"}
-{"timestamp": "2026-01-11 02:50:25,277", "module": "main_recs", "level": "INFO", "message": "Mean AUC: 0.9010"}
-{"timestamp": "2026-01-11 02:50:25,277", "module": "main_recs", "level": "INFO", "message": "STEP 7 DONE"}
-{"timestamp": "2026-01-11 02:50:25,278", "module": "main_recs", "level": "INFO", "message": "STEP 8: Generating recommendations and saving model"}
-{"timestamp": "2026-01-11 02:50:25,278", "module": "main_recs", "level": "ERROR", "message": "ERROR: Generating recommendations failed: OvRGroupModel.predict_top_k() takes from 2 to 3 positional arguments but 4 were given"}
+{"timestamp": "2026-01-12 12:39:23,675", "module": "main_recs", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_main_recs.json setup completed"}
+{"timestamp": "2026-01-12 12:39:23,677", "module": "main_recs", "level": "INFO", "message": "STEP 1: Loading environment variables"}
+{"timestamp": "2026-01-12 12:39:23,688", "module": "main_recs", "level": "INFO", "message": "DONE: Loading environment variables completed successfully"}
+{"timestamp": "2026-01-12 12:39:23,688", "module": "main_recs", "level": "INFO", "message": "INFO: Data directory: ./data"}
+{"timestamp": "2026-01-12 12:39:23,688", "module": "main_recs", "level": "INFO", "message": "INFO: Models directory: ./models"}
+{"timestamp": "2026-01-12 12:39:23,688", "module": "main_recs", "level": "INFO", "message": "INFO: Results directory: ./results"}
+{"timestamp": "2026-01-12 12:39:23,689", "module": "main_recs", "level": "INFO", "message": "STEP 1 DONE"}
+{"timestamp": "2026-01-12 12:39:23,689", "module": "main_recs", "level": "INFO", "message": "STEP 2: Skipping raw data download (--skip-download flag)"}
+{"timestamp": "2026-01-12 12:39:23,689", "module": "main_recs", "level": "INFO", "message": "STEP 2 DONE"}
+{"timestamp": "2026-01-12 12:39:23,689", "module": "main_recs", "level": "INFO", "message": "STEP 3: Preprocessing data"}
+{"timestamp": "2026-01-12 12:40:09,072", "module": "main_recs", "level": "INFO", "message": "Memory cleanup after preprocessing: 0 objects collected"}
+{"timestamp": "2026-01-12 12:40:09,072", "module": "main_recs", "level": "INFO", "message": "STEP 3 DONE"}
+{"timestamp": "2026-01-12 12:40:09,072", "module": "main_recs", "level": "INFO", "message": "STEP 4: Feature Engineering"}
+{"timestamp": "2026-01-12 12:40:48,627", "module": "main_recs", "level": "INFO", "message": "Memory cleanup after feature_engineering: 0 objects collected"}
+{"timestamp": "2026-01-12 12:40:48,628", "module": "main_recs", "level": "INFO", "message": "STEP 4 DONE"}
+{"timestamp": "2026-01-12 12:40:48,628", "module": "main_recs", "level": "INFO", "message": "STEP 5: Target Engineering"}
+{"timestamp": "2026-01-12 12:41:18,328", "module": "main_recs", "level": "INFO", "message": "Memory cleanup after target_engineering: 0 objects collected"}
+{"timestamp": "2026-01-12 12:41:18,328", "module": "main_recs", "level": "INFO", "message": "STEP 5 DONE"}
+{"timestamp": "2026-01-12 12:41:18,332", "module": "main_recs", "level": "INFO", "message": "STEP 6: Splitting data into train/test sets"}
+{"timestamp": "2026-01-12 12:41:23,970", "module": "main_recs", "level": "INFO", "message": "Memory cleanup after train_test_split: 0 objects collected"}
+{"timestamp": "2026-01-12 12:41:23,970", "module": "main_recs", "level": "INFO", "message": "STEP 6 DONE"}
+{"timestamp": "2026-01-12 12:41:23,970", "module": "main_recs", "level": "INFO", "message": "STEP 7: Modelling OvR Grouped CatBoost"}
+{"timestamp": "2026-01-12 13:25:50,343", "module": "main_recs", "level": "INFO", "message": "Memory cleanup after model_training: 0 objects collected"}
+{"timestamp": "2026-01-12 13:25:50,343", "module": "main_recs", "level": "INFO", "message": "STEP 7 DONE"}
+{"timestamp": "2026-01-12 13:25:50,343", "module": "main_recs", "level": "INFO", "message": "STEP 8: Evaluating OvR Grouped CatBoost"}
+{"timestamp": "2026-01-12 13:26:09,039", "module": "main_recs", "level": "INFO", "message": "Mean AUC: 0.8326"}
+{"timestamp": "2026-01-12 13:26:09,127", "module": "main_recs", "level": "INFO", "message": "Memory cleanup after evaluation: 33 objects collected"}
+{"timestamp": "2026-01-12 13:26:09,127", "module": "main_recs", "level": "INFO", "message": "STEP 8 DONE"}
+{"timestamp": "2026-01-12 13:26:09,127", "module": "main_recs", "level": "INFO", "message": "STEP 9: Generating recommendations and saving model"}
+{"timestamp": "2026-01-12 13:26:09,205", "module": "main_recs", "level": "INFO", "message": "Generated recommendations for 100 customers"}
+{"timestamp": "2026-01-12 13:26:09,331", "module": "main_recs", "level": "INFO", "message": "Model saved to: models/ovr_grouped_santander"}
+{"timestamp": "2026-01-12 13:26:09,426", "module": "main_recs", "level": "INFO", "message": "Memory cleanup after final_cleanup: 132 objects collected"}
+{"timestamp": "2026-01-12 13:26:09,426", "module": "main_recs", "level": "INFO", "message": "STEP 9 DONE"}
+{"timestamp": "2026-01-12 13:26:09,426", "module": "main_recs", "level": "INFO", "message": "Pipeline completed successfully!"}

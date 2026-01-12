@@ -24,7 +24,7 @@ from prometheus_fastapi_instrumentator import Instrumentator
 
 from src.logging_setup import setup_logging
 from src.app.preprocess_data import DataHandler
-from src.app.get_predictions import ModelHandler
+from src.app.get_prediction import ModelHandler
 from src.app.validate_query import QueryValidator
 
 

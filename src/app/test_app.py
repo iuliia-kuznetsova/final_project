@@ -56,12 +56,12 @@ def send_request(i, row):
     '''
         Sends one POST request to the FastAPI prediction API using data from a single row.
         Args:
-            i (int): Row number (used for apartment_id).
-            row (pd.Series): One row from the DataFrame containing model parameters.
+            customer_id (int) - customer identifier;
+            row (pd.Series) - one row from the DataFrame.
     '''
     payload = {
-        'apartment_id': f'APT_{i}',
-        'model_params': row.to_dict()
+        'customer_id': f'APT_{i}',
+        'data': row.to_dict()
     }
 
     try:
@@ -73,19 +73,19 @@ def send_request(i, row):
         # Handle the response
         if response.status_code == 200:
             data = response.json()
-            print(f"[{i:04d}] Done | price={data['price']:.2f} | request_duration={duration:.3f}s")
+            logger.info(f"[{i:04d}] Done | price={data['price']:.2f} | request_duration={duration:.3f}s")
         else:
-            print(f'[{i:04d}] Failed | response_code={response.status_code} | {response.text[:100]}')
+            logger.error(f'[{i:04d}] Failed | response_code={response.status_code} | {response.text[:100]}')
 
     except requests.exceptions.RequestException as e:
-        print(f'[{i:04d}] Request error: {e}')
+        logger.error(f'[{i:04d}] Request error: {e}')
 
 # ---------- Main ---------- #
 if __name__ == '__main__':
 
-    logger.info(f'Running limited test for {args.limit} requests')
+    logger.info(f'Running application test for {args.limit} requests')
     generate_test_data()
     for i, (_, row) in enumerate(test_data.head(args.limit).iterrows(), 1):
-        send_request(i, row) # i as an apartment id of test_data
+        send_request(i, row) # i as a customer id of test_data
         time.sleep(args.sleep)
-    logger.info('Test finished successfully')
+    logger.info('Test finished')

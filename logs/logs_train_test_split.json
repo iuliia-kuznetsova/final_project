@@ -1,176 +1,23 @@
-{"timestamp": "2026-01-10 15:04:20,495", "module": "train_test_split", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_train_test_split.json setup completed"}
-{"timestamp": "2026-01-10 15:07:14,066", "module": "train_test_split", "level": "INFO", "message": "Starting train/test split pipeline"}
-{"timestamp": "2026-01-10 15:07:14,066", "module": "train_test_split", "level": "INFO", "message": "Starting train/test split pipeline"}
-{"timestamp": "2026-01-10 15:07:16,330", "module": "train_test_split", "level": "INFO", "message": "Loaded data from: ./data/data_preprocessed.parquet"}
-{"timestamp": "2026-01-10 15:07:16,331", "module": "train_test_split", "level": "INFO", "message": "Total rows: 12,677,703, Total columns: 106"}
-{"timestamp": "2026-01-10 15:07:16,430", "module": "train_test_split", "level": "INFO", "message": "Date range: 2015-01-28 to 2016-04-28 (16 months)"}
-{"timestamp": "2026-01-10 15:07:16,431", "module": "train_test_split", "level": "INFO", "message": "Train dates: 2015-01-28 to 2016-03-28 (15 months)"}
-{"timestamp": "2026-01-10 15:07:16,431", "module": "train_test_split", "level": "INFO", "message": "Test dates: 2016-04-28 to 2016-04-28 (1 months)"}
-{"timestamp": "2026-01-10 15:07:16,790", "module": "train_test_split", "level": "INFO", "message": "Train rows: 11,751,040"}
-{"timestamp": "2026-01-10 15:07:16,790", "module": "train_test_split", "level": "INFO", "message": "Test rows: 926,663"}
-{"timestamp": "2026-01-10 15:07:16,791", "module": "train_test_split", "level": "INFO", "message": "Excluded datetime columns from features: ['fecha_dato']"}
-{"timestamp": "2026-01-10 15:07:16,791", "module": "train_test_split", "level": "INFO", "message": "Number of features: 80"}
-{"timestamp": "2026-01-10 15:07:16,791", "module": "train_test_split", "level": "INFO", "message": "Number of targets: 24"}
-{"timestamp": "2026-01-10 15:07:16,823", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test split completed"}
-{"timestamp": "2026-01-10 15:07:20,942", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test splits saved to: ./data/"}
-{"timestamp": "2026-01-10 15:07:20,956", "module": "train_test_split", "level": "INFO", "message": "Train/test split completed successfully"}
-{"timestamp": "2026-01-10 15:29:04,724", "module": "train_test_split", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_train_test_split.json setup completed"}
-{"timestamp": "2026-01-10 15:31:50,321", "module": "train_test_split", "level": "INFO", "message": "Starting train/test split pipeline"}
-{"timestamp": "2026-01-10 15:31:50,322", "module": "train_test_split", "level": "INFO", "message": "Starting train/test split pipeline"}
-{"timestamp": "2026-01-10 15:31:52,448", "module": "train_test_split", "level": "INFO", "message": "Loaded data from: ./data/data_preprocessed.parquet"}
-{"timestamp": "2026-01-10 15:31:52,448", "module": "train_test_split", "level": "INFO", "message": "Total rows: 12,677,703, Total columns: 106"}
-{"timestamp": "2026-01-10 15:31:52,544", "module": "train_test_split", "level": "INFO", "message": "Date range: 2015-01-28 to 2016-04-28 (16 months)"}
-{"timestamp": "2026-01-10 15:31:52,544", "module": "train_test_split", "level": "INFO", "message": "Train dates: 2015-01-28 to 2016-03-28 (15 months)"}
-{"timestamp": "2026-01-10 15:31:52,544", "module": "train_test_split", "level": "INFO", "message": "Test dates: 2016-04-28 to 2016-04-28 (1 months)"}
-{"timestamp": "2026-01-10 15:31:52,843", "module": "train_test_split", "level": "INFO", "message": "Train rows: 11,751,040"}
-{"timestamp": "2026-01-10 15:31:52,844", "module": "train_test_split", "level": "INFO", "message": "Test rows: 926,663"}
-{"timestamp": "2026-01-10 15:31:52,844", "module": "train_test_split", "level": "INFO", "message": "Excluded datetime columns from features: ['fecha_dato']"}
-{"timestamp": "2026-01-10 15:31:52,844", "module": "train_test_split", "level": "INFO", "message": "Number of features: 80"}
-{"timestamp": "2026-01-10 15:31:52,845", "module": "train_test_split", "level": "INFO", "message": "Number of targets: 24"}
-{"timestamp": "2026-01-10 15:31:52,870", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test split completed"}
-{"timestamp": "2026-01-10 15:31:56,729", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test splits saved to: ./data/"}
-{"timestamp": "2026-01-10 15:31:56,743", "module": "train_test_split", "level": "INFO", "message": "Train/test split completed successfully"}
-{"timestamp": "2026-01-10 15:38:11,831", "module": "train_test_split", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_train_test_split.json setup completed"}
-{"timestamp": "2026-01-10 15:41:20,323", "module": "train_test_split", "level": "INFO", "message": "Starting train/test split pipeline"}
-{"timestamp": "2026-01-10 15:41:20,324", "module": "train_test_split", "level": "INFO", "message": "Starting train/test split pipeline"}
-{"timestamp": "2026-01-10 15:41:22,508", "module": "train_test_split", "level": "INFO", "message": "Loaded data from: ./data/data_preprocessed.parquet"}
-{"timestamp": "2026-01-10 15:41:22,508", "module": "train_test_split", "level": "INFO", "message": "Total rows: 12,677,703, Total columns: 106"}
-{"timestamp": "2026-01-10 15:41:22,621", "module": "train_test_split", "level": "INFO", "message": "Date range: 2015-01-28 to 2016-04-28 (16 months)"}
-{"timestamp": "2026-01-10 15:41:22,621", "module": "train_test_split", "level": "INFO", "message": "Train dates: 2015-01-28 to 2016-03-28 (15 months)"}
-{"timestamp": "2026-01-10 15:41:22,621", "module": "train_test_split", "level": "INFO", "message": "Test dates: 2016-04-28 to 2016-04-28 (1 months)"}
-{"timestamp": "2026-01-10 15:41:22,941", "module": "train_test_split", "level": "INFO", "message": "Train rows: 11,751,040"}
-{"timestamp": "2026-01-10 15:41:22,941", "module": "train_test_split", "level": "INFO", "message": "Test rows: 926,663"}
-{"timestamp": "2026-01-10 15:41:22,942", "module": "train_test_split", "level": "INFO", "message": "Excluded datetime columns from features: ['fecha_dato']"}
-{"timestamp": "2026-01-10 15:41:22,942", "module": "train_test_split", "level": "INFO", "message": "Number of features: 80"}
-{"timestamp": "2026-01-10 15:41:22,942", "module": "train_test_split", "level": "INFO", "message": "Number of targets: 24"}
-{"timestamp": "2026-01-10 15:41:22,969", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test split completed"}
-{"timestamp": "2026-01-10 15:41:26,913", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test splits saved to: ./data/"}
-{"timestamp": "2026-01-10 15:41:26,925", "module": "train_test_split", "level": "INFO", "message": "Train/test split completed successfully"}
-{"timestamp": "2026-01-10 15:52:37,531", "module": "train_test_split", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_train_test_split.json setup completed"}
-{"timestamp": "2026-01-10 15:55:30,352", "module": "train_test_split", "level": "INFO", "message": "Starting train/test split pipeline"}
-{"timestamp": "2026-01-10 15:55:30,352", "module": "train_test_split", "level": "INFO", "message": "Starting train/test split pipeline"}
-{"timestamp": "2026-01-10 15:55:32,578", "module": "train_test_split", "level": "INFO", "message": "Loaded data from: ./data/data_preprocessed.parquet"}
-{"timestamp": "2026-01-10 15:55:32,578", "module": "train_test_split", "level": "INFO", "message": "Total rows: 12,677,703, Total columns: 106"}
-{"timestamp": "2026-01-10 15:55:32,695", "module": "train_test_split", "level": "INFO", "message": "Date range: 2015-01-28 to 2016-04-28 (16 months)"}
-{"timestamp": "2026-01-10 15:55:32,696", "module": "train_test_split", "level": "INFO", "message": "Train dates: 2015-01-28 to 2016-03-28 (15 months)"}
-{"timestamp": "2026-01-10 15:55:32,696", "module": "train_test_split", "level": "INFO", "message": "Test dates: 2016-04-28 to 2016-04-28 (1 months)"}
-{"timestamp": "2026-01-10 15:55:33,033", "module": "train_test_split", "level": "INFO", "message": "Train rows: 11,751,040"}
-{"timestamp": "2026-01-10 15:55:33,033", "module": "train_test_split", "level": "INFO", "message": "Test rows: 926,663"}
-{"timestamp": "2026-01-10 15:55:33,034", "module": "train_test_split", "level": "INFO", "message": "Excluded datetime columns from features: ['fecha_dato']"}
-{"timestamp": "2026-01-10 15:55:33,034", "module": "train_test_split", "level": "INFO", "message": "Number of features: 80"}
-{"timestamp": "2026-01-10 15:55:33,034", "module": "train_test_split", "level": "INFO", "message": "Number of targets: 24"}
-{"timestamp": "2026-01-10 15:55:33,060", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test split completed"}
-{"timestamp": "2026-01-10 15:55:36,953", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test splits saved to: ./data/"}
-{"timestamp": "2026-01-10 15:55:36,965", "module": "train_test_split", "level": "INFO", "message": "Train/test split completed successfully"}
-{"timestamp": "2026-01-10 16:09:07,186", "module": "train_test_split", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_train_test_split.json setup completed"}
-{"timestamp": "2026-01-10 16:12:02,844", "module": "train_test_split", "level": "INFO", "message": "Starting train/test split pipeline"}
-{"timestamp": "2026-01-10 16:12:02,844", "module": "train_test_split", "level": "INFO", "message": "Starting train/test split pipeline"}
-{"timestamp": "2026-01-10 16:12:05,032", "module": "train_test_split", "level": "INFO", "message": "Loaded data from: ./data/data_preprocessed.parquet"}
-{"timestamp": "2026-01-10 16:12:05,033", "module": "train_test_split", "level": "INFO", "message": "Total rows: 12,677,703, Total columns: 106"}
-{"timestamp": "2026-01-10 16:12:05,139", "module": "train_test_split", "level": "INFO", "message": "Date range: 2015-01-28 to 2016-04-28 (16 months)"}
-{"timestamp": "2026-01-10 16:12:05,140", "module": "train_test_split", "level": "INFO", "message": "Train dates: 2015-01-28 to 2016-03-28 (15 months)"}
-{"timestamp": "2026-01-10 16:12:05,140", "module": "train_test_split", "level": "INFO", "message": "Test dates: 2016-04-28 to 2016-04-28 (1 months)"}
-{"timestamp": "2026-01-10 16:12:05,477", "module": "train_test_split", "level": "INFO", "message": "Train rows: 11,751,040"}
-{"timestamp": "2026-01-10 16:12:05,477", "module": "train_test_split", "level": "INFO", "message": "Test rows: 926,663"}
-{"timestamp": "2026-01-10 16:12:05,478", "module": "train_test_split", "level": "INFO", "message": "Excluded datetime columns from features: ['fecha_dato']"}
-{"timestamp": "2026-01-10 16:12:05,478", "module": "train_test_split", "level": "INFO", "message": "Number of features: 80"}
-{"timestamp": "2026-01-10 16:12:05,478", "module": "train_test_split", "level": "INFO", "message": "Number of targets: 24"}
-{"timestamp": "2026-01-10 16:12:05,505", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test split completed"}
-{"timestamp": "2026-01-10 16:12:09,428", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test splits saved to: ./data/"}
-{"timestamp": "2026-01-10 16:12:09,440", "module": "train_test_split", "level": "INFO", "message": "Train/test split completed successfully"}
-{"timestamp": "2026-01-10 16:32:46,900", "module": "train_test_split", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_train_test_split.json setup completed"}
-{"timestamp": "2026-01-10 16:35:30,455", "module": "train_test_split", "level": "INFO", "message": "Starting train/test split pipeline"}
-{"timestamp": "2026-01-10 16:35:30,455", "module": "train_test_split", "level": "INFO", "message": "Starting train/test split pipeline"}
-{"timestamp": "2026-01-10 16:35:32,632", "module": "train_test_split", "level": "INFO", "message": "Loaded data from: ./data/data_preprocessed.parquet"}
-{"timestamp": "2026-01-10 16:35:32,633", "module": "train_test_split", "level": "INFO", "message": "Total rows: 12,677,703, Total columns: 106"}
-{"timestamp": "2026-01-10 16:35:32,729", "module": "train_test_split", "level": "INFO", "message": "Date range: 2015-01-28 to 2016-04-28 (16 months)"}
-{"timestamp": "2026-01-10 16:35:32,729", "module": "train_test_split", "level": "INFO", "message": "Train dates: 2015-01-28 to 2016-03-28 (15 months)"}
-{"timestamp": "2026-01-10 16:35:32,729", "module": "train_test_split", "level": "INFO", "message": "Test dates: 2016-04-28 to 2016-04-28 (1 months)"}
-{"timestamp": "2026-01-10 16:35:33,037", "module": "train_test_split", "level": "INFO", "message": "Train rows: 11,751,040"}
-{"timestamp": "2026-01-10 16:35:33,037", "module": "train_test_split", "level": "INFO", "message": "Test rows: 926,663"}
-{"timestamp": "2026-01-10 16:35:33,038", "module": "train_test_split", "level": "INFO", "message": "Excluded datetime columns from features: ['fecha_dato']"}
-{"timestamp": "2026-01-10 16:35:33,038", "module": "train_test_split", "level": "INFO", "message": "Number of features: 80"}
-{"timestamp": "2026-01-10 16:35:33,038", "module": "train_test_split", "level": "INFO", "message": "Number of targets: 24"}
-{"timestamp": "2026-01-10 16:35:33,063", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test split completed"}
-{"timestamp": "2026-01-10 16:35:36,923", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test splits saved to: ./data/"}
-{"timestamp": "2026-01-10 16:35:36,939", "module": "train_test_split", "level": "INFO", "message": "Train/test split completed successfully"}
-{"timestamp": "2026-01-10 18:15:33,835", "module": "train_test_split", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_train_test_split.json setup completed"}
-{"timestamp": "2026-01-10 18:18:06,829", "module": "train_test_split", "level": "INFO", "message": "Starting train/test split pipeline"}
-{"timestamp": "2026-01-10 18:18:06,829", "module": "train_test_split", "level": "INFO", "message": "Starting train/test split pipeline"}
-{"timestamp": "2026-01-10 18:18:08,966", "module": "train_test_split", "level": "INFO", "message": "Loaded data from: ./data/data_preprocessed.parquet"}
-{"timestamp": "2026-01-10 18:18:08,966", "module": "train_test_split", "level": "INFO", "message": "Total rows: 12,677,703, Total columns: 106"}
-{"timestamp": "2026-01-10 18:18:09,060", "module": "train_test_split", "level": "INFO", "message": "Date range: 2015-01-28 to 2016-04-28 (16 months)"}
-{"timestamp": "2026-01-10 18:18:09,060", "module": "train_test_split", "level": "INFO", "message": "Train dates: 2015-01-28 to 2016-03-28 (15 months)"}
-{"timestamp": "2026-01-10 18:18:09,061", "module": "train_test_split", "level": "INFO", "message": "Test dates: 2016-04-28 to 2016-04-28 (1 months)"}
-{"timestamp": "2026-01-10 18:18:09,355", "module": "train_test_split", "level": "INFO", "message": "Train rows: 11,751,040"}
-{"timestamp": "2026-01-10 18:18:09,356", "module": "train_test_split", "level": "INFO", "message": "Test rows: 926,663"}
-{"timestamp": "2026-01-10 18:18:09,356", "module": "train_test_split", "level": "INFO", "message": "Excluded datetime columns from features: ['fecha_dato']"}
-{"timestamp": "2026-01-10 18:18:09,356", "module": "train_test_split", "level": "INFO", "message": "Number of features: 80"}
-{"timestamp": "2026-01-10 18:18:09,356", "module": "train_test_split", "level": "INFO", "message": "Number of targets: 24"}
-{"timestamp": "2026-01-10 18:18:09,382", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test split completed"}
-{"timestamp": "2026-01-10 18:18:13,219", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test splits saved to: ./data/"}
-{"timestamp": "2026-01-10 18:18:13,232", "module": "train_test_split", "level": "INFO", "message": "Train/test split completed successfully"}
-{"timestamp": "2026-01-10 23:41:03,311", "module": "train_test_split", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_train_test_split.json setup completed"}
-{"timestamp": "2026-01-10 23:42:59,600", "module": "train_test_split", "level": "INFO", "message": "Starting train/test split pipeline"}
-{"timestamp": "2026-01-10 23:42:59,601", "module": "train_test_split", "level": "INFO", "message": "Starting train/test split pipeline"}
-{"timestamp": "2026-01-10 23:43:01,447", "module": "train_test_split", "level": "INFO", "message": "Loaded data from: ./data/data_preprocessed.parquet"}
-{"timestamp": "2026-01-10 23:43:01,447", "module": "train_test_split", "level": "INFO", "message": "Total rows: 12,677,703, Total columns: 106"}
-{"timestamp": "2026-01-10 23:43:01,538", "module": "train_test_split", "level": "INFO", "message": "Date range: 2015-01-28 to 2016-04-28 (16 months)"}
-{"timestamp": "2026-01-10 23:43:01,538", "module": "train_test_split", "level": "INFO", "message": "Train dates: 2015-01-28 to 2016-03-28 (15 months)"}
-{"timestamp": "2026-01-10 23:43:01,538", "module": "train_test_split", "level": "INFO", "message": "Test dates: 2016-04-28 to 2016-04-28 (1 months)"}
-{"timestamp": "2026-01-10 23:43:01,812", "module": "train_test_split", "level": "INFO", "message": "Train rows: 11,751,040"}
-{"timestamp": "2026-01-10 23:43:01,813", "module": "train_test_split", "level": "INFO", "message": "Test rows: 926,663"}
-{"timestamp": "2026-01-10 23:43:01,813", "module": "train_test_split", "level": "INFO", "message": "Excluded datetime columns from features: ['fecha_dato']"}
-{"timestamp": "2026-01-10 23:43:01,814", "module": "train_test_split", "level": "INFO", "message": "Number of features: 80"}
-{"timestamp": "2026-01-10 23:43:01,814", "module": "train_test_split", "level": "INFO", "message": "Number of targets: 24"}
-{"timestamp": "2026-01-10 23:43:01,834", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test split completed"}
-{"timestamp": "2026-01-10 23:43:05,096", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test splits saved to: ./data/"}
-{"timestamp": "2026-01-10 23:43:05,107", "module": "train_test_split", "level": "INFO", "message": "Train/test split completed successfully"}
-{"timestamp": "2026-01-11 00:01:15,485", "module": "train_test_split", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_train_test_split.json setup completed"}
-{"timestamp": "2026-01-11 00:03:11,649", "module": "train_test_split", "level": "INFO", "message": "Starting train/test split pipeline"}
-{"timestamp": "2026-01-11 00:03:11,649", "module": "train_test_split", "level": "INFO", "message": "Starting train/test split pipeline"}
-{"timestamp": "2026-01-11 00:03:13,494", "module": "train_test_split", "level": "INFO", "message": "Loaded data from: ./data/data_preprocessed.parquet"}
-{"timestamp": "2026-01-11 00:03:13,495", "module": "train_test_split", "level": "INFO", "message": "Total rows: 12,677,703, Total columns: 106"}
-{"timestamp": "2026-01-11 00:03:13,582", "module": "train_test_split", "level": "INFO", "message": "Date range: 2015-01-28 to 2016-04-28 (16 months)"}
-{"timestamp": "2026-01-11 00:03:13,583", "module": "train_test_split", "level": "INFO", "message": "Train dates: 2015-01-28 to 2016-03-28 (15 months)"}
-{"timestamp": "2026-01-11 00:03:13,583", "module": "train_test_split", "level": "INFO", "message": "Test dates: 2016-04-28 to 2016-04-28 (1 months)"}
-{"timestamp": "2026-01-11 00:03:13,865", "module": "train_test_split", "level": "INFO", "message": "Train rows: 11,751,040"}
-{"timestamp": "2026-01-11 00:03:13,866", "module": "train_test_split", "level": "INFO", "message": "Test rows: 926,663"}
-{"timestamp": "2026-01-11 00:03:13,866", "module": "train_test_split", "level": "INFO", "message": "Excluded datetime columns from features: ['fecha_dato']"}
-{"timestamp": "2026-01-11 00:03:13,866", "module": "train_test_split", "level": "INFO", "message": "Number of features: 80"}
-{"timestamp": "2026-01-11 00:03:13,866", "module": "train_test_split", "level": "INFO", "message": "Number of targets: 24"}
-{"timestamp": "2026-01-11 00:03:13,887", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test split completed"}
-{"timestamp": "2026-01-11 00:03:17,132", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test splits saved to: ./data/"}
-{"timestamp": "2026-01-11 00:03:17,143", "module": "train_test_split", "level": "INFO", "message": "Train/test split completed successfully"}
-{"timestamp": "2026-01-11 01:35:45,892", "module": "train_test_split", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_train_test_split.json setup completed"}
-{"timestamp": "2026-01-11 01:37:37,933", "module": "train_test_split", "level": "INFO", "message": "Starting train/test split pipeline"}
-{"timestamp": "2026-01-11 01:37:37,933", "module": "train_test_split", "level": "INFO", "message": "Starting train/test split pipeline"}
-{"timestamp": "2026-01-11 01:37:39,765", "module": "train_test_split", "level": "INFO", "message": "Loaded data from: ./data/data_preprocessed.parquet"}
-{"timestamp": "2026-01-11 01:37:39,765", "module": "train_test_split", "level": "INFO", "message": "Total rows: 12,677,703, Total columns: 106"}
-{"timestamp": "2026-01-11 01:37:39,849", "module": "train_test_split", "level": "INFO", "message": "Date range: 2015-01-28 to 2016-04-28 (16 months)"}
-{"timestamp": "2026-01-11 01:37:39,849", "module": "train_test_split", "level": "INFO", "message": "Train dates: 2015-01-28 to 2016-03-28 (15 months)"}
-{"timestamp": "2026-01-11 01:37:39,849", "module": "train_test_split", "level": "INFO", "message": "Test dates: 2016-04-28 to 2016-04-28 (1 months)"}
-{"timestamp": "2026-01-11 01:37:40,143", "module": "train_test_split", "level": "INFO", "message": "Train rows: 11,751,040"}
-{"timestamp": "2026-01-11 01:37:40,143", "module": "train_test_split", "level": "INFO", "message": "Test rows: 926,663"}
-{"timestamp": "2026-01-11 01:37:40,144", "module": "train_test_split", "level": "INFO", "message": "Excluded datetime columns from features: ['fecha_dato']"}
-{"timestamp": "2026-01-11 01:37:40,144", "module": "train_test_split", "level": "INFO", "message": "Number of features: 80"}
-{"timestamp": "2026-01-11 01:37:40,144", "module": "train_test_split", "level": "INFO", "message": "Number of targets: 24"}
-{"timestamp": "2026-01-11 01:37:40,165", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test split completed"}
-{"timestamp": "2026-01-11 01:37:43,405", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test splits saved to: ./data/"}
-{"timestamp": "2026-01-11 01:37:43,417", "module": "train_test_split", "level": "INFO", "message": "Train/test split completed successfully"}
-{"timestamp": "2026-01-11 01:52:31,035", "module": "train_test_split", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_train_test_split.json setup completed"}
-{"timestamp": "2026-01-11 01:54:15,744", "module": "train_test_split", "level": "INFO", "message": "Starting train/test split pipeline"}
-{"timestamp": "2026-01-11 01:54:15,744", "module": "train_test_split", "level": "INFO", "message": "Starting train/test split pipeline"}
-{"timestamp": "2026-01-11 01:54:17,602", "module": "train_test_split", "level": "INFO", "message": "Loaded data from: ./data/data_preprocessed.parquet"}
-{"timestamp": "2026-01-11 01:54:17,602", "module": "train_test_split", "level": "INFO", "message": "Total rows: 12,677,703, Total columns: 106"}
-{"timestamp": "2026-01-11 01:54:17,697", "module": "train_test_split", "level": "INFO", "message": "Date range: 2015-01-28 to 2016-04-28 (16 months)"}
-{"timestamp": "2026-01-11 01:54:17,698", "module": "train_test_split", "level": "INFO", "message": "Train dates: 2015-01-28 to 2016-03-28 (15 months)"}
-{"timestamp": "2026-01-11 01:54:17,698", "module": "train_test_split", "level": "INFO", "message": "Test dates: 2016-04-28 to 2016-04-28 (1 months)"}
-{"timestamp": "2026-01-11 01:54:17,975", "module": "train_test_split", "level": "INFO", "message": "Train rows: 11,751,040"}
-{"timestamp": "2026-01-11 01:54:17,975", "module": "train_test_split", "level": "INFO", "message": "Test rows: 926,663"}
-{"timestamp": "2026-01-11 01:54:17,975", "module": "train_test_split", "level": "INFO", "message": "Excluded datetime columns from features: ['fecha_dato']"}
-{"timestamp": "2026-01-11 01:54:17,976", "module": "train_test_split", "level": "INFO", "message": "Number of features: 80"}
-{"timestamp": "2026-01-11 01:54:17,976", "module": "train_test_split", "level": "INFO", "message": "Number of targets: 24"}
-{"timestamp": "2026-01-11 01:54:17,997", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test split completed"}
-{"timestamp": "2026-01-11 01:54:21,265", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test splits saved to: ./data/"}
-{"timestamp": "2026-01-11 01:54:21,275", "module": "train_test_split", "level": "INFO", "message": "Train/test split completed successfully"}
+{"timestamp": "2026-01-12 12:37:18,169", "module": "train_test_split", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_train_test_split.json setup completed"}
+{"timestamp": "2026-01-12 12:39:22,345", "module": "train_test_split", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_train_test_split.json setup completed"}
+{"timestamp": "2026-01-12 12:41:18,332", "module": "train_test_split", "level": "INFO", "message": "Starting sampling and temporal train/test split pipeline"}
+{"timestamp": "2026-01-12 12:41:20,301", "module": "train_test_split", "level": "INFO", "message": "Loaded data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-12 12:41:20,301", "module": "train_test_split", "level": "INFO", "message": "Total rows: 12,677,703, Total columns: 103"}
+{"timestamp": "2026-01-12 12:41:20,301", "module": "train_test_split", "level": "INFO", "message": "Found 24 target columns"}
+{"timestamp": "2026-01-12 12:41:20,548", "module": "train_test_split", "level": "INFO", "message": "Sampling: positive rows 447,737 (3.5%)"}
+{"timestamp": "2026-01-12 12:41:22,265", "module": "train_test_split", "level": "INFO", "message": "Sampling: negative rows 791,072 (6.5% of negatives)"}
+{"timestamp": "2026-01-12 12:41:22,685", "module": "train_test_split", "level": "INFO", "message": "Sampling: total sampled rows 1,238,809 (9.8% of original)"}
+{"timestamp": "2026-01-12 12:41:22,685", "module": "train_test_split", "level": "INFO", "message": "DONE: Sampling completed"}
+{"timestamp": "2026-01-12 12:41:23,186", "module": "train_test_split", "level": "INFO", "message": "Sampled data saved to: ./data/data_sampled.parquet"}
+{"timestamp": "2026-01-12 12:41:23,302", "module": "train_test_split", "level": "INFO", "message": "Sampled data summary saved to: ./results/data_sampled_summary.parquet"}
+{"timestamp": "2026-01-12 12:41:23,385", "module": "train_test_split", "level": "INFO", "message": "Date range: 2015-01-28 to 2016-04-28 (16 months)"}
+{"timestamp": "2026-01-12 12:41:23,385", "module": "train_test_split", "level": "INFO", "message": "Train dates: 2015-01-28 to 2016-03-28 (15 months)"}
+{"timestamp": "2026-01-12 12:41:23,385", "module": "train_test_split", "level": "INFO", "message": "Test dates: 2016-04-28 to 2016-04-28 (1 months)"}
+{"timestamp": "2026-01-12 12:41:23,413", "module": "train_test_split", "level": "INFO", "message": "Train rows: 1,152,814"}
+{"timestamp": "2026-01-12 12:41:23,413", "module": "train_test_split", "level": "INFO", "message": "Test rows: 85,995"}
+{"timestamp": "2026-01-12 12:41:23,413", "module": "train_test_split", "level": "INFO", "message": "Excluded datetime columns from features: ['fecha_dato']"}
+{"timestamp": "2026-01-12 12:41:23,414", "module": "train_test_split", "level": "INFO", "message": "Number of features: 77"}
+{"timestamp": "2026-01-12 12:41:23,414", "module": "train_test_split", "level": "INFO", "message": "Number of targets: 24"}
+{"timestamp": "2026-01-12 12:41:23,416", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test split completed"}
+{"timestamp": "2026-01-12 12:41:23,860", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test splits saved to: ./data/"}
+{"timestamp": "2026-01-12 12:41:23,916", "module": "train_test_split", "level": "INFO", "message": "Sampling and temporal train/test split completed successfully"}

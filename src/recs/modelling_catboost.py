@@ -64,7 +64,7 @@ logger = setup_logging('modelling_catboost')
 # Load environment variables
 load_dotenv()
 # Set working directory to project root
-PROJECT_ROOT = Path(__file__).parent.parent
+PROJECT_ROOT = Path(__file__).parent.parent.parent  # src/recs -> src -> project_root
 os.chdir(PROJECT_ROOT)
 
 # ---------- Constants ---------- #

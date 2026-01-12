@@ -15,7 +15,7 @@
 
 # ----------- Imports ----------- #
 import os
-from typing import List
+import gc
 import io
 import zipfile
 import requests
@@ -31,7 +31,7 @@ logger = setup_logging('data_loading')
 # Load environment variables
 load_dotenv()
 # Set working directory to project root
-PROJECT_ROOT = Path(__file__).parent.parent
+PROJECT_ROOT = Path(__file__).parent.parent.parent  # src/recs -> src -> project_root
 os.chdir(PROJECT_ROOT)
 
 # ---------- Constants ---------- #
@@ -78,16 +78,13 @@ def download_yadisk_file(
 def download_and_extract(
     public_url: str,
     data_dir: str = DATA_DIR
-) -> List[str]:
+) -> None:
     '''
         Download dataset from Yandex.Disk and extract to data directory.
         
         Supports:
         - Plain CSV files (saved directly)
         - ZIP archives (extracted to data_dir)
-        
-        Returns:
-            List of extracted file paths
     '''
     # Ensure data directory exists
     data_path = Path(data_dir)
@@ -123,34 +120,31 @@ def download_and_extract(
         logger.info(f'Saved: {target_path}')
 
     logger.info(f'Download complete. {len(extracted_files)} file(s) saved to {data_dir}')
-    return extracted_files
 
-def run_data_loading(data_dir: str = DATA_DIR) -> List[str]:
+    del raw, extracted_files
+    gc.collect()
+
+    return None
+
+def run_data_loading() -> None:
     '''
         Run data loading pipeline.
-        
-        Downloads data from Yandex.Disk and extracts to data_dir.
-        
-        Returns:
-            List of extracted file paths
+        Downloads data from Yandex.Disk and extracts to DATA_DIR.
     '''
     logger.info('Starting data loading pipeline')
-    
     if not PUBLIC_URL:
         raise ValueError(
             "YADISK_PUBLIC_URL environment variable is not set. "
             "Please set it in your .env file or environment."
         )
-    
-    extracted_files = download_and_extract(PUBLIC_URL, data_dir)
-
+    download_and_extract(PUBLIC_URL, DATA_DIR)
     logger.info('Data loading pipeline completed successfully')
 
-    return extracted_files
 
 # ---------- Main function ---------- #
 if __name__ == '__main__':
     run_data_loading()
+
 
 # ---------- All exports ---------- #
 __all__ = ['run_data_loading']
