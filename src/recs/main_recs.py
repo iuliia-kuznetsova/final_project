@@ -15,6 +15,7 @@ import os
 import sys
 import gc
 import argparse
+from datetime import datetime
 from pythonjsonlogger import jsonlogger
 import traceback
 from dotenv import load_dotenv
@@ -26,7 +27,7 @@ from src.recs.data_preprocessing import run_preprocessing
 from src.recs.feature_engineering import run_feature_engineering
 from src.recs.target_engineering import run_target_engineering
 from src.recs.train_test_split import run_train_test_split
-from src.recs.modelling_ovr import run_modelling_ovr, OvRGroupModel, load_training_data, get_product_names
+from src.recs.modelling_ovr import run_modelling_ovr, OvRGroupModel, load_training_data, get_product_names, log_to_mlflow
 
 
 # ---------- Memory Helper ---------- #
@@ -42,7 +43,9 @@ logger = setup_logging('main_recs')
 
 # ---------- Argument Parser ---------- #
 def parse_args():
-    '''Parse command line arguments.'''
+    '''
+        Parse command line arguments
+    '''
     parser = argparse.ArgumentParser(
         description='Bank Products Recommendation System Pipeline'
     )
@@ -172,7 +175,7 @@ def main(args):
     
     # ---------- Step 6: Split data into train/test sets ---------- #
     print('\n' + '='*80)
-    logger.info('STEP 6: Splitting data into train/test sets')
+    logger.info('STEP 6: Splitting sampled data into train/test sets')
     print('='*80)
     
     try:
@@ -259,7 +262,7 @@ def main(args):
 
     # ---------- Step 9: Recommendations & Save ---------- #
     print('\n' + '='*80)
-    logger.info('STEP 9: Generating recommendations and saving model')
+    logger.info('STEP 9: Generating recommendations, saving and logging model')
     print('='*80)
     
     try:
@@ -269,8 +272,16 @@ def main(args):
         logger.info(f'Generated recommendations for {len(recommendations)} customers')
         
         # Save model
-        model_path = model.save('ovr_grouped_santander')
+        model_path = model.save('ovr_grouped_catboost')
         logger.info(f'Model saved to: {model_path}')
+
+        # Log model to MLflow
+        model.log_to_mlflow(
+            run_name=f'final_model_{datetime.now().strftime("%Y%m%d_%H%M%S")}',
+            register_model=False,
+            model_name='ovr_grouped_catboost'
+        )
+        logger.info('Model logged to MLflow')
         
         # Final cleanup: free test data and model from memory
         del X_test, y_test, X_test_sample, recommendations, model

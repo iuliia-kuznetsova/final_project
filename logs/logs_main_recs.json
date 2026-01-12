@@ -32,3 +32,37 @@
 {"timestamp": "2026-01-12 13:26:09,426", "module": "main_recs", "level": "INFO", "message": "Memory cleanup after final_cleanup: 132 objects collected"}
 {"timestamp": "2026-01-12 13:26:09,426", "module": "main_recs", "level": "INFO", "message": "STEP 9 DONE"}
 {"timestamp": "2026-01-12 13:26:09,426", "module": "main_recs", "level": "INFO", "message": "Pipeline completed successfully!"}
+{"timestamp": "2026-01-12 13:52:09,747", "module": "main_recs", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_main_recs.json setup completed"}
+{"timestamp": "2026-01-12 13:52:09,748", "module": "main_recs", "level": "INFO", "message": "STEP 1: Loading environment variables"}
+{"timestamp": "2026-01-12 13:52:09,755", "module": "main_recs", "level": "INFO", "message": "DONE: Loading environment variables completed successfully"}
+{"timestamp": "2026-01-12 13:52:09,755", "module": "main_recs", "level": "INFO", "message": "INFO: Data directory: ./data"}
+{"timestamp": "2026-01-12 13:52:09,755", "module": "main_recs", "level": "INFO", "message": "INFO: Models directory: ./models"}
+{"timestamp": "2026-01-12 13:52:09,755", "module": "main_recs", "level": "INFO", "message": "INFO: Results directory: ./results"}
+{"timestamp": "2026-01-12 13:52:09,755", "module": "main_recs", "level": "INFO", "message": "STEP 1 DONE"}
+{"timestamp": "2026-01-12 13:52:09,755", "module": "main_recs", "level": "INFO", "message": "STEP 2: Skipping raw data download (--skip-download flag)"}
+{"timestamp": "2026-01-12 13:52:09,755", "module": "main_recs", "level": "INFO", "message": "STEP 2 DONE"}
+{"timestamp": "2026-01-12 13:52:09,755", "module": "main_recs", "level": "INFO", "message": "STEP 3: Preprocessing data"}
+{"timestamp": "2026-01-12 13:52:53,012", "module": "main_recs", "level": "INFO", "message": "Memory cleanup after preprocessing: 0 objects collected"}
+{"timestamp": "2026-01-12 13:52:53,013", "module": "main_recs", "level": "INFO", "message": "STEP 3 DONE"}
+{"timestamp": "2026-01-12 13:52:53,013", "module": "main_recs", "level": "INFO", "message": "STEP 4: Feature Engineering"}
+{"timestamp": "2026-01-12 13:53:31,023", "module": "main_recs", "level": "INFO", "message": "Memory cleanup after feature_engineering: 0 objects collected"}
+{"timestamp": "2026-01-12 13:53:31,023", "module": "main_recs", "level": "INFO", "message": "STEP 4 DONE"}
+{"timestamp": "2026-01-12 13:53:31,023", "module": "main_recs", "level": "INFO", "message": "STEP 5: Target Engineering"}
+{"timestamp": "2026-01-12 13:53:59,992", "module": "main_recs", "level": "INFO", "message": "Memory cleanup after target_engineering: 0 objects collected"}
+{"timestamp": "2026-01-12 13:53:59,992", "module": "main_recs", "level": "INFO", "message": "STEP 5 DONE"}
+{"timestamp": "2026-01-12 13:53:59,993", "module": "main_recs", "level": "INFO", "message": "STEP 6: Splitting data into train/test sets"}
+{"timestamp": "2026-01-12 13:54:05,074", "module": "main_recs", "level": "INFO", "message": "Memory cleanup after train_test_split: 0 objects collected"}
+{"timestamp": "2026-01-12 13:54:05,074", "module": "main_recs", "level": "INFO", "message": "STEP 6 DONE"}
+{"timestamp": "2026-01-12 13:54:05,074", "module": "main_recs", "level": "INFO", "message": "STEP 7: Modelling OvR Grouped CatBoost"}
+{"timestamp": "2026-01-12 19:43:06,571", "module": "main_recs", "level": "INFO", "message": "Memory cleanup after model_training: 0 objects collected"}
+{"timestamp": "2026-01-12 19:43:06,571", "module": "main_recs", "level": "INFO", "message": "STEP 7 DONE"}
+{"timestamp": "2026-01-12 19:43:06,571", "module": "main_recs", "level": "INFO", "message": "STEP 8: Evaluating OvR Grouped CatBoost"}
+{"timestamp": "2026-01-12 19:43:25,511", "module": "main_recs", "level": "INFO", "message": "Mean AUC: 0.9025"}
+{"timestamp": "2026-01-12 19:43:25,604", "module": "main_recs", "level": "INFO", "message": "Memory cleanup after evaluation: 33 objects collected"}
+{"timestamp": "2026-01-12 19:43:25,604", "module": "main_recs", "level": "INFO", "message": "STEP 8 DONE"}
+{"timestamp": "2026-01-12 19:43:25,604", "module": "main_recs", "level": "INFO", "message": "STEP 9: Generating recommendations and saving model"}
+{"timestamp": "2026-01-12 19:43:25,682", "module": "main_recs", "level": "INFO", "message": "Generated recommendations for 100 customers"}
+{"timestamp": "2026-01-12 19:43:25,834", "module": "main_recs", "level": "INFO", "message": "Model saved to: models/ovr_grouped_santander"}
+{"timestamp": "2026-01-12 19:43:25,933", "module": "main_recs", "level": "INFO", "message": "Memory cleanup after final_cleanup: 132 objects collected"}
+{"timestamp": "2026-01-12 19:43:25,934", "module": "main_recs", "level": "INFO", "message": "STEP 9 DONE"}
+{"timestamp": "2026-01-12 19:43:25,934", "module": "main_recs", "level": "INFO", "message": "Pipeline completed successfully!"}

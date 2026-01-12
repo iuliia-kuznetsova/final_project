@@ -75,6 +75,7 @@ from src.logging_setup import setup_logging
 logger = setup_logging('modelling_ovr')
 logging.getLogger('catboost').setLevel(logging.ERROR)
 
+
 # ---------- Config ---------- #
 load_dotenv()
 PROJECT_ROOT = Path(__file__).parent.parent.parent  # src/recs -> src -> project_root
@@ -82,30 +83,6 @@ os.chdir(PROJECT_ROOT)
 
 
 # ---------- Constants ---------- #
-# Random state
-RANDOM_STATE = int(os.getenv('RANDOM_STATE', 42))
-
-# Directories
-# Data directory
-DATA_DIR = os.getenv('DATA_DIR', './data')
-# Results directory
-RESULTS_DIR = os.getenv('RESULTS_DIR', './results')
-# Models directory
-MODELS_DIR = os.getenv('MODELS_DIR', './models')
-
-# MLflow experiment name
-MLFLOW_EXPERIMENT = os.getenv('MLFLOW_EXPERIMENT', 'ovr_grouped_catboost')
-
-# Number of CV folds
-N_SPLITS = int(os.getenv('N_SPLITS', 5))
-
-# Top-K recommendations
-TOP_K = int(os.getenv('TOP_K', 7))
-
-# Prevalence group thresholds (percentages)
-FREQUENT_THRESHOLD = float(os.getenv('FREQUENT_THRESHOLD', 5.0))
-RARE_THRESHOLD = float(os.getenv('RARE_THRESHOLD', 1.0))
-
 # Helper to parse boolean env vars
 # As bool() of any empty string is True
 def _parse_bool_env(key: str, default: bool = True) -> bool:
@@ -114,55 +91,68 @@ def _parse_bool_env(key: str, default: bool = True) -> bool:
         return default
     return value.lower() in ('true', '1', 'yes', 'on')
 
-# Optimization parameters
-OPTIMIZE = _parse_bool_env('OPTIMIZE', True)  # Run Optuna hyperparameter optimization
-N_TRIALS = int(os.getenv('N_TRIALS', 15)) # Optuna trials per group
-OPTUNA_TIMEOUT = int(os.getenv('OPTUNA_TIMEOUT', 180)) # Optuna timeout per group optimization (seconds)
-RUN_CV = _parse_bool_env('RUN_CV', True)  # Run 5-fold TimeSeriesSplit CV
+# Random state
+RANDOM_STATE = int(os.getenv('RANDOM_STATE', 42))
 
-# Memory management
-SUBSAMPLE_RATIO = float(os.getenv('SUBSAMPLE_RATIO', 1.0))  # Subsample training data (0.1 = 10%)
-#MAX_RAM_GB = float(os.getenv('MAX_RAM_GB', 4.0))  # Max RAM for CatBoost in GB
+# Directories
+DATA_DIR = os.getenv('DATA_DIR', './data')
+RESULTS_DIR = os.getenv('RESULTS_DIR', './results')
+MODELS_DIR = os.getenv('MODELS_DIR', './models')
 
-# Retraining on full dataset
-RETRAIN_ON_FULL_DATA = _parse_bool_env('RETRAIN_ON_FULL_DATA', False)  # Retrain final models on full preprocessed data
-PREPROCESSED_DATA_FILE = os.getenv('PREPROCESSED_DATA_FILE', 'data_preprocessed.parquet')
+# MLflow experiment name
+MLFLOW_EXPERIMENT = os.getenv('MLFLOW_EXPERIMENT', 'ovr_grouped_catboost')
 
-# ---------- HPO Speed Optimization Parameters ---------- #
-# Number of CV folds for HPO (use fewer folds to speed up HPO)
-HPO_N_SPLITS = int(os.getenv('HPO_N_SPLITS', 2))  # Default 2 folds for HPO (vs 5 for final CV)
+# Recommendations parameters
+# Top-K recommendations
+TOP_K = int(os.getenv('TOP_K', 7))
+# Prevalence group thresholds (percentages)
+FREQUENT_THRESHOLD = float(os.getenv('FREQUENT_THRESHOLD', 0.5))
+RARE_THRESHOLD = float(os.getenv('RARE_THRESHOLD', 0.01))
+# Drop low-importance features to speed up training
+USE_FEATURE_SELECTION = _parse_bool_env('USE_FEATURE_SELECTION', False)
+# Drop features below this importance
+MIN_FEATURE_IMPORTANCE = float(os.getenv('MIN_FEATURE_IMPORTANCE', 0.001))
 
-# HPO-specific CatBoost settings for faster trials
-HPO_MAX_ITERATIONS = int(os.getenv('HPO_MAX_ITERATIONS', 300))  # Lower iterations during HPO
-HPO_EARLY_STOPPING_ROUNDS = int(os.getenv('HPO_EARLY_STOPPING_ROUNDS', 30))  # Early stopping for HPO
-
-# Use CatBoost Pool pre-quantization (speeds up repeated training)
+# Hyperparameter optimization parameters
+# Run Optuna hyperparameter optimization
+OPTIMIZE = _parse_bool_env('OPTIMIZE', True)
+# Number of Optuna trials per group
+N_TRIALS = int(os.getenv('N_TRIALS', 15))
+# Optuna timeout per group optimization (seconds)
+OPTUNA_TIMEOUT = int(os.getenv('OPTUNA_TIMEOUT', 180))
+# Subsample training data (0.1 = 10%)
+SUBSAMPLE_RATIO = float(os.getenv('SUBSAMPLE_RATIO', 1.0))
+# Number of CV folds for HPO 
+HPO_N_SPLITS = int(os.getenv('HPO_N_SPLITS', 3))
+# Lower iterations during HPO
+HPO_MAX_ITERATIONS = int(os.getenv('HPO_MAX_ITERATIONS', 300))
+# Early stopping for HPO
+HPO_EARLY_STOPPING_ROUNDS = int(os.getenv('HPO_EARLY_STOPPING_ROUNDS', 30))
+# CatBoost Pool pre-quantization
 USE_QUANTIZED_POOL = _parse_bool_env('USE_QUANTIZED_POOL', True)
 
-# ---------- Training Speed Optimization Parameters ---------- #
+# Training parameters
+# Retraining final models on full preprocessed data
+RETRAIN_ON_FULL_DATA = _parse_bool_env('RETRAIN_ON_FULL_DATA', False)
+# Preprocessed data file
+PREPROCESSED_DATA_FILE = os.getenv('PREPROCESSED_DATA_FILE', 'data_preprocessed.parquet')
+# Run k-fold TimeSeriesSplit CV
+RUN_CV = _parse_bool_env('RUN_CV', True)  
+# Number of CV folds
+N_SPLITS = int(os.getenv('N_SPLITS', 5))
 # Boosting type: 'Plain' is faster, 'Ordered' may be slightly better quality
 BOOSTING_TYPE = os.getenv('BOOSTING_TYPE', 'Plain')
-
 # Border count (max_bin) - lower = faster but less precise
-# CPU default: 254, GPU: 128. For speed: 64-128
 BORDER_COUNT = int(os.getenv('BORDER_COUNT', 128))
-
 # Thread count for CatBoost (-1 = auto)
 THREAD_COUNT = int(os.getenv('THREAD_COUNT', -1))
-
 # CTR complexity (1-2 for speed, higher for quality with many categoricals)
 MAX_CTR_COMPLEXITY = int(os.getenv('MAX_CTR_COMPLEXITY', 1))
-
 # One-hot encoding max size for low-cardinality categoricals
 ONE_HOT_MAX_SIZE = int(os.getenv('ONE_HOT_MAX_SIZE', 10))
-
 # Early stopping rounds for final training
 EARLY_STOPPING_ROUNDS = int(os.getenv('EARLY_STOPPING_ROUNDS', 50))
 
-# ---------- Feature Selection Parameters ---------- #
-# Drop low-importance features to speed up training
-USE_FEATURE_SELECTION = _parse_bool_env('USE_FEATURE_SELECTION', False)
-MIN_FEATURE_IMPORTANCE = float(os.getenv('MIN_FEATURE_IMPORTANCE', 0.001))  # Drop features below this importance
 
 # ---------- Helper Functions ---------- #
 def load_training_data(
@@ -1259,8 +1249,172 @@ class OvRGroupModel:
         gc.collect()
         logger.info('Memory cleanup: cleared cached pools and ran garbage collection')
         
+        # Log final model to MLflow
+        if MLFLOW_AVAILABLE and self.mlflow_experiment:
+            self._log_to_mlflow(
+                run_name=f'final_ovr_model_{datetime.now().strftime("%Y%m%d_%H%M%S")}',
+                register_model=False
+            )
+        
         return self
     
+
+    # ----------- MLflow Logging ------------ #
+    def log_to_mlflow(
+        self,
+        run_name: Optional[str] = None,
+        register_model: bool = False,
+        model_name: str = 'ovr_grouped_catboost'
+    ) -> Optional[str]:
+        '''
+            Log final trained OVR model to MLflow.
+            
+            Logs:
+            - All CatBoost estimators for each group (not just first 5)
+            - Model metadata (thresholds, product groups, best params)
+            - Feature importance summary
+            - CV scores
+            
+            Args:
+                run_name: Optional name for the MLflow run
+                register_model: Whether to register the model in MLflow Model Registry
+                model_name: Name for model registration
+                
+            Returns:
+                MLflow run ID if successful, None otherwise
+        '''
+        if not MLFLOW_AVAILABLE:
+            logger.warning('MLflow not available, skipping model logging')
+            return None
+        
+        if not self.models:
+            logger.warning('No models to log. Call fit() first.')
+            return None
+        
+        run_id = None
+        run_name = run_name or f'final_model_{datetime.now().strftime("%Y%m%d_%H%M%S")}'
+        
+        try:
+            with mlflow.start_run(run_name=run_name) as run:
+                run_id = run.info.run_id
+                logger.info(f'Logging final model to MLflow (run_id: {run_id})')
+                
+                # Log training configuration parameters
+                mlflow.log_param('n_products', len(self.all_products))
+                mlflow.log_param('n_features', len(self.feature_names))
+                mlflow.log_param('n_groups', len(self.models))
+                mlflow.log_param('frequent_threshold', self.frequent_threshold)
+                mlflow.log_param('rare_threshold', self.rare_threshold)
+                mlflow.log_param('n_splits', self.n_splits)
+                mlflow.log_param('random_state', self.random_state)
+                mlflow.log_param('top_k', self.top_k)
+                mlflow.log_param('use_feature_selection', self.use_feature_selection)
+                
+                # Log group sizes
+                for group_name, products in self.product_groups.items():
+                    mlflow.log_param(f'n_{group_name}_products', len(products))
+                
+                # Log CV scores if available
+                if self.cv_scores:
+                    all_cv_aucs = []
+                    for group_name, scores in self.cv_scores.items():
+                        if scores:
+                            mean_auc = np.mean(scores)
+                            std_auc = np.std(scores)
+                            mlflow.log_metric(f'{group_name}_cv_mean_auc', mean_auc)
+                            mlflow.log_metric(f'{group_name}_cv_std_auc', std_auc)
+                            all_cv_aucs.extend(scores)
+                    
+                    if all_cv_aucs:
+                        mlflow.log_metric('overall_cv_mean_auc', np.mean(all_cv_aucs))
+                        mlflow.log_metric('overall_cv_std_auc', np.std(all_cv_aucs))
+                
+                # Log all CatBoost models for each group
+                n_models_logged = 0
+                for group_name, model in self.models.items():
+                    products = self.product_groups[group_name]
+                    
+                    # Log best hyperparameters for this group
+                    if group_name in self.best_params:
+                        for param_name, param_value in self.best_params[group_name].items():
+                            if param_name not in ['verbose', 'thread_count', 'logging_level']:
+                                mlflow.log_param(f'{group_name}_hp_{param_name}', param_value)
+                    
+                    # Log each CatBoost estimator
+                    for product, estimator in zip(products, model.estimators_):
+                        artifact_path = f'models/{group_name}/{product}'
+                        mlflow.catboost.log_model(
+                            estimator, 
+                            artifact_path,
+                            registered_model_name=f'{model_name}_{group_name}_{product}' if register_model else None
+                        )
+                        n_models_logged += 1
+                        logger.info(f'  Logged model: {group_name}/{product}')
+                
+                logger.info(f'Logged {n_models_logged} CatBoost models to MLflow')
+                
+                # Log metadata as JSON artifacts
+                import tempfile
+                
+                # Save thresholds
+                with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:
+                    json.dump(self.thresholds, f, indent=2)
+                    thresholds_path = f.name
+                mlflow.log_artifact(thresholds_path, 'metadata')
+                os.remove(thresholds_path)
+                
+                # Save product groups
+                with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:
+                    json.dump(self.product_groups, f, indent=2)
+                    groups_path = f.name
+                mlflow.log_artifact(groups_path, 'metadata')
+                os.remove(groups_path)
+                
+                # Save best params
+                with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:
+                    json.dump(self.best_params, f, indent=2, default=str)
+                    params_path = f.name
+                mlflow.log_artifact(params_path, 'metadata')
+                os.remove(params_path)
+                
+                # Save feature names and cat features
+                metadata = {
+                    'all_products': self.all_products,
+                    'feature_names': self.feature_names,
+                    'cat_features': self.cat_features,
+                    'cat_feature_indices': self.cat_feature_indices,
+                    'selected_features': self.selected_features,
+                    'cv_scores': self.cv_scores
+                }
+                with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:
+                    json.dump(metadata, f, indent=2)
+                    metadata_path = f.name
+                mlflow.log_artifact(metadata_path, 'metadata')
+                os.remove(metadata_path)
+                
+                # Log feature importance summary if models exist
+                try:
+                    importance_df = self.get_feature_importance(top_n=50)
+                    with tempfile.NamedTemporaryFile(mode='w', suffix='.csv', delete=False) as f:
+                        importance_df.to_csv(f, index=False)
+                        importance_path = f.name
+                    mlflow.log_artifact(importance_path, 'feature_importance')
+                    os.remove(importance_path)
+                except Exception as e:
+                    logger.warning(f'Could not log feature importance: {e}')
+                
+                # Add tags
+                mlflow.set_tag('model_type', 'OvR_CatBoost')
+                mlflow.set_tag('n_groups', len(self.models))
+                mlflow.set_tag('n_total_models', n_models_logged)
+                
+                logger.info(f'DONE: Final model logged to MLflow (run_id: {run_id})')
+                
+        except Exception as e:
+            logger.error(f'Error logging to MLflow: {e}')
+            return None
+        
+        return run_id
 
     # ----------- Inference ------------ #
     def predict_proba(
@@ -1879,15 +2033,14 @@ def run_modelling_ovr():
     
     # Save models
     model_path = model.save('ovr_grouped_catboost')
-    logger.info(f'\nModels saved to: {model_path}')
-    
-    # Example: Access specific group model
-    # frequent_model = model.get_group_model('frequent')
-    # frequent_products = model.get_group_products('frequent')
-    
-    # Example: Load saved models
-    # loaded = OvRGroupModel().load(model_path)
-    # new_recs = loaded.recommend(X_test, k=7)
+    logger.info(f'Model saved to: {model_path}')
+
+    model.log_to_mlflow(
+        run_name=f'final_model_{datetime.now().strftime("%Y%m%d_%H%M%S")}',
+        register_model=False,
+        model_name='ovr_grouped_catboost'
+    )
+    logger.info('Model logged to MLflow')
     
     logger.info('OvR Group Model training pipeline completed successfully')
 
@@ -1897,4 +2050,4 @@ if __name__ == '__main__':
     run_modelling_ovr()
 
 # ---------- All exports ---------- #
-__all__ = ['run_modelling_ovr', 'OvRGroupModel', 'load_training_data', 'get_product_names'] 
+__all__ = ['run_modelling_ovr', 'OvRGroupModel', 'load_training_data', 'get_product_names', 'log_to_mlflow'] 

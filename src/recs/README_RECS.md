@@ -55,3 +55,16 @@ Fixed heavy params during HPO: max_ctr_complexity, boosting_type, border_count
 Pre-quantization: Quantize data once, reuse for all trials
 Memory cleanup: Explicit gc.collect() after each step and fold
 Optional feature selection: Drop low-importance features to reduce tree complexity
+
+When it shines (your exact case)
+Large datasets (>1M rows): Quantization dominates training time
+
+Many Optuna trials (>50): Amortizes upfront cost
+
+Mixed cat+num features: Handles your 33 categoricals perfectly
+
+OvR multilabel: Pre-quantize once per target
+
+Bottom line: 5-10x HPO speedup on your 17M Santander dataset. Do this for development, then final training uses fresh quantization on full data. Essential optimization!
+
+Pre-quantization means CatBoost converts your raw features (especially numerical and categorical) into discrete bins/buckets once upfront, then reuses these quantized values for all Optuna trials instead of requantizing fresh each time.
