@@ -43,3 +43,10 @@
 {"timestamp": "2026-01-12 13:54:04,526", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test split completed"}
 {"timestamp": "2026-01-12 13:54:04,972", "module": "train_test_split", "level": "INFO", "message": "DONE: Train/test splits saved to: ./data/"}
 {"timestamp": "2026-01-12 13:54:05,027", "module": "train_test_split", "level": "INFO", "message": "Sampling and temporal train/test split completed successfully"}
+{"timestamp": "2026-01-13 11:28:44,246", "module": "train_test_split", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_train_test_split.json setup completed"}
+{"timestamp": "2026-01-13 11:44:23,739", "module": "train_test_split", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_train_test_split.json setup completed"}
+{"timestamp": "2026-01-13 11:48:01,495", "module": "train_test_split", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_train_test_split.json setup completed"}
+{"timestamp": "2026-01-13 11:54:02,462", "module": "train_test_split", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_train_test_split.json setup completed"}
+{"timestamp": "2026-01-13 12:03:28,141", "module": "train_test_split", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_train_test_split.json setup completed"}
+{"timestamp": "2026-01-13 12:14:47,361", "module": "train_test_split", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_train_test_split.json setup completed"}
+{"timestamp": "2026-01-13 12:15:50,555", "module": "train_test_split", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_train_test_split.json setup completed"}

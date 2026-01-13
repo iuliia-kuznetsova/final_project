@@ -108,17 +108,19 @@ def engineer_targets(
     logger.info(f'Full preprocessed and engineered data saved to: {data_dir}/{preprocessed_data_file}')
     logger.info(f'Full preprocessed and engineered data summary saved to: {results_dir}/{preprocessed_data_summary_file}')
     
-    del df_engineered, df_engineered_summary
+    del df_engineered_summary
     gc.collect()
 
-    return None   
+    return df_engineered   
 
 def run_target_engineering():
     '''
         Run target engineering pipeline.
     '''
     logger.info('Starting target engineering pipeline')
-    engineer_targets(DATA_DIR, RESULTS_DIR, PREPROCESSED_DATA_FILE, PREPROCESSED_DATA_SUMMARY_FILE)
+    df = engineer_targets(DATA_DIR, RESULTS_DIR, PREPROCESSED_DATA_FILE, PREPROCESSED_DATA_SUMMARY_FILE)
+    del df
+    gc.collect()
     logger.info('Target engineering completed successfully')
 
 # ---------- Main function ---------- #
@@ -126,4 +128,4 @@ if __name__ == '__main__':
     run_target_engineering()
 
 # ---------- All exports ---------- #
-__all__ = ['run_target_engineering']
+__all__ = ['run_target_engineering', 'engineer_targets']

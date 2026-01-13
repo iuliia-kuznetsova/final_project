@@ -1,0 +1,122 @@
+version: '3.8'
+
+services:
+  # ============================================
+  # Main Recommender API Service
+  # ============================================
+  recommender:
+    container_name: recommender_api
+    build:
+      context: ../..
+      dockerfile: src/api/Dockerfile
+    env_file:
+      - .env
+    environment:
+      - RECOMMENDER_HOST=0.0.0.0
+      - RECOMMENDER_PORT=8080
+      - MODEL_DIR=/app/models
+      - DATA_DIR=/app/data
+      - MODEL_NAME=ovr_grouped_santander
+    ports:
+      - '${RECOMMENDER_VM_PORT:-8080}:8080'
+    volumes:
+      - ../../models:/app/models:ro
+      - ../../data:/app/data:ro
+      - ../../logs:/app/logs
+    hostname: recommender
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    networks:
+      - recommender_network
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+
+  # ============================================
+  # Prometheus Metrics Collection
+  # ============================================
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus:v2.48.0
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=15d'
+      - '--web.enable-lifecycle'
+    ports:
+      - '${PROMETHEUS_VM_PORT:-9090}:9090'
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    depends_on:
+      recommender:
+        condition: service_healthy
+    restart: always
+    hostname: prometheus
+    networks:
+      - recommender_network
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:9090/-/healthy"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ============================================
+  # Grafana Visualization Dashboard
+  # ============================================
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:10.2.2
+    env_file:
+      - .env
+    environment:
+      - GF_SECURITY_ADMIN_USER=${GRAFANA_USER:-admin}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASS:-admin}
+      - GF_USERS_ALLOW_SIGN_UP=false
+      - GF_SERVER_HTTP_PORT=3000
+      - GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-piechart-panel
+    ports:
+      - '${GRAFANA_VM_PORT:-3000}:3000'
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/dashboards:/var/lib/grafana/dashboards:ro
+    depends_on:
+      prometheus:
+        condition: service_healthy
+    restart: always
+    hostname: grafana
+    networks:
+      - recommender_network
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:3000/api/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+# ============================================
+# Networks
+# ============================================
+networks:
+  recommender_network:
+    driver: bridge
+    name: recommender_network
+
+# ============================================
+# Volumes for data persistence
+# ============================================
+volumes:
+  prometheus_data:
+    name: prometheus_data
+  grafana_data:
+    name: grafana_data

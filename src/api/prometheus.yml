@@ -1,0 +1,69 @@
+# Prometheus Configuration for Bank Products Recommender
+# =====================================================
+
+global:
+  # How frequently to scrape targets
+  scrape_interval: 15s
+  # How frequently to evaluate rules
+  evaluation_interval: 15s
+  # External labels for federation and alerting
+  external_labels:
+    monitor: 'recommender-monitor'
+    environment: 'production'
+
+# Alertmanager configuration (optional)
+# alerting:
+#   alertmanagers:
+#     - static_configs:
+#         - targets:
+#           - alertmanager:9093
+
+# Rule files (optional)
+# rule_files:
+#   - "alert_rules.yml"
+
+# Scrape configurations
+scrape_configs:
+  # ============================================
+  # Prometheus self-monitoring
+  # ============================================
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+    metrics_path: /metrics
+    scrape_interval: 30s
+
+  # ============================================
+  # Bank Products Recommender API
+  # ============================================
+  - job_name: 'recommender'
+    static_configs:
+      - targets: ['recommender:8080']
+        labels:
+          service: 'recommender'
+          team: 'ml-engineering'
+    metrics_path: /metrics
+    scrape_interval: 5s
+    scrape_timeout: 5s
+    
+    # Relabel configurations
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        regex: '(.+):(.+)'
+        replacement: '${1}'
+
+    # Metric relabeling to add custom labels
+    metric_relabel_configs:
+      - source_labels: [__name__]
+        regex: '(recommender_.*|http_.*|python_.*)'
+        action: keep
+
+  # ============================================
+  # Node Exporter (if available)
+  # ============================================
+  # - job_name: 'node'
+  #   static_configs:
+  #     - targets: ['node-exporter:9100']
+  #   metrics_path: /metrics
+  #   scrape_interval: 15s

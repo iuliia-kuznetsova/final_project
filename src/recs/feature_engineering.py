@@ -45,6 +45,8 @@ RESULTS_DIR = os.getenv('RESULTS_DIR', './results')
 PREPROCESSED_DATA_FILE = os.getenv('PREPROCESSED_DATA_FILE', 'data_preprocessed.parquet')
 # Preprocessed data summary file
 PREPROCESSED_DATA_SUMMARY_FILE = os.getenv('PREPROCESSED_DATA_SUMMARY_FILE', 'data_preprocessed_summary.parquet')
+# App test preprocessed data file
+APP_PREPROCESSED_DATA_FILE = os.getenv('APP_PREPROCESSED_DATA_FILE', 'app_test_data_preprocessed.parquet')
 
 
 # ---------- Functions ---------- #
@@ -125,25 +127,28 @@ def engineer_features(
     # Save preprocessed data
     Path(data_dir).mkdir(parents=True, exist_ok=True)
     df_engineered.write_parquet(f"{data_dir}/{preprocessed_data_file}")
-    
-    # Save preprocessed data summary
-    df_engineered_summary = df_engineered.describe()
-    df_engineered_summary.write_parquet(f"{results_dir}/{preprocessed_data_summary_file}")
-
     logger.info(f'Preprocessed and engineered data saved to: {data_dir}/{preprocessed_data_file}')
-    logger.info(f'Preprocessed and engineered data summary saved to: {results_dir}/{preprocessed_data_summary_file}')
-   
-    del df_engineered, df_engineered_summary
+
+    # Save preprocessed data summary
+    if preprocessed_data_summary_file is not None:
+        df_engineered_summary = df_engineered.describe()
+        df_engineered_summary.write_parquet(f"{results_dir}/{preprocessed_data_summary_file}")
+        logger.info(f'Preprocessed and engineered data summary saved to: {results_dir}/{preprocessed_data_summary_file}')
+
+    
+    del df_engineered_summary
     gc.collect()
 
-    return None
+    return df_engineered
 
 def run_feature_engineering():
     '''
         Run feature engineering pipeline.
     '''
     logger.info('Starting feature engineering pipeline')
-    engineer_features(DATA_DIR, RESULTS_DIR, PREPROCESSED_DATA_FILE, PREPROCESSED_DATA_SUMMARY_FILE)
+    df = engineer_features(DATA_DIR, RESULTS_DIR, PREPROCESSED_DATA_FILE, PREPROCESSED_DATA_SUMMARY_FILE)
+    del df
+    gc.collect()
     logger.info('Feature engineering completed successfully')
 
 
@@ -153,4 +158,4 @@ if __name__ == '__main__':
 
 
 # ---------- All exports ---------- #
-__all__ = ['run_feature_engineering']
+__all__ = ['run_feature_engineering', 'engineer_features']

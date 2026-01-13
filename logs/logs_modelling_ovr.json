@@ -438,3 +438,86 @@
 {"timestamp": "2026-01-12 19:43:25,682", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 100 customers completed"}
 {"timestamp": "2026-01-12 19:43:25,682", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Recommendations for 100 customers completed"}
 {"timestamp": "2026-01-12 19:43:25,834", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Models saved to: models/ovr_grouped_santander"}
+{"timestamp": "2026-01-12 21:36:37,492", "module": "modelling_ovr", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-12 21:36:38,126", "module": "modelling_ovr", "level": "INFO", "message": "MLflow experiment: ovr_grouped_catboost"}
+{"timestamp": "2026-01-12 21:36:38,126", "module": "modelling_ovr", "level": "INFO", "message": "OvRGroupModel initialized"}
+{"timestamp": "2026-01-12 21:36:38,126", "module": "modelling_ovr", "level": "INFO", "message": "  HPO settings: n_splits=3, max_iter=300, early_stop=30"}
+{"timestamp": "2026-01-12 21:36:38,126", "module": "modelling_ovr", "level": "INFO", "message": "  Training settings: boosting=Plain, border_count=128, threads=-1"}
+{"timestamp": "2026-01-12 21:36:38,126", "module": "modelling_ovr", "level": "INFO", "message": "  Feature selection: enabled=True, min_importance=0.001"}
+{"timestamp": "2026-01-12 21:36:49,512", "module": "modelling_ovr", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-12 21:36:50,115", "module": "modelling_ovr", "level": "INFO", "message": "MLflow experiment: ovr_grouped_catboost"}
+{"timestamp": "2026-01-12 21:36:50,115", "module": "modelling_ovr", "level": "INFO", "message": "OvRGroupModel initialized"}
+{"timestamp": "2026-01-12 21:36:50,115", "module": "modelling_ovr", "level": "INFO", "message": "  HPO settings: n_splits=3, max_iter=300, early_stop=30"}
+{"timestamp": "2026-01-12 21:36:50,115", "module": "modelling_ovr", "level": "INFO", "message": "  Training settings: boosting=Plain, border_count=128, threads=-1"}
+{"timestamp": "2026-01-12 21:36:50,115", "module": "modelling_ovr", "level": "INFO", "message": "  Feature selection: enabled=True, min_importance=0.001"}
+{"timestamp": "2026-01-12 21:36:50,134", "module": "modelling_ovr", "level": "INFO", "message": "Loaded 3 group models from: models/ovr_grouped_santander"}
+{"timestamp": "2026-01-12 21:36:50,191", "module": "modelling_ovr", "level": "INFO", "message": "Logging final model to MLflow (run_id: 4918da8ce53343ca8c086efd9a8ba642)"}
+{"timestamp": "2026-01-12 21:36:50,520", "module": "modelling_ovr", "level": "ERROR", "message": "Error logging to MLflow: Invalid model name ('models/frequent/target_recibo') provided. Model name must be a non-empty string and cannot contain the following characters: ('/', ':', '.', '%', '\"', \"'\")"}
+{"timestamp": "2026-01-12 21:37:22,651", "module": "modelling_ovr", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-12 21:37:23,286", "module": "modelling_ovr", "level": "INFO", "message": "MLflow experiment: ovr_grouped_catboost"}
+{"timestamp": "2026-01-12 21:37:23,286", "module": "modelling_ovr", "level": "INFO", "message": "OvRGroupModel initialized"}
+{"timestamp": "2026-01-12 21:37:23,286", "module": "modelling_ovr", "level": "INFO", "message": "  HPO settings: n_splits=3, max_iter=300, early_stop=30"}
+{"timestamp": "2026-01-12 21:37:23,286", "module": "modelling_ovr", "level": "INFO", "message": "  Training settings: boosting=Plain, border_count=128, threads=-1"}
+{"timestamp": "2026-01-12 21:37:23,286", "module": "modelling_ovr", "level": "INFO", "message": "  Feature selection: enabled=True, min_importance=0.001"}
+{"timestamp": "2026-01-12 21:37:23,306", "module": "modelling_ovr", "level": "INFO", "message": "Loaded 3 group models from: models/ovr_grouped_santander"}
+{"timestamp": "2026-01-12 21:37:23,376", "module": "modelling_ovr", "level": "INFO", "message": "Logging final model to MLflow (run_id: 1678eda3d1b14bf19ab30d6ddc8e0d19)"}
+{"timestamp": "2026-01-12 21:37:26,505", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_recibo"}
+{"timestamp": "2026-01-12 21:37:29,063", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_nom_pens"}
+{"timestamp": "2026-01-12 21:37:31,597", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_nomina"}
+{"timestamp": "2026-01-12 21:37:34,227", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_cco_fin"}
+{"timestamp": "2026-01-12 21:37:36,748", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_tjcr_fin"}
+{"timestamp": "2026-01-12 21:37:39,290", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_cno_fin"}
+{"timestamp": "2026-01-12 21:37:41,772", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_ecue_fin"}
+{"timestamp": "2026-01-12 21:37:44,235", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_dela_fin"}
+{"timestamp": "2026-01-12 21:37:46,755", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_reca_fin"}
+{"timestamp": "2026-01-12 21:37:49,287", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_ctma_fin"}
+{"timestamp": "2026-01-12 21:37:51,773", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_valo_fin"}
+{"timestamp": "2026-01-12 21:37:54,381", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_ctop_fin"}
+{"timestamp": "2026-01-12 21:37:56,938", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_fond_fin"}
+{"timestamp": "2026-01-12 21:37:59,421", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_deco_fin"}
+{"timestamp": "2026-01-12 21:38:02,005", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_ctpp_fin"}
+{"timestamp": "2026-01-12 21:38:04,637", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: mid_plan_fin"}
+{"timestamp": "2026-01-12 21:38:07,084", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: mid_ctju_fin"}
+{"timestamp": "2026-01-12 21:38:09,598", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: mid_deme_fin"}
+{"timestamp": "2026-01-12 21:38:12,081", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: mid_pres_fin"}
+{"timestamp": "2026-01-12 21:38:14,553", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: mid_cder_fin"}
+{"timestamp": "2026-01-12 21:38:17,089", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: mid_hip_fin"}
+{"timestamp": "2026-01-12 21:38:19,595", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: mid_viv_fin"}
+{"timestamp": "2026-01-12 21:38:22,176", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: rare_aval_fin"}
+{"timestamp": "2026-01-12 21:38:24,681", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: rare_ahor_fin"}
+{"timestamp": "2026-01-12 21:38:24,682", "module": "modelling_ovr", "level": "INFO", "message": "Logged 24 CatBoost models to MLflow"}
+{"timestamp": "2026-01-12 21:38:24,763", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Final model logged to MLflow (run_id: 1678eda3d1b14bf19ab30d6ddc8e0d19)"}
+{"timestamp": "2026-01-12 21:39:35,318", "module": "modelling_ovr", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-12 21:39:35,916", "module": "modelling_ovr", "level": "INFO", "message": "MLflow experiment: ovr_grouped_catboost"}
+{"timestamp": "2026-01-12 21:39:35,916", "module": "modelling_ovr", "level": "INFO", "message": "OvRGroupModel initialized"}
+{"timestamp": "2026-01-12 21:39:35,916", "module": "modelling_ovr", "level": "INFO", "message": "  HPO settings: n_splits=3, max_iter=300, early_stop=30"}
+{"timestamp": "2026-01-12 21:39:35,916", "module": "modelling_ovr", "level": "INFO", "message": "  Training settings: boosting=Plain, border_count=128, threads=-1"}
+{"timestamp": "2026-01-12 21:39:35,916", "module": "modelling_ovr", "level": "INFO", "message": "  Feature selection: enabled=True, min_importance=0.001"}
+{"timestamp": "2026-01-12 21:39:35,936", "module": "modelling_ovr", "level": "INFO", "message": "Loaded 3 group models from: models/ovr_grouped_santander"}
+{"timestamp": "2026-01-12 21:39:36,002", "module": "modelling_ovr", "level": "INFO", "message": "Logging final model to MLflow (run_id: 5f663adc418a48b6af19fe51f0431c66)"}
+{"timestamp": "2026-01-12 21:39:39,208", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_recibo"}
+{"timestamp": "2026-01-12 21:39:41,633", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_nom_pens"}
+{"timestamp": "2026-01-12 21:39:44,090", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_nomina"}
+{"timestamp": "2026-01-12 21:39:46,602", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_cco_fin"}
+{"timestamp": "2026-01-12 21:39:49,049", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_tjcr_fin"}
+{"timestamp": "2026-01-12 21:39:51,564", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_cno_fin"}
+{"timestamp": "2026-01-12 21:39:53,950", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_ecue_fin"}
+{"timestamp": "2026-01-12 21:39:56,441", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_dela_fin"}
+{"timestamp": "2026-01-12 21:39:58,946", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_reca_fin"}
+{"timestamp": "2026-01-12 21:40:01,393", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_ctma_fin"}
+{"timestamp": "2026-01-12 21:40:04,021", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_valo_fin"}
+{"timestamp": "2026-01-12 21:40:06,544", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_ctop_fin"}
+{"timestamp": "2026-01-12 21:40:09,012", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_fond_fin"}
+{"timestamp": "2026-01-12 21:40:11,468", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_deco_fin"}
+{"timestamp": "2026-01-12 21:40:13,929", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: frequent_ctpp_fin"}
+{"timestamp": "2026-01-12 21:40:16,551", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: mid_plan_fin"}
+{"timestamp": "2026-01-12 21:40:18,989", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: mid_ctju_fin"}
+{"timestamp": "2026-01-12 21:40:21,588", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: mid_deme_fin"}
+{"timestamp": "2026-01-12 21:40:23,955", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: mid_pres_fin"}
+{"timestamp": "2026-01-12 21:40:26,397", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: mid_cder_fin"}
+{"timestamp": "2026-01-12 21:40:28,806", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: mid_hip_fin"}
+{"timestamp": "2026-01-12 21:40:31,286", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: mid_viv_fin"}
+{"timestamp": "2026-01-12 21:40:33,921", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: rare_aval_fin"}
+{"timestamp": "2026-01-12 21:40:36,501", "module": "modelling_ovr", "level": "INFO", "message": "  Logged model: rare_ahor_fin"}
+{"timestamp": "2026-01-12 21:40:36,501", "module": "modelling_ovr", "level": "INFO", "message": "Logged 24 CatBoost models to MLflow"}
+{"timestamp": "2026-01-12 21:40:36,567", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Final model logged to MLflow (run_id: 5f663adc418a48b6af19fe51f0431c66)"}

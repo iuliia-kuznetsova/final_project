@@ -62,6 +62,10 @@ PREPROCESSED_DATA_FILE = os.getenv('PREPROCESSED_DATA_FILE', 'data_preprocessed.
 PREPROCESSED_DATA_SUMMARY_FILE = os.getenv('PREPROCESSED_DATA_SUMMARY_FILE', 'data_preprocessed_summary.parquet')
 # Encoding maps file
 ENCODING_MAPS_FILE = os.getenv('ENCODING_MAPS_FILE', 'encoding_maps.json')
+# App test data file
+APP_TEST_DATA_FILE = os.getenv('APP_TEST_DATA_FILE', 'app_test_data.csv')
+# App test preprocessed data file
+APP_TEST_PREPROCESSED_DATA_FILE = os.getenv('APP_TEST_PREPROCESSED_DATA_FILE', 'app_test_data_preprocessed.parquet')
 
 
 # ---------- Functions ---------- #
@@ -320,7 +324,7 @@ def preprocess_data(
     results_dir: str = RESULTS_DIR,
     preprocessed_data_file: str = PREPROCESSED_DATA_FILE,
     preprocessed_data_summary_file: str = 'data_preprocessed_summary.parquet'
-) -> tuple[pl.DataFrame, pl.DataFrame]:
+) -> pl.DataFrame:
     logger.info('Starting data preprocessing pipeline')
     
     # Create 'customer_period' feature: difference between fecha_dato and fecha_alta in months
@@ -338,18 +342,18 @@ def preprocess_data(
     # Drop features with high proportion of missing values 'ult_fec_cli_1t', 'conyuemp'
     # Drop non-indicative feature 'tipodom', 'indext'
     # Drop 'fecha_alta' feature as CatBoost cannot handle dates
-    df_preprocessed = df_preprocessed.drop(['ult_fec_cli_1t', 'conyuemp', 'tipodom', 'fecha_alta', 'indext'])
-    logger.info(f'Dropped features: {["ult_fec_cli_1t", "conyuemp", "tipodom", "fecha_alta", "indext"]}')
+    # Drop 'antiguedad' feature as it is highly correlated with customer_period
+    df_preprocessed = df_preprocessed.drop(['ult_fec_cli_1t', 'conyuemp', 'tipodom', 'fecha_alta', 'indext', 'antiguedad'])
+    logger.info(f'Dropped features: {["ult_fec_cli_1t", "conyuemp", "tipodom", "fecha_alta", "indext", "antiguedad"]}')
     
-    # Clip outliers (before dropping antiguedad)
+    # Clip outliers
     df_preprocessed = (
         df_preprocessed
             .with_columns([
-                pl.col('age').clip(18, 90).alias('age'),
-                pl.col('antiguedad').clip(0, 500).log1p().alias('antiguedad')
+                pl.col('age').clip(18, 90).alias('age')
             ])
     )
-    logger.info(f'Clipped outliers: {["age", "antiguedad"]}')
+    logger.info(f'Clipped outliers: {["age"]}')
     
     # Impute missing values in categorical columns
     # Fill with 'missing'
@@ -386,9 +390,8 @@ def preprocess_data(
     logger.info('Imputed renta missing values')
     
     # Drop 'nomprov' (used for renta imputation, now no longer needed)
-    # Drop 'antiguedad' as it is highly correlated with customer_period
-    df_preprocessed = df_preprocessed.drop(['nomprov', 'antiguedad'])
-    logger.info(f'Dropped features: {["nomprov", "antiguedad"]}')
+    df_preprocessed = df_preprocessed.drop(['nomprov'])
+    logger.info(f'Dropped features: {["nomprov"]}')
    
     # Drop rows where sexo is null
     # As data contain rows with almost all features are null
@@ -403,22 +406,25 @@ def preprocess_data(
     # Save preprocessed data
     Path(data_dir).mkdir(parents=True, exist_ok=True)
     df_preprocessed.write_parquet(f"{data_dir}/{preprocessed_data_file}")
-    
-    # Save preprocessed data summary
-    df_preprocessed_summary = df_preprocessed.describe()
-    df_preprocessed_summary.write_parquet(f"{results_dir}/{preprocessed_data_summary_file}")
     logger.info(f"Preprocessed data saved to: {data_dir}/{preprocessed_data_file}")
-    logger.info(f"Preprocessed data summary saved to: {results_dir}/{preprocessed_data_summary_file}")
+
+    # Save preprocessed data summary
+    if preprocessed_data_summary_file is not None:
+        df_preprocessed_summary = df_preprocessed.describe()
+        df_preprocessed_summary.write_parquet(f"{results_dir}/{preprocessed_data_summary_file}")
+        logger.info(f"Preprocessed data summary saved to: {results_dir}/{preprocessed_data_summary_file}")
    
-    del df, df_preprocessed, df_preprocessed_summary
+    del df_preprocessed_summary
     gc.collect()
 
-    return None
+    return df_preprocessed
 
 def run_preprocessing():
     logger.info('Starting data preprocessing pipeline')
     df_encoded = load_and_encode_data(DATA_DIR, RESULTS_DIR, RAW_DATA_FILE, ENCODING_MAPS_FILE)
-    preprocess_data(df_encoded, DATA_DIR, RESULTS_DIR, PREPROCESSED_DATA_FILE, PREPROCESSED_DATA_SUMMARY_FILE)
+    df = preprocess_data(df_encoded, DATA_DIR, RESULTS_DIR, PREPROCESSED_DATA_FILE, PREPROCESSED_DATA_SUMMARY_FILE)
+    del df_encoded, df
+    gc.collect()
     logger.info('Data preprocessing completed successfully')
 
 
@@ -428,4 +434,4 @@ if __name__ == '__main__':
 
 
 # ---------- All exports ---------- #
-__all__ = ['run_preprocessing']
+__all__ = ['run_preprocessing', 'load_and_encode_data', 'preprocess_data']

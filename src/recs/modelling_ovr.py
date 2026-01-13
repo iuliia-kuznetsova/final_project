@@ -1342,14 +1342,16 @@ class OvRGroupModel:
                     
                     # Log each CatBoost estimator
                     for product, estimator in zip(products, model.estimators_):
-                        artifact_path = f'models/{group_name}/{product}'
+                        # Clean product name for artifact path (remove 'target_' prefix, use underscores)
+                        product_clean = product.replace('target_', '').replace('.', '_')
+                        artifact_name = f'{group_name}_{product_clean}'
                         mlflow.catboost.log_model(
                             estimator, 
-                            artifact_path,
-                            registered_model_name=f'{model_name}_{group_name}_{product}' if register_model else None
+                            artifact_name,
+                            registered_model_name=f'{model_name}_{group_name}_{product_clean}' if register_model else None
                         )
                         n_models_logged += 1
-                        logger.info(f'  Logged model: {group_name}/{product}')
+                        logger.info(f'  Logged model: {artifact_name}')
                 
                 logger.info(f'Logged {n_models_logged} CatBoost models to MLflow')
                 

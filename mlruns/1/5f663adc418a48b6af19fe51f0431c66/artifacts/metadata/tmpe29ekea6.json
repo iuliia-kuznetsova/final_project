@@ -1,0 +1,38 @@
+{
+  "frequent": {
+    "iterations": 150,
+    "depth": 7,
+    "learning_rate": 0.12028665880905137,
+    "l2_leaf_reg": 3.968793330444372,
+    "bagging_temperature": 0.15601864044243652,
+    "loss_function": "Logloss",
+    "random_seed": 42,
+    "logging_level": "Silent",
+    "thread_count": -1,
+    "auto_class_weights": "Balanced"
+  },
+  "mid": {
+    "iterations": 150,
+    "depth": 7,
+    "learning_rate": 0.12028665880905137,
+    "l2_leaf_reg": 3.968793330444372,
+    "bagging_temperature": 0.15601864044243652,
+    "loss_function": "Logloss",
+    "random_seed": 42,
+    "logging_level": "Silent",
+    "thread_count": -1,
+    "auto_class_weights": "Balanced"
+  },
+  "rare": {
+    "iterations": 100,
+    "depth": 4,
+    "learning_rate": 0.15515699235673208,
+    "l2_leaf_reg": 3.9913058785616786,
+    "bagging_temperature": 0.7080725777960455,
+    "loss_function": "Logloss",
+    "random_seed": 42,
+    "logging_level": "Silent",
+    "thread_count": -1,
+    "auto_class_weights": "Balanced"
+  }
+}

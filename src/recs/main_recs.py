@@ -32,7 +32,9 @@ from src.recs.modelling_ovr import run_modelling_ovr, OvRGroupModel, load_traini
 
 # ---------- Memory Helper ---------- #
 def log_memory_cleanup(logger, step_name: str):
-    '''Force garbage collection and log memory cleanup after a pipeline step.'''
+    '''
+        Force garbage collection and log memory cleanup after a pipeline step
+    '''
     collected = gc.collect()
     logger.info(f'Memory cleanup after {step_name}: {collected} objects collected')
 

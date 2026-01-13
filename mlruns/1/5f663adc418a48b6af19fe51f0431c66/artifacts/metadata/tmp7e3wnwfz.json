@@ -1,0 +1,32 @@
+{
+  "frequent": [
+    "target_recibo",
+    "target_nom_pens",
+    "target_nomina",
+    "target_cco_fin",
+    "target_tjcr_fin",
+    "target_cno_fin",
+    "target_ecue_fin",
+    "target_dela_fin",
+    "target_reca_fin",
+    "target_ctma_fin",
+    "target_valo_fin",
+    "target_ctop_fin",
+    "target_fond_fin",
+    "target_deco_fin",
+    "target_ctpp_fin"
+  ],
+  "mid": [
+    "target_plan_fin",
+    "target_ctju_fin",
+    "target_deme_fin",
+    "target_pres_fin",
+    "target_cder_fin",
+    "target_hip_fin",
+    "target_viv_fin"
+  ],
+  "rare": [
+    "target_aval_fin",
+    "target_ahor_fin"
+  ]
+}

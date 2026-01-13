@@ -141,3 +141,350 @@
 {"timestamp": "2026-01-12 13:52:52,895", "module": "data_preprocessing", "level": "INFO", "message": "Preprocessed data saved to: ./data/data_preprocessed.parquet"}
 {"timestamp": "2026-01-12 13:52:52,895", "module": "data_preprocessing", "level": "INFO", "message": "Preprocessed data summary saved to: ./results/data_preprocessed_summary.parquet"}
 {"timestamp": "2026-01-12 13:52:52,951", "module": "data_preprocessing", "level": "INFO", "message": "Data preprocessing completed successfully"}
+{"timestamp": "2026-01-13 11:28:44,222", "module": "data_preprocessing", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_data_preprocessing.json setup completed"}
+{"timestamp": "2026-01-13 11:31:04,467", "module": "data_preprocessing", "level": "INFO", "message": "Loading raw data from: ./data/train_ver2.csv"}
+{"timestamp": "2026-01-13 11:31:22,831", "module": "data_preprocessing", "level": "INFO", "message": "Loaded 13647309 rows x 48 columns"}
+{"timestamp": "2026-01-13 11:31:22,832", "module": "data_preprocessing", "level": "INFO", "message": "Applying data type transformations"}
+{"timestamp": "2026-01-13 11:31:23,266", "module": "data_preprocessing", "level": "INFO", "message": "Parsed date columns"}
+{"timestamp": "2026-01-13 11:31:28,385", "module": "data_preprocessing", "level": "INFO", "message": "Encoded categorical columns to Categorical"}
+{"timestamp": "2026-01-13 11:31:39,731", "module": "data_preprocessing", "level": "INFO", "message": "Encoded boolean and product columns to Boolean"}
+{"timestamp": "2026-01-13 11:31:42,022", "module": "data_preprocessing", "level": "INFO", "message": "Casted numeric columns to UInt8, UInt32 and Float32"}
+{"timestamp": "2026-01-13 11:31:42,023", "module": "data_preprocessing", "level": "INFO", "message": "Final schema:"}
+{"timestamp": "2026-01-13 11:31:42,024", "module": "data_preprocessing", "level": "INFO", "message": "  fecha_dato: Date"}
+{"timestamp": "2026-01-13 11:31:42,025", "module": "data_preprocessing", "level": "INFO", "message": "  ncodpers: String"}
+{"timestamp": "2026-01-13 11:31:42,026", "module": "data_preprocessing", "level": "INFO", "message": "  ind_empleado: Categorical"}
+{"timestamp": "2026-01-13 11:31:42,026", "module": "data_preprocessing", "level": "INFO", "message": "  pais_residencia: Categorical"}
+{"timestamp": "2026-01-13 11:31:42,027", "module": "data_preprocessing", "level": "INFO", "message": "  sexo: Categorical"}
+{"timestamp": "2026-01-13 11:31:42,027", "module": "data_preprocessing", "level": "INFO", "message": "  age: UInt8"}
+{"timestamp": "2026-01-13 11:31:42,028", "module": "data_preprocessing", "level": "INFO", "message": "  fecha_alta: Date"}
+{"timestamp": "2026-01-13 11:31:42,029", "module": "data_preprocessing", "level": "INFO", "message": "  ind_nuevo: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,029", "module": "data_preprocessing", "level": "INFO", "message": "  antiguedad: UInt32"}
+{"timestamp": "2026-01-13 11:31:42,030", "module": "data_preprocessing", "level": "INFO", "message": "  indrel: Categorical"}
+{"timestamp": "2026-01-13 11:31:42,030", "module": "data_preprocessing", "level": "INFO", "message": "  ult_fec_cli_1t: Date"}
+{"timestamp": "2026-01-13 11:31:42,031", "module": "data_preprocessing", "level": "INFO", "message": "  indrel_1mes: Categorical"}
+{"timestamp": "2026-01-13 11:31:42,032", "module": "data_preprocessing", "level": "INFO", "message": "  tiprel_1mes: Categorical"}
+{"timestamp": "2026-01-13 11:31:42,033", "module": "data_preprocessing", "level": "INFO", "message": "  indresi: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,033", "module": "data_preprocessing", "level": "INFO", "message": "  indext: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,034", "module": "data_preprocessing", "level": "INFO", "message": "  conyuemp: Categorical"}
+{"timestamp": "2026-01-13 11:31:42,035", "module": "data_preprocessing", "level": "INFO", "message": "  canal_entrada: Categorical"}
+{"timestamp": "2026-01-13 11:31:42,036", "module": "data_preprocessing", "level": "INFO", "message": "  indfall: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,037", "module": "data_preprocessing", "level": "INFO", "message": "  tipodom: String"}
+{"timestamp": "2026-01-13 11:31:42,037", "module": "data_preprocessing", "level": "INFO", "message": "  cod_prov: Categorical"}
+{"timestamp": "2026-01-13 11:31:42,038", "module": "data_preprocessing", "level": "INFO", "message": "  nomprov: Categorical"}
+{"timestamp": "2026-01-13 11:31:42,039", "module": "data_preprocessing", "level": "INFO", "message": "  ind_actividad_cliente: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,039", "module": "data_preprocessing", "level": "INFO", "message": "  renta: Float32"}
+{"timestamp": "2026-01-13 11:31:42,040", "module": "data_preprocessing", "level": "INFO", "message": "  segmento: Categorical"}
+{"timestamp": "2026-01-13 11:31:42,041", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ahor_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,041", "module": "data_preprocessing", "level": "INFO", "message": "  ind_aval_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,042", "module": "data_preprocessing", "level": "INFO", "message": "  ind_cco_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,043", "module": "data_preprocessing", "level": "INFO", "message": "  ind_cder_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,044", "module": "data_preprocessing", "level": "INFO", "message": "  ind_cno_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,044", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ctju_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,045", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ctma_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,046", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ctop_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,046", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ctpp_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,047", "module": "data_preprocessing", "level": "INFO", "message": "  ind_deco_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,047", "module": "data_preprocessing", "level": "INFO", "message": "  ind_deme_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,048", "module": "data_preprocessing", "level": "INFO", "message": "  ind_dela_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,049", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ecue_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,050", "module": "data_preprocessing", "level": "INFO", "message": "  ind_fond_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,050", "module": "data_preprocessing", "level": "INFO", "message": "  ind_hip_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,051", "module": "data_preprocessing", "level": "INFO", "message": "  ind_plan_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,052", "module": "data_preprocessing", "level": "INFO", "message": "  ind_pres_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,053", "module": "data_preprocessing", "level": "INFO", "message": "  ind_reca_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,053", "module": "data_preprocessing", "level": "INFO", "message": "  ind_tjcr_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,054", "module": "data_preprocessing", "level": "INFO", "message": "  ind_valo_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,055", "module": "data_preprocessing", "level": "INFO", "message": "  ind_viv_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,056", "module": "data_preprocessing", "level": "INFO", "message": "  ind_nomina_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,056", "module": "data_preprocessing", "level": "INFO", "message": "  ind_nom_pens_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,057", "module": "data_preprocessing", "level": "INFO", "message": "  ind_recibo_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:31:42,058", "module": "data_preprocessing", "level": "INFO", "message": "Encoding maps saved to: ./results/encoding_maps.json"}
+{"timestamp": "2026-01-13 11:31:42,059", "module": "data_preprocessing", "level": "INFO", "message": "Starting data preprocessing pipeline"}
+{"timestamp": "2026-01-13 11:31:42,511", "module": "data_preprocessing", "level": "INFO", "message": "Computed customer_period (months since fecha_alta)"}
+{"timestamp": "2026-01-13 11:31:42,519", "module": "data_preprocessing", "level": "INFO", "message": "Dropped features: ['ult_fec_cli_1t', 'conyuemp', 'tipodom', 'fecha_alta', 'indext']"}
+{"timestamp": "2026-01-13 11:31:42,688", "module": "data_preprocessing", "level": "INFO", "message": "Clipped outliers: ['age', 'antiguedad']"}
+{"timestamp": "2026-01-13 11:31:45,795", "module": "data_preprocessing", "level": "INFO", "message": "Filled missing values in categorical columns with \"missing\""}
+{"timestamp": "2026-01-13 11:31:47,109", "module": "data_preprocessing", "level": "INFO", "message": "Imputed renta missing values"}
+{"timestamp": "2026-01-13 11:31:47,111", "module": "data_preprocessing", "level": "INFO", "message": "Dropped features: ['nomprov', 'antiguedad']"}
+{"timestamp": "2026-01-13 11:31:47,112", "module": "data_preprocessing", "level": "INFO", "message": "Dropped rows with almost all features null"}
+{"timestamp": "2026-01-13 11:31:47,162", "module": "data_preprocessing", "level": "INFO", "message": "Dropped rows where ind_nomina_ult1 or ind_nom_pens_ult1 is null"}
+{"timestamp": "2026-01-13 11:31:49,965", "module": "data_preprocessing", "level": "INFO", "message": "Preprocessed data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-13 11:31:50,601", "module": "data_preprocessing", "level": "INFO", "message": "Preprocessed data summary saved to: ./results/preprocessed_data_summary.parquet"}
+{"timestamp": "2026-01-13 11:44:23,720", "module": "data_preprocessing", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_data_preprocessing.json setup completed"}
+{"timestamp": "2026-01-13 11:44:55,548", "module": "data_preprocessing", "level": "INFO", "message": "Loading raw data from: ./data/train_ver2.csv"}
+{"timestamp": "2026-01-13 11:45:13,812", "module": "data_preprocessing", "level": "INFO", "message": "Loaded 13647309 rows x 48 columns"}
+{"timestamp": "2026-01-13 11:45:13,813", "module": "data_preprocessing", "level": "INFO", "message": "Applying data type transformations"}
+{"timestamp": "2026-01-13 11:45:14,192", "module": "data_preprocessing", "level": "INFO", "message": "Parsed date columns"}
+{"timestamp": "2026-01-13 11:45:19,260", "module": "data_preprocessing", "level": "INFO", "message": "Encoded categorical columns to Categorical"}
+{"timestamp": "2026-01-13 11:45:30,553", "module": "data_preprocessing", "level": "INFO", "message": "Encoded boolean and product columns to Boolean"}
+{"timestamp": "2026-01-13 11:45:32,752", "module": "data_preprocessing", "level": "INFO", "message": "Casted numeric columns to UInt8, UInt32 and Float32"}
+{"timestamp": "2026-01-13 11:45:32,754", "module": "data_preprocessing", "level": "INFO", "message": "Final schema:"}
+{"timestamp": "2026-01-13 11:45:32,754", "module": "data_preprocessing", "level": "INFO", "message": "  fecha_dato: Date"}
+{"timestamp": "2026-01-13 11:45:32,755", "module": "data_preprocessing", "level": "INFO", "message": "  ncodpers: String"}
+{"timestamp": "2026-01-13 11:45:32,756", "module": "data_preprocessing", "level": "INFO", "message": "  ind_empleado: Categorical"}
+{"timestamp": "2026-01-13 11:45:32,757", "module": "data_preprocessing", "level": "INFO", "message": "  pais_residencia: Categorical"}
+{"timestamp": "2026-01-13 11:45:32,758", "module": "data_preprocessing", "level": "INFO", "message": "  sexo: Categorical"}
+{"timestamp": "2026-01-13 11:45:32,760", "module": "data_preprocessing", "level": "INFO", "message": "  age: UInt8"}
+{"timestamp": "2026-01-13 11:45:32,761", "module": "data_preprocessing", "level": "INFO", "message": "  fecha_alta: Date"}
+{"timestamp": "2026-01-13 11:45:32,762", "module": "data_preprocessing", "level": "INFO", "message": "  ind_nuevo: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,763", "module": "data_preprocessing", "level": "INFO", "message": "  antiguedad: UInt32"}
+{"timestamp": "2026-01-13 11:45:32,763", "module": "data_preprocessing", "level": "INFO", "message": "  indrel: Categorical"}
+{"timestamp": "2026-01-13 11:45:32,764", "module": "data_preprocessing", "level": "INFO", "message": "  ult_fec_cli_1t: Date"}
+{"timestamp": "2026-01-13 11:45:32,766", "module": "data_preprocessing", "level": "INFO", "message": "  indrel_1mes: Categorical"}
+{"timestamp": "2026-01-13 11:45:32,766", "module": "data_preprocessing", "level": "INFO", "message": "  tiprel_1mes: Categorical"}
+{"timestamp": "2026-01-13 11:45:32,767", "module": "data_preprocessing", "level": "INFO", "message": "  indresi: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,767", "module": "data_preprocessing", "level": "INFO", "message": "  indext: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,769", "module": "data_preprocessing", "level": "INFO", "message": "  conyuemp: Categorical"}
+{"timestamp": "2026-01-13 11:45:32,769", "module": "data_preprocessing", "level": "INFO", "message": "  canal_entrada: Categorical"}
+{"timestamp": "2026-01-13 11:45:32,770", "module": "data_preprocessing", "level": "INFO", "message": "  indfall: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,771", "module": "data_preprocessing", "level": "INFO", "message": "  tipodom: String"}
+{"timestamp": "2026-01-13 11:45:32,772", "module": "data_preprocessing", "level": "INFO", "message": "  cod_prov: Categorical"}
+{"timestamp": "2026-01-13 11:45:32,772", "module": "data_preprocessing", "level": "INFO", "message": "  nomprov: Categorical"}
+{"timestamp": "2026-01-13 11:45:32,773", "module": "data_preprocessing", "level": "INFO", "message": "  ind_actividad_cliente: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,774", "module": "data_preprocessing", "level": "INFO", "message": "  renta: Float32"}
+{"timestamp": "2026-01-13 11:45:32,775", "module": "data_preprocessing", "level": "INFO", "message": "  segmento: Categorical"}
+{"timestamp": "2026-01-13 11:45:32,775", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ahor_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,776", "module": "data_preprocessing", "level": "INFO", "message": "  ind_aval_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,777", "module": "data_preprocessing", "level": "INFO", "message": "  ind_cco_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,777", "module": "data_preprocessing", "level": "INFO", "message": "  ind_cder_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,778", "module": "data_preprocessing", "level": "INFO", "message": "  ind_cno_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,778", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ctju_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,779", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ctma_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,780", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ctop_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,780", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ctpp_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,781", "module": "data_preprocessing", "level": "INFO", "message": "  ind_deco_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,782", "module": "data_preprocessing", "level": "INFO", "message": "  ind_deme_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,782", "module": "data_preprocessing", "level": "INFO", "message": "  ind_dela_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,783", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ecue_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,783", "module": "data_preprocessing", "level": "INFO", "message": "  ind_fond_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,784", "module": "data_preprocessing", "level": "INFO", "message": "  ind_hip_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,786", "module": "data_preprocessing", "level": "INFO", "message": "  ind_plan_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,786", "module": "data_preprocessing", "level": "INFO", "message": "  ind_pres_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,787", "module": "data_preprocessing", "level": "INFO", "message": "  ind_reca_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,788", "module": "data_preprocessing", "level": "INFO", "message": "  ind_tjcr_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,788", "module": "data_preprocessing", "level": "INFO", "message": "  ind_valo_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,789", "module": "data_preprocessing", "level": "INFO", "message": "  ind_viv_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,790", "module": "data_preprocessing", "level": "INFO", "message": "  ind_nomina_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,791", "module": "data_preprocessing", "level": "INFO", "message": "  ind_nom_pens_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,791", "module": "data_preprocessing", "level": "INFO", "message": "  ind_recibo_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:45:32,792", "module": "data_preprocessing", "level": "INFO", "message": "Encoding maps saved to: ./results/encoding_maps.json"}
+{"timestamp": "2026-01-13 11:45:32,793", "module": "data_preprocessing", "level": "INFO", "message": "Starting data preprocessing pipeline"}
+{"timestamp": "2026-01-13 11:45:33,234", "module": "data_preprocessing", "level": "INFO", "message": "Computed customer_period (months since fecha_alta)"}
+{"timestamp": "2026-01-13 11:45:33,241", "module": "data_preprocessing", "level": "INFO", "message": "Dropped features: ['ult_fec_cli_1t', 'conyuemp', 'tipodom', 'fecha_alta', 'indext']"}
+{"timestamp": "2026-01-13 11:45:33,392", "module": "data_preprocessing", "level": "INFO", "message": "Clipped outliers: ['age', 'antiguedad']"}
+{"timestamp": "2026-01-13 11:45:36,471", "module": "data_preprocessing", "level": "INFO", "message": "Filled missing values in categorical columns with \"missing\""}
+{"timestamp": "2026-01-13 11:45:37,733", "module": "data_preprocessing", "level": "INFO", "message": "Imputed renta missing values"}
+{"timestamp": "2026-01-13 11:45:37,734", "module": "data_preprocessing", "level": "INFO", "message": "Dropped features: ['nomprov', 'antiguedad']"}
+{"timestamp": "2026-01-13 11:45:37,737", "module": "data_preprocessing", "level": "INFO", "message": "Dropped rows with almost all features null"}
+{"timestamp": "2026-01-13 11:45:37,782", "module": "data_preprocessing", "level": "INFO", "message": "Dropped rows where ind_nomina_ult1 or ind_nom_pens_ult1 is null"}
+{"timestamp": "2026-01-13 11:45:40,236", "module": "data_preprocessing", "level": "INFO", "message": "Preprocessed data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-13 11:45:40,887", "module": "data_preprocessing", "level": "INFO", "message": "Preprocessed data summary saved to: ./results/preprocessed_data_summary.parquet"}
+{"timestamp": "2026-01-13 11:48:01,475", "module": "data_preprocessing", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_data_preprocessing.json setup completed"}
+{"timestamp": "2026-01-13 11:54:02,431", "module": "data_preprocessing", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_data_preprocessing.json setup completed"}
+{"timestamp": "2026-01-13 11:54:35,173", "module": "data_preprocessing", "level": "INFO", "message": "Loading raw data from: ./data/train_ver2.csv"}
+{"timestamp": "2026-01-13 11:54:53,362", "module": "data_preprocessing", "level": "INFO", "message": "Loaded 13647309 rows x 48 columns"}
+{"timestamp": "2026-01-13 11:54:53,363", "module": "data_preprocessing", "level": "INFO", "message": "Applying data type transformations"}
+{"timestamp": "2026-01-13 11:54:53,742", "module": "data_preprocessing", "level": "INFO", "message": "Parsed date columns"}
+{"timestamp": "2026-01-13 11:54:58,952", "module": "data_preprocessing", "level": "INFO", "message": "Encoded categorical columns to Categorical"}
+{"timestamp": "2026-01-13 11:55:12,906", "module": "data_preprocessing", "level": "INFO", "message": "Encoded boolean and product columns to Boolean"}
+{"timestamp": "2026-01-13 11:55:15,083", "module": "data_preprocessing", "level": "INFO", "message": "Casted numeric columns to UInt8, UInt32 and Float32"}
+{"timestamp": "2026-01-13 11:55:15,085", "module": "data_preprocessing", "level": "INFO", "message": "Final schema:"}
+{"timestamp": "2026-01-13 11:55:15,086", "module": "data_preprocessing", "level": "INFO", "message": "  fecha_dato: Date"}
+{"timestamp": "2026-01-13 11:55:15,086", "module": "data_preprocessing", "level": "INFO", "message": "  ncodpers: String"}
+{"timestamp": "2026-01-13 11:55:15,087", "module": "data_preprocessing", "level": "INFO", "message": "  ind_empleado: Categorical"}
+{"timestamp": "2026-01-13 11:55:15,088", "module": "data_preprocessing", "level": "INFO", "message": "  pais_residencia: Categorical"}
+{"timestamp": "2026-01-13 11:55:15,089", "module": "data_preprocessing", "level": "INFO", "message": "  sexo: Categorical"}
+{"timestamp": "2026-01-13 11:55:15,089", "module": "data_preprocessing", "level": "INFO", "message": "  age: UInt8"}
+{"timestamp": "2026-01-13 11:55:15,090", "module": "data_preprocessing", "level": "INFO", "message": "  fecha_alta: Date"}
+{"timestamp": "2026-01-13 11:55:15,091", "module": "data_preprocessing", "level": "INFO", "message": "  ind_nuevo: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,092", "module": "data_preprocessing", "level": "INFO", "message": "  antiguedad: UInt32"}
+{"timestamp": "2026-01-13 11:55:15,092", "module": "data_preprocessing", "level": "INFO", "message": "  indrel: Categorical"}
+{"timestamp": "2026-01-13 11:55:15,093", "module": "data_preprocessing", "level": "INFO", "message": "  ult_fec_cli_1t: Date"}
+{"timestamp": "2026-01-13 11:55:15,093", "module": "data_preprocessing", "level": "INFO", "message": "  indrel_1mes: Categorical"}
+{"timestamp": "2026-01-13 11:55:15,094", "module": "data_preprocessing", "level": "INFO", "message": "  tiprel_1mes: Categorical"}
+{"timestamp": "2026-01-13 11:55:15,095", "module": "data_preprocessing", "level": "INFO", "message": "  indresi: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,096", "module": "data_preprocessing", "level": "INFO", "message": "  indext: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,097", "module": "data_preprocessing", "level": "INFO", "message": "  conyuemp: Categorical"}
+{"timestamp": "2026-01-13 11:55:15,097", "module": "data_preprocessing", "level": "INFO", "message": "  canal_entrada: Categorical"}
+{"timestamp": "2026-01-13 11:55:15,098", "module": "data_preprocessing", "level": "INFO", "message": "  indfall: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,099", "module": "data_preprocessing", "level": "INFO", "message": "  tipodom: String"}
+{"timestamp": "2026-01-13 11:55:15,099", "module": "data_preprocessing", "level": "INFO", "message": "  cod_prov: Categorical"}
+{"timestamp": "2026-01-13 11:55:15,100", "module": "data_preprocessing", "level": "INFO", "message": "  nomprov: Categorical"}
+{"timestamp": "2026-01-13 11:55:15,100", "module": "data_preprocessing", "level": "INFO", "message": "  ind_actividad_cliente: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,101", "module": "data_preprocessing", "level": "INFO", "message": "  renta: Float32"}
+{"timestamp": "2026-01-13 11:55:15,102", "module": "data_preprocessing", "level": "INFO", "message": "  segmento: Categorical"}
+{"timestamp": "2026-01-13 11:55:15,102", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ahor_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,103", "module": "data_preprocessing", "level": "INFO", "message": "  ind_aval_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,103", "module": "data_preprocessing", "level": "INFO", "message": "  ind_cco_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,104", "module": "data_preprocessing", "level": "INFO", "message": "  ind_cder_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,104", "module": "data_preprocessing", "level": "INFO", "message": "  ind_cno_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,105", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ctju_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,105", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ctma_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,106", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ctop_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,107", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ctpp_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,107", "module": "data_preprocessing", "level": "INFO", "message": "  ind_deco_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,108", "module": "data_preprocessing", "level": "INFO", "message": "  ind_deme_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,109", "module": "data_preprocessing", "level": "INFO", "message": "  ind_dela_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,110", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ecue_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,111", "module": "data_preprocessing", "level": "INFO", "message": "  ind_fond_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,112", "module": "data_preprocessing", "level": "INFO", "message": "  ind_hip_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,112", "module": "data_preprocessing", "level": "INFO", "message": "  ind_plan_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,113", "module": "data_preprocessing", "level": "INFO", "message": "  ind_pres_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,113", "module": "data_preprocessing", "level": "INFO", "message": "  ind_reca_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,114", "module": "data_preprocessing", "level": "INFO", "message": "  ind_tjcr_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,114", "module": "data_preprocessing", "level": "INFO", "message": "  ind_valo_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,115", "module": "data_preprocessing", "level": "INFO", "message": "  ind_viv_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,116", "module": "data_preprocessing", "level": "INFO", "message": "  ind_nomina_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,117", "module": "data_preprocessing", "level": "INFO", "message": "  ind_nom_pens_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,118", "module": "data_preprocessing", "level": "INFO", "message": "  ind_recibo_ult1: Boolean"}
+{"timestamp": "2026-01-13 11:55:15,119", "module": "data_preprocessing", "level": "INFO", "message": "Encoding maps saved to: ./results/encoding_maps.json"}
+{"timestamp": "2026-01-13 11:55:15,119", "module": "data_preprocessing", "level": "INFO", "message": "Starting data preprocessing pipeline"}
+{"timestamp": "2026-01-13 11:55:15,587", "module": "data_preprocessing", "level": "INFO", "message": "Computed customer_period (months since fecha_alta)"}
+{"timestamp": "2026-01-13 11:55:15,600", "module": "data_preprocessing", "level": "INFO", "message": "Dropped features: ['ult_fec_cli_1t', 'conyuemp', 'tipodom', 'fecha_alta', 'indext']"}
+{"timestamp": "2026-01-13 11:55:15,761", "module": "data_preprocessing", "level": "INFO", "message": "Clipped outliers: ['age', 'antiguedad']"}
+{"timestamp": "2026-01-13 11:55:18,872", "module": "data_preprocessing", "level": "INFO", "message": "Filled missing values in categorical columns with \"missing\""}
+{"timestamp": "2026-01-13 11:55:20,115", "module": "data_preprocessing", "level": "INFO", "message": "Imputed renta missing values"}
+{"timestamp": "2026-01-13 11:55:20,116", "module": "data_preprocessing", "level": "INFO", "message": "Dropped features: ['nomprov', 'antiguedad']"}
+{"timestamp": "2026-01-13 11:55:20,119", "module": "data_preprocessing", "level": "INFO", "message": "Dropped rows with almost all features null"}
+{"timestamp": "2026-01-13 11:55:20,166", "module": "data_preprocessing", "level": "INFO", "message": "Dropped rows where ind_nomina_ult1 or ind_nom_pens_ult1 is null"}
+{"timestamp": "2026-01-13 11:55:22,889", "module": "data_preprocessing", "level": "INFO", "message": "Preprocessed data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-13 11:55:23,379", "module": "data_preprocessing", "level": "INFO", "message": "Preprocessed data summary saved to: ./results/preprocessed_data_summary.parquet"}
+{"timestamp": "2026-01-13 12:03:28,111", "module": "data_preprocessing", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_data_preprocessing.json setup completed"}
+{"timestamp": "2026-01-13 12:04:00,207", "module": "data_preprocessing", "level": "INFO", "message": "Loading raw data from: ./data/train_ver2.csv"}
+{"timestamp": "2026-01-13 12:04:18,446", "module": "data_preprocessing", "level": "INFO", "message": "Loaded 13647309 rows x 48 columns"}
+{"timestamp": "2026-01-13 12:04:18,447", "module": "data_preprocessing", "level": "INFO", "message": "Applying data type transformations"}
+{"timestamp": "2026-01-13 12:04:18,825", "module": "data_preprocessing", "level": "INFO", "message": "Parsed date columns"}
+{"timestamp": "2026-01-13 12:04:23,701", "module": "data_preprocessing", "level": "INFO", "message": "Encoded categorical columns to Categorical"}
+{"timestamp": "2026-01-13 12:04:35,022", "module": "data_preprocessing", "level": "INFO", "message": "Encoded boolean and product columns to Boolean"}
+{"timestamp": "2026-01-13 12:04:37,221", "module": "data_preprocessing", "level": "INFO", "message": "Casted numeric columns to UInt8, UInt32 and Float32"}
+{"timestamp": "2026-01-13 12:04:37,222", "module": "data_preprocessing", "level": "INFO", "message": "Final schema:"}
+{"timestamp": "2026-01-13 12:04:37,223", "module": "data_preprocessing", "level": "INFO", "message": "  fecha_dato: Date"}
+{"timestamp": "2026-01-13 12:04:37,223", "module": "data_preprocessing", "level": "INFO", "message": "  ncodpers: String"}
+{"timestamp": "2026-01-13 12:04:37,224", "module": "data_preprocessing", "level": "INFO", "message": "  ind_empleado: Categorical"}
+{"timestamp": "2026-01-13 12:04:37,225", "module": "data_preprocessing", "level": "INFO", "message": "  pais_residencia: Categorical"}
+{"timestamp": "2026-01-13 12:04:37,225", "module": "data_preprocessing", "level": "INFO", "message": "  sexo: Categorical"}
+{"timestamp": "2026-01-13 12:04:37,226", "module": "data_preprocessing", "level": "INFO", "message": "  age: UInt8"}
+{"timestamp": "2026-01-13 12:04:37,226", "module": "data_preprocessing", "level": "INFO", "message": "  fecha_alta: Date"}
+{"timestamp": "2026-01-13 12:04:37,227", "module": "data_preprocessing", "level": "INFO", "message": "  ind_nuevo: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,227", "module": "data_preprocessing", "level": "INFO", "message": "  antiguedad: UInt32"}
+{"timestamp": "2026-01-13 12:04:37,228", "module": "data_preprocessing", "level": "INFO", "message": "  indrel: Categorical"}
+{"timestamp": "2026-01-13 12:04:37,228", "module": "data_preprocessing", "level": "INFO", "message": "  ult_fec_cli_1t: Date"}
+{"timestamp": "2026-01-13 12:04:37,229", "module": "data_preprocessing", "level": "INFO", "message": "  indrel_1mes: Categorical"}
+{"timestamp": "2026-01-13 12:04:37,229", "module": "data_preprocessing", "level": "INFO", "message": "  tiprel_1mes: Categorical"}
+{"timestamp": "2026-01-13 12:04:37,230", "module": "data_preprocessing", "level": "INFO", "message": "  indresi: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,230", "module": "data_preprocessing", "level": "INFO", "message": "  indext: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,232", "module": "data_preprocessing", "level": "INFO", "message": "  conyuemp: Categorical"}
+{"timestamp": "2026-01-13 12:04:37,233", "module": "data_preprocessing", "level": "INFO", "message": "  canal_entrada: Categorical"}
+{"timestamp": "2026-01-13 12:04:37,234", "module": "data_preprocessing", "level": "INFO", "message": "  indfall: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,235", "module": "data_preprocessing", "level": "INFO", "message": "  tipodom: String"}
+{"timestamp": "2026-01-13 12:04:37,235", "module": "data_preprocessing", "level": "INFO", "message": "  cod_prov: Categorical"}
+{"timestamp": "2026-01-13 12:04:37,236", "module": "data_preprocessing", "level": "INFO", "message": "  nomprov: Categorical"}
+{"timestamp": "2026-01-13 12:04:37,236", "module": "data_preprocessing", "level": "INFO", "message": "  ind_actividad_cliente: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,237", "module": "data_preprocessing", "level": "INFO", "message": "  renta: Float32"}
+{"timestamp": "2026-01-13 12:04:37,238", "module": "data_preprocessing", "level": "INFO", "message": "  segmento: Categorical"}
+{"timestamp": "2026-01-13 12:04:37,238", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ahor_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,239", "module": "data_preprocessing", "level": "INFO", "message": "  ind_aval_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,239", "module": "data_preprocessing", "level": "INFO", "message": "  ind_cco_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,241", "module": "data_preprocessing", "level": "INFO", "message": "  ind_cder_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,241", "module": "data_preprocessing", "level": "INFO", "message": "  ind_cno_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,242", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ctju_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,243", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ctma_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,243", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ctop_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,244", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ctpp_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,245", "module": "data_preprocessing", "level": "INFO", "message": "  ind_deco_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,245", "module": "data_preprocessing", "level": "INFO", "message": "  ind_deme_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,246", "module": "data_preprocessing", "level": "INFO", "message": "  ind_dela_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,247", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ecue_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,248", "module": "data_preprocessing", "level": "INFO", "message": "  ind_fond_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,248", "module": "data_preprocessing", "level": "INFO", "message": "  ind_hip_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,249", "module": "data_preprocessing", "level": "INFO", "message": "  ind_plan_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,249", "module": "data_preprocessing", "level": "INFO", "message": "  ind_pres_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,250", "module": "data_preprocessing", "level": "INFO", "message": "  ind_reca_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,251", "module": "data_preprocessing", "level": "INFO", "message": "  ind_tjcr_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,251", "module": "data_preprocessing", "level": "INFO", "message": "  ind_valo_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,252", "module": "data_preprocessing", "level": "INFO", "message": "  ind_viv_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,253", "module": "data_preprocessing", "level": "INFO", "message": "  ind_nomina_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,253", "module": "data_preprocessing", "level": "INFO", "message": "  ind_nom_pens_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,254", "module": "data_preprocessing", "level": "INFO", "message": "  ind_recibo_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:04:37,255", "module": "data_preprocessing", "level": "INFO", "message": "Encoding maps saved to: ./results/encoding_maps.json"}
+{"timestamp": "2026-01-13 12:04:37,256", "module": "data_preprocessing", "level": "INFO", "message": "Starting data preprocessing pipeline"}
+{"timestamp": "2026-01-13 12:04:37,705", "module": "data_preprocessing", "level": "INFO", "message": "Computed customer_period (months since fecha_alta)"}
+{"timestamp": "2026-01-13 12:04:37,713", "module": "data_preprocessing", "level": "INFO", "message": "Dropped features: ['ult_fec_cli_1t', 'conyuemp', 'tipodom', 'fecha_alta', 'indext']"}
+{"timestamp": "2026-01-13 12:04:37,862", "module": "data_preprocessing", "level": "INFO", "message": "Clipped outliers: ['age', 'antiguedad']"}
+{"timestamp": "2026-01-13 12:04:40,916", "module": "data_preprocessing", "level": "INFO", "message": "Filled missing values in categorical columns with \"missing\""}
+{"timestamp": "2026-01-13 12:04:42,366", "module": "data_preprocessing", "level": "INFO", "message": "Imputed renta missing values"}
+{"timestamp": "2026-01-13 12:04:42,368", "module": "data_preprocessing", "level": "INFO", "message": "Dropped features: ['nomprov', 'antiguedad']"}
+{"timestamp": "2026-01-13 12:04:42,371", "module": "data_preprocessing", "level": "INFO", "message": "Dropped rows with almost all features null"}
+{"timestamp": "2026-01-13 12:04:42,417", "module": "data_preprocessing", "level": "INFO", "message": "Dropped rows where ind_nomina_ult1 or ind_nom_pens_ult1 is null"}
+{"timestamp": "2026-01-13 12:04:44,911", "module": "data_preprocessing", "level": "INFO", "message": "Preprocessed data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-13 12:04:45,406", "module": "data_preprocessing", "level": "INFO", "message": "Preprocessed data summary saved to: ./results/preprocessed_data_summary.parquet"}
+{"timestamp": "2026-01-13 12:14:47,328", "module": "data_preprocessing", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_data_preprocessing.json setup completed"}
+{"timestamp": "2026-01-13 12:15:50,528", "module": "data_preprocessing", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_data_preprocessing.json setup completed"}
+{"timestamp": "2026-01-13 12:16:23,122", "module": "data_preprocessing", "level": "INFO", "message": "Loading raw data from: ./data/train_ver2.csv"}
+{"timestamp": "2026-01-13 12:16:41,407", "module": "data_preprocessing", "level": "INFO", "message": "Loaded 13647309 rows x 48 columns"}
+{"timestamp": "2026-01-13 12:16:41,408", "module": "data_preprocessing", "level": "INFO", "message": "Applying data type transformations"}
+{"timestamp": "2026-01-13 12:16:41,794", "module": "data_preprocessing", "level": "INFO", "message": "Parsed date columns"}
+{"timestamp": "2026-01-13 12:16:46,756", "module": "data_preprocessing", "level": "INFO", "message": "Encoded categorical columns to Categorical"}
+{"timestamp": "2026-01-13 12:16:58,112", "module": "data_preprocessing", "level": "INFO", "message": "Encoded boolean and product columns to Boolean"}
+{"timestamp": "2026-01-13 12:17:00,448", "module": "data_preprocessing", "level": "INFO", "message": "Casted numeric columns to UInt8, UInt32 and Float32"}
+{"timestamp": "2026-01-13 12:17:00,449", "module": "data_preprocessing", "level": "INFO", "message": "Final schema:"}
+{"timestamp": "2026-01-13 12:17:00,450", "module": "data_preprocessing", "level": "INFO", "message": "  fecha_dato: Date"}
+{"timestamp": "2026-01-13 12:17:00,451", "module": "data_preprocessing", "level": "INFO", "message": "  ncodpers: String"}
+{"timestamp": "2026-01-13 12:17:00,452", "module": "data_preprocessing", "level": "INFO", "message": "  ind_empleado: Categorical"}
+{"timestamp": "2026-01-13 12:17:00,452", "module": "data_preprocessing", "level": "INFO", "message": "  pais_residencia: Categorical"}
+{"timestamp": "2026-01-13 12:17:00,453", "module": "data_preprocessing", "level": "INFO", "message": "  sexo: Categorical"}
+{"timestamp": "2026-01-13 12:17:00,454", "module": "data_preprocessing", "level": "INFO", "message": "  age: UInt8"}
+{"timestamp": "2026-01-13 12:17:00,455", "module": "data_preprocessing", "level": "INFO", "message": "  fecha_alta: Date"}
+{"timestamp": "2026-01-13 12:17:00,455", "module": "data_preprocessing", "level": "INFO", "message": "  ind_nuevo: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,456", "module": "data_preprocessing", "level": "INFO", "message": "  antiguedad: UInt32"}
+{"timestamp": "2026-01-13 12:17:00,457", "module": "data_preprocessing", "level": "INFO", "message": "  indrel: Categorical"}
+{"timestamp": "2026-01-13 12:17:00,457", "module": "data_preprocessing", "level": "INFO", "message": "  ult_fec_cli_1t: Date"}
+{"timestamp": "2026-01-13 12:17:00,458", "module": "data_preprocessing", "level": "INFO", "message": "  indrel_1mes: Categorical"}
+{"timestamp": "2026-01-13 12:17:00,459", "module": "data_preprocessing", "level": "INFO", "message": "  tiprel_1mes: Categorical"}
+{"timestamp": "2026-01-13 12:17:00,459", "module": "data_preprocessing", "level": "INFO", "message": "  indresi: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,460", "module": "data_preprocessing", "level": "INFO", "message": "  indext: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,461", "module": "data_preprocessing", "level": "INFO", "message": "  conyuemp: Categorical"}
+{"timestamp": "2026-01-13 12:17:00,461", "module": "data_preprocessing", "level": "INFO", "message": "  canal_entrada: Categorical"}
+{"timestamp": "2026-01-13 12:17:00,462", "module": "data_preprocessing", "level": "INFO", "message": "  indfall: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,463", "module": "data_preprocessing", "level": "INFO", "message": "  tipodom: String"}
+{"timestamp": "2026-01-13 12:17:00,463", "module": "data_preprocessing", "level": "INFO", "message": "  cod_prov: Categorical"}
+{"timestamp": "2026-01-13 12:17:00,464", "module": "data_preprocessing", "level": "INFO", "message": "  nomprov: Categorical"}
+{"timestamp": "2026-01-13 12:17:00,465", "module": "data_preprocessing", "level": "INFO", "message": "  ind_actividad_cliente: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,466", "module": "data_preprocessing", "level": "INFO", "message": "  renta: Float32"}
+{"timestamp": "2026-01-13 12:17:00,467", "module": "data_preprocessing", "level": "INFO", "message": "  segmento: Categorical"}
+{"timestamp": "2026-01-13 12:17:00,467", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ahor_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,468", "module": "data_preprocessing", "level": "INFO", "message": "  ind_aval_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,469", "module": "data_preprocessing", "level": "INFO", "message": "  ind_cco_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,469", "module": "data_preprocessing", "level": "INFO", "message": "  ind_cder_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,470", "module": "data_preprocessing", "level": "INFO", "message": "  ind_cno_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,471", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ctju_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,472", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ctma_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,472", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ctop_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,473", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ctpp_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,474", "module": "data_preprocessing", "level": "INFO", "message": "  ind_deco_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,474", "module": "data_preprocessing", "level": "INFO", "message": "  ind_deme_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,475", "module": "data_preprocessing", "level": "INFO", "message": "  ind_dela_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,476", "module": "data_preprocessing", "level": "INFO", "message": "  ind_ecue_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,477", "module": "data_preprocessing", "level": "INFO", "message": "  ind_fond_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,477", "module": "data_preprocessing", "level": "INFO", "message": "  ind_hip_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,478", "module": "data_preprocessing", "level": "INFO", "message": "  ind_plan_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,479", "module": "data_preprocessing", "level": "INFO", "message": "  ind_pres_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,480", "module": "data_preprocessing", "level": "INFO", "message": "  ind_reca_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,480", "module": "data_preprocessing", "level": "INFO", "message": "  ind_tjcr_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,481", "module": "data_preprocessing", "level": "INFO", "message": "  ind_valo_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,481", "module": "data_preprocessing", "level": "INFO", "message": "  ind_viv_fin_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,482", "module": "data_preprocessing", "level": "INFO", "message": "  ind_nomina_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,483", "module": "data_preprocessing", "level": "INFO", "message": "  ind_nom_pens_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,484", "module": "data_preprocessing", "level": "INFO", "message": "  ind_recibo_ult1: Boolean"}
+{"timestamp": "2026-01-13 12:17:00,485", "module": "data_preprocessing", "level": "INFO", "message": "Encoding maps saved to: ./results/encoding_maps.json"}
+{"timestamp": "2026-01-13 12:17:00,486", "module": "data_preprocessing", "level": "INFO", "message": "Starting data preprocessing pipeline"}
+{"timestamp": "2026-01-13 12:17:00,958", "module": "data_preprocessing", "level": "INFO", "message": "Computed customer_period (months since fecha_alta)"}
+{"timestamp": "2026-01-13 12:17:00,968", "module": "data_preprocessing", "level": "INFO", "message": "Dropped features: ['ult_fec_cli_1t', 'conyuemp', 'tipodom', 'fecha_alta', 'indext']"}
+{"timestamp": "2026-01-13 12:17:01,139", "module": "data_preprocessing", "level": "INFO", "message": "Clipped outliers: ['age', 'antiguedad']"}
+{"timestamp": "2026-01-13 12:17:04,249", "module": "data_preprocessing", "level": "INFO", "message": "Filled missing values in categorical columns with \"missing\""}
+{"timestamp": "2026-01-13 12:17:05,590", "module": "data_preprocessing", "level": "INFO", "message": "Imputed renta missing values"}
+{"timestamp": "2026-01-13 12:17:05,591", "module": "data_preprocessing", "level": "INFO", "message": "Dropped features: ['nomprov', 'antiguedad']"}
+{"timestamp": "2026-01-13 12:17:05,594", "module": "data_preprocessing", "level": "INFO", "message": "Dropped rows with almost all features null"}
+{"timestamp": "2026-01-13 12:17:05,645", "module": "data_preprocessing", "level": "INFO", "message": "Dropped rows where ind_nomina_ult1 or ind_nom_pens_ult1 is null"}
+{"timestamp": "2026-01-13 12:17:08,813", "module": "data_preprocessing", "level": "INFO", "message": "Preprocessed data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-13 12:17:09,309", "module": "data_preprocessing", "level": "INFO", "message": "Preprocessed data summary saved to: ./results/preprocessed_data_summary.parquet"}
