@@ -32,7 +32,7 @@ logger = setup_logging('target_engineering')
 # Load environment variables
 load_dotenv()
 # Set working directory to project root
-PROJECT_ROOT = Path(__file__).parent.parent.parent  # src/recs -> src -> project_root
+PROJECT_ROOT = Path(__file__).parent.parent.parent
 os.chdir(PROJECT_ROOT)
 
 
@@ -45,7 +45,6 @@ RESULTS_DIR = os.getenv('RESULTS_DIR', './results')
 PREPROCESSED_DATA_FILE = os.getenv('PREPROCESSED_DATA_FILE', 'data_preprocessed.parquet')
 # Preprocessed data summary file
 PREPROCESSED_DATA_SUMMARY_FILE = os.getenv('PREPROCESSED_DATA_SUMMARY_FILE', 'data_preprocessed_summary.parquet')
-
 
 
 # ---------- Functions ---------- #
@@ -86,7 +85,7 @@ def engineer_targets(
         target_cols.append(target)
     # Add targets to the dataframe
     df_engineered = df_engineered.with_columns(target_cols)
-    logger.info(f'Created targets for new products: {[col.meta.output_name() for col in target_cols]}')
+    logger.info(f'Targets created: {[col.meta.output_name() for col in target_cols]}')
 
     # Filter out rows from the last month in the dataset
     # Since shift(-1) looks at next month, the last month has no valid targets
@@ -94,18 +93,19 @@ def engineer_targets(
     target_names = [f"target_{prod.replace('ind_', '').replace('_ult1', '')}" for prod in products]
     # Drop rows where any target is null (last observation per customer)
     df_engineered = df_engineered.drop_nulls(subset=target_names)
-    logger.info(f'Filtered out last month per customer - no valid targets possible')
-    logger.info(f'Rows after filtering last month per customer: {df_engineered.height:,}')
+    logger.info(f'Last month per customer filtered out')
+    logger.info(f'Data size after filtering last month per customer: {df_engineered.height:,} rows x {df_engineered.width:,} columns')
+
+    logger.info('DONE: All targets created')
 
     # Save full preprocessed data with targets
     Path(data_dir).mkdir(parents=True, exist_ok=True)
     df_engineered.write_parquet(f"{data_dir}/{preprocessed_data_file}")
+    logger.info(f'Full preprocessed and engineered data saved to: {data_dir}/{preprocessed_data_file}')
     
     # Save preprocessed data summary
     df_engineered_summary = df_engineered.describe()
     df_engineered_summary.write_parquet(f"{results_dir}/{preprocessed_data_summary_file}")
-
-    logger.info(f'Full preprocessed and engineered data saved to: {data_dir}/{preprocessed_data_file}')
     logger.info(f'Full preprocessed and engineered data summary saved to: {results_dir}/{preprocessed_data_summary_file}')
     
     del df_engineered_summary
@@ -121,11 +121,13 @@ def run_target_engineering():
     df = engineer_targets(DATA_DIR, RESULTS_DIR, PREPROCESSED_DATA_FILE, PREPROCESSED_DATA_SUMMARY_FILE)
     del df
     gc.collect()
-    logger.info('Target engineering completed successfully')
+    logger.info('Target engineering pipeline completed successfully')
+
 
 # ---------- Main function ---------- #
 if __name__ == '__main__':
     run_target_engineering()
+
 
 # ---------- All exports ---------- #
 __all__ = ['run_target_engineering', 'engineer_targets']

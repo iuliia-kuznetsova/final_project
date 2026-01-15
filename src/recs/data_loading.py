@@ -10,7 +10,7 @@
     - Extracted CSV file(s) in data_dir
 
     Usage:
-    python -m src.data_loading
+    python -m src.recs.data_loading
 '''
 
 # ----------- Imports ----------- #
@@ -38,9 +38,10 @@ os.chdir(PROJECT_ROOT)
 # Data directory
 DATA_DIR = os.getenv('DATA_DIR', './data')
 # Public URL of the data file on Yandex.Disk
-PUBLIC_URL = os.getenv('YADISK_PUBLIC_URL')
+PUBLIC_URL = os.getenv('YADISK_PUBLIC_URL', 'https://disk.yandex.com/d/Io0siOESo2RAaA')
 # Yandex.Disk API endpoint for getting download links
-YADISK_API_URL = "https://cloud-api.yandex.net/v1/disk/public/resources/download"
+YADISK_API_URL = os.getenv('YADISK_URL', 'https://cloud-api.yandex.net/v1/disk/public/resources/download')
+
 
 # ---------- Functions ---------- #
 def get_yadisk_direct_link(
@@ -94,8 +95,8 @@ def download_and_extract(
     extracted_files = []
 
     # Check if it's a ZIP file
-    if raw[:4] == b'PK\x03\x04':  # ZIP magic bytes
-        logger.info('Detected ZIP archive, extracting...')
+    if raw[:4] == b'PK\x03\x04':
+        logger.info('ZIP archive detected')
         with zipfile.ZipFile(io.BytesIO(raw)) as zf:
             # Extract all files
             for file_name in zf.namelist():
@@ -109,17 +110,17 @@ def download_and_extract(
                     dst.write(src.read())
                 
                 extracted_files.append(str(target_path))
-                logger.info(f'Extracted: {target_path}')
+                logger.info(f'Data extracted to: {target_path}')
     else:
         # Assume it's a plain CSV file
-        logger.info('Detected plain file, saving...')
+        logger.info('Plain file detected')
         target_path = data_path / 'train_ver2.csv'
         with open(target_path, 'wb') as f:
             f.write(raw)
         extracted_files.append(str(target_path))
-        logger.info(f'Saved: {target_path}')
+        logger.info(f'File saved to: {target_path}')
 
-    logger.info(f'Download complete. {len(extracted_files)} file(s) saved to {data_dir}')
+    logger.info(f'DONE: Data download completed')
 
     del raw, extracted_files
     gc.collect()

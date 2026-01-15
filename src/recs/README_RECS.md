@@ -1,3 +1,68 @@
+```mermaid
+flowchart TD
+    A[Start] --> B[Load train / validation data]
+    B --> C[Prepare data<br/>(to pandas, fix categoricals)]
+    C --> D[Detect categorical feature indices]
+
+    D --> E{Feature selection enabled?}
+    E -- Yes --> F[Train quick CatBoost<br/>→ drop low-importance features]
+    E -- No --> G[Keep all features]
+    F --> H
+    G --> H
+
+    H[Determine target product list] --> I[Group products by prevalence]
+    I -->|> frequent_threshold| J[Frequent group]
+    I -->|between thresholds| K[Mid group]
+    I -->|< rare_threshold| L[Rare group]
+
+    %% ===== GROUP LOOP =====
+    subgraph GROUP_LOOP[For each group: frequent / mid / rare]
+        M[Select group targets] --> N{Optuna optimization enabled?}
+
+        N -- Yes --> O[Optuna HPO<br/>TimeSeriesSplit CV<br/>Mean AUC]
+        N -- No --> P[Use default CatBoost params]
+
+        O --> Q[Best params]
+        P --> Q
+
+        Q --> R[Train models<br/>ONE PRODUCT AT A TIME]
+        R --> S{Has both classes?}
+
+        S -- No --> T[Skip product<br/>threshold = 1.0]
+        S -- Yes --> U[Train CatBoost]
+        U --> V[Save model to disk]
+        V --> W[Reload model]
+
+        W --> X[Assemble OvR wrapper]
+
+        X --> Y{Validation data available?}
+        Y -- Yes --> Z[Optimize thresholds<br/>per product (F1)]
+        Y -- No --> AA[Use default threshold = 0.5]
+
+        Z --> AB[Store thresholds]
+        AA --> AB
+
+        AB --> AC[Log models & params to MLflow]
+    end
+
+    J --> GROUP_LOOP
+    K --> GROUP_LOOP
+    L --> GROUP_LOOP
+
+    %% ===== OPTIONAL RETRAIN =====
+    AC --> AD{Retrain on full data?}
+    AD -- Yes --> AE[Load full preprocessed data]
+    AE --> AF[Apply same feature selection]
+    AF --> AG[Retrain each group<br/>on full data]
+    AD -- No --> AH[Skip retraining]
+
+    AG --> AI[Final models ready]
+    AH --> AI
+
+    AI --> AJ[End]
+```
+
+
     # All Positives + Random Negatives Sampling
     # Get all positives : rows with at least one positive target
     # Sample negatives : random rows with negative target

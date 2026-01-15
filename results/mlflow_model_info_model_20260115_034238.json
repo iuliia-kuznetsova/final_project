@@ -1,0 +1,10 @@
+{
+  "run_id": "f8d21b1657f24b27a1f0bdf1be0fe56f",
+  "experiment_id": "23",
+  "experiment_name": "bank_products_recommendation",
+  "run_name": "model_20260115_034238",
+  "registry_model_name": "ovr_grouped_catboost",
+  "model_uri": "runs:/f8d21b1657f24b27a1f0bdf1be0fe56f/model",
+  "n_models": 24,
+  "timestamp": "2026-01-15T03:43:49.165993"
+}

@@ -1,0 +1,34 @@
+{
+  "products": [
+    "target_recibo",
+    "target_nom_pens",
+    "target_nomina",
+    "target_cco_fin",
+    "target_tjcr_fin",
+    "target_cno_fin",
+    "target_ecue_fin",
+    "target_dela_fin"
+  ],
+  "best_params": {
+    "iterations": 150,
+    "depth": 7,
+    "learning_rate": 0.12028665880905137,
+    "l2_leaf_reg": 3.968793330444372,
+    "bagging_temperature": 0.15601864044243652,
+    "loss_function": "Logloss",
+    "random_seed": 42,
+    "logging_level": "Silent",
+    "thread_count": -1,
+    "auto_class_weights": "Balanced"
+  },
+  "thresholds": {
+    "target_recibo": 0.5506611611718659,
+    "target_nom_pens": 0.7821116168613103,
+    "target_nomina": 0.8076983807589875,
+    "target_cco_fin": 0.9074372681063511,
+    "target_tjcr_fin": 0.5379542227636953,
+    "target_cno_fin": 0.8768995097639388,
+    "target_ecue_fin": 0.9312269230733935,
+    "target_dela_fin": 0.9017012241156888
+  }
+}

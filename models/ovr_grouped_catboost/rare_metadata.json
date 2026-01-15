@@ -1,0 +1,36 @@
+{
+  "products": [
+    "target_plan_fin",
+    "target_ctju_fin",
+    "target_deme_fin",
+    "target_pres_fin",
+    "target_cder_fin",
+    "target_hip_fin",
+    "target_viv_fin",
+    "target_aval_fin",
+    "target_ahor_fin"
+  ],
+  "best_params": {
+    "iterations": 150,
+    "depth": 7,
+    "learning_rate": 0.12028665880905137,
+    "l2_leaf_reg": 3.968793330444372,
+    "bagging_temperature": 0.15601864044243652,
+    "loss_function": "Logloss",
+    "random_seed": 42,
+    "logging_level": "Silent",
+    "thread_count": -1,
+    "auto_class_weights": "Balanced"
+  },
+  "thresholds": {
+    "target_plan_fin": 0.3478732582190908,
+    "target_ctju_fin": 0.9773621472939723,
+    "target_deme_fin": 0.5,
+    "target_pres_fin": 0.05948394066220527,
+    "target_cder_fin": 0.014598839192869887,
+    "target_hip_fin": 0.012547400210707115,
+    "target_viv_fin": 0.29160478369781817,
+    "target_aval_fin": 0.5,
+    "target_ahor_fin": 2.543874980405198e-08
+  }
+}

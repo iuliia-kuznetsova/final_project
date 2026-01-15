@@ -1,3 +1,8 @@
-{"timestamp": "2026-01-12 12:37:18,146", "module": "data_loading", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_data_loading.json setup completed"}
-{"timestamp": "2026-01-12 12:39:22,321", "module": "data_loading", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_data_loading.json setup completed"}
-{"timestamp": "2026-01-12 13:52:08,492", "module": "data_loading", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_data_loading.json setup completed"}
+{"timestamp": "2026-01-14 21:24:13,528", "module": "data_loading", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_data_loading.json setup completed"}
+{"timestamp": "2026-01-14 21:24:15,277", "module": "data_loading", "level": "INFO", "message": "Starting data loading pipeline"}
+{"timestamp": "2026-01-14 21:24:15,514", "module": "data_loading", "level": "INFO", "message": "Direct link obtained for Yandex.Disk resource"}
+{"timestamp": "2026-01-14 21:24:15,811", "module": "data_loading", "level": "INFO", "message": "File content downloaded from https://disk.yandex.com/d/Io0siOESo2RAaA"}
+{"timestamp": "2026-01-14 21:24:18,703", "module": "data_loading", "level": "INFO", "message": "ZIP archive detected"}
+{"timestamp": "2026-01-14 21:24:31,012", "module": "data_loading", "level": "INFO", "message": "Data extracted to: data/train_ver2.csv"}
+{"timestamp": "2026-01-14 21:24:31,013", "module": "data_loading", "level": "INFO", "message": "DONE: Data download completed"}
+{"timestamp": "2026-01-14 21:24:31,097", "module": "data_loading", "level": "INFO", "message": "Data loading pipeline completed successfully"}

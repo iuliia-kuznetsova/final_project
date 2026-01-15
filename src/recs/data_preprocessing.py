@@ -45,7 +45,7 @@ logger = setup_logging('data_preprocessing')
 # Load environment variables
 load_dotenv()
 # Set working directory to project root
-PROJECT_ROOT = Path(__file__).parent.parent.parent  # src/recs -> src -> project_root
+PROJECT_ROOT = Path(__file__).parent.parent.parent
 os.chdir(PROJECT_ROOT)
 
 
@@ -62,10 +62,6 @@ PREPROCESSED_DATA_FILE = os.getenv('PREPROCESSED_DATA_FILE', 'data_preprocessed.
 PREPROCESSED_DATA_SUMMARY_FILE = os.getenv('PREPROCESSED_DATA_SUMMARY_FILE', 'data_preprocessed_summary.parquet')
 # Encoding maps file
 ENCODING_MAPS_FILE = os.getenv('ENCODING_MAPS_FILE', 'encoding_maps.json')
-# App test data file
-APP_TEST_DATA_FILE = os.getenv('APP_TEST_DATA_FILE', 'app_test_data.csv')
-# App test preprocessed data file
-APP_TEST_PREPROCESSED_DATA_FILE = os.getenv('APP_TEST_PREPROCESSED_DATA_FILE', 'app_test_data_preprocessed.parquet')
 
 
 # ---------- Functions ---------- #
@@ -134,14 +130,15 @@ def load_and_encode_data(
     for col in product_cols:
         load_schema[col] = pl.Utf8
     
-    logger.info(f"Loading raw data from: {data_dir}/{raw_file}")
+    logger.info(f"Loading data from: {data_dir}/{raw_file}")
     df = pl.read_csv(
         f"{data_dir}/{raw_file}", 
         schema_overrides=load_schema,
         null_values=['NA', 'N/A', 'NaN', 'nan', 'null', 'None', '', ' '],
         ignore_errors=True
     )
-    logger.info(f"Loaded {df.shape[0]} rows x {df.shape[1]} columns")
+    logger.info('DONE: Data loaded')
+    logger.info(f"Data size: {df.shape[0]} rows x {df.shape[1]} columns")
     
     # Define encoding mappings for letter-coded columns
     encoding_maps = {
@@ -188,7 +185,7 @@ def load_and_encode_data(
                 pl.col('ult_fec_cli_1t').str.to_date('%Y-%m-%d').alias('ult_fec_cli_1t'),
             ])
     )
-    logger.info('Parsed date columns')
+    logger.info(f"Date columns parsed: {['fecha_dato', 'fecha_alta', 'ult_fec_cli_1t']}")
 
     # Transform categorical columns to Categorical
     # Strip whitespace before replacing
@@ -210,7 +207,7 @@ def load_and_encode_data(
                 pl.col('nomprov').str.strip_chars().cast(pl.Categorical),
             ])
     )
-    logger.info('Encoded categorical columns to Categorical')
+    logger.info(f"Categorical columns casted to Categorical: {['cod_prov', 'pais_residencia', 'canal_entrada', 'nomprov']}")
     
     # Transform boolean columns using pl.when()
     # Strip whitespace first for all comparisons 
@@ -272,7 +269,8 @@ def load_and_encode_data(
                 for col in product_cols if col in df.columns
             )
     )
-    logger.info('Encoded boolean and product columns to Boolean')
+    logger.info("Boolean columns casted to Boolean: ['indfall', 'ind_nuevo', 'indresi', 'ind_actividad_cliente', 'indext']")
+    logger.info("Product columns casted to Boolean")
     
     # Transform numeric columns
     # Convert invalid values (NA, empty strings, etc.) to null
@@ -298,10 +296,10 @@ def load_and_encode_data(
                 .alias('renta')
             )
     )
-    logger.info('Casted numeric columns to UInt8, UInt32 and Float32')
+    logger.info("Numeric columns casted to UInt8, UInt32 and Float32: ['age', 'antiguedad', 'renta']")
     
     # Log final schema
-    logger.info('Final schema:')
+    logger.info('Final data schema:')
     for col, dtype in zip(df.columns, df.dtypes):
         logger.info(f"  {col}: {dtype}")
 
@@ -312,6 +310,7 @@ def load_and_encode_data(
         k: {str(kk): str(vv) for kk, vv in v.items()} 
         for k, v in all_maps.items()
     }
+
     with open(f"{results_dir}/{encoding_maps_file}", 'w') as f:
         json.dump(serializable_maps, f, indent=2)
     logger.info(f"Encoding maps saved to: {results_dir}/{encoding_maps_file}")
@@ -325,7 +324,6 @@ def preprocess_data(
     preprocessed_data_file: str = PREPROCESSED_DATA_FILE,
     preprocessed_data_summary_file: str = 'data_preprocessed_summary.parquet'
 ) -> pl.DataFrame:
-    logger.info('Starting data preprocessing pipeline')
     
     # Create 'customer_period' feature: difference between fecha_dato and fecha_alta in months
     df_preprocessed = (
@@ -337,14 +335,14 @@ def preprocess_data(
                 ).alias('customer_period')
             ])
     )
-    logger.info('Computed customer_period (months since fecha_alta)')
+    logger.info('Feature customer_period (months since fecha_alta) computed')
     
     # Drop features with high proportion of missing values 'ult_fec_cli_1t', 'conyuemp'
     # Drop non-indicative feature 'tipodom', 'indext'
     # Drop 'fecha_alta' feature as CatBoost cannot handle dates
     # Drop 'antiguedad' feature as it is highly correlated with customer_period
     df_preprocessed = df_preprocessed.drop(['ult_fec_cli_1t', 'conyuemp', 'tipodom', 'fecha_alta', 'indext', 'antiguedad'])
-    logger.info(f'Dropped features: {["ult_fec_cli_1t", "conyuemp", "tipodom", "fecha_alta", "indext", "antiguedad"]}')
+    logger.info("Features dropped: ['ult_fec_cli_1t', 'conyuemp', 'tipodom,' 'fecha_alta', 'indext', 'antiguedad']")
     
     # Clip outliers
     df_preprocessed = (
@@ -353,7 +351,7 @@ def preprocess_data(
                 pl.col('age').clip(18, 90).alias('age')
             ])
     )
-    logger.info(f'Clipped outliers: {["age"]}')
+    logger.info("Clipped outliers: ['age']")
     
     # Impute missing values in categorical columns
     # Fill with 'missing'
@@ -387,22 +385,23 @@ def preprocess_data(
         ])
         .drop('renta_median')
     )
-    logger.info('Imputed renta missing values')
+    logger.info('Feature renta missing values imputed')
     
     # Drop 'nomprov' (used for renta imputation, now no longer needed)
     df_preprocessed = df_preprocessed.drop(['nomprov'])
-    logger.info(f'Dropped features: {["nomprov"]}')
+    logger.info("Feature dropped: ['nomprov']")
    
     # Drop rows where sexo is null
     # As data contain rows with almost all features are null
     df_preprocessed = df_preprocessed.filter(pl.col('sexo').is_not_null())
-    logger.info('Dropped rows with almost all features null')
+    logger.info('Rows with almost all features null dropped')
 
     # Drop rows where ind_nomina_ult1 or ind_nom_pens_ult1 is null
     # As these features would be used for targets creation
     df_preprocessed = df_preprocessed.filter(pl.col('ind_nomina_ult1').is_not_null() & pl.col('ind_nom_pens_ult1').is_not_null())
-    logger.info('Dropped rows where ind_nomina_ult1 or ind_nom_pens_ult1 is null')
+    logger.info("Rows where ['ind_nomina_ult1', 'ind_nom_pens_ult1'] are null dropped")
     
+    logger.info('DONE: Data preprocessing completed')
     # Save preprocessed data
     Path(data_dir).mkdir(parents=True, exist_ok=True)
     df_preprocessed.write_parquet(f"{data_dir}/{preprocessed_data_file}")
@@ -425,7 +424,7 @@ def run_preprocessing():
     df = preprocess_data(df_encoded, DATA_DIR, RESULTS_DIR, PREPROCESSED_DATA_FILE, PREPROCESSED_DATA_SUMMARY_FILE)
     del df_encoded, df
     gc.collect()
-    logger.info('Data preprocessing completed successfully')
+    logger.info('Data preprocessing pipeline completed successfully')
 
 
 # ---------- Main function ---------- #

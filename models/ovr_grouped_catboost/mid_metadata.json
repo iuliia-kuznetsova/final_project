@@ -1,0 +1,32 @@
+{
+  "products": [
+    "target_reca_fin",
+    "target_ctma_fin",
+    "target_valo_fin",
+    "target_ctop_fin",
+    "target_fond_fin",
+    "target_deco_fin",
+    "target_ctpp_fin"
+  ],
+  "best_params": {
+    "iterations": 150,
+    "depth": 7,
+    "learning_rate": 0.12028665880905137,
+    "l2_leaf_reg": 3.968793330444372,
+    "bagging_temperature": 0.15601864044243652,
+    "loss_function": "Logloss",
+    "random_seed": 42,
+    "logging_level": "Silent",
+    "thread_count": -1,
+    "auto_class_weights": "Balanced"
+  },
+  "thresholds": {
+    "target_reca_fin": 0.8891970465281744,
+    "target_ctma_fin": 0.9520002042760739,
+    "target_valo_fin": 0.4299951042835305,
+    "target_ctop_fin": 0.349202698072479,
+    "target_fond_fin": 0.519194029507469,
+    "target_deco_fin": 0.5,
+    "target_ctpp_fin": 0.6327204599116413
+  }
+}

@@ -45,8 +45,6 @@ RESULTS_DIR = os.getenv('RESULTS_DIR', './results')
 PREPROCESSED_DATA_FILE = os.getenv('PREPROCESSED_DATA_FILE', 'data_preprocessed.parquet')
 # Preprocessed data summary file
 PREPROCESSED_DATA_SUMMARY_FILE = os.getenv('PREPROCESSED_DATA_SUMMARY_FILE', 'data_preprocessed_summary.parquet')
-# App test preprocessed data file
-APP_PREPROCESSED_DATA_FILE = os.getenv('APP_PREPROCESSED_DATA_FILE', 'app_test_data_preprocessed.parquet')
 
 
 # ---------- Functions ---------- #
@@ -67,7 +65,7 @@ def engineer_features(
 
     # Load preprocessed data
     df_preprocessed = pl.read_parquet(f"{data_dir}/{preprocessed_data_file}")
-    logger.info(f'Loaded preprocessed data from: {data_dir}/{preprocessed_data_file}')
+    logger.info(f'Preprocessed data loaded from: {data_dir}/{preprocessed_data_file}')
     
     # Get all products
     products = [col for col in df_preprocessed.columns if col.startswith('ind_') and col.endswith('_ult1')]
@@ -80,7 +78,6 @@ def engineer_features(
     top_products = products[:10]
     # Add lag features for each month
     for lag in lag_months:
-        logger.info(f'Adding {lag}m lags...')
         # Add individual product lag features
         lag_cols = [
             pl.col(prod).shift(lag).over('ncodpers').alias(f"{prod}_lag{lag}")
@@ -91,7 +88,7 @@ def engineer_features(
             pl.sum_horizontal(top_products).shift(lag).over('ncodpers').alias(f"n_products_lag{lag}")
         )
         df_engineered = df_engineered.with_columns(lag_cols)
-        logger.info(f'Added {lag}m lags for {len(top_products)} products')
+        logger.info(f'{lag}m lags features for top 10 products added')
     
     # Add "recently acquired" features
     # Binary feature: 1 if customer recently acquired product (has now but didn't have 1 month ago)
@@ -101,7 +98,7 @@ def engineer_features(
         for prod in top_products
     ]
     df_engineered = df_engineered.with_columns(recent_acquisition_cols)
-    logger.info(f'Added recently acquired features for {len(top_products)} products')
+    logger.info(f'Recently acquired features for top {len(top_products)} products added')
     
     # Add product interactions features using 'one, but not the other' logic
     # Binary feature: 1 if a customer has exactly one of two highly correlated products
@@ -122,7 +119,9 @@ def engineer_features(
                     ((pl.col(prod1) == 1) ^ (pl.col(prod2) == 1)).cast(pl.Int8).alias(f"{prod1}_{prod2}_interaction")
                 ])
         )
-        logger.info(f'Added interaction feature for {prod1} and {prod2}')
+        logger.info(f"Interaction feature for ['{prod1}', '{prod2}'] added")
+
+    logger.info(f'DONE: All features added')
 
     # Save preprocessed data
     Path(data_dir).mkdir(parents=True, exist_ok=True)
@@ -149,7 +148,7 @@ def run_feature_engineering():
     df = engineer_features(DATA_DIR, RESULTS_DIR, PREPROCESSED_DATA_FILE, PREPROCESSED_DATA_SUMMARY_FILE)
     del df
     gc.collect()
-    logger.info('Feature engineering completed successfully')
+    logger.info('Feature engineering pipeline completed successfully')
 
 
 # ---------- Main function ---------- #

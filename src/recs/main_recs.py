@@ -15,11 +15,9 @@ import os
 import sys
 import gc
 import argparse
-from datetime import datetime
-from pythonjsonlogger import jsonlogger
 import traceback
 from dotenv import load_dotenv
-import polars as pl
+from pathlib import Path
 
 from src.logging_setup import setup_logging
 from src.recs.data_loading import run_data_loading
@@ -27,7 +25,8 @@ from src.recs.data_preprocessing import run_preprocessing
 from src.recs.feature_engineering import run_feature_engineering
 from src.recs.target_engineering import run_target_engineering
 from src.recs.train_test_split import run_train_test_split
-from src.recs.modelling_ovr import run_modelling_ovr, OvRGroupModel, load_training_data, get_product_names, log_to_mlflow
+from src.recs.modelling_ovr import OvRGroupModel, load_training_data, get_product_names
+from src.recs.mlflow_logging import log_saved_model_to_mlflow
 
 
 # ---------- Memory Helper ---------- #
@@ -36,7 +35,7 @@ def log_memory_cleanup(logger, step_name: str):
         Force garbage collection and log memory cleanup after a pipeline step
     '''
     collected = gc.collect()
-    logger.info(f'Memory cleanup after {step_name}: {collected} objects collected')
+    logger.info(f'Memory cleanup after {step_name} completed')
 
 
 # ---------- Logging setup ---------- #
@@ -77,6 +76,7 @@ def main(args):
         7. Train models: OvR CatBoost (Optuna optimization + CV on sampled data)
         8. Evaluate models: OvR CatBoost
         9. Generate recommendations
+        10. Log model to MLflow
     '''
     
     # ---------- Step 1: Load environment variables ---------- #
@@ -92,6 +92,11 @@ def main(args):
     RAW_DATA_FILE = os.getenv('RAW_DATA_FILE', 'train_ver2.csv')
     PREPROCESSED_DATA_FILE = os.getenv('PREPROCESSED_DATA_FILE', 'data_preprocessed.parquet')
     
+    # Create directories if they don't exist
+    Path(DATA_DIR).mkdir(parents=True, exist_ok=True)
+    Path(MODELS_DIR).mkdir(parents=True, exist_ok=True)
+    Path(RESULTS_DIR).mkdir(parents=True, exist_ok=True)
+
     logger.info('DONE: Loading environment variables completed successfully')
     logger.info(f'INFO: Data directory: {DATA_DIR}')
     logger.info(f'INFO: Models directory: {MODELS_DIR}')
@@ -275,26 +280,36 @@ def main(args):
         
         # Save model
         model_path = model.save('ovr_grouped_catboost')
-        logger.info(f'Model saved to: {model_path}')
-
-        # Log model to MLflow
-        model.log_to_mlflow(
-            run_name=f'final_model_{datetime.now().strftime("%Y%m%d_%H%M%S")}',
-            register_model=False,
-            model_name='ovr_grouped_catboost'
-        )
-        logger.info('Model logged to MLflow')
-        
         # Final cleanup: free test data and model from memory
         del X_test, y_test, X_test_sample, recommendations, model
         log_memory_cleanup(logger, 'final_cleanup')
-        
+        logger.info(f'Model saved to: {model_path}')
         logger.info('STEP 9 DONE')
     except Exception as e:
         logger.error(f'ERROR: Generating recommendations failed: {e}')
         traceback.print_exc()
         sys.exit(1)
     
+    # ---------- Step 10: Log model to MLflow ---------- #
+    print('\n' + '='*80)
+    logger.info('STEP 10: Logging model to MLflow')
+    print('='*80)
+    try:
+        log_saved_model_to_mlflow(
+            model_path='models/ovr_grouped_catboost',
+            X_sample_path='data/X_test.parquet',
+            experiment_name='bank_products_recommendation',
+            run_name=None,
+            registry_model_name='ovr_grouped_catboost'
+        )
+        logger.info('Model logged to MLflow')
+        logger.info('STEP 10 DONE')
+    except Exception as e:
+        logger.error(f'ERROR: Logging model to MLflow failed: {e}')
+        traceback.print_exc()
+        sys.exit(1)
+
+
     logger.info('Pipeline completed successfully!')
 
 

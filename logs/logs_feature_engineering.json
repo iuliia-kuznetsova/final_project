@@ -1,92 +1,15 @@
-{"timestamp": "2026-01-12 12:37:18,157", "module": "feature_engineering", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_feature_engineering.json setup completed"}
-{"timestamp": "2026-01-12 12:39:22,332", "module": "feature_engineering", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_feature_engineering.json setup completed"}
-{"timestamp": "2026-01-12 12:40:09,072", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
-{"timestamp": "2026-01-12 12:40:10,825", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
-{"timestamp": "2026-01-12 12:40:13,544", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
-{"timestamp": "2026-01-12 12:40:24,336", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
-{"timestamp": "2026-01-12 12:40:24,337", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
-{"timestamp": "2026-01-12 12:40:33,697", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
-{"timestamp": "2026-01-12 12:40:43,359", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
-{"timestamp": "2026-01-12 12:40:43,414", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
-{"timestamp": "2026-01-12 12:40:43,476", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
-{"timestamp": "2026-01-12 12:40:43,532", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
-{"timestamp": "2026-01-12 12:40:43,586", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
-{"timestamp": "2026-01-12 12:40:43,646", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
-{"timestamp": "2026-01-12 12:40:48,515", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
-{"timestamp": "2026-01-12 12:40:48,515", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_summary.parquet"}
-{"timestamp": "2026-01-12 12:40:48,573", "module": "feature_engineering", "level": "INFO", "message": "Feature engineering completed successfully"}
-{"timestamp": "2026-01-12 13:52:08,503", "module": "feature_engineering", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_feature_engineering.json setup completed"}
-{"timestamp": "2026-01-12 13:52:53,013", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
-{"timestamp": "2026-01-12 13:52:54,726", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
-{"timestamp": "2026-01-12 13:52:57,408", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
-{"timestamp": "2026-01-12 13:53:06,691", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
-{"timestamp": "2026-01-12 13:53:06,691", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
-{"timestamp": "2026-01-12 13:53:16,166", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
-{"timestamp": "2026-01-12 13:53:25,785", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
-{"timestamp": "2026-01-12 13:53:25,840", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
-{"timestamp": "2026-01-12 13:53:25,898", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
-{"timestamp": "2026-01-12 13:53:25,951", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
-{"timestamp": "2026-01-12 13:53:26,003", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
-{"timestamp": "2026-01-12 13:53:26,061", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
-{"timestamp": "2026-01-12 13:53:30,912", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
-{"timestamp": "2026-01-12 13:53:30,912", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_summary.parquet"}
-{"timestamp": "2026-01-12 13:53:30,970", "module": "feature_engineering", "level": "INFO", "message": "Feature engineering completed successfully"}
-{"timestamp": "2026-01-13 11:28:44,235", "module": "feature_engineering", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_feature_engineering.json setup completed"}
-{"timestamp": "2026-01-13 11:44:23,730", "module": "feature_engineering", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_feature_engineering.json setup completed"}
-{"timestamp": "2026-01-13 11:45:57,613", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
-{"timestamp": "2026-01-13 11:46:00,991", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
-{"timestamp": "2026-01-13 11:46:11,536", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
-{"timestamp": "2026-01-13 11:46:11,537", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
-{"timestamp": "2026-01-13 11:46:21,350", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
-{"timestamp": "2026-01-13 11:46:31,782", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
-{"timestamp": "2026-01-13 11:46:31,838", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
-{"timestamp": "2026-01-13 11:46:31,901", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
-{"timestamp": "2026-01-13 11:46:31,967", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
-{"timestamp": "2026-01-13 11:46:32,025", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
-{"timestamp": "2026-01-13 11:46:32,087", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
-{"timestamp": "2026-01-13 11:46:36,327", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
-{"timestamp": "2026-01-13 11:46:37,360", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_feature_engineered_summary.parquet"}
-{"timestamp": "2026-01-13 11:48:01,486", "module": "feature_engineering", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_feature_engineering.json setup completed"}
-{"timestamp": "2026-01-13 11:54:02,441", "module": "feature_engineering", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_feature_engineering.json setup completed"}
-{"timestamp": "2026-01-13 11:55:39,395", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
-{"timestamp": "2026-01-13 11:55:42,231", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
-{"timestamp": "2026-01-13 11:55:51,919", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
-{"timestamp": "2026-01-13 11:55:51,920", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
-{"timestamp": "2026-01-13 11:56:01,757", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
-{"timestamp": "2026-01-13 11:56:11,727", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
-{"timestamp": "2026-01-13 11:56:11,788", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
-{"timestamp": "2026-01-13 11:56:11,843", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
-{"timestamp": "2026-01-13 11:56:11,899", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
-{"timestamp": "2026-01-13 11:56:11,960", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
-{"timestamp": "2026-01-13 11:56:12,017", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
-{"timestamp": "2026-01-13 11:56:16,092", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
-{"timestamp": "2026-01-13 11:56:17,191", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_summary.parquet"}
-{"timestamp": "2026-01-13 12:03:28,122", "module": "feature_engineering", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_feature_engineering.json setup completed"}
-{"timestamp": "2026-01-13 12:05:03,812", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
-{"timestamp": "2026-01-13 12:05:07,166", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
-{"timestamp": "2026-01-13 12:05:17,012", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
-{"timestamp": "2026-01-13 12:05:17,013", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
-{"timestamp": "2026-01-13 12:05:27,017", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
-{"timestamp": "2026-01-13 12:05:37,314", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
-{"timestamp": "2026-01-13 12:05:37,371", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
-{"timestamp": "2026-01-13 12:05:37,431", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
-{"timestamp": "2026-01-13 12:05:37,488", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
-{"timestamp": "2026-01-13 12:05:37,545", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
-{"timestamp": "2026-01-13 12:05:37,608", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
-{"timestamp": "2026-01-13 12:05:41,675", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
-{"timestamp": "2026-01-13 12:05:42,733", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_summary.parquet"}
-{"timestamp": "2026-01-13 12:14:47,341", "module": "feature_engineering", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_feature_engineering.json setup completed"}
-{"timestamp": "2026-01-13 12:15:50,537", "module": "feature_engineering", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_feature_engineering.json setup completed"}
-{"timestamp": "2026-01-13 12:17:19,190", "module": "feature_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
-{"timestamp": "2026-01-13 12:17:21,987", "module": "feature_engineering", "level": "INFO", "message": "Adding 3m lags..."}
-{"timestamp": "2026-01-13 12:17:31,627", "module": "feature_engineering", "level": "INFO", "message": "Added 3m lags for 10 products"}
-{"timestamp": "2026-01-13 12:17:31,628", "module": "feature_engineering", "level": "INFO", "message": "Adding 6m lags..."}
-{"timestamp": "2026-01-13 12:17:41,508", "module": "feature_engineering", "level": "INFO", "message": "Added 6m lags for 10 products"}
-{"timestamp": "2026-01-13 12:17:51,909", "module": "feature_engineering", "level": "INFO", "message": "Added recently acquired features for 10 products"}
-{"timestamp": "2026-01-13 12:17:51,966", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_nom_pens_ult1"}
-{"timestamp": "2026-01-13 12:17:52,030", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nom_pens_ult1"}
-{"timestamp": "2026-01-13 12:17:52,087", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_nomina_ult1"}
-{"timestamp": "2026-01-13 12:17:52,145", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_cno_fin_ult1 and ind_recibo_ult1"}
-{"timestamp": "2026-01-13 12:17:52,207", "module": "feature_engineering", "level": "INFO", "message": "Added interaction feature for ind_nomina_ult1 and ind_recibo_ult1"}
-{"timestamp": "2026-01-13 12:17:56,299", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
-{"timestamp": "2026-01-13 12:17:57,355", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_summary.parquet"}
+{"timestamp": "2026-01-14 21:24:13,631", "module": "feature_engineering", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_feature_engineering.json setup completed"}
+{"timestamp": "2026-01-14 21:25:17,697", "module": "feature_engineering", "level": "INFO", "message": "Starting feature engineering pipeline"}
+{"timestamp": "2026-01-14 21:25:19,468", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed data loaded from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-14 21:25:32,021", "module": "feature_engineering", "level": "INFO", "message": "3m lags features for top 10 products added"}
+{"timestamp": "2026-01-14 21:25:41,745", "module": "feature_engineering", "level": "INFO", "message": "6m lags features for top 10 products added"}
+{"timestamp": "2026-01-14 21:25:52,054", "module": "feature_engineering", "level": "INFO", "message": "Recently acquired features for top 10 products added"}
+{"timestamp": "2026-01-14 21:25:52,143", "module": "feature_engineering", "level": "INFO", "message": "Interaction feature for ['ind_nomina_ult1', 'ind_nom_pens_ult1'] added"}
+{"timestamp": "2026-01-14 21:25:52,231", "module": "feature_engineering", "level": "INFO", "message": "Interaction feature for ['ind_cno_fin_ult1', 'ind_nom_pens_ult1'] added"}
+{"timestamp": "2026-01-14 21:25:52,330", "module": "feature_engineering", "level": "INFO", "message": "Interaction feature for ['ind_cno_fin_ult1', 'ind_nomina_ult1'] added"}
+{"timestamp": "2026-01-14 21:25:52,384", "module": "feature_engineering", "level": "INFO", "message": "Interaction feature for ['ind_cno_fin_ult1', 'ind_recibo_ult1'] added"}
+{"timestamp": "2026-01-14 21:25:52,459", "module": "feature_engineering", "level": "INFO", "message": "Interaction feature for ['ind_nomina_ult1', 'ind_recibo_ult1'] added"}
+{"timestamp": "2026-01-14 21:25:52,459", "module": "feature_engineering", "level": "INFO", "message": "DONE: All features added"}
+{"timestamp": "2026-01-14 21:25:56,637", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-14 21:25:57,928", "module": "feature_engineering", "level": "INFO", "message": "Preprocessed and engineered data summary saved to: ./results/data_preprocessed_summary.parquet"}
+{"timestamp": "2026-01-14 21:25:58,076", "module": "feature_engineering", "level": "INFO", "message": "Feature engineering pipeline completed successfully"}
