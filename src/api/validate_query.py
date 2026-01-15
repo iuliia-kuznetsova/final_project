@@ -60,11 +60,6 @@ class QueryValidator:
     ):
         '''
             Initialize the validator.
-            
-            Args:
-                feature_schema: Dictionary defining expected features and their types
-                required_features: List of required feature names
-                strict_mode: If True, reject unknown features; if False, allow extra features
         '''
         self.feature_schema = feature_schema or FEATURE_SCHEMA
         self.required_features = required_features or REQUIRED_FEATURES
@@ -80,14 +75,6 @@ class QueryValidator:
     ) -> Tuple[bool, Optional[str]]:
         '''
             Validate that a value matches the expected type.
-            
-            Args:
-                value: The value to validate
-                expected_type: Expected type string ('str', 'int', 'float', 'bool', 'date')
-                field_name: Name of the field (for error messages)
-                
-            Returns:
-                Tuple of (is_valid, error_message)
         '''
         # Handle None values
         if value is None:
@@ -134,14 +121,6 @@ class QueryValidator:
     ) -> Tuple[bool, Optional[str]]:
         '''
             Validate that a numeric value is within the expected range.
-            
-            Args:
-                value: The numeric value to validate
-                schema: Schema dict containing 'min' and/or 'max' keys
-                field_name: Name of the field
-                
-            Returns:
-                Tuple of (is_valid, error_message)
         '''
         if value is None:
             return True, None
@@ -163,12 +142,6 @@ class QueryValidator:
     ) -> Tuple[bool, List[str]]:
         '''
             Check that all required features are present in the data.
-            
-            Args:
-                data: Dictionary of feature values
-                
-            Returns:
-                Tuple of (all_present, missing_features)
         '''
         missing = []
         for feature in self.required_features:
@@ -188,12 +161,6 @@ class QueryValidator:
     ) -> Tuple[bool, List[Dict[str, str]]]:
         '''
             Validate data types for all features.
-            
-            Args:
-                data: Dictionary of feature values
-                
-            Returns:
-                Tuple of (all_valid, list of error dicts)
         '''
         errors = []
         
@@ -246,12 +213,6 @@ class QueryValidator:
     ) -> Tuple[bool, Optional[str]]:
         '''
             Validate customer ID format.
-            
-            Args:
-                customer_id: Customer identifier to validate
-                
-            Returns:
-                Tuple of (is_valid, error_message)
         '''
         if customer_id is None:
             return False, "customer_id is required"
@@ -276,12 +237,6 @@ class QueryValidator:
     ) -> Tuple[bool, List[Dict[str, str]]]:
         '''
             Validate complete prediction request.
-            
-            Args:
-                request_data: Dictionary containing 'customer_id' and 'features'
-                
-            Returns:
-                Tuple of (is_valid, list of error dicts)
         '''
         errors = []
         
@@ -340,12 +295,6 @@ class QueryValidator:
     ) -> Tuple[bool, Dict[int, List[Dict[str, str]]]]:
         '''
             Validate a batch of prediction requests.
-            
-            Args:
-                requests: List of request dictionaries
-                
-            Returns:
-                Tuple of (all_valid, dict mapping index to errors)
         '''
         all_errors = {}
         all_valid = True

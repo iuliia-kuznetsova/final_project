@@ -8,3 +8,12 @@
 {"timestamp": "2026-01-14 21:26:27,513", "module": "target_engineering", "level": "INFO", "message": "Full preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
 {"timestamp": "2026-01-14 21:26:28,527", "module": "target_engineering", "level": "INFO", "message": "Full preprocessed and engineered data summary saved to: ./results/data_preprocessed_summary.parquet"}
 {"timestamp": "2026-01-14 21:26:28,682", "module": "target_engineering", "level": "INFO", "message": "Target engineering pipeline completed successfully"}
+{"timestamp": "2026-01-15 05:58:47,337", "module": "target_engineering", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_target_engineering.json setup completed"}
+{"timestamp": "2026-01-15 06:06:39,245", "module": "target_engineering", "level": "INFO", "message": "Logging to /home/mle-user/mle_projects/final_project/logs/logs_target_engineering.json setup completed"}
+{"timestamp": "2026-01-15 06:09:08,225", "module": "target_engineering", "level": "INFO", "message": "Loaded preprocessed data from: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-15 06:09:31,293", "module": "target_engineering", "level": "INFO", "message": "Targets created: ['target_ahor_fin', 'target_aval_fin', 'target_cco_fin', 'target_cder_fin', 'target_cno_fin', 'target_ctju_fin', 'target_ctma_fin', 'target_ctop_fin', 'target_ctpp_fin', 'target_deco_fin', 'target_deme_fin', 'target_dela_fin', 'target_ecue_fin', 'target_fond_fin', 'target_hip_fin', 'target_plan_fin', 'target_pres_fin', 'target_reca_fin', 'target_tjcr_fin', 'target_valo_fin', 'target_viv_fin', 'target_nomina', 'target_nom_pens', 'target_recibo']"}
+{"timestamp": "2026-01-15 06:09:31,487", "module": "target_engineering", "level": "INFO", "message": "Last month per customer filtered out"}
+{"timestamp": "2026-01-15 06:09:31,488", "module": "target_engineering", "level": "INFO", "message": "Data size after filtering last month per customer: 12,677,703 rows x 103 columns"}
+{"timestamp": "2026-01-15 06:09:31,488", "module": "target_engineering", "level": "INFO", "message": "DONE: All targets created"}
+{"timestamp": "2026-01-15 06:09:35,443", "module": "target_engineering", "level": "INFO", "message": "Full preprocessed and engineered data saved to: ./data/data_preprocessed.parquet"}
+{"timestamp": "2026-01-15 06:09:36,445", "module": "target_engineering", "level": "INFO", "message": "Full preprocessed and engineered data summary saved to: ./results/data_preprocessed_summary.parquet"}

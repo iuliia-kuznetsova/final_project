@@ -110,13 +110,13 @@ OPTIMIZE = _parse_bool_env('OPTIMIZE', True)
 OPT_N_TRIALS = int(os.getenv('OPT_N_TRIALS', 15))
 # Optuna timeout per group optimization (seconds)
 OPT_OPTUNA_TIMEOUT = int(os.getenv('OPT_OPTUNA_TIMEOUT', 180))
-# Number of CV folds for HPO 
+# Number of CV folds for optimization
 OPT_N_SPLITS = int(os.getenv('OPT_N_SPLITS', 3))
-# Lower iterations during HPO
+# Lower iterations during optimization
 OPT_MAX_ITERATIONS = int(os.getenv('OPT_MAX_ITERATIONS', 300))
-# Early stopping for HPO
+# Early stopping for optimization
 OPT_EARLY_STOPPING_ROUNDS = int(os.getenv('OPT_EARLY_STOPPING_ROUNDS', 30))
-# CatBoost Pool pre-quantization
+# CatBoost Pool pre-quantization for optimization
 OPT_USE_QUANTIZED_POOL = _parse_bool_env('OPT_USE_QUANTIZED_POOL', True)
 
 # Training parameters

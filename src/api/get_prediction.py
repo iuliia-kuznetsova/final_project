@@ -93,12 +93,6 @@ class ModelHandler:
     ):
         '''
             Initialize the model handler.
-            
-            Args:
-                model_dir: Directory containing the trained model
-                model_name: Name of the model folder
-                data_dir: Directory containing data files
-                top_k: Default number of recommendations to return
         '''
         self.model_dir = Path(model_dir)
         self.model_name = model_name
@@ -117,9 +111,6 @@ class ModelHandler:
     def load_model(self) -> 'ModelHandler':
         '''
             Load the trained OvR model from disk.
-            
-            Returns:
-                self for method chaining
         '''
         model_path = self.model_dir / self.model_name
         
@@ -153,7 +144,9 @@ class ModelHandler:
         return self
 
     def _ensure_loaded(self):
-        '''Ensure model is loaded before prediction.'''
+        '''
+            Ensure model is loaded before prediction.
+        '''
         if not self.is_loaded or self.model is None:
             self.load_model()
 
@@ -163,12 +156,6 @@ class ModelHandler:
     ) -> pd.DataFrame:
         '''
             Preprocess features for model inference.
-            
-            Args:
-                features: Dictionary of feature values
-                
-            Returns:
-                DataFrame ready for model prediction
         '''
         # Convert dict to DataFrame
         df = pd.DataFrame([features])
@@ -215,13 +202,6 @@ class ModelHandler:
     ) -> Dict[str, Any]:
         '''
             Generate top-K product recommendations for a customer.
-            
-            Args:
-                features: Dictionary of customer features
-                top_k: Number of recommendations (default: self.top_k)
-                
-            Returns:
-                Dictionary with recommendations and probabilities
         '''
         self._ensure_loaded()
         
@@ -257,13 +237,6 @@ class ModelHandler:
     ) -> List[Dict[str, Any]]:
         '''
             Generate recommendations for a batch of customers.
-            
-            Args:
-                batch_features: List of feature dictionaries
-                top_k: Number of recommendations per customer
-                
-            Returns:
-                List of recommendation dictionaries
         '''
         self._ensure_loaded()
         
@@ -302,9 +275,6 @@ class ModelHandler:
     def get_model_info(self) -> Dict[str, Any]:
         '''
             Get model metadata and information.
-            
-            Returns:
-                Dictionary with model information
         '''
         self._ensure_loaded()
         
@@ -325,9 +295,6 @@ class ModelHandler:
     def health_check(self) -> Dict[str, Any]:
         '''
             Perform health check on the model.
-            
-            Returns:
-                Dictionary with health status
         '''
         try:
             self._ensure_loaded()
@@ -354,16 +321,13 @@ class ModelHandler:
             }
 
 
-# ---------- Singleton Instance ---------- #
+# Load model once at startup, every /predict endpoint reuses it
 _model_handler: Optional[ModelHandler] = None
 
 
 def get_model_handler() -> ModelHandler:
     '''
         Get or create the global ModelHandler instance.
-        
-        Returns:
-            Singleton ModelHandler instance
     '''
     global _model_handler
     if _model_handler is None:

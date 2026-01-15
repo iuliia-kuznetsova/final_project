@@ -1,22 +1,20 @@
 version: '3.8'
 
 services:
-  # ============================================
-  # Main Recommender API Service
-  # ============================================
+  # ---------- Main Recommender API Service ---------- #
   recommender:
     container_name: recommender_api
     build:
       context: ../..
       dockerfile: src/api/Dockerfile
     env_file:
-      - .env
+      - ../../.env
     environment:
       - RECOMMENDER_HOST=0.0.0.0
       - RECOMMENDER_PORT=8080
-      - MODEL_DIR=/app/models
-      - DATA_DIR=/app/data
-      - MODEL_NAME=ovr_grouped_santander
+      - MODEL_DIR=../../models
+      - DATA_DIR=../../data
+      - MODEL_NAME=ovr_grouped_catboost
     ports:
       - '${RECOMMENDER_VM_PORT:-8080}:8080'
     volumes:
@@ -40,9 +38,7 @@ services:
         reservations:
           memory: 2G
 
-  # ============================================
-  # Prometheus Metrics Collection
-  # ============================================
+  # ---------- Prometheus Metrics Collection ---------- #
   prometheus:
     container_name: prometheus
     image: prom/prometheus:v2.48.0
@@ -71,14 +67,12 @@ services:
       timeout: 10s
       retries: 3
 
-  # ============================================
-  # Grafana Visualization Dashboard
-  # ============================================
+  # ---------- Grafana Visualization Dashboard ---------- #
   grafana:
     container_name: grafana
     image: grafana/grafana:10.2.2
     env_file:
-      - .env
+      - ../../.env
     environment:
       - GF_SECURITY_ADMIN_USER=${GRAFANA_USER:-admin}
       - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASS:-admin}
@@ -104,17 +98,13 @@ services:
       timeout: 10s
       retries: 3
 
-# ============================================
-# Networks
-# ============================================
+# ---------- Networks ---------- #
 networks:
   recommender_network:
     driver: bridge
     name: recommender_network
 
-# ============================================
-# Volumes for data persistence
-# ============================================
+# ---------- Volumes for data persistence ---------- #
 volumes:
   prometheus_data:
     name: prometheus_data

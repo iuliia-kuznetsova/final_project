@@ -44,75 +44,75 @@ FEATURE_SCHEMA = {
     'ind_actividad_cliente': {'type': 'bool', 'required': True, 'description': 'Activity indicator'},
     
     # Current product ownership (Boolean)
-    'ind_ahor_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Saving Account'},
+    'ind_ahor_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Savings Account'},
     'ind_aval_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Guarantees'},
-    'ind_cco_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Current Accounts'},
-    'ind_cder_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Derivada Account'},
-    'ind_cno_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Payroll Account'},
+    'ind_cco_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Checking Account'},
+    'ind_cder_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Derivatives'},
+    'ind_cno_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Payroll'},
     'ind_ctju_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Junior Account'},
-    'ind_ctma_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Más particular Account'},
-    'ind_ctop_fin_ult1': {'type': 'bool', 'required': True, 'description': 'particular Account'},
-    'ind_ctpp_fin_ult1': {'type': 'bool', 'required': True, 'description': 'particular Plus Account'},
-    'ind_deco_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Short-term deposits'},
-    'ind_deme_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Medium-term deposits'},
-    'ind_dela_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Long-term deposits'},
-    'ind_ecue_fin_ult1': {'type': 'bool', 'required': True, 'description': 'e-account'},
+    'ind_ctma_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Particular Account number 3'},
+    'ind_ctop_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Particular Account number 1'},
+    'ind_ctpp_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Particular Account number 2'},
+    'ind_deco_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Short-term Deposit'},
+    'ind_deme_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Medium-term Deposit'},
+    'ind_dela_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Long-term Deposit'},
+    'ind_ecue_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Digital Account'},
     'ind_fond_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Funds'},
     'ind_hip_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Mortgage'},
-    'ind_plan_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Pensions'},
-    'ind_pres_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Loans'},
-    'ind_reca_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Taxes'},
+    'ind_plan_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Pension Plan'},
+    'ind_pres_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Loan'},
+    'ind_reca_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Tax Account'},
     'ind_tjcr_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Credit Card'},
     'ind_valo_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Securities'},
     'ind_viv_fin_ult1': {'type': 'bool', 'required': True, 'description': 'Home Account'},
-    'ind_nomina_ult1': {'type': 'bool', 'required': True, 'description': 'Payroll'},
+    'ind_nomina_ult1': {'type': 'bool', 'required': True, 'description': 'Payroll Account'},
     'ind_nom_pens_ult1': {'type': 'bool', 'required': True, 'description': 'Pensions'},
     'ind_recibo_ult1': {'type': 'bool', 'required': True, 'description': 'Direct Debit'},
-    
+
     # Lag-3 features (Boolean)
-    'ind_ahor_fin_ult1_lag3': {'type': 'bool', 'required': True, 'description': 'Saving Account lag3'},
+    'ind_ahor_fin_ult1_lag3': {'type': 'bool', 'required': True, 'description': 'Savings Account lag3'},
     'ind_aval_fin_ult1_lag3': {'type': 'bool', 'required': True, 'description': 'Guarantees lag3'},
-    'ind_cco_fin_ult1_lag3': {'type': 'bool', 'required': True, 'description': 'Current Accounts lag3'},
-    'ind_cder_fin_ult1_lag3': {'type': 'bool', 'required': True, 'description': 'Derivada Account lag3'},
+    'ind_cco_fin_ult1_lag3': {'type': 'bool', 'required': True, 'description': 'Checking Account lag3'},
+    'ind_cder_fin_ult1_lag3': {'type': 'bool', 'required': True, 'description': 'Derivatives lag3'},
     'ind_cno_fin_ult1_lag3': {'type': 'bool', 'required': True, 'description': 'Payroll Account lag3'},
     'ind_ctju_fin_ult1_lag3': {'type': 'bool', 'required': True, 'description': 'Junior Account lag3'},
-    'ind_ctma_fin_ult1_lag3': {'type': 'bool', 'required': True, 'description': 'Más particular Account lag3'},
-    'ind_ctop_fin_ult1_lag3': {'type': 'bool', 'required': True, 'description': 'particular Account lag3'},
-    'ind_ctpp_fin_ult1_lag3': {'type': 'bool', 'required': True, 'description': 'particular Plus Account lag3'},
-    'ind_deco_fin_ult1_lag3': {'type': 'bool', 'required': True, 'description': 'Short-term deposits lag3'},
-    'n_products_lag3': {'type': 'int', 'required': True, 'min': 0, 'description': 'Number of products lag3'},
+    'ind_ctma_fin_ult1_lag3': {'type': 'bool', 'required': True, 'description': 'Particular Account number 3 lag3'},
+    'ind_ctop_fin_ult1_lag3': {'type': 'bool', 'required': True, 'description': 'Particular Account number 1 lag3'},
+    'ind_ctpp_fin_ult1_lag3': {'type': 'bool', 'required': True, 'description': 'Particular Account number 2 lag3'},
+    'ind_deco_fin_ult1_lag3': {'type': 'bool', 'required': True, 'description': 'Short-term Deposit lag3'},
+    'n_products_lag3': {'type': 'int', 'required': True, 'min': 0, 'description': 'Number of Products lag3'},
     
     # Lag-6 features (Boolean)
-    'ind_ahor_fin_ult1_lag6': {'type': 'bool', 'required': True, 'description': 'Saving Account lag6'},
+    'ind_ahor_fin_ult1_lag6': {'type': 'bool', 'required': True, 'description': 'Savings Account lag6'},
     'ind_aval_fin_ult1_lag6': {'type': 'bool', 'required': True, 'description': 'Guarantees lag6'},
-    'ind_cco_fin_ult1_lag6': {'type': 'bool', 'required': True, 'description': 'Current Accounts lag6'},
-    'ind_cder_fin_ult1_lag6': {'type': 'bool', 'required': True, 'description': 'Derivada Account lag6'},
+    'ind_cco_fin_ult1_lag6': {'type': 'bool', 'required': True, 'description': 'Checking Account lag6'},
+    'ind_cder_fin_ult1_lag6': {'type': 'bool', 'required': True, 'description': 'Derivatives lag6'},
     'ind_cno_fin_ult1_lag6': {'type': 'bool', 'required': True, 'description': 'Payroll Account lag6'},
     'ind_ctju_fin_ult1_lag6': {'type': 'bool', 'required': True, 'description': 'Junior Account lag6'},
-    'ind_ctma_fin_ult1_lag6': {'type': 'bool', 'required': True, 'description': 'Más particular Account lag6'},
-    'ind_ctop_fin_ult1_lag6': {'type': 'bool', 'required': True, 'description': 'particular Account lag6'},
-    'ind_ctpp_fin_ult1_lag6': {'type': 'bool', 'required': True, 'description': 'particular Plus Account lag6'},
-    'ind_deco_fin_ult1_lag6': {'type': 'bool', 'required': True, 'description': 'Short-term deposits lag6'},
-    'n_products_lag6': {'type': 'int', 'required': True, 'min': 0, 'description': 'Number of products lag6'},
+    'ind_ctma_fin_ult1_lag6': {'type': 'bool', 'required': True, 'description': 'Particular Account number 3 lag6'},
+    'ind_ctop_fin_ult1_lag6': {'type': 'bool', 'required': True, 'description': 'Particular Account number 1 lag6'},
+    'ind_ctpp_fin_ult1_lag6': {'type': 'bool', 'required': True, 'description': 'Particular Account number 2 lag6'},
+    'ind_deco_fin_ult1_lag6': {'type': 'bool', 'required': True, 'description': 'Short-term Deposit lag6'},
+    'n_products_lag6': {'type': 'int', 'required': True, 'min': 0, 'description': 'Number of Products lag6'},
     
     # Acquired recently features (Int8: -1, 0, 1)
-    'ind_ahor_fin_ult1_acquired_recently': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'Saving Account acquired recently'},
+    'ind_ahor_fin_ult1_acquired_recently': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'Savings Account acquired recently'},
     'ind_aval_fin_ult1_acquired_recently': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'Guarantees acquired recently'},
-    'ind_cco_fin_ult1_acquired_recently': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'Current Accounts acquired recently'},
-    'ind_cder_fin_ult1_acquired_recently': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'Derivada Account acquired recently'},
+    'ind_cco_fin_ult1_acquired_recently': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'Checking Account acquired recently'},
+    'ind_cder_fin_ult1_acquired_recently': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'Derivatives acquired recently'},
     'ind_cno_fin_ult1_acquired_recently': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'Payroll Account acquired recently'},
     'ind_ctju_fin_ult1_acquired_recently': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'Junior Account acquired recently'},
-    'ind_ctma_fin_ult1_acquired_recently': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'Más particular Account acquired recently'},
-    'ind_ctop_fin_ult1_acquired_recently': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'particular Account acquired recently'},
-    'ind_ctpp_fin_ult1_acquired_recently': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'particular Plus Account acquired recently'},
-    'ind_deco_fin_ult1_acquired_recently': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'Short-term deposits acquired recently'},
+    'ind_ctma_fin_ult1_acquired_recently': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'Particular Account number 3 acquired recently'},
+    'ind_ctop_fin_ult1_acquired_recently': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'Particular Account number 1 acquired recently'},
+    'ind_ctpp_fin_ult1_acquired_recently': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'Particular Account number 2 acquired recently'},
+    'ind_deco_fin_ult1_acquired_recently': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'Short-term Deposit acquired recently'},
     
     # Interaction features (Int8: -1, 0, 1)
-    'ind_nomina_ult1_ind_nom_pens_ult1_interaction': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'Payroll-Pensions interaction'},
-    'ind_cno_fin_ult1_ind_nom_pens_ult1_interaction': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'Payroll Account-Pensions interaction'},
+    'ind_nomina_ult1_ind_nom_pens_ult1_interaction': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'Payroll Account-Pensions interaction'},
+    'ind_cno_fin_ult1_ind_nom_pens_ult1_interaction': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'Payroll-Pensions interaction'},
     'ind_cno_fin_ult1_ind_nomina_ult1_interaction': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'Payroll Account-Payroll interaction'},
     'ind_cno_fin_ult1_ind_recibo_ult1_interaction': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'Payroll Account-Direct Debit interaction'},
-    'ind_nomina_ult1_ind_recibo_ult1_interaction': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'Payroll-Direct Debit interaction'},
+    'ind_nomina_ult1_ind_recibo_ult1_interaction': {'type': 'int', 'required': True, 'min': -1, 'max': 1, 'description': 'Payroll Account-Direct Debit interaction'},
 }
 
 # List of all required feature names (excluding targets)
@@ -160,22 +160,9 @@ PRODUCT_NAMES = [
 
 # ---------- Request Models ---------- #
 class CustomerFeatures(BaseModel):
-    '''Customer features for prediction request.'''
-    
-    # Core identifiers
-    fecha_dato: Union[str, date] = Field(..., description='Reference date (YYYY-MM-DD)')
-    ncodpers: str = Field(..., description='Customer ID')
-    
-    # Categorical features
-    ind_empleado: Optional[str] = Field(None, description='Employee indicator')
-    pais_residencia: Optional[str] = Field(None, description='Country of residence')
-    sexo: Optional[str] = Field(None, description='Gender')
-    indrel: Optional[str] = Field(None, description='Customer relationship type')
-    indrel_1mes: Optional[str] = Field(None, description='Customer type at beginning of month')
-    tiprel_1mes: Optional[str] = Field(None, description='Customer relation type')
-    canal_entrada: Optional[str] = Field(None, description='Channel used to join')
-    cod_prov: Optional[str] = Field(None, description='Province code')
-    segmento: Optional[str] = Field(None, description='Customer segment')
+    '''
+       Customer features for prediction request.
+    '''
     
     # Numeric features
     age: int = Field(..., ge=0, le=150, description='Customer age')
@@ -271,7 +258,9 @@ class CustomerFeatures(BaseModel):
 
 
 class PredictionRequest(BaseModel):
-    '''Request model for prediction endpoint.'''
+    '''
+        Request model for prediction endpoint.
+    '''
     
     customer_id: str = Field(..., description='Unique customer identifier')
     features: CustomerFeatures = Field(..., description='Customer features for prediction')
@@ -298,7 +287,9 @@ class PredictionRequest(BaseModel):
 
 
 class BatchPredictionRequest(BaseModel):
-    '''Request model for batch prediction endpoint.'''
+    '''
+       Request model for batch prediction endpoint.
+    '''
     
     customers: List[PredictionRequest] = Field(..., description='List of customer prediction requests')
     
@@ -318,7 +309,9 @@ class BatchPredictionRequest(BaseModel):
 
 # ---------- Response Models ---------- #
 class ProductRecommendation(BaseModel):
-    '''Single product recommendation.'''
+    '''
+       Single product recommendation.
+    '''
     
     product_id: str = Field(..., description='Product identifier')
     product_name: str = Field(..., description='Human-readable product name')
@@ -327,7 +320,9 @@ class ProductRecommendation(BaseModel):
 
 
 class PredictionResponse(BaseModel):
-    '''Response model for prediction endpoint.'''
+    '''
+       Response model for prediction endpoint.
+    '''
     
     customer_id: str = Field(..., description='Customer identifier')
     recommendations: List[ProductRecommendation] = Field(..., description='Top-K product recommendations')
@@ -336,7 +331,9 @@ class PredictionResponse(BaseModel):
 
 
 class BatchPredictionResponse(BaseModel):
-    '''Response model for batch prediction endpoint.'''
+    '''
+       Response model for batch prediction endpoint.
+    '''
     
     predictions: List[PredictionResponse] = Field(..., description='List of prediction responses')
     total_latency_ms: float = Field(..., description='Total batch processing latency in milliseconds')
@@ -344,7 +341,9 @@ class BatchPredictionResponse(BaseModel):
 
 
 class HealthResponse(BaseModel):
-    '''Response model for health check endpoint.'''
+    '''
+       Response model for health check endpoint.
+    '''
     
     status: str = Field(..., description='Health status')
     model_loaded: bool = Field(..., description='Whether model is loaded')
@@ -352,7 +351,9 @@ class HealthResponse(BaseModel):
 
 
 class ValidationError(BaseModel):
-    '''Validation error response.'''
+    '''
+        Validation error response.
+    '''
     
     field: str = Field(..., description='Field that failed validation')
     message: str = Field(..., description='Error message')
@@ -360,7 +361,9 @@ class ValidationError(BaseModel):
 
 
 class ErrorResponse(BaseModel):
-    '''Error response model.'''
+    '''
+       Error response model.
+    '''
     
     error: str = Field(..., description='Error type')
     message: str = Field(..., description='Error message')

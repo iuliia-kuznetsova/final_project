@@ -83,24 +83,13 @@ def sample_data(
 ) -> pd.DataFrame:
     '''
         Sample data from preprocessed parquet file.
-        
-        Args:
-            data_dir: Directory containing data files
-            preprocessed_file: Name of preprocessed parquet file
-            output_file: Name of output sample file
-            sample_size: Number of rows to sample
-            random_state: Random seed for reproducibility
-            
-        Returns:
-            Sampled DataFrame
     '''
-    logger.info(f'Sampling {sample_size} rows from {preprocessed_file}')
     
     # Load data with Polars (faster for large files)
     data_path = os.path.join(data_dir, preprocessed_file)
     df = pl.read_parquet(data_path)
     
-    logger.info(f'Loaded data: {df.height:,} rows x {df.width} columns')
+    logger.info(f'Preprocessed data loaded: {df.height:,} rows x {df.width} columns')
     
     # Sample data
     if sample_size >= df.height:
@@ -108,22 +97,24 @@ def sample_data(
         logger.info(f'Sample size >= data size, using all {df.height:,} rows')
     else:
         sample_df = df.sample(n=sample_size, seed=random_state)
-        logger.info(f'Sampled {sample_size:,} rows')
+        logger.info(f'Data sampled: {sample_size:,} rows')
     
     # Drop target columns (not needed for prediction)
     target_cols = [col for col in sample_df.columns if col.startswith('target_')]
     sample_df = sample_df.drop(target_cols)
     
-    logger.info(f'Dropped {len(target_cols)} target columns')
+    logger.info(f'Target columns for API testing dropped: {len(target_cols)}')
     
     # Save sample to parquet
     output_path = os.path.join(data_dir, output_file)
     sample_df.write_parquet(output_path)
-    logger.info(f'Saved sample data to {output_path}')
+    logger.info(f'Sampled data saved to: {output_path}')
     
     # Convert to pandas for API testing
     sample_pd = sample_df.to_pandas()
-    
+    logger.info(f'Data converted to pandas for API testing')
+    logger.info(f'DONE: Sampling completed')
+
     # Clean up
     del df, sample_df
     gc.collect()
@@ -137,25 +128,16 @@ def load_test_data(
 ) -> pd.DataFrame:
     '''
         Load existing test data from parquet file.
-        
-        Args:
-            data_dir: Directory containing data files
-            test_file: Name of test data file
-            
-        Returns:
-            Test DataFrame
     '''
     data_path = os.path.join(data_dir, test_file)
     
     if not os.path.exists(data_path):
-        logger.warning(f'Test data file not found: {data_path}')
-        logger.info('Generating new sample data...')
+        logger.warning(f'Api test data file not found: {data_path}')
         return sample_data(data_dir)
     
-    logger.info(f'Loading test data from {data_path}')
     df = pl.read_parquet(data_path).to_pandas()
-    logger.info(f'Loaded {len(df):,} rows')
-    
+    logger.info(f'Api test data loaded: {len(df):,} rows')
+    logger.info(f'DONE: Api test data loaded')
     return df
 
 
@@ -166,13 +148,6 @@ def row_to_request(
 ) -> Dict[str, Any]:
     '''
         Convert a DataFrame row to API request format.
-        
-        Args:
-            row: pandas Series representing a data row
-            top_k: Number of recommendations to request
-            
-        Returns:
-            Request dictionary
     '''
     # Extract customer ID
     customer_id = str(row.get('ncodpers', 'unknown'))
@@ -203,13 +178,7 @@ def row_to_request(
 # ---------- API Client Functions ---------- #
 def check_health(base_url: str = API_BASE_URL) -> bool:
     '''
-        Check if API is healthy.
-        
-        Args:
-            base_url: API base URL
-            
-        Returns:
-            True if API is healthy
+        Check if the API is healthy.
     '''
     try:
         response = requests.get(f'{base_url}/health', timeout=5)
@@ -232,14 +201,6 @@ def send_single_request(
 ) -> Optional[Dict[str, Any]]:
     '''
         Send a single prediction request to the API.
-        
-        Args:
-            request_data: Request payload
-            base_url: API base URL
-            request_idx: Request index for logging
-            
-        Returns:
-            Response dictionary or None on error
     '''
     try:
         start_time = time.time()
@@ -262,21 +223,22 @@ def send_single_request(
                 top_rec = result['recommendations'][0]
             
             logger.info(
-                f"[{request_idx:04d}] OK | customer={customer_id} | "
-                f"n_recs={n_recs} | latency={latency_ms:.1f}ms | "
-                f"top={top_rec['product_id'] if top_rec else 'N/A'} "
-                f"({top_rec['probability']:.3f})" if top_rec else ''
+                f"Request [{request_idx:04d}] successfully completed | "
+                f"customer id: {customer_id} | "
+                f"number of recommendations: {n_recs} latency: {latency_ms:.1f}ms | "
+                f"top recommendation: {top_rec['product_id'] if top_rec else 'N/A'} with probability: {top_rec['probability']:.3f}"
             )
             return result
         else:
             error_detail = response.text[:200]
             logger.error(
-                f"[{request_idx:04d}] FAILED | status={response.status_code} | {error_detail}"
+                f"Request [{request_idx:04d}] failed with status={response.status_code} | "
+                f"and error_detail: {error_detail}"
             )
             return None
             
     except requests.exceptions.RequestException as e:
-        logger.error(f"[{request_idx:04d}] ERROR | {e}")
+        logger.error(f"Request [{request_idx:04d}] failed with error: {e}")
         return None
 
 
@@ -286,13 +248,6 @@ def send_batch_request(
 ) -> Optional[Dict[str, Any]]:
     '''
         Send a batch prediction request to the API.
-        
-        Args:
-            requests_data: List of request payloads
-            base_url: API base URL
-            
-        Returns:
-            Response dictionary or None on error
     '''
     try:
         start_time = time.time()
@@ -309,18 +264,20 @@ def send_batch_request(
             total_latency = result.get('total_latency_ms', elapsed * 1000)
             
             logger.info(
-                f"BATCH OK | n_predictions={n_predictions} | "
-                f"total_latency={total_latency:.1f}ms | "
+                f"Batch prediction successfully completed | "
+                f"number of predictions: {n_predictions} | "
+                f"total latency: {total_latency:.1f}ms | "
+                f"average latency: {total_latency/n_predictions:.1f}ms | "
                 f"avg_latency={total_latency/n_predictions:.1f}ms"
             )
             return result
         else:
             error_detail = response.text[:200]
-            logger.error(f"BATCH FAILED | status={response.status_code} | {error_detail}")
+            logger.error(f"Batch prediction failed with status={response.status_code} and error detail: {error_detail}")
             return None
             
     except requests.exceptions.RequestException as e:
-        logger.error(f"BATCH ERROR | {e}")
+        logger.error(f"Batch prediction failed with error: {e}")
         return None
 
 
@@ -334,18 +291,8 @@ def run_single_prediction_test(
 ) -> Dict[str, Any]:
     '''
         Run single prediction test.
-        
-        Args:
-            test_data: Test DataFrame
-            limit: Number of requests to send
-            sleep_seconds: Sleep between requests
-            top_k: Number of recommendations
-            base_url: API base URL
-            
-        Returns:
-            Test results summary
     '''
-    logger.info(f'Running single prediction test: {limit} requests, sleep={sleep_seconds}s')
+    logger.info(f'Running single prediction test: {limit} requests, sleep: {sleep_seconds}s')
     
     results = {
         'total_requests': 0,
@@ -388,7 +335,7 @@ def run_single_prediction_test(
             'max': np.max(results['latencies'])
         }
     
-    logger.info(f"Single prediction test completed: {results['successful']}/{results['total_requests']} successful")
+    logger.info(f"Single prediction test completed: {results['successful']} successful requests out of {results['total_requests']}")
     
     return results
 
@@ -402,16 +349,6 @@ def run_batch_prediction_test(
 ) -> Dict[str, Any]:
     '''
         Run batch prediction test.
-        
-        Args:
-            test_data: Test DataFrame
-            batch_size: Size of each batch
-            n_batches: Number of batches to send
-            top_k: Number of recommendations
-            base_url: API base URL
-            
-        Returns:
-            Test results summary
     '''
     logger.info(f'Running batch prediction test: {n_batches} batches x {batch_size} customers')
     
@@ -486,16 +423,11 @@ def main():
     BATCH_PREDICT_URL = f"{API_BASE_URL}/predict/batch"
     HEALTH_URL = f"{API_BASE_URL}/health"
     
-    logger.info(f'API Testing started')
-    logger.info(f'  Target: {API_BASE_URL}')
-    logger.info(f'  Limit: {args.limit} requests')
-    logger.info(f'  Sleep: {args.sleep}s between requests')
-    logger.info(f'  Batch size: {args.batch_size}')
-    logger.info(f'  Top-K: {args.top_k}')
+    logger.info(f'Starting API Testing')
     
     # Check API health first
     if not check_health(API_BASE_URL):
-        logger.error('API is not healthy, aborting tests')
+        logger.error('API is not healthy')
         return
     
     # Load or sample test data
@@ -504,12 +436,8 @@ def main():
     else:
         test_data = load_test_data(DATA_DIR)
     
-    logger.info(f'Test data loaded: {len(test_data)} rows')
-    
     # Run single prediction tests
-    logger.info('=' * 60)
     logger.info('Starting Single Prediction Tests')
-    logger.info('=' * 60)
     
     single_results = run_single_prediction_test(
         test_data=test_data,
@@ -520,9 +448,7 @@ def main():
     )
     
     # Run batch prediction tests
-    logger.info('=' * 60)
     logger.info('Starting Batch Prediction Tests')
-    logger.info('=' * 60)
     
     n_batches = min(args.limit // args.batch_size, 10)
     batch_results = run_batch_prediction_test(
@@ -534,36 +460,43 @@ def main():
     )
     
     # Print summary
-    logger.info('=' * 60)
     logger.info('Test Summary')
-    logger.info('=' * 60)
     
-    logger.info('Single Prediction Results:')
-    logger.info(f"  Total: {single_results['total_requests']}")
-    logger.info(f"  Successful: {single_results['successful']}")
-    logger.info(f"  Failed: {single_results['failed']}")
-    logger.info(f"  Success Rate: {single_results['success_rate']:.1%}")
+    logger.info(f"Single Prediction Results: | "
+                f"Total requests: {single_results['total_requests']} | "
+                f"Successful requests: {single_results['successful']} | "
+                f"Failed requests: {single_results['failed']} | "
+                f"Success rate: {single_results['success_rate']:.1%} | "
+            )
     
     if 'latency_stats' in single_results:
         stats = single_results['latency_stats']
-        logger.info(f"  Latency (ms):")
-        logger.info(f"    Mean: {stats['mean']:.1f}")
-        logger.info(f"    Median: {stats['median']:.1f}")
-        logger.info(f"    P95: {stats['p95']:.1f}")
-        logger.info(f"    P99: {stats['p99']:.1f}")
+        logger.info(f"Latency (ms): | "
+                    f"Mean: {stats['mean']:.1f} | "
+                    f"Median: {stats['median']:.1f} | "
+                    f"P95: {stats['p95']:.1f} | "
+                    f"P99: {stats['p99']:.1f} | "
+                    f"Min: {stats['min']:.1f} | "
+                    f"Max: {stats['max']:.1f}"
+                )
     
-    logger.info('')
-    logger.info('Batch Prediction Results:')
-    logger.info(f"  Total Batches: {batch_results['total_batches']}")
-    logger.info(f"  Successful Batches: {batch_results['successful_batches']}")
-    logger.info(f"  Total Predictions: {batch_results['total_predictions']}")
-    logger.info(f"  Batch Success Rate: {batch_results['batch_success_rate']:.1%}")
+    logger.info(f"Batch Prediction Results: | "
+                f"Total batches: {batch_results['total_batches']} | "
+                f"Successful batches: {batch_results['successful_batches']} | "
+                f"Total predictions: {batch_results['total_predictions']} | "
+                f"Batch success rate: {batch_results['batch_success_rate']:.1%}"
+            )
     
     if 'batch_latency_stats' in batch_results:
         stats = batch_results['batch_latency_stats']
-        logger.info(f"  Batch Latency (ms):")
-        logger.info(f"    Mean: {stats['mean']:.1f}")
-        logger.info(f"    Median: {stats['median']:.1f}")
+        logger.info(f"Batch Latency (ms): | "
+                    f"Mean: {stats['mean']:.1f} | "
+                    f"Median: {stats['median']:.1f} | "
+                    f"P95: {stats['p95']:.1f} | "
+                    f"P99: {stats['p99']:.1f} | "
+                    f"Min: {stats['min']:.1f} | "
+                    f"Max: {stats['max']:.1f}"
+                )
     
     # Save results to file
     results_file = os.path.join(DATA_DIR, 'api_test_results.json')
@@ -580,9 +513,15 @@ def main():
             }
         }, f, indent=2, default=str)
     
-    logger.info(f'\nResults saved to: {results_file}')
-    logger.info('API testing completed')
+    logger.info(f'Results saved to: {results_file}')
+    logger.info('API testing successfully completed')
 
 
+# ---------- Main ---------- #
+if __name__ == '__main__':
+    main()
+
+
+# ---------- Main ---------- #
 if __name__ == '__main__':
     main()

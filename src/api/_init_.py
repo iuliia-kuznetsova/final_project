@@ -2,10 +2,9 @@
     Bank Products Recommender API Module
 
     This module provides a FastAPI-based recommendation service with:
-    - RESTful API endpoints for single and batch predictions
-    - Prometheus metrics integration
-    - Request validation with Pydantic schemas
-    - Docker deployment with Grafana dashboards
+    - Main API module for the recommendation service
+    - Prometheus metrics collection
+    - Grafana dashboards for monitoring
 '''
 
 from src.api.schemas import (

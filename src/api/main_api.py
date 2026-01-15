@@ -7,7 +7,6 @@
 
     Usage:
     python -m src.api.main_api
-    or
     uvicorn src.api.main_api:app --host 0.0.0.0 --port 8080
 '''
 
@@ -54,8 +53,6 @@ if os.path.exists(os.path.join(config_dir, '.env')):
 # API Configuration
 RECOMMENDER_HOST = os.getenv('RECOMMENDER_HOST', '0.0.0.0')
 RECOMMENDER_PORT = int(os.getenv('RECOMMENDER_PORT', 8080))
-API_VERSION = os.getenv('API_VERSION', '1.0.0')
-DEBUG_MODE = os.getenv('DEBUG_MODE', 'false').lower() == 'true'
 
 
 # ---------- Prometheus Metrics ---------- #
@@ -124,11 +121,13 @@ validator: QueryValidator = None
 # ---------- Lifespan (Startup/Shutdown) ---------- #
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    '''Application lifespan handler for startup and shutdown.'''
+    '''
+        Application lifespan handler for startup and shutdown.
+    '''
     global model_handler, validator
     
     # Startup
-    logger.info('Starting Bank Products Recommender API...')
+    logger.info('Starting Bank Products Recommender API')
     
     try:
         # Initialize model handler
@@ -156,7 +155,7 @@ async def lifespan(app: FastAPI):
     yield  # Application is running
     
     # Shutdown
-    logger.info('Shutting down Bank Products Recommender API...')
+    logger.info('Shutting down Bank Products Recommender API')
 
 
 # ---------- FastAPI App ---------- #
@@ -167,29 +166,10 @@ app = FastAPI(
     
     This API provides personalized product recommendations for banking customers
     based on their profile and behavior patterns.
-    
-    ## Features
-    - **Single Prediction**: Get top-K recommendations for a single customer
-    - **Batch Prediction**: Get recommendations for multiple customers at once
-    - **Prometheus Metrics**: Built-in metrics for monitoring and alerting
-    
-    ## Model
-    Uses a One-vs-Rest (OvR) CatBoost model trained on customer data to predict
-    the probability of product acquisition.
     ''',
-    version=API_VERSION,
     lifespan=lifespan,
     docs_url='/docs',
     redoc_url='/redoc'
-)
-
-# CORS middleware
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=['*'],
-    allow_credentials=True,
-    allow_methods=['*'],
-    allow_headers=['*'],
 )
 
 # Prometheus instrumentation
@@ -206,7 +186,9 @@ instrumentator.instrument(app).expose(app)
 # ---------- Exception Handlers ---------- #
 @app.exception_handler(HTTPException)
 async def http_exception_handler(request: Request, exc: HTTPException):
-    '''Handle HTTP exceptions with custom response format.'''
+    '''
+        Handle HTTP exceptions with custom response format.
+    '''
     REQUEST_COUNTER.labels(endpoint=request.url.path, status='error').inc()
     
     return JSONResponse(
@@ -221,7 +203,9 @@ async def http_exception_handler(request: Request, exc: HTTPException):
 
 @app.exception_handler(Exception)
 async def general_exception_handler(request: Request, exc: Exception):
-    '''Handle general exceptions.'''
+    '''
+        Handle general exceptions.
+    '''
     logger.error(f'Unhandled exception: {exc}', exc_info=True)
     REQUEST_COUNTER.labels(endpoint=request.url.path, status='error').inc()
     
@@ -229,8 +213,7 @@ async def general_exception_handler(request: Request, exc: Exception):
         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
         content={
             'error': 'InternalServerError',
-            'message': 'An unexpected error occurred',
-            'details': [{'field': 'server', 'message': str(exc)}] if DEBUG_MODE else None
+            'message': 'An unexpected error occurred'
         }
     )
 
@@ -238,10 +221,11 @@ async def general_exception_handler(request: Request, exc: Exception):
 # ---------- Endpoints ---------- #
 @app.get('/', tags=['General'])
 async def root():
-    '''Root endpoint returning API information.'''
+    '''
+        Root endpoint returning API information.
+    '''
     return {
         'name': 'Bank Products Recommender API',
-        'version': API_VERSION,
         'status': 'running',
         'docs': '/docs',
         'health': '/health',
@@ -252,9 +236,7 @@ async def root():
 @app.get('/health', response_model=HealthResponse, tags=['General'])
 async def health_check():
     '''
-    Health check endpoint.
-    
-    Returns the current health status of the API and model.
+        Health check endpoint.
     '''
     if model_handler is None:
         return HealthResponse(
@@ -275,9 +257,7 @@ async def health_check():
 @app.get('/model/info', tags=['Model'])
 async def get_model_info():
     '''
-    Get information about the loaded model.
-    
-    Returns model metadata including version, number of features, and product groups.
+        Get information about the loaded model.
     '''
     if model_handler is None:
         raise HTTPException(
@@ -299,14 +279,7 @@ async def get_model_info():
 )
 async def predict(request: PredictionRequest):
     '''
-    Get product recommendations for a single customer.
-    
-    Accepts customer features and returns top-K product recommendations
-    with probabilities.
-    
-    - **customer_id**: Unique customer identifier
-    - **features**: Customer features for prediction
-    - **top_k**: Number of recommendations to return (default: 7, max: 24)
+        Get product recommendations for a single customer.
     '''
     INPROGRESS_REQUESTS.labels(endpoint='/predict').inc()
     start_time = time.time()
@@ -404,12 +377,7 @@ async def predict(request: PredictionRequest):
 )
 async def predict_batch(request: BatchPredictionRequest):
     '''
-    Get product recommendations for multiple customers.
-    
-    Accepts a list of customer features and returns recommendations for each.
-    Maximum batch size is 1000 customers.
-    
-    - **customers**: List of prediction requests
+        Get product recommendations for multiple customers.
     '''
     INPROGRESS_REQUESTS.labels(endpoint='/predict/batch').inc()
     start_time = time.time()
@@ -517,6 +485,5 @@ if __name__ == '__main__':
         'src.api.main_api:app',
         host=RECOMMENDER_HOST,
         port=RECOMMENDER_PORT,
-        reload=DEBUG_MODE,
         log_level='info'
     )
