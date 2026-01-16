@@ -119,8 +119,8 @@ class ModelHandler:
         
         logger.info(f'Loading model from: {model_path}')
         
-        # Initialize and load model
-        self.model = OvRGroupModel()
+        # Initialize and load model (disable MLflow for inference)
+        self.model = OvRGroupModel(mlflow_experiment=None)
         self.model.load(str(model_path))
         
         # Extract model metadata

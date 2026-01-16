@@ -53,6 +53,7 @@ if os.path.exists(os.path.join(config_dir, '.env')):
 # API Configuration
 RECOMMENDER_HOST = os.getenv('RECOMMENDER_HOST', '0.0.0.0')
 RECOMMENDER_PORT = int(os.getenv('RECOMMENDER_PORT', 8080))
+API_VERSION = os.getenv('API_VERSION', '1.0.0')
 
 
 # ---------- Prometheus Metrics ---------- #

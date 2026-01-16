@@ -26,27 +26,17 @@ A FastAPI-based recommendation service for bank products with Prometheus metrics
 
 ## Quick Start
 
-### 1. Setup Environment
-
-```bash
-# Copy environment template
-cp .env.example .env
-
-# Edit configuration as needed
-nano .env
-```
-
-### 2. Build and Run with Docker Compose
+### Build and Run with Docker Compose
 
 ```bash
 # Build and start all services
-docker-compose up -d --build
+docker compose -f src/api/docker-compose.yml up -d --build
 
 # Check service status
-docker-compose ps
+docker compose ps
 
 # View logs
-docker-compose logs -f recommender
+docker compose logs -f recommender
 ```
 
 ### 3. Access Services
@@ -59,12 +49,15 @@ docker-compose logs -f recommender
 ## API Endpoints
 
 ### Health Check
+```curl 
+-s http://localhost:8080/health | jq
+```
 
 ```bash
 GET /health
 ```
 
-Response:
+Expected response:
 ```json
 {
   "status": "healthy",
@@ -73,7 +66,72 @@ Response:
 }
 ```
 
+### API Root Info
+```curl 
+-s http://localhost:8080/ | jq
+```
+
+Expected response:
+```json
+{
+  "name": "Bank Products Recommender API",
+  "status": "running",
+  "docs": "/docs",
+  "health": "/health",
+  "metrics": "/metrics"
+}
+```
+
+### Model Info
+```curl 
+-s http://localhost:8080/model/info | jq
+```
+
+Expected response:
+```json
+{
+  "model_name": "ovr_grouped_catboost",
+  "model_version": "20260116",
+  "n_features": 27,
+  "n_cat_features": 33,
+  "n_products": 24,
+  "groups": {
+    "frequent": 8,
+    "mid": 7,
+    "rare": 9
+  },
+  "top_k_default": 7,
+  "is_loaded": true
+}
+```
+
 ### Single Prediction
+```curl 
+-s -X POST http://localhost:8080/predict \
+  -H "Content-Type: application/json" \
+  -d '{
+    "customer_id": "12345678",
+    "features": {
+      "age": 35,
+      "renta": 50000.0,
+      "customer_period": 12,
+      "ind_nuevo": false,
+      "indresi": true,
+      "indfall": false,
+      "ind_actividad_cliente": true,
+      "ind_empleado": "A",
+      "pais_residencia": "ES",
+      "sexo": "H",
+      "indrel": "1",
+      "indrel_1mes": "1",
+      "tiprel_1mes": "A",
+      "canal_entrada": "KHE",
+      "cod_prov": "28",
+      "segmento": "02 - PARTICULARES"
+    },
+    "top_k": 7
+  }' | jq
+```
 
 ```bash
 POST /predict
@@ -151,6 +209,9 @@ Request:
 GET /model/info
 ```
 
+### Metrics
+curl -s http://localhost:8080/metrics | head -50
+
 ## Testing the API
 
 ### Run API Tests
@@ -182,16 +243,34 @@ curl -X POST http://localhost:8080/predict \
     "features": {
       "fecha_dato": "2016-05-28",
       "ncodpers": "12345678",
+      "ind_empleado": "A",
+      "pais_residencia": "ES",
+      "sexo": "H",
       "age": 35,
-      "customer_period": 12,
       "ind_nuevo": false,
+      "indrel": "1",
+      "indrel_1mes": "1",
+      "tiprel_1mes": "A",
       "indresi": true,
+      "canal_entrada": "KAT",
       "indfall": false,
-      "ind_actividad_cliente": true
+      "cod_prov": "28",
+      "ind_actividad_cliente": true,
+      "renta": 326124.90,
+      "segmento": "02 - PARTICULARES",
+      "customer_period": 12
     },
     "top_k": 7
   }'
 ```
+
+Expected 
+{"customer_id":"12345678","recommendations":[{"product_id":"target_recibo","product_name":"Direct Debit","probability":0.0,"rank":1},{"product_id":"target_cno_fin","product_name":"Payroll Account","probability":0.0,"rank":2},{"product_id":"target_cco_fin","product_name":"Current Account","probability":0.0,"rank":3},{"product_id":"target_ctma_fin","product_name":"Más Particular Account","probability":0.0,"rank":4},{"product_id":"target_ecue_fin","product_name":"e-Account","probability":0.0,"rank":5},{"product_id":"target_nomina","product_name":"Payroll","probability":0.0,"rank":6},{"product_id":"target_nom_pens","product_name":"Pension Payroll","probability":0.0,"rank":7}],"latency_ms":29.04534339904785,"model_version":"20260116"}
+
+
+Test Api
+
+python -m src.api.test_api --sample --limit 100 --sleep 0.1
 
 ## Prometheus Metrics
 
@@ -310,4 +389,30 @@ python -m src.api.main_api
 
 # Or with uvicorn directly
 uvicorn src.api.main_api:app --host 0.0.0.0 --port 8080 --reload
+```
+
+
+# Get access to the microservice front page
+Open browser and navigate to http://127.0.0.1:8080
+
+# Get acess to Prometheus
+Open browser and navigate to http://localhost:9091/query
+
+# Get acess to Grafana
+Open browser and navigate to http://localhost:3001
+
+# Get access to interactive API documentation
+Open browser and navigate to http://127.0.0.1:8080/docs
+
+# Get API metrics
+Open browser and navigate to http://127.0.0.1:8080/metrics
+
+# Stop and remove the containers
+``` bash
+docker stop sprint_3_stage_3_4_microservice_container
+docker rm sprint_3_stage_3_4_microservice_container
+docker stop prometheus                               
+docker rm prometheus
+docker stop grafana
+docker rm grafana
 ```

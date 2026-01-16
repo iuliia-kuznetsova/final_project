@@ -398,6 +398,7 @@ def run_batch_prediction_test(
             'mean': np.mean(results['batch_latencies']),
             'median': np.median(results['batch_latencies']),
             'p95': np.percentile(results['batch_latencies'], 95) if len(results['batch_latencies']) > 1 else results['batch_latencies'][0],
+            'p99': np.percentile(results['batch_latencies'], 99) if len(results['batch_latencies']) > 1 else results['batch_latencies'][0],
             'min': np.min(results['batch_latencies']),
             'max': np.max(results['batch_latencies'])
         }

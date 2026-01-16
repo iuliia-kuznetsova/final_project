@@ -1,10 +1,10 @@
-'''
-  Prometheus Configuration for Bank Products Recommender
-
-  This file configures Prometheus to scrape metrics from the Bank Products Recommender API and Prometheus itself.
-  It also configures the scrape interval and scrape timeout for the API and Prometheus.
-  It also configures the relabeling and metric relabeling for the API.
-'''
+#
+#  Prometheus Configuration for Bank Products Recommender
+#
+#  This file configures Prometheus to scrape metrics from the Bank Products Recommender API and Prometheus itself.
+#  It also configures the scrape interval and scrape timeout for the API and Prometheus.
+#  It also configures the relabeling and metric relabeling for the API.
+#
 
 global:
   # How frequently to scrape targets

@@ -207,3 +207,1023 @@
 {"timestamp": "2026-01-15 03:42:38,570", "module": "modelling_ovr", "level": "INFO", "message": "Models training settings: boosting=Plain, border_count=128, threads=-1"}
 {"timestamp": "2026-01-15 03:42:38,570", "module": "modelling_ovr", "level": "INFO", "message": "Feature selection settings: enabled=True, min_importance=0.001"}
 {"timestamp": "2026-01-15 03:42:38,589", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Loaded 3 group models from: models/ovr_grouped_catboost"}
+{"timestamp": "2026-01-16 09:57:05,173", "module": "modelling_ovr", "level": "INFO", "message": "Logging to /app/logs/logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-16 09:57:11,479", "module": "modelling_ovr", "level": "INFO", "message": "Logging to /app/logs/logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-16 09:57:14,735", "module": "modelling_ovr", "level": "INFO", "message": "Logging to /app/logs/logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-16 09:57:18,132", "module": "modelling_ovr", "level": "INFO", "message": "Logging to /app/logs/logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-16 09:57:21,516", "module": "modelling_ovr", "level": "INFO", "message": "Logging to /app/logs/logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-16 09:57:25,059", "module": "modelling_ovr", "level": "INFO", "message": "Logging to /app/logs/logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-16 09:57:29,074", "module": "modelling_ovr", "level": "INFO", "message": "Logging to /app/logs/logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-16 09:57:33,860", "module": "modelling_ovr", "level": "INFO", "message": "Logging to /app/logs/logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-16 09:57:40,368", "module": "modelling_ovr", "level": "INFO", "message": "Logging to /app/logs/logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-16 09:57:50,112", "module": "modelling_ovr", "level": "INFO", "message": "Logging to /app/logs/logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-16 09:58:06,189", "module": "modelling_ovr", "level": "INFO", "message": "Logging to /app/logs/logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-16 09:58:35,630", "module": "modelling_ovr", "level": "INFO", "message": "Logging to /app/logs/logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-16 09:59:30,540", "module": "modelling_ovr", "level": "INFO", "message": "Logging to /app/logs/logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-16 10:00:07,492", "module": "modelling_ovr", "level": "INFO", "message": "Logging to /app/logs/logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-16 10:00:07,607", "module": "modelling_ovr", "level": "INFO", "message": "MLflow tracking URI: http://localhost:5000"}
+{"timestamp": "2026-01-16 10:04:27,356", "module": "modelling_ovr", "level": "INFO", "message": "Logging to /app/logs/logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-16 10:04:27,481", "module": "modelling_ovr", "level": "INFO", "message": "MLflow tracking URI: http://localhost:5000"}
+{"timestamp": "2026-01-16 10:05:54,115", "module": "modelling_ovr", "level": "INFO", "message": "Logging to /app/logs/logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-16 10:05:54,240", "module": "modelling_ovr", "level": "INFO", "message": "MLflow tracking URI: http://localhost:5000"}
+{"timestamp": "2026-01-16 10:10:05,212", "module": "modelling_ovr", "level": "INFO", "message": "Logging to /app/logs/logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-16 10:10:05,331", "module": "modelling_ovr", "level": "INFO", "message": "MLflow tracking URI: http://localhost:5000"}
+{"timestamp": "2026-01-16 10:12:26,111", "module": "modelling_ovr", "level": "INFO", "message": "Logging to /app/logs/logs_modelling_ovr.json setup completed"}
+{"timestamp": "2026-01-16 10:12:26,228", "module": "modelling_ovr", "level": "INFO", "message": "OvRGroupModel initialized"}
+{"timestamp": "2026-01-16 10:12:26,228", "module": "modelling_ovr", "level": "INFO", "message": "Hyperparameters optimization settings: n_splits=3, max_iter=300, early_stop=30"}
+{"timestamp": "2026-01-16 10:12:26,229", "module": "modelling_ovr", "level": "INFO", "message": "Models training settings: boosting=Plain, border_count=128, threads=-1"}
+{"timestamp": "2026-01-16 10:12:26,229", "module": "modelling_ovr", "level": "INFO", "message": "Feature selection settings: enabled=True, min_importance=0.001"}
+{"timestamp": "2026-01-16 10:12:26,246", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Loaded 3 group models from: /app/models/ovr_grouped_catboost"}
+{"timestamp": "2026-01-16 10:39:51,519", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:51,539", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:51,540", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:51,655", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:51,674", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:51,675", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:51,795", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:51,814", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:51,816", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:51,931", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:51,946", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:51,946", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:52,060", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:52,078", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:52,079", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:52,194", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:52,212", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:52,213", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:52,328", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:52,346", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:52,347", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:52,462", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:52,480", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:52,481", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:52,603", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:52,621", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:52,622", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:52,737", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:52,755", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:52,756", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:52,871", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:52,888", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:52,889", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:53,005", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:53,023", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:53,023", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:53,138", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:53,155", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:53,156", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:53,270", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:53,288", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:53,289", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:53,405", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:53,423", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:53,423", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:53,538", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:53,557", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:53,558", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:53,672", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:53,690", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:53,691", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:53,806", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:53,824", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:53,825", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:53,939", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:53,956", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:53,957", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:54,072", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:54,091", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:54,092", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:54,206", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:54,224", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:54,225", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:54,340", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:54,358", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:54,359", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:54,474", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:54,492", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:54,492", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:54,607", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:54,625", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:54,645", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:54,760", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:54,777", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:54,778", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:54,893", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:54,911", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:54,911", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:55,026", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:55,044", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:55,045", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:55,160", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:55,179", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:55,180", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:55,294", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:55,311", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:55,312", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:55,427", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:55,451", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:55,452", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:55,566", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:55,584", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:55,585", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:55,699", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:55,716", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:55,717", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:55,832", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:55,850", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:55,850", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:55,964", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:55,983", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:55,984", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:56,099", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:56,116", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:56,117", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:56,232", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:56,250", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:56,251", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:56,365", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:56,383", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:56,384", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:56,499", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:56,517", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:56,518", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:56,633", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:56,651", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:56,652", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:56,766", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:56,784", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:56,785", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:56,900", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:56,919", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:56,920", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:57,035", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:57,054", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:57,056", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:57,171", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:57,190", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:57,191", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:57,305", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:57,324", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:57,324", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:57,439", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:57,457", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:57,458", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:57,572", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:57,590", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:57,590", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:57,705", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:57,723", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:57,724", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:57,839", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:57,857", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:57,858", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:57,972", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:57,990", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:57,991", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:58,105", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:58,124", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:58,125", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:58,240", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:58,259", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:58,260", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:58,375", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:58,393", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:58,394", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:58,512", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:58,530", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:58,531", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:58,646", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:58,664", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:58,664", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:58,779", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:58,798", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:58,798", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:58,913", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:58,930", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:58,931", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:59,046", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:59,065", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:59,066", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:59,181", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:59,199", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:59,200", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:59,315", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:59,334", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:59,335", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:59,449", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:59,467", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:59,467", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:59,582", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:59,600", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:59,601", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:59,717", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:59,736", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:59,737", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:59,852", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:39:59,870", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:39:59,871", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:39:59,985", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:00,004", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:00,005", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:00,121", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:00,141", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:00,142", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:00,257", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:00,276", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:00,277", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:00,393", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:00,410", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:00,411", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:00,528", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:00,547", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:00,548", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:00,664", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:00,682", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:00,683", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:00,798", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:00,816", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:00,817", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:00,932", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:00,966", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:00,967", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:01,082", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:01,101", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:01,102", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:01,217", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:01,235", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:01,236", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:01,351", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:01,371", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:01,372", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:01,487", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:01,505", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:01,505", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:01,620", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:01,639", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:01,639", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:01,755", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:01,773", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:01,774", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:01,890", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:01,909", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:01,910", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:02,025", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:02,044", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:02,045", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:02,160", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:02,180", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:02,181", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:02,295", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:02,314", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:02,315", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:02,451", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:02,470", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:02,471", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:02,588", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:02,607", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:02,608", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:02,723", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:02,742", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:02,743", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:02,866", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:02,885", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:02,886", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:03,000", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:03,019", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:03,020", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:03,134", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:03,153", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:03,154", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:03,269", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:03,287", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:03,288", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:03,403", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:03,421", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:03,422", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:03,537", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:03,555", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:03,556", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:03,671", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:03,690", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:03,691", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:03,806", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:03,825", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:03,825", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:03,941", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:03,960", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:03,961", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:04,077", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:04,095", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:04,096", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:04,211", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:04,229", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:04,230", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:04,344", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:04,363", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:04,363", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:04,478", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:04,496", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:04,497", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:04,611", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:04,629", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:04,630", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:04,745", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:04,763", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:04,764", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:04,879", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:04,916", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:04,917", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:40:05,110", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:05,135", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:05,136", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:40:05,217", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:05,241", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:05,242", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:40:05,323", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:05,349", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:05,350", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:40:05,429", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:05,455", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:05,456", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:40:05,539", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:05,565", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:05,566", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:40:05,650", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:05,676", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:05,678", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:40:05,761", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:05,787", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:05,788", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:40:05,871", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:05,897", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:05,898", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:40:05,978", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:06,004", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:06,005", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:40:06,086", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:40:06,104", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:40:06,105", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:42:02,768", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:02,786", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:02,787", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:02,902", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:02,921", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:02,922", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:03,038", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:03,058", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:03,058", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:03,179", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:03,197", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:03,198", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:03,312", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:03,331", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:03,332", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:03,447", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:03,465", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:03,466", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:03,581", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:03,599", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:03,600", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:03,715", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:03,733", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:03,734", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:03,849", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:03,868", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:03,869", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:03,984", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:04,003", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:04,004", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:04,119", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:04,137", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:04,138", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:04,254", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:04,272", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:04,273", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:04,387", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:04,406", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:04,406", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:04,521", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:04,539", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:04,540", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:04,656", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:04,685", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:04,686", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:04,801", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:04,819", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:04,820", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:04,935", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:04,953", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:04,954", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:05,070", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:05,088", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:05,089", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:05,206", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:05,225", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:05,226", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:05,341", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:05,359", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:05,360", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:05,475", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:05,495", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:05,496", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:05,611", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:05,630", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:05,631", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:05,746", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:05,764", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:05,765", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:05,882", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:05,900", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:05,901", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:06,016", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:06,035", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:06,036", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:06,150", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:06,168", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:06,169", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:06,284", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:06,302", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:06,303", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:06,418", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:06,437", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:06,437", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:06,552", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:06,570", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:06,571", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:06,686", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:06,705", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:06,705", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:06,820", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:06,839", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:06,840", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:06,954", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:06,973", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:06,974", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:07,089", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:07,109", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:07,110", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:07,224", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:07,243", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:07,244", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:07,359", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:07,377", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:07,378", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:07,494", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:07,512", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:07,513", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:07,628", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:07,646", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:07,646", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:07,762", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:07,780", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:07,781", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:07,895", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:07,914", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:07,915", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:08,029", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:08,048", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:08,049", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:08,165", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:08,183", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:08,184", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:08,299", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:08,317", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:08,318", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:08,432", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:08,450", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:08,451", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:08,566", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:08,584", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:08,585", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:08,700", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:08,719", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:08,720", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:08,835", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:08,854", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:08,855", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:08,969", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:08,989", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:08,990", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:09,105", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:09,124", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:09,125", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:09,241", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:09,259", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:09,260", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:09,376", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:09,395", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:09,396", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:09,510", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:09,528", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:09,529", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:09,644", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:09,662", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:09,663", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:09,778", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:09,796", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:09,797", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:09,912", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:09,930", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:09,931", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:10,046", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:10,066", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:10,066", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:10,181", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:10,199", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:10,200", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:10,315", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:10,334", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:10,334", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:10,449", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:10,468", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:10,469", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:10,584", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:10,602", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:10,603", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:10,718", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:10,736", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:10,737", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:10,852", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:10,870", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:10,871", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:10,986", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:11,003", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:11,004", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:11,119", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:11,137", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:11,138", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:11,252", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:11,270", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:11,271", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:11,386", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:11,405", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:11,406", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:11,520", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:11,538", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:11,539", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:11,654", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:11,672", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:11,673", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:11,788", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:11,806", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:11,806", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:11,921", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:11,940", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:11,940", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:12,056", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:12,074", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:12,075", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:12,190", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:12,209", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:12,209", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:12,324", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:12,342", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:12,343", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:12,458", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:12,477", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:12,478", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:12,592", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:12,610", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:12,611", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:12,726", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:12,744", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:12,745", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:12,860", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:12,879", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:12,880", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:12,994", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:13,013", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:13,013", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:13,127", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:13,146", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:13,147", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:13,261", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:13,280", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:13,281", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:13,398", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:13,417", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:13,418", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:13,533", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:13,551", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:13,552", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:13,667", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:13,685", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:13,686", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:13,801", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:13,819", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:13,820", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:13,936", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:13,954", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:13,955", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:14,070", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:14,088", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:14,089", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:14,204", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:14,222", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:14,223", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:14,338", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:14,356", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:14,357", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:14,472", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:14,491", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:14,492", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:14,607", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:14,625", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:14,626", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:14,741", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:14,759", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:14,760", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:14,875", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:14,895", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:14,896", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:15,010", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:15,028", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:15,029", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:15,144", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:15,163", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:15,164", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:15,280", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:15,299", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:15,300", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:15,415", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:15,434", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:15,435", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:15,550", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:15,568", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:15,569", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:15,684", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:15,703", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:15,704", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:15,819", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:15,837", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:15,838", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:15,953", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:15,972", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:15,973", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:16,088", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:16,108", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:16,109", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:16,292", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:16,318", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:16,319", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:42:16,400", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:16,426", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:16,427", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:42:16,508", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:16,534", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:16,535", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:42:16,617", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:16,643", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:16,644", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:42:16,725", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:16,751", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:16,752", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:42:16,834", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:16,859", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:16,860", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:42:16,942", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:16,993", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:16,994", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:42:17,076", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:17,102", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:17,103", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:42:17,185", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:17,211", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:17,212", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:42:17,293", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:17,319", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:17,320", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:42:19,325", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:19,343", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:19,344", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:19,459", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:19,477", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:19,478", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:19,592", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:19,612", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:19,613", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:19,728", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:19,747", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:19,748", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:19,863", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:19,881", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:19,882", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:19,997", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:20,015", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:20,016", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:20,131", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:20,149", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:20,150", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:20,265", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:20,282", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:20,283", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:20,399", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:20,417", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:20,439", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:20,554", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:20,572", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:20,573", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:20,688", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:20,706", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:20,707", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:20,822", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:20,840", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:20,841", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:20,955", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:20,974", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:20,975", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:21,089", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:21,107", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:21,108", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:21,224", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:21,242", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:21,243", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:21,357", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:21,376", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:21,377", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:21,492", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:21,510", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:21,511", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:21,626", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:21,645", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:21,646", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:21,761", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:21,779", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:21,780", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:21,895", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:21,913", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:21,914", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:22,029", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:22,048", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:22,049", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:22,164", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:22,182", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:22,183", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:22,298", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:22,316", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:22,317", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:22,433", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:22,451", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:22,453", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:22,568", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:22,586", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:22,587", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:22,702", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:22,720", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:22,721", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:22,836", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:22,854", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:22,855", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:22,970", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:22,988", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:22,989", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:23,104", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:23,121", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:23,122", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:23,237", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:23,255", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:23,256", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:23,371", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:23,389", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:23,390", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:23,505", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:23,524", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:23,525", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:23,640", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:23,658", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:23,659", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:23,774", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:23,792", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:23,793", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:23,909", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:23,926", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:23,927", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:24,042", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:24,060", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:24,061", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:24,175", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:24,194", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:24,195", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:24,309", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:24,328", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:24,329", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:24,443", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:24,463", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:24,464", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:24,578", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:24,597", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:24,598", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:24,713", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:24,732", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:24,733", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:24,848", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:24,866", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:24,867", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:24,982", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:24,998", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:24,999", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:25,114", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:25,133", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:25,134", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:25,249", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:25,267", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:25,268", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:25,382", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:25,400", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:25,401", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:25,516", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:25,534", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:25,534", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:25,649", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:25,667", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:25,668", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:25,786", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:25,808", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:25,808", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:25,923", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:25,941", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:25,942", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:26,057", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:26,076", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:26,077", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:26,192", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:26,209", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:26,210", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:26,326", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:26,345", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:26,345", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:26,460", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:26,478", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:26,479", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:26,594", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:26,612", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:26,613", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:26,728", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:26,746", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:26,747", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:26,862", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:26,880", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:26,881", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:26,995", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:27,013", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:27,014", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:27,129", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:27,147", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:27,148", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:27,262", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:27,279", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:27,280", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:27,394", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:27,412", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:27,413", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:27,528", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:27,547", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:27,548", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:27,663", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:27,681", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:27,682", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:27,797", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:27,816", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:27,817", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:27,932", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:27,951", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:27,952", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:28,067", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:28,085", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:28,086", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:28,201", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:28,220", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:28,221", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:28,336", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:28,355", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:28,356", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:28,470", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:28,489", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:28,489", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:28,604", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:28,622", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:28,623", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:28,738", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:28,756", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:28,757", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:28,872", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:28,890", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:28,891", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:29,005", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:29,023", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:29,024", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:29,139", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:29,158", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:29,159", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:29,274", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:29,293", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:29,294", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:29,408", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:29,427", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:29,428", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:29,543", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:29,561", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:29,562", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:29,677", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:29,695", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:29,696", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:29,811", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:29,829", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:29,830", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:29,945", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:29,964", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:29,965", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:30,080", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:30,098", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:30,099", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:30,214", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:30,232", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:30,233", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:30,349", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:30,367", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:30,368", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:30,483", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:30,502", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:30,503", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:30,618", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:30,637", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:30,638", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:30,753", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:30,771", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:30,772", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:30,888", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:30,903", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:30,904", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:31,019", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:31,038", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:31,039", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:31,154", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:31,172", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:31,173", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:31,288", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:31,307", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:31,308", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:31,423", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:31,441", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:31,442", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:31,557", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:31,576", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:31,577", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:31,692", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:31,711", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:31,712", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:31,828", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:31,846", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:31,847", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:31,962", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:31,981", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:31,982", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:32,103", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:32,124", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:32,125", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:32,240", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:32,260", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:32,261", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:32,376", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:32,395", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:32,396", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:32,511", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:32,529", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:32,530", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:32,646", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:32,665", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:32,666", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}
+{"timestamp": "2026-01-16 10:42:32,852", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:32,879", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:32,880", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:42:32,964", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:32,989", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:32,990", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:42:33,077", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:33,103", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:33,104", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:42:33,188", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:33,214", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:33,215", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:42:33,297", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:33,323", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:33,324", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:42:33,407", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:33,434", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:33,435", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:42:33,518", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:33,544", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:33,545", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:42:33,628", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:33,655", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:33,656", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:42:33,738", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:33,764", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:33,765", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:42:33,846", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:42:33,872", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:42:33,873", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 10 customers completed"}
+{"timestamp": "2026-01-16 10:54:58,834", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Data prepared for model training"}
+{"timestamp": "2026-01-16 10:54:58,852", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Predictions for all products completed"}
+{"timestamp": "2026-01-16 10:54:58,853", "module": "modelling_ovr", "level": "INFO", "message": "DONE: Top-K recommendations for 1 customers completed"}

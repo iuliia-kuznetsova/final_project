@@ -246,13 +246,6 @@ class CustomerFeatures(BaseModel):
     ind_cno_fin_ult1_ind_recibo_ult1_interaction: int = Field(0, ge=-1, le=1)
     ind_nomina_ult1_ind_recibo_ult1_interaction: int = Field(0, ge=-1, le=1)
     
-    @field_validator('fecha_dato', mode='before')
-    @classmethod
-    def parse_date(cls, v):
-        if isinstance(v, str):
-            return v  # Will be parsed later
-        return v
-    
     class Config:
         extra = 'allow'  # Allow extra fields to be passed through
 
