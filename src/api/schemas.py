@@ -279,27 +279,6 @@ class PredictionRequest(BaseModel):
         }
 
 
-class BatchPredictionRequest(BaseModel):
-    '''
-       Request model for batch prediction endpoint.
-    '''
-    
-    customers: List[PredictionRequest] = Field(..., description='List of customer prediction requests')
-    
-    class Config:
-        json_schema_extra = {
-            'example': {
-                'customers': [
-                    {
-                        'customer_id': '12345678',
-                        'features': {'ncodpers': '12345678', 'age': 35},
-                        'top_k': 7
-                    }
-                ]
-            }
-        }
-
-
 # ---------- Response Models ---------- #
 class ProductRecommendation(BaseModel):
     '''
@@ -321,16 +300,6 @@ class PredictionResponse(BaseModel):
     recommendations: List[ProductRecommendation] = Field(..., description='Top-K product recommendations')
     latency_ms: float = Field(..., description='Prediction latency in milliseconds')
     model_version: str = Field(..., description='Model version used for prediction')
-
-
-class BatchPredictionResponse(BaseModel):
-    '''
-       Response model for batch prediction endpoint.
-    '''
-    
-    predictions: List[PredictionResponse] = Field(..., description='List of prediction responses')
-    total_latency_ms: float = Field(..., description='Total batch processing latency in milliseconds')
-    batch_size: int = Field(..., description='Number of predictions in batch')
 
 
 class HealthResponse(BaseModel):
@@ -370,10 +339,8 @@ __all__ = [
     'PRODUCT_NAMES',
     'CustomerFeatures',
     'PredictionRequest',
-    'BatchPredictionRequest',
     'ProductRecommendation',
     'PredictionResponse',
-    'BatchPredictionResponse',
     'HealthResponse',
     'ValidationError',
     'ErrorResponse',

@@ -46,7 +46,6 @@ HOST = os.getenv('RECOMMENDER_HOST', 'localhost')
 PORT = os.getenv('RECOMMENDER_PORT', '8080')
 API_BASE_URL = f"http://{HOST}:{PORT}"
 PREDICT_URL = f"{API_BASE_URL}/predict"
-BATCH_PREDICT_URL = f"{API_BASE_URL}/predict/batch"
 HEALTH_URL = f"{API_BASE_URL}/health"
 
 APP_SLEEP_SECONDS = float(os.getenv('APP_SLEEP_SECONDS', 0.1))
@@ -60,8 +59,6 @@ def parse_args():
                        help='Number of requests to send (max 1000)')
     parser.add_argument('--sleep', type=float, default=APP_SLEEP_SECONDS, 
                        help='Sleep time between requests in seconds')
-    parser.add_argument('--batch-size', type=int, default=10, 
-                       help='Batch size for batch prediction testing')
     parser.add_argument('--host', type=str, default=HOST, 
                        help='API host')
     parser.add_argument('--port', type=int, default=int(PORT), 
@@ -242,45 +239,6 @@ def send_single_request(
         return None
 
 
-def send_batch_request(
-    requests_data: List[Dict[str, Any]],
-    base_url: str = API_BASE_URL
-) -> Optional[Dict[str, Any]]:
-    '''
-        Send a batch prediction request to the API.
-    '''
-    try:
-        start_time = time.time()
-        response = requests.post(
-            f'{base_url}/predict/batch',
-            json={'customers': requests_data},
-            timeout=60
-        )
-        elapsed = time.time() - start_time
-        
-        if response.status_code == 200:
-            result = response.json()
-            n_predictions = result.get('batch_size', 0)
-            total_latency = result.get('total_latency_ms', elapsed * 1000)
-            
-            logger.info(
-                f"Batch prediction successfully completed | "
-                f"number of predictions: {n_predictions} | "
-                f"total latency: {total_latency:.1f}ms | "
-                f"average latency: {total_latency/n_predictions:.1f}ms | "
-                f"avg_latency={total_latency/n_predictions:.1f}ms"
-            )
-            return result
-        else:
-            error_detail = response.text[:200]
-            logger.error(f"Batch prediction failed with status={response.status_code} and error detail: {error_detail}")
-            return None
-            
-    except requests.exceptions.RequestException as e:
-        logger.error(f"Batch prediction failed with error: {e}")
-        return None
-
-
 # ---------- Test Runners ---------- #
 def run_single_prediction_test(
     test_data: pd.DataFrame,
@@ -340,74 +298,6 @@ def run_single_prediction_test(
     return results
 
 
-def run_batch_prediction_test(
-    test_data: pd.DataFrame,
-    batch_size: int = 10,
-    n_batches: int = 10,
-    top_k: int = 7,
-    base_url: str = API_BASE_URL
-) -> Dict[str, Any]:
-    '''
-        Run batch prediction test.
-    '''
-    logger.info(f'Running batch prediction test: {n_batches} batches x {batch_size} customers')
-    
-    results = {
-        'total_batches': 0,
-        'successful_batches': 0,
-        'total_predictions': 0,
-        'successful_predictions': 0,
-        'batch_latencies': [],
-        'start_time': datetime.now().isoformat()
-    }
-    
-    for batch_idx in range(n_batches):
-        # Get batch of rows
-        start_idx = batch_idx * batch_size
-        end_idx = start_idx + batch_size
-        
-        if start_idx >= len(test_data):
-            break
-        
-        batch_rows = test_data.iloc[start_idx:end_idx]
-        
-        # Convert to requests
-        batch_requests = [
-            row_to_request(row, top_k=top_k)
-            for _, row in batch_rows.iterrows()
-        ]
-        
-        # Send batch request
-        response = send_batch_request(batch_requests, base_url)
-        
-        results['total_batches'] += 1
-        results['total_predictions'] += len(batch_requests)
-        
-        if response:
-            results['successful_batches'] += 1
-            results['successful_predictions'] += response.get('batch_size', 0)
-            results['batch_latencies'].append(response.get('total_latency_ms', 0))
-    
-    # Calculate statistics
-    results['end_time'] = datetime.now().isoformat()
-    results['batch_success_rate'] = results['successful_batches'] / results['total_batches'] if results['total_batches'] > 0 else 0
-    
-    if results['batch_latencies']:
-        import numpy as np
-        results['batch_latency_stats'] = {
-            'mean': np.mean(results['batch_latencies']),
-            'median': np.median(results['batch_latencies']),
-            'p95': np.percentile(results['batch_latencies'], 95) if len(results['batch_latencies']) > 1 else results['batch_latencies'][0],
-            'p99': np.percentile(results['batch_latencies'], 99) if len(results['batch_latencies']) > 1 else results['batch_latencies'][0],
-            'min': np.min(results['batch_latencies']),
-            'max': np.max(results['batch_latencies'])
-        }
-    
-    logger.info(f"Batch prediction test completed: {results['successful_batches']}/{results['total_batches']} batches successful")
-    
-    return results
-
-
 # ---------- Main ---------- #
 def main():
     args = parse_args()
@@ -418,10 +308,9 @@ def main():
         return
     
     # Update URLs with command line args
-    global API_BASE_URL, PREDICT_URL, BATCH_PREDICT_URL, HEALTH_URL
+    global API_BASE_URL, PREDICT_URL, HEALTH_URL
     API_BASE_URL = f"http://{args.host}:{args.port}"
     PREDICT_URL = f"{API_BASE_URL}/predict"
-    BATCH_PREDICT_URL = f"{API_BASE_URL}/predict/batch"
     HEALTH_URL = f"{API_BASE_URL}/health"
     
     logger.info(f'Starting API Testing')
@@ -448,18 +337,6 @@ def main():
         base_url=API_BASE_URL
     )
     
-    # Run batch prediction tests
-    logger.info('Starting Batch Prediction Tests')
-    
-    n_batches = min(args.limit // args.batch_size, 10)
-    batch_results = run_batch_prediction_test(
-        test_data=test_data,
-        batch_size=args.batch_size,
-        n_batches=n_batches,
-        top_k=args.top_k,
-        base_url=API_BASE_URL
-    )
-    
     # Print summary
     logger.info('Test Summary')
     
@@ -481,35 +358,15 @@ def main():
                     f"Max: {stats['max']:.1f}"
                 )
     
-    logger.info(f"Batch Prediction Results: | "
-                f"Total batches: {batch_results['total_batches']} | "
-                f"Successful batches: {batch_results['successful_batches']} | "
-                f"Total predictions: {batch_results['total_predictions']} | "
-                f"Batch success rate: {batch_results['batch_success_rate']:.1%}"
-            )
-    
-    if 'batch_latency_stats' in batch_results:
-        stats = batch_results['batch_latency_stats']
-        logger.info(f"Batch Latency (ms): | "
-                    f"Mean: {stats['mean']:.1f} | "
-                    f"Median: {stats['median']:.1f} | "
-                    f"P95: {stats['p95']:.1f} | "
-                    f"P99: {stats['p99']:.1f} | "
-                    f"Min: {stats['min']:.1f} | "
-                    f"Max: {stats['max']:.1f}"
-                )
-    
     # Save results to file
     results_file = os.path.join(DATA_DIR, 'api_test_results.json')
     with open(results_file, 'w') as f:
         json.dump({
             'single_prediction': single_results,
-            'batch_prediction': batch_results,
             'config': {
                 'host': args.host,
                 'port': args.port,
                 'limit': args.limit,
-                'batch_size': args.batch_size,
                 'top_k': args.top_k
             }
         }, f, indent=2, default=str)

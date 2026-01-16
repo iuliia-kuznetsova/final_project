@@ -230,48 +230,6 @@ class ModelHandler:
             'top_k': k
         }
 
-    def predict_batch(
-        self, 
-        batch_features: List[Dict[str, Any]],
-        top_k: Optional[int] = None
-    ) -> List[Dict[str, Any]]:
-        '''
-            Generate recommendations for a batch of customers.
-        '''
-        self._ensure_loaded()
-        
-        k = top_k or self.top_k
-        
-        # Preprocess all features
-        dfs = [self._preprocess_features(f) for f in batch_features]
-        X = pd.concat(dfs, ignore_index=True)
-        
-        # Get predictions
-        top_k_indices, top_k_probas, top_k_names = self.model.predict_top_k(X, k=k)
-        
-        # Build recommendations for each customer
-        results = []
-        for customer_idx in range(len(batch_features)):
-            recommendations = []
-            for rank, (product_id, prob) in enumerate(
-                zip(top_k_names[customer_idx], top_k_probas[customer_idx])
-            ):
-                recommendations.append({
-                    'product_id': product_id,
-                    'product_name': PRODUCT_NAME_MAPPING.get(product_id, product_id),
-                    'probability': float(prob),
-                    'rank': rank + 1
-                })
-            
-            results.append({
-                'recommendations': recommendations,
-                'top_k': k
-            })
-        
-        logger.info(f'Generated recommendations for {len(results)} customers')
-        
-        return results
-
     def get_model_info(self) -> Dict[str, Any]:
         '''
             Get model metadata and information.

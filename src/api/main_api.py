@@ -2,7 +2,7 @@
     Bank Products Recommender API
 
     This module provides a FastAPI application for bank product recommendations.
-    Includes endpoints for health check, single prediction, and batch predictions.
+    Includes endpoints for health check and single prediction.
     Integrated with Prometheus for metrics collection and monitoring.
 
     Usage:
@@ -31,9 +31,7 @@ from src.api.get_prediction import ModelHandler, get_model_handler
 from src.api.validate_query import QueryValidator
 from src.api.schemas import (
     PredictionRequest,
-    BatchPredictionRequest,
     PredictionResponse,
-    BatchPredictionResponse,
     ProductRecommendation,
     HealthResponse,
     ErrorResponse,
@@ -98,13 +96,6 @@ VALIDATION_ERRORS = Counter(
     'recommender_validation_errors_total',
     'Total number of validation errors',
     ['field']
-)
-
-# Batch size histogram
-BATCH_SIZE = Histogram(
-    'recommender_batch_size',
-    'Histogram of batch prediction sizes',
-    buckets=[1, 5, 10, 25, 50, 100, 250, 500, 1000]
 )
 
 # Model info
@@ -365,119 +356,6 @@ async def predict(request: PredictionRequest):
     
     finally:
         INPROGRESS_REQUESTS.labels(endpoint='/predict').dec()
-
-
-@app.post(
-    '/predict/batch',
-    response_model=BatchPredictionResponse,
-    responses={
-        400: {'model': ErrorResponse, 'description': 'Validation Error'},
-        500: {'model': ErrorResponse, 'description': 'Internal Server Error'}
-    },
-    tags=['Predictions']
-)
-async def predict_batch(request: BatchPredictionRequest):
-    '''
-        Get product recommendations for multiple customers.
-    '''
-    INPROGRESS_REQUESTS.labels(endpoint='/predict/batch').inc()
-    start_time = time.time()
-    
-    try:
-        # Validate batch size
-        if len(request.customers) > 1000:
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail='Batch size exceeds maximum of 1000'
-            )
-        
-        BATCH_SIZE.observe(len(request.customers))
-        
-        # Validate all requests
-        all_errors = {}
-        for idx, customer_request in enumerate(request.customers):
-            request_dict = {
-                'customer_id': customer_request.customer_id,
-                'features': customer_request.features.model_dump()
-            }
-            is_valid, errors = validator.validate(request_dict)
-            if not is_valid:
-                all_errors[idx] = errors
-        
-        if all_errors:
-            REQUEST_COUNTER.labels(endpoint='/predict/batch', status='validation_error').inc()
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail={
-                    'error': 'BatchValidationError',
-                    'message': f'Validation failed for {len(all_errors)} requests',
-                    'details': all_errors
-                }
-            )
-        
-        # Prepare batch features
-        batch_features = [req.features.model_dump() for req in request.customers]
-        top_k_values = [req.top_k for req in request.customers]
-        
-        # Get batch predictions
-        results = model_handler.predict_batch(
-            batch_features=batch_features,
-            top_k=max(top_k_values)  # Use max top_k for batch
-        )
-        
-        # Calculate latency
-        latency = time.time() - start_time
-        latency_ms = latency * 1000
-        
-        # Record metrics
-        PREDICTION_LATENCY.labels(endpoint='/predict/batch').observe(latency)
-        REQUEST_COUNTER.labels(endpoint='/predict/batch', status='success').inc()
-        
-        # Build responses
-        predictions = []
-        for idx, (customer_request, result) in enumerate(zip(request.customers, results)):
-            # Trim to requested top_k
-            recs = result['recommendations'][:customer_request.top_k]
-            
-            recommendations = [
-                ProductRecommendation(
-                    product_id=rec['product_id'],
-                    product_name=rec['product_name'],
-                    probability=rec['probability'],
-                    rank=rec['rank']
-                )
-                for rec in recs
-            ]
-            
-            predictions.append(PredictionResponse(
-                customer_id=customer_request.customer_id,
-                recommendations=recommendations,
-                latency_ms=latency_ms / len(request.customers),  # Average per customer
-                model_version=model_handler.model_version
-            ))
-        
-        logger.info(f'Batch prediction completed: {len(predictions)} customers, '
-                   f'total_latency={latency_ms:.2f}ms')
-        
-        return BatchPredictionResponse(
-            predictions=predictions,
-            total_latency_ms=latency_ms,
-            batch_size=len(predictions)
-        )
-    
-    except HTTPException:
-        raise
-    
-    except Exception as e:
-        logger.error(f'Batch prediction error: {e}')
-        REQUEST_COUNTER.labels(endpoint='/predict/batch', status='error').inc()
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=str(e)
-        )
-    
-    finally:
-        INPROGRESS_REQUESTS.labels(endpoint='/predict/batch').dec()
 
 
 # ---------- Main ---------- #

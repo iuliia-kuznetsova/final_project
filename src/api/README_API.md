@@ -39,6 +39,16 @@ docker compose ps
 docker compose logs -f recommender
 ```
 
+rebuild containers
+# After code changes, run:
+docker compose -f src/api/docker-compose.yml build --no-cache recommender
+docker compose -f src/api/docker-compose.yml up -d
+
+After rebuilding, you may need to fix logs permissions again:
+sudo chown -R 1000:1000 /home/mle-user/mle_projects/final_project/logs
+sudo chown -R mle-user:mle-user /home/mle-user/mle_projects/final_project/logs/
+
+
 ### 3. Access Services
 
 - **Recommender API**: http://localhost:8080
@@ -47,6 +57,12 @@ docker compose logs -f recommender
 - **Grafana**: http://localhost:3000 (admin/admin123)
 
 ## API Endpoints
+/           - API info
+/health     - Health check
+/metrics    - Prometheus metrics
+/model/info - Model information
+/predict    - Single prediction
+
 
 ### Health Check
 ```curl 
