@@ -12,9 +12,11 @@
 
 # ---------- Imports ---------- #
 import os
+import json
 import time
 import uvicorn
 from typing import List
+from pathlib import Path
 from datetime import datetime
 from contextlib import asynccontextmanager
 from dotenv import load_dotenv
@@ -104,6 +106,29 @@ MODEL_INFO = Info(
     'Information about the loaded model'
 )
 
+# Model evaluation metrics (loaded at startup)
+MODEL_LOG_LOSS = Gauge(
+    'recommender_model_log_loss',
+    'Model log loss from evaluation (per product)',
+    ['product']
+)
+
+MODEL_AUC = Gauge(
+    'recommender_model_auc',
+    'Model AUC-ROC from evaluation (per product)',
+    ['product']
+)
+
+MODEL_MEAN_LOG_LOSS = Gauge(
+    'recommender_model_mean_log_loss',
+    'Mean log loss across all products'
+)
+
+MODEL_MEAN_AUC = Gauge(
+    'recommender_model_mean_auc',
+    'Mean AUC-ROC across all products'
+)
+
 
 # ---------- Global Instances ---------- #
 model_handler: ModelHandler = None
@@ -133,6 +158,41 @@ async def lifespan(app: FastAPI):
             'n_features': str(model_info['n_features']),
             'n_products': str(model_info['n_products']),
         })
+        
+        # Load and set model evaluation metrics (log loss, AUC)
+        results_dir = Path(os.getenv('RESULTS_DIR', './results'))
+        eval_files = list(results_dir.glob('ovr_grouped_evaluation_*.json'))
+        if eval_files:
+            latest_eval_file = sorted(eval_files)[-1]
+            with open(latest_eval_file, 'r') as f:
+                eval_results = json.load(f)
+            
+            # Set per-product metrics and calculate means
+            per_product = eval_results.get('per_product', {})
+            log_losses = []
+            aucs = []
+            for product, metrics in per_product.items():
+                product_name = product.replace('target_', '')
+                log_loss_val = metrics.get('log_loss', 0.0)
+                auc_val = metrics.get('auc_roc', 0.0)
+                
+                MODEL_LOG_LOSS.labels(product=product_name).set(log_loss_val)
+                MODEL_AUC.labels(product=product_name).set(auc_val)
+                
+                if log_loss_val > 0:
+                    log_losses.append(log_loss_val)
+                if auc_val > 0:
+                    aucs.append(auc_val)
+            
+            # Set overall metrics (calculated from per-product)
+            overall = eval_results.get('overall', {})
+            MODEL_MEAN_AUC.set(overall.get('mean_auc', 0.0))
+            MODEL_MEAN_LOG_LOSS.set(sum(log_losses) / len(log_losses) if log_losses else 0.0)
+            
+            logger.info(f'Loaded evaluation metrics from: {latest_eval_file}')
+            logger.info(f'Mean AUC: {overall.get("mean_auc", 0.0):.4f}, Mean Log Loss: {sum(log_losses)/len(log_losses) if log_losses else 0:.4f}')
+        else:
+            logger.warning('No evaluation results found - model metrics not set')
         
         # Initialize validator
         validator = QueryValidator()

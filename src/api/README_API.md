@@ -1,28 +1,243 @@
 # Bank Products Recommender API
+Overview of a FastAPI-based recommendation service for bank products with Prometheus metrics and Grafana dashboards.
 
-A FastAPI-based recommendation service for bank products with Prometheus metrics and Grafana dashboards.
+##  API Architecture
 
-## Architecture
+### System Overview
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                     Docker Compose Stack                      │
-├─────────────────────────────────────────────────────────────┤
-│                                                               │
-│  ┌─────────────────┐  ┌─────────────────┐  ┌──────────────┐ │
-│  │   Recommender   │  │   Prometheus    │  │   Grafana    │ │
-│  │      API        │──│   (Metrics)     │──│ (Dashboard)  │ │
-│  │    :8080        │  │    :9090        │  │    :3000     │ │
-│  └─────────────────┘  └─────────────────┘  └──────────────┘ │
-│           │                                                   │
-│           ▼                                                   │
-│  ┌─────────────────┐                                         │
-│  │   OvR Model     │                                         │
-│  │   (CatBoost)    │                                         │
-│  └─────────────────┘                                         │
-│                                                               │
-└─────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                          Docker Compose Stack                                    │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  ┌─────────────────────────────────────────────────────────────────────────┐   │
+│  │                        Recommender API Container                         │   │
+│  │                              :8080                                       │   │
+│  │  ┌─────────────┐   ┌─────────────┐   ┌─────────────┐   ┌────────────┐  │   │
+│  │  │   FastAPI   │──▶│  Validator  │──▶│Model Handler│──▶│   OvR      │  │   │
+│  │  │  (main_api) │   │(validate_   │   │(get_predict │   │  Models    │  │   │
+│  │  │             │   │  query)     │   │   ion)      │   │(CatBoost)  │  │   │
+│  │  └─────────────┘   └─────────────┘   └─────────────┘   └────────────┘  │   │
+│  │         │                                                               │   │
+│  │         │ /metrics                                                      │   │
+│  │         ▼                                                               │   │
+│  │  ┌─────────────────┐                                                    │   │
+│  │  │ Prometheus      │                                                    │   │
+│  │  │ Instrumentator  │                                                    │   │
+│  │  └─────────────────┘                                                    │   │
+│  └─────────────────────────────────────────────────────────────────────────┘   │
+│                │                                                                │
+│                │ scrape metrics                                                 │
+│                ▼                                                                │
+│  ┌─────────────────────┐            ┌─────────────────────┐                    │
+│  │     Prometheus      │───────────▶│      Grafana        │                    │
+│  │       :9090         │  query     │       :3000         │                    │
+│  │  • Collect metrics  │            │  • Dashboards       │                    │
+│  │  • Store time-series│            │  • Alerts           │                    │
+│  │  • Retention: 15d   │            │  • Visualizations   │                    │
+│  └─────────────────────┘            └─────────────────────┘                    │
+│                                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+### Request Processing Flow
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                           /predict Request Flow                                  │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│   Client                                                                         │
+│     │                                                                            │
+│     │  POST /predict                                                             │
+│     │  {customer_id, features, top_k}                                           │
+│     ▼                                                                            │
+│   ┌──────────────────────────────────────────────────────────────────────────┐  │
+│   │ Step 1: Request Reception (main_api.py)                                   │  │
+│   │   • Parse JSON body                                                       │  │
+│   │   • Validate against PredictionRequest schema                             │  │
+│   │   • Start latency timer                                                   │  │
+│   │   • Increment in-progress counter                                         │  │
+│   └───────────────────────────────┬──────────────────────────────────────────┘  │
+│                                   │                                              │
+│                                   ▼                                              │
+│   ┌──────────────────────────────────────────────────────────────────────────┐  │
+│   │ Step 2: Query Validation (validate_query.py)                              │  │
+│   │   • Check customer_id format                                              │  │
+│   │   • Verify all required features present                                  │  │
+│   │   • Validate data types (int, float, bool, str)                          │  │
+│   │   • Validate numeric ranges (age: 0-150, etc.)                           │  │
+│   │   • If validation fails → 400 Bad Request                                │  │
+│   └───────────────────────────────┬──────────────────────────────────────────┘  │
+│                                   │                                              │
+│                                   ▼                                              │
+│   ┌──────────────────────────────────────────────────────────────────────────┐  │
+│   │ Step 3: Feature Preprocessing (get_prediction.py - ModelHandler)          │  │
+│   │   • Convert request dict to DataFrame                                     │  │
+│   │   • Add default values for missing optional features                     │  │
+│   │   • Convert categorical columns to string                                │  │
+│   │   • Convert boolean columns                                              │  │
+│   │   • Align features to model's expected order                             │  │
+│   └───────────────────────────────┬──────────────────────────────────────────┘  │
+│                                   │                                              │
+│                                   ▼                                              │
+│   ┌──────────────────────────────────────────────────────────────────────────┐  │
+│   │ Step 4: Model Inference (get_prediction.py + modelling_ovr.py)            │  │
+│   │                                                                           │  │
+│   │   ┌─────────────────────────────────────────────────────────────────┐    │  │
+│   │   │                    OvRGroupModel.predict_top_k()                 │    │  │
+│   │   │                                                                  │    │  │
+│   │   │   ┌──────────────┐   ┌──────────────┐   ┌──────────────┐       │    │  │
+│   │   │   │ Frequent     │   │    Mid       │   │    Rare      │       │    │  │
+│   │   │   │ Group Models │   │ Group Models │   │ Group Models │       │    │  │
+│   │   │   │ (8 products) │   │ (7 products) │   │ (9 products) │       │    │  │
+│   │   │   └──────┬───────┘   └──────┬───────┘   └──────┬───────┘       │    │  │
+│   │   │          │                  │                  │                │    │  │
+│   │   │          └──────────────────┼──────────────────┘                │    │  │
+│   │   │                             ▼                                   │    │  │
+│   │   │                  ┌────────────────────┐                         │    │  │
+│   │   │                  │ Collect 24 probs   │                         │    │  │
+│   │   │                  │ Sort by probability│                         │    │  │
+│   │   │                  │ Return top-K       │                         │    │  │
+│   │   │                  └────────────────────┘                         │    │  │
+│   │   └─────────────────────────────────────────────────────────────────┘    │  │
+│   └───────────────────────────────┬──────────────────────────────────────────┘  │
+│                                   │                                              │
+│                                   ▼                                              │
+│   ┌──────────────────────────────────────────────────────────────────────────┐  │
+│   │ Step 5: Response Building (main_api.py)                                   │  │
+│   │   • Map product IDs to human-readable names                              │  │
+│   │   • Calculate latency                                                    │  │
+│   │   • Record Prometheus metrics                                            │  │
+│   │   • Build PredictionResponse                                             │  │
+│   │   • Decrement in-progress counter                                        │  │
+│   └───────────────────────────────┬──────────────────────────────────────────┘  │
+│                                   │                                              │
+│                                   ▼                                              │
+│   Client receives JSON response:                                                 │
+│   {                                                                              │
+│     "customer_id": "12345678",                                                  │
+│     "recommendations": [                                                         │
+│       {"product_id": "target_recibo", "product_name": "Direct Debit",           │
+│        "probability": 0.85, "rank": 1},                                         │
+│       ...                                                                        │
+│     ],                                                                           │
+│     "latency_ms": 45.2,                                                         │
+│     "model_version": "20260116"                                                 │
+│   }                                                                              │
+│                                                                                  │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+### Model Loading Flow (Startup)
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                        API Startup / Model Loading                               │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│   Container Start                                                                │
+│        │                                                                         │
+│        ▼                                                                         │
+│   ┌──────────────────────────────────────────────────────────────────────────┐  │
+│   │ 1. FastAPI Lifespan (main_api.py)                                         │  │
+│   │    • Load environment variables                                           │  │
+│   │    • Initialize logging                                                   │  │
+│   └───────────────────────────────┬──────────────────────────────────────────┘  │
+│                                   │                                              │
+│                                   ▼                                              │
+│   ┌──────────────────────────────────────────────────────────────────────────┐  │
+│   │ 2. Model Handler Initialization (get_prediction.py)                       │  │
+│   │    • Create ModelHandler singleton                                        │  │
+│   │    • Set model paths from env vars                                        │  │
+│   └───────────────────────────────┬──────────────────────────────────────────┘  │
+│                                   │                                              │
+│                                   ▼                                              │
+│   ┌──────────────────────────────────────────────────────────────────────────┐  │
+│   │ 3. Load OvR Model (modelling_ovr.py)                                      │  │
+│   │    • Load metadata.json (features, thresholds, groups)                   │  │
+│   │    • Load 24 CatBoost models (.cbm files)                                │  │
+│   │    • Reconstruct OvR wrapper per group                                   │  │
+│   │                                                                           │  │
+│   │    models/ovr_grouped_catboost/                                          │  │
+│   │    ├── metadata.json                                                      │  │
+│   │    ├── frequent_metadata.json                                             │  │
+│   │    ├── frequent_target_recibo.cbm                                         │  │
+│   │    ├── frequent_target_cco_fin.cbm                                        │  │
+│   │    ├── ...                                                                │  │
+│   │    ├── mid_metadata.json                                                  │  │
+│   │    ├── mid_target_*.cbm                                                   │  │
+│   │    ├── rare_metadata.json                                                 │  │
+│   │    └── rare_target_*.cbm                                                  │  │
+│   └───────────────────────────────┬──────────────────────────────────────────┘  │
+│                                   │                                              │
+│                                   ▼                                              │
+│   ┌──────────────────────────────────────────────────────────────────────────┐  │
+│   │ 4. Initialize Validator (validate_query.py)                               │  │
+│   │    • Load feature schema                                                  │  │
+│   │    • Set required features list                                           │  │
+│   └───────────────────────────────┬──────────────────────────────────────────┘  │
+│                                   │                                              │
+│                                   ▼                                              │
+│   ┌──────────────────────────────────────────────────────────────────────────┐  │
+│   │ 5. Update Prometheus Model Info                                           │  │
+│   │    • Set model version tag                                                │  │
+│   │    • Set n_features, n_products info                                      │  │
+│   └───────────────────────────────┬──────────────────────────────────────────┘  │
+│                                   │                                              │
+│                                   ▼                                              │
+│                         API Ready on :8080                                       │
+│                                                                                  │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+## Component Descriptions
+
+### `main_api.py` - FastAPI Application
+Purpose: Main API application with endpoints and Prometheus instrumentation.
+Endpoints:
+- `/` - GET - API info
+- `/health` - GET - Health check
+- `/metrics` - GET - Prometheus metrics
+- `/model/info` - GET - Model metadata
+- `/predict` - POST - Single prediction
+- `/docs` - GET - Swagger documentation
+Prometheus Metrics Exposed:
+- `recommender_requests_total` - Counter - Total requests by endpoint/status
+- `recommender_prediction_latency_seconds` - Histogram - Prediction latency
+- `recommender_recommendations_count` - Histogram - Recommendations per request
+- `recommender_top_probability` - Histogram - Top recommendation confidence
+- `recommender_inprogress_requests` - Gauge - Currently processing
+- `recommender_validation_errors_total` - Counter - Validation failures by field
+
+### `get_prediction.py` - Model Handler
+Purpose: Load and manage the OvR model for inference.
+Key Class: `ModelHandler`
+Methods:
+- `load_model()` - Load saved model from disk
+- `predict(features, top_k)` - Generate recommendations
+- `get_model_info()` - Return model metadata
+- `health_check()` - Verify model is operational
+Singleton Pattern: Model loaded once at startup, reused for all requests.
+
+### `validate_query.py` - Request Validation
+Purpose: Validate incoming prediction requests.
+Key Class: `QueryValidator`
+Validations Performed:
+1. Customer ID format (string/int, max 20 chars)
+2. Required features presence (75 features)
+3. Data type validation (int, float, bool, str, date)
+4. Numeric range validation (e.g., age: 0-150)
+
+### `schemas.py` - Pydantic Models
+Purpose: Define request/response schemas for API validation.
+Key Models:
+- `CustomerFeatures` - Feature input schema
+- `PredictionRequest` - Full prediction request
+- `PredictionResponse` - Prediction output
+- `HealthResponse` - Health check response
+- `ErrorResponse` - Error format
+
 
 ## Quick Start
 
@@ -33,46 +248,39 @@ A FastAPI-based recommendation service for bank products with Prometheus metrics
 docker compose -f src/api/docker-compose.yml up -d --build
 
 # Check service status
-docker compose ps
+docker compose -f src/api/docker-compose.yml ps
 
 # View logs
-docker compose logs -f recommender
+docker compose -f src/api/docker-compose.yml logs -f recommender
 ```
 
-rebuild containers
-# After code changes, run:
+### Rebuild After Code Changes
+
+```bash
+# Rebuild without cache
 docker compose -f src/api/docker-compose.yml build --no-cache recommender
 docker compose -f src/api/docker-compose.yml up -d
 
-After rebuilding, you may need to fix logs permissions again:
-sudo chown -R 1000:1000 /home/mle-user/mle_projects/final_project/logs
-sudo chown -R mle-user:mle-user /home/mle-user/mle_projects/final_project/logs/
+# Fix logs permissions if falls with error
+sudo chown -R mle-user:mle-user ./logs/
+```
 
 
-### 3. Access Services
+## Service URLs
+Recommender API - Main API: http://localhost:8080
+API Documentation - Swagger UI: http://localhost:8080/docs
+API Metrics - Prometheus metrics: http://localhost:8080/metrics
+Prometheus - Metrics database: http://localhost:9090
+Grafana - Dashboards (admin/admin): http://localhost:3000
+MLflow - Experiment tracking: http://localhost:5000
 
-- **Recommender API**: http://localhost:8080
-- **API Documentation**: http://localhost:8080/docs
-- **Prometheus**: http://localhost:9090
-- **Grafana**: http://localhost:3000 (admin/admin123)
 
 ## API Endpoints
-/           - API info
-/health     - Health check
-/metrics    - Prometheus metrics
-/model/info - Model information
-/predict    - Single prediction
-
 
 ### Health Check
-```curl 
--s http://localhost:8080/health | jq
-```
-
 ```bash
-GET /health
+curl -s http://localhost:8080/health | jq
 ```
-
 Expected response:
 ```json
 {
@@ -83,10 +291,9 @@ Expected response:
 ```
 
 ### API Root Info
-```curl 
--s http://localhost:8080/ | jq
+```bash
+curl -s http://localhost:8080/ | jq
 ```
-
 Expected response:
 ```json
 {
@@ -99,17 +306,16 @@ Expected response:
 ```
 
 ### Model Info
-```curl 
--s http://localhost:8080/model/info | jq
+```bash
+curl -s http://localhost:8080/model/info | jq
 ```
-
 Expected response:
 ```json
 {
   "model_name": "ovr_grouped_catboost",
   "model_version": "20260116",
-  "n_features": 27,
-  "n_cat_features": 33,
+  "n_features": 75,
+  "n_cat_features": 10,
   "n_products": 24,
   "groups": {
     "frequent": 8,
@@ -122,8 +328,8 @@ Expected response:
 ```
 
 ### Single Prediction
-```curl 
--s -X POST http://localhost:8080/predict \
+```bash
+curl -s -X POST http://localhost:8080/predict \
   -H "Content-Type: application/json" \
   -d '{
     "customer_id": "12345678",
@@ -148,31 +354,7 @@ Expected response:
     "top_k": 7
   }' | jq
 ```
-
-```bash
-POST /predict
-```
-
-Request:
-```json
-{
-  "customer_id": "12345678",
-  "features": {
-    "fecha_dato": "2016-05-28",
-    "ncodpers": "12345678",
-    "age": 35,
-    "customer_period": 12,
-    "ind_nuevo": false,
-    "indresi": true,
-    "indfall": false,
-    "ind_actividad_cliente": true,
-    "ind_cco_fin_ult1": true
-  },
-  "top_k": 7
-}
-```
-
-Response:
+Expected response:
 ```json
 {
   "customer_id": "12345678",
@@ -191,53 +373,24 @@ Response:
     }
   ],
   "latency_ms": 45.2,
-  "model_version": "20240115"
+  "model_version": "20260116"
 }
 ```
 
-### Batch Prediction
-
+### Prometheus Metrics
 ```bash
-POST /predict/batch
-```
-
-Request:
-```json
-{
-  "customers": [
-    {
-      "customer_id": "12345678",
-      "features": {...},
-      "top_k": 7
-    },
-    {
-      "customer_id": "87654321",
-      "features": {...},
-      "top_k": 7
-    }
-  ]
-}
-```
-
-### Model Info
-
-```bash
-GET /model/info
-```
-
-### Metrics
 curl -s http://localhost:8080/metrics | head -50
+```
+
 
 ## Testing the API
-
 ### Run API Tests
-
 ```bash
 # Generate sample data and run tests
-python -m src.api.test_api --sample --limit 100 --sleep 0.1
+python3 -m src.api.test_api --sample --limit 100 --sleep 0.1
 
 # Test with custom configuration
-python -m src.api.test_api \
+python3 -m src.api.test_api \
   --host localhost \
   --port 8080 \
   --limit 50 \
@@ -245,190 +398,34 @@ python -m src.api.test_api \
   --top-k 7
 ```
 
-### Example with curl
-
-```bash
-# Health check
-curl http://localhost:8080/health
-
-# Single prediction
-curl -X POST http://localhost:8080/predict \
-  -H "Content-Type: application/json" \
-  -d '{
-    "customer_id": "12345678",
-    "features": {
-      "fecha_dato": "2016-05-28",
-      "ncodpers": "12345678",
-      "ind_empleado": "A",
-      "pais_residencia": "ES",
-      "sexo": "H",
-      "age": 35,
-      "ind_nuevo": false,
-      "indrel": "1",
-      "indrel_1mes": "1",
-      "tiprel_1mes": "A",
-      "indresi": true,
-      "canal_entrada": "KAT",
-      "indfall": false,
-      "cod_prov": "28",
-      "ind_actividad_cliente": true,
-      "renta": 326124.90,
-      "segmento": "02 - PARTICULARES",
-      "customer_period": 12
-    },
-    "top_k": 7
-  }'
-```
-
-Expected 
-{"customer_id":"12345678","recommendations":[{"product_id":"target_recibo","product_name":"Direct Debit","probability":0.0,"rank":1},{"product_id":"target_cno_fin","product_name":"Payroll Account","probability":0.0,"rank":2},{"product_id":"target_cco_fin","product_name":"Current Account","probability":0.0,"rank":3},{"product_id":"target_ctma_fin","product_name":"Más Particular Account","probability":0.0,"rank":4},{"product_id":"target_ecue_fin","product_name":"e-Account","probability":0.0,"rank":5},{"product_id":"target_nomina","product_name":"Payroll","probability":0.0,"rank":6},{"product_id":"target_nom_pens","product_name":"Pension Payroll","probability":0.0,"rank":7}],"latency_ms":29.04534339904785,"model_version":"20260116"}
-
-
-Test Api
-
-python -m src.api.test_api --sample --limit 100 --sleep 0.1
-
-## Prometheus Metrics
-
-The API exposes the following custom metrics at `/metrics`:
-
-| Metric | Type | Description |
-|--------|------|-------------|
-| `recommender_requests_total` | Counter | Total requests by endpoint and status |
-| `recommender_prediction_latency_seconds` | Histogram | Prediction latency distribution |
-| `recommender_recommendations_count` | Histogram | Number of recommendations returned |
-| `recommender_top_probability` | Histogram | Top recommendation probability |
-| `recommender_inprogress_requests` | Gauge | Currently processing requests |
-| `recommender_validation_errors_total` | Counter | Validation errors by field |
-| `recommender_batch_size` | Histogram | Batch prediction sizes |
-
-## Grafana Dashboard
-
-A pre-configured dashboard is available in Grafana showing:
-
-- Request rate (success/sec)
-- P95 latency
-- In-progress requests
-- Success rate
-- Request rate by status over time
-- Latency percentiles (p50, p90, p95, p99)
-- Validation errors by field
-- Top recommendation probability distribution
-
-## File Structure
-
-```
-src/api/
-├── main_api.py              # FastAPI application
-├── get_prediction.py        # Model handler
-├── validate_query.py        # Request validation
-├── schemas.py               # Pydantic schemas
-├── test_api.py              # API testing
-├── Dockerfile               # Container definition
-├── docker-compose.yml       # Multi-service orchestration
-├── prometheus.yml           # Prometheus configuration
-├── .env.example             # Environment template
-├── README_API.md            # This file
-└── grafana/
-    ├── provisioning/
-    │   ├── datasources/
-    │   │   └── prometheus.yml
-    │   └── dashboards/
-    │       └── dashboard.yml
-    └── dashboards/
-        └── recommender.json
-```
-
-## Required Features
-
-The API expects the following features in prediction requests:
-
-### Core Features
-- `fecha_dato`: Reference date (YYYY-MM-DD)
-- `ncodpers`: Customer ID
-- `age`: Customer age
-- `customer_period`: Customer tenure
-
-### Categorical Features
-- `ind_empleado`, `pais_residencia`, `sexo`, `indrel`, `indrel_1mes`
-- `tiprel_1mes`, `canal_entrada`, `cod_prov`, `segmento`
-
-### Boolean Features
-- `ind_nuevo`, `indresi`, `indfall`, `ind_actividad_cliente`
-- `ind_*_fin_ult1`: Current product ownership (24 products)
-- `ind_*_lag3`, `ind_*_lag6`: Lagged product ownership
-
-### Numeric Features
-- `renta`: Household income
-- `n_products_lag3`, `n_products_lag6`: Number of products
-
-## Troubleshooting
-
-### Common Issues
-
-1. **Model not found**: Ensure the model is saved in `models/ovr_grouped_santander/`
-2. **Port already in use**: Change ports in `.env` file
-3. **Memory issues**: Adjust Docker memory limits in `docker-compose.yml`
 
 ### Logs
-
 ```bash
 # View all logs
-docker-compose logs -f
+docker compose -f src/api/docker-compose.yml logs -f
 
 # View specific service logs
-docker-compose logs -f recommender
-docker-compose logs -f prometheus
-docker-compose logs -f grafana
+docker compose -f src/api/docker-compose.yml logs -f recommender
+docker compose -f src/api/docker-compose.yml logs -f prometheus
+docker compose -f src/api/docker-compose.yml logs -f grafana
 ```
+
 
 ### Restart Services
-
 ```bash
 # Restart a specific service
-docker-compose restart recommender
+docker compose -f src/api/docker-compose.yml restart recommender
 
 # Rebuild and restart
-docker-compose up -d --build recommender
+docker compose -f src/api/docker-compose.yml up -d --build recommender
 ```
 
-## Development
 
-### Local Development (without Docker)
-
+### Stop and Remove Containers
 ```bash
-# Install dependencies
-pip install -r requirements.txt
+# Stop containers
+docker compose -f src/api/docker-compose.yml down
 
-# Run the API
-python -m src.api.main_api
-
-# Or with uvicorn directly
-uvicorn src.api.main_api:app --host 0.0.0.0 --port 8080 --reload
-```
-
-
-# Get access to the microservice front page
-Open browser and navigate to http://127.0.0.1:8080
-
-# Get acess to Prometheus
-Open browser and navigate to http://localhost:9091/query
-
-# Get acess to Grafana
-Open browser and navigate to http://localhost:3001
-
-# Get access to interactive API documentation
-Open browser and navigate to http://127.0.0.1:8080/docs
-
-# Get API metrics
-Open browser and navigate to http://127.0.0.1:8080/metrics
-
-# Stop and remove the containers
-``` bash
-docker stop sprint_3_stage_3_4_microservice_container
-docker rm sprint_3_stage_3_4_microservice_container
-docker stop prometheus                               
-docker rm prometheus
-docker stop grafana
-docker rm grafana
+# Stop and remove volumes
+docker compose -f src/api/docker-compose.yml down -v
 ```

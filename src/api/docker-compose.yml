@@ -18,6 +18,7 @@ services:
     volumes:
       - ../../models:/app/models:ro
       - ../../data:/app/data:ro
+      - ../../results:/app/results:ro
       - ../../logs:/app/logs
     hostname: recommender
     restart: always

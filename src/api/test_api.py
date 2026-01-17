@@ -38,6 +38,7 @@ load_dotenv(os.path.join(config_dir, '.env'))
 
 # ---------- Constants ---------- #
 DATA_DIR = os.getenv('DATA_DIR', './data')
+RESULTS_DIR = os.getenv('RESULTS_DIR', './results')
 PREPROCESSED_DATA_FILE = os.getenv('PREPROCESSED_DATA_FILE', 'data_preprocessed.parquet')
 API_TEST_DATA_FILE = os.getenv('API_TEST_DATA_FILE', 'api_test_data.parquet')
 API_SAMPLE_NUMBER = int(os.getenv('API_SAMPLE_NUMBER', 1000))
@@ -359,7 +360,7 @@ def main():
                 )
     
     # Save results to file
-    results_file = os.path.join(DATA_DIR, 'api_test_results.json')
+    results_file = os.path.join(RESULTS_DIR, 'api_test_results.json')
     with open(results_file, 'w') as f:
         json.dump({
             'single_prediction': single_results,
@@ -379,7 +380,3 @@ def main():
 if __name__ == '__main__':
     main()
 
-
-# ---------- Main ---------- #
-if __name__ == '__main__':
-    main()
