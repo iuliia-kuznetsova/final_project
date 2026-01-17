@@ -2,76 +2,7 @@
 Overview of the ML pipeline for training the bank product recommendation model.
 
 ## Pipeline Overview
-
-```
-┌─────────────────────────────────────────────────────────────────────────────────────┐
-│                        Recommendation Pipeline (src/recs)                            │
-├─────────────────────────────────────────────────────────────────────────────────────┤
-│                                                                                      │
-│   ┌──────────────────┐                                                              │
-│   │ Step 1: Data     │  • Download raw data from Yandex.Disk                        │
-│   │ Loading          │  • Extract ZIP archive                                       │
-│   │ (data_loading.py)│  • Save train_ver2.csv to data/                              │
-│   └────────┬─────────┘                                                              │
-│            │                                                                         │
-│            ▼                                                                         │
-│   ┌──────────────────┐                                                              │
-│   │ Step 2: Data     │  • Load CSV with schema overrides                            │
-│   │ Preprocessing    │  • Encode categorical variables                              │
-│   │(data_preprocess  │  • Convert boolean columns                                   │
-│   │    ing.py)       │  • Handle missing values (imputation)                        │
-│   └────────┬─────────┘  • Create customer_period feature                            │
-│            │            • Drop high-null columns                                     │
-│            ▼            • Save data_preprocessed.parquet                            │
-│   ┌──────────────────┐                                                              │
-│   │ Step 3: Feature  │  • Add lag features (3m, 6m)                                 │
-│   │ Engineering      │  • Add "acquired_recently" features                          │
-│   │(feature_engineer │  • Add product interaction features                          │
-│   │    ing.py)       │  • Update data_preprocessed.parquet                          │
-│   └────────┬─────────┘                                                              │
-│            │                                                                         │
-│            ▼                                                                         │
-│   ┌──────────────────┐                                                              │
-│   │ Step 4: Target   │  • Create 24 binary target columns                           │
-│   │ Engineering      │  • Target = 1 if customer will add product next month        │
-│   │(target_engineer  │  • Filter out last month (no targets)                        │
-│   │    ing.py)       │  • Update data_preprocessed.parquet                          │
-│   └────────┬─────────┘                                                              │
-│            │                                                                         │
-│            ▼                                                                         │
-│   ┌──────────────────┐                                                              │
-│   │ Step 5: Train/   │  • All Positives + Random Negatives sampling                 │
-│   │ Test Split       │  • Temporal split (last month - test)                        │
-│   │(train_test_split │  • Save X_train, X_test, y_train, y_test                     │
-│   │    .py)          │                                                              │
-│   └────────┬─────────┘                                                              │
-│            │                                                                         │
-│            ▼                                                                         │
-│   ┌──────────────────┐                                                              │
-│   │ Step 6: Model    │  • Group products by prevalence                              │
-│   │ Training         │  • Optuna hyperparameter optimization per group on sampled data with CV evaluation                     │
-│   │(modelling_ovr.py)│  • Train OvR CatBoost on sampled data                            │
-│   │                  │  • Optimize thresholds per product
-                         │• Retrain CatBoost for each product on full dataset
-│   └────────┬─────────┘                                                              │
-│            │                                                                         │
-│            ▼                                                                         │
-│   ┌──────────────────┐                                                              │
-│   │ Step 7: Model    │  • Evaluate on test set                                      │
-│   │ Evaluation       │  • Calculate AUC, MAP@N, Precision@N                         │
-│   │(modelling_ovr.py)│  • Save evaluation results                                   │
-│   └────────┬─────────┘                                                              │
-│            │                                                                         │
-│            ▼                                                                         │
-│   ┌──────────────────┐                                                              │
-│   │ Step 8: Save &   │  • Save models to models/ovr_grouped_catboost/               │
-│   │ Log to MLflow    │  • Log models, metrics, artifacts to MLflow                  │
-│   │(mlflow_logging   │  • Register model in MLflow Model Registry                   │
-│   │    .py)          │                                                              │
-│   └──────────────────┘                                                              │
-│                                                                                      │
-└─────────────────────────────────────────────────────────────────────────────────────┘
-```
+<img width="869" height="2726" alt="1" src="https://github.com/user-attachments/assets/f204ba29-61c4-44df-90c0-524872a6569d" />
 
 ## Detailed Step Descriptions
 
